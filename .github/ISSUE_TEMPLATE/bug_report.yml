@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a parsing, calculation, export, or interface problem.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Remove confidential structures and personal data before uploading files.
+  - type: input
+    id: version
+    attributes:
+      label: Application version
+      placeholder: 0.5.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: macOS and Mac model
+      placeholder: macOS 15, MacBook Air M2
+    validations:
+      required: true
+  - type: input
+    id: orca
+    attributes:
+      label: ORCA version
+      placeholder: ORCA 6.1
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Explain what happened and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+  - type: textarea
+    id: sample
+    attributes:
+      label: Minimal non-confidential sample
+      description: Attach a reduced ORCA output when possible.

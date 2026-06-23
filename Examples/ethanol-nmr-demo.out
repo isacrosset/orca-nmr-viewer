@@ -1,0 +1,50 @@
+                         *****************
+                         * O   R   C   A *
+                         *****************
+
+CARTESIAN COORDINATES (ANGSTROEM)
+---------------------------------
+C       -1.226922     0.247095     0.000000
+C       -0.013548    -0.546773     0.000000
+H       -2.092804    -0.413336     0.000000
+H       -1.249625     0.875419    -0.889165
+H       -1.249625     0.875419     0.889165
+O        1.099618     0.302262     0.000000
+H        0.009152    -1.175097     0.889165
+H        0.009152    -1.175097    -0.889165
+H        1.892077    -0.216216     0.000000
+
+Nucleus  Element    Isotropic     Anisotropy
+-------  -------  ------------   ------------
+    0       C          176.840         59.356
+    1       C          132.220         62.878
+    2       H           30.210         12.469
+    3       H           30.440         15.284
+    4       H           30.440         15.284
+    5       O          290.125        110.616
+    6       H           28.970         27.101
+    7       H           28.970         27.101
+    8       H           26.320         32.114
+
+NUCLEUS A = 0C   NUCLEUS B = 2H   COUPLING
+Fermi contact contribution                          126.300
+Spin dipole contribution                             -1.220
+Paramagnetic spin orbit contribution                  0.310
+Diamagnetic spin orbit contribution                   0.080
+Total isotropic coupling iso=                       125.470
+
+NUCLEUS A = 0C   NUCLEUS B = 1C   COUPLING
+Fermi contact contribution                           41.100
+Spin dipole contribution                             -0.420
+Paramagnetic spin orbit contribution                  0.160
+Diamagnetic spin orbit contribution                   0.040
+Total isotropic coupling iso=                        40.880
+
+NUCLEUS A = 1C   NUCLEUS B = 6H   COUPLING
+Fermi contact contribution                          128.220
+Spin dipole contribution                             -1.010
+Paramagnetic spin orbit contribution                  0.250
+Diamagnetic spin orbit contribution                   0.060
+Total isotropic coupling iso=                       127.520
+
+ORCA TERMINATED NORMALLY

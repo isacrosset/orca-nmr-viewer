@@ -1,0 +1,17 @@
+name: Feature request
+description: Suggest an improvement to ORCA NMR Viewer.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Scientific or workflow use case
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true

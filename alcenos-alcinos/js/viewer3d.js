@@ -23,8 +23,10 @@ export const ELEM = {
   Br: { color: 0xa5432a, vdw: 1.85, ball: 0.5, name: 'bromo' },
   I: { color: 0x8b2fc9, vdw: 1.98, ball: 0.56, name: 'iodo' },
   Na: { color: 0xab5cf2, vdw: 2.27, ball: 0.5, name: 'sódio' },
+  B: { color: 0xffa5a5, vdw: 1.92, ball: 0.36, name: 'boro' },
+  Pd: { color: 0x8fa0b8, vdw: 1.63, ball: 0.62, name: 'paládio' },
 };
-export const BOND = { 'C-H': 1.09, 'C-C': 1.53, 'C-Cl': 1.78, 'C-Br': 1.94, 'C-I': 2.14, 'C-O': 1.43, 'O-H': 0.97, 'C-N': 1.47, 'C=C': 1.34, 'Car': 1.39, 'C-S': 1.8 };
+export const BOND = { 'C-H': 1.09, 'C-C': 1.53, 'C-Cl': 1.78, 'C-Br': 1.94, 'C-I': 2.14, 'C-O': 1.43, 'O-H': 0.97, 'C-N': 1.47, 'C=C': 1.34, 'Car': 1.39, 'C-S': 1.8, 'C-B': 1.57, 'B-H': 1.19, 'C≡C': 1.20 };
 
 /* ---------- vetores ---------- */
 
@@ -69,7 +71,32 @@ export function groupTemplate(name) {
     return tetraDirs(u, phase, ref);
   };
   if (name === 'H') { add('H', [0, 0, BOND['C-H']]); return { atoms, bonds }; }
+  if (['Br', 'Cl', 'I', 'F'].includes(name)) { add(name, [0, 0, BOND['C-' + name] || 1.9]); return { atoms, bonds }; }
+  if (name === 'Ph') {
+    const ipso = add('C', [0, 0, 1.5]);
+    const ctr = [0, 0, 1.5 + 1.39];
+    const ring = [ipso];
+    for (let k = 1; k < 6; k++) {
+      const th = k * Math.PI / 3;
+      ring.push(add('C', [1.39 * Math.sin(th), 0, ctr[2] - 1.39 * Math.cos(th)]));
+    }
+    for (let k = 0; k < 6; k++) bonds.push([ring[k], ring[(k + 1) % 6], k % 2 === 0 ? 2 : 1, { normal: [0, 1, 0] }]);
+    for (let k = 1; k < 6; k++) {
+      const p = atoms[ring[k]].p, d = V.norm(V.sub(p, ctr));
+      const hh = add('H', V.add(p, V.mul(d, 1.08)));
+      bonds.push([ring[k], hh]);
+    }
+    return { atoms, bonds };
+  }
   const c1 = add('C', [0, 0, BOND['C-C']]);
+  if (name === 'tBu') {
+    tet(c1, [0, 0, 0], Math.PI / 6).forEach((d) => {
+      const cm = add('C', V.add(atoms[c1].p, V.mul(d, BOND['C-C'])));
+      bonds.push([c1, cm]);
+      tetraDirs(V.mul(d, -1), Math.PI / 3).forEach((e) => { const hh = add('H', V.add(atoms[cm].p, V.mul(e, BOND['C-H']))); bonds.push([cm, hh]); });
+    });
+    return { atoms, bonds };
+  }
   if (name === 'CH3') {
     tet(c1, [0, 0, 0], Math.PI / 6).forEach((d) => { const h = add('H', V.add(atoms[c1].p, V.mul(d, BOND['C-H']))); bonds.push([c1, h]); });
     return { atoms, bonds };
@@ -284,7 +311,7 @@ export class Mol {
       return m;
     });
     this.bondMeshes = this.bonds.map((b) => {
-      const n = b.order === 2 ? 2 : 1;
+      const n = b.order === 2 ? 2 : b.order === 3 ? 3 : 1;
       const arr = [];
       for (let k = 0; k < n; k++) {
         const mat = b.opt.partial
@@ -322,16 +349,17 @@ export class Mol {
       const d = pb.clone().sub(pa), L = d.length();
       const meshes = this.bondMeshes[k];
       let off = new THREE.Vector3();
-      if (meshes.length === 2) {
+      if (meshes.length >= 2) {
         const nrm = b.opt.normal ? new THREE.Vector3(...b.opt.normal) : new THREE.Vector3(0, 0, 1);
-        off = d.clone().cross(nrm).normalize().multiplyScalar(0.13);
+        off = d.clone().cross(nrm).normalize().multiplyScalar(meshes.length === 3 ? 0.16 : 0.13);
       }
       meshes.forEach((m, n) => {
         m.visible = !hide;
         if (hide) return;
-        const r = (b.opt.partial ? 0.06 : this.o.bondR) * (meshes.length === 2 ? 0.7 : 1);
+        const r = (b.opt.partial ? 0.06 : this.o.bondR) * (meshes.length >= 2 ? 0.62 : 1);
         const mid = pa.clone().add(pb).multiplyScalar(0.5);
         if (meshes.length === 2) mid.add(off.clone().multiplyScalar(n === 0 ? 1 : -1));
+        if (meshes.length === 3) mid.add(off.clone().multiplyScalar(n === 0 ? 0 : n === 1 ? 1 : -1));
         m.position.copy(mid);
         m.quaternion.setFromUnitVectors(UP, d.clone().normalize());
         m.scale.set(r, L, r);
@@ -469,7 +497,7 @@ export class Center {
       const base = this.atoms.length;
       tpl.atoms.forEach((a) => this.atoms.push({ el: a.el, p: [0, 0, 0], tag: 'g' + k }));
       this.bonds.push([0, base]);
-      tpl.bonds.forEach((b) => this.bonds.push([base + b[0], base + b[1]]));
+      tpl.bonds.forEach((b) => this.bonds.push([base + b[0], base + b[1], b[2] || 1, b[3] || {}]));
       this.parts.push({ tpl, base, name: g });
     });
   }

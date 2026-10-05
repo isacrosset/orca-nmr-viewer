@@ -199,7 +199,7 @@ export class Viewer {
     this.ro = new ResizeObserver(() => this.resize());
     this.ro.observe(host);
     this.visible = true;
-    this.io = new IntersectionObserver((en) => { this.visible = en[0].isIntersecting; }, { threshold: 0.01 });
+    this.io = new IntersectionObserver((en) => { this.visible = en[en.length - 1].isIntersecting; }, { threshold: 0.01 });
     this.io.observe(host);
     this.clock = new THREE.Clock();
     this.running = true;

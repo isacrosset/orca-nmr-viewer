@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conformações &amp; Estereoquímica</title>
+  <meta name="description" content="Material interativo de Química Orgânica: isômeros constitucionais, conformações de alcanos e cicloalcanos (Newman, cavalete, cadeira do ciclo-hexano) e estereoquímica (quiralidade, enantiômeros, diastereoisômeros, R/S, Fischer, E/Z), com exercícios resolvidos e propostos.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2f6fde"/><path d="M9 20.5 L9 12.5 L16 8.5 L23 12.5 L23 20.5 L16 24.5 Z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><circle cx="16" cy="16.5" r="2.4" fill="#ffd43b"/></svg>
+      <span>Conformações &amp; Estereoquímica<small>Química Orgânica interativa</small></span>
+    </a>
+    <nav class="tabs" role="tablist" aria-label="Módulos">
+      <button class="tab" role="tab" data-target="conf" aria-selected="false">Conformações</button>
+      <button class="tab" role="tab" data-target="estereo" aria-selected="false">Estereoquímica</button>
+    </nav>
+    <button class="icon-btn" id="theme-btn" type="button" title="Alternar tema claro/escuro" aria-label="Alternar tema"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidenav" id="sidenav" aria-label="Seções"></aside>
+
+  <main>
+    <div class="mobile-nav"><select id="mobile-select" aria-label="Seção"></select></div>
+
+<!-- ================================================================== -->
+<!-- INÍCIO                                                              -->
+<!-- ================================================================== -->
+
+<section class="page" id="inicio" data-tab="inicio" data-title="Início">
+  <span class="kicker">Química Orgânica</span>
+  <h2>Moléculas em três dimensões</h2>
+  <p class="lead">Este material reúne teoria, figuras interativas e exercícios sobre como as moléculas orgânicas se organizam no espaço: as <b>conformações</b> que elas assumem ao girar em torno de ligações simples e a <b>estereoquímica</b> — o estudo das moléculas que só diferem pelo arranjo espacial dos átomos.</p>
+  <div class="hero">
+    <a class="card" href="#conf-isomeros">
+      <h3 style="margin-top:0">⟳ Conformações</h3>
+      <p>Isômeros constitucionais, conformações e confôrmeros, projeções de Newman e cavalete, análise conformacional de alcanos, cicloalcanos e a cadeira do ciclo-hexano (axial × equatorial, interconversão, dissubstituídos).</p>
+      <span class="badge">10 seções · 3 laboratórios 3D · 25 exercícios</span>
+    </a>
+    <a class="card" href="#est-intro">
+      <h3 style="margin-top:0">✋ Estereoquímica</h3>
+      <p>Quiralidade, enantiômeros e diastereoisômeros, atividade óptica, regras de prioridade CIP, configuração R/S, projeção de Fischer, compostos meso, isomeria E/Z e nomenclatura.</p>
+      <span class="badge">10 seções · treinos ilimitados de R/S · 27 exercícios</span>
+    </a>
+  </div>
+  <h3>Como usar</h3>
+  <ul>
+    <li>Escolha um módulo nas abas do topo e siga as seções na ordem (menu à esquerda ou, no celular, o seletor no topo da página).</li>
+    <li>Modelos 3D podem ser <b>girados com o mouse ou com o dedo</b>; duplo clique restaura a vista.</li>
+    <li>Nos <b>exercícios resolvidos</b>, tente resolver antes de abrir a resolução. Os <b>exercícios propostos</b> são corrigidos na hora e seu progresso fica salvo neste navegador.</li>
+    <li>Valores de energia seguem as tabelas usuais de livros-texto (McMurry, Solomons, Clayden) e são aproximados.</li>
+  </ul>
+  <div class="box tip"><span class="box-title">Dica de estudo</span>Tenha à mão um kit de modelos moleculares (ou palitos e massinha). Montar a molécula e girá-la é a forma mais rápida de "ver" conformações e estereoisômeros.</div>
+</section>
+
+<!-- ================================================================== -->
+<!-- CONFORMAÇÕES                                                        -->
+<!-- ================================================================== -->
+
+<section class="page" id="conf-isomeros" data-tab="conf" data-title="Isômeros constitucionais">
+  <span class="kicker">Conformações · 1</span>
+  <h2>Isômeros constitucionais</h2>
+  <p class="lead"><b>Isômeros</b> são compostos diferentes que têm a <b>mesma fórmula molecular</b>. Eles se dividem em dois grandes grupos, conforme a diferença esteja na <i>conectividade</i> dos átomos ou apenas no seu <i>arranjo espacial</i>.</p>
+
+  <div class="tree" aria-label="Classificação dos isômeros">
+    <div class="node">Isômeros<small>mesma fórmula molecular</small></div>
+    <div class="branch">
+      <div class="col">
+        <div class="node alt">Constitucionais (estruturais)<small>átomos ligados em ordem diferente</small></div>
+        <div class="branch">
+          <div class="node leaf">cadeia</div><div class="node leaf">posição</div><div class="node leaf">função</div><div class="node leaf">compensação</div><div class="node leaf">tautomeria</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="node alt">Estereoisômeros<small>mesma conectividade, arranjo espacial diferente</small></div>
+        <div class="branch">
+          <div class="node leaf">Enantiômeros<small>imagens especulares</small></div>
+          <div class="node leaf">Diastereoisômeros<small>não são imagens especulares (inclui cis/trans)</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="box def"><span class="box-title">Definição</span><b>Isômeros constitucionais</b> (ou estruturais) têm a mesma fórmula molecular, mas os átomos estão conectados de maneira diferente. Por isso, recebem <b>nomes IUPAC diferentes</b> e têm propriedades físicas e químicas diferentes.</div>
+
+  <h3>Tipos de isomeria constitucional</h3>
+  <div class="cards">
+    <div class="card">
+      <h4>De cadeia</h4>
+      <p>Diferem no tipo de cadeia carbônica (normal × ramificada, aberta × fechada). C<sub>4</sub>H<sub>10</sub>:</p>
+      <div class="figs">
+        <figure class="fig"><div data-fig="butano"></div><figcaption><b>butano</b><br>PE −0,5 °C</figcaption></figure>
+        <figure class="fig"><div data-fig="isobutano"></div><figcaption><b>2-metilpropano</b><br>PE −11,7 °C</figcaption></figure>
+      </div>
+    </div>
+    <div class="card">
+      <h4>De posição</h4>
+      <p>Mesma cadeia e mesma função, mas o grupo funcional (ou ramificação, ou insaturação) ocupa posição diferente. C<sub>3</sub>H<sub>8</sub>O:</p>
+      <div class="figs">
+        <figure class="fig"><div data-fig="propan1ol"></div><figcaption><b>propan-1-ol</b></figcaption></figure>
+        <figure class="fig"><div data-fig="propan2ol"></div><figcaption><b>propan-2-ol</b></figcaption></figure>
+      </div>
+    </div>
+    <div class="card">
+      <h4>De função</h4>
+      <p>Pertencem a funções orgânicas diferentes. C<sub>2</sub>H<sub>6</sub>O:</p>
+      <div class="figs">
+        <figure class="fig"><div data-fig="etanol"></div><figcaption><b>etanol</b> (álcool)<br>PE 78 °C</figcaption></figure>
+        <figure class="fig"><div data-fig="dme"></div><figcaption><b>metoximetano</b> (éter)<br>PE −24 °C</figcaption></figure>
+      </div>
+    </div>
+    <div class="card">
+      <h4>De compensação (metameria)</h4>
+      <p>Diferem na posição de um heteroátomo dentro da cadeia. C<sub>4</sub>H<sub>10</sub>O:</p>
+      <div class="figs">
+        <figure class="fig"><div data-fig="etoxietano"></div><figcaption><b>etoxietano</b></figcaption></figure>
+        <figure class="fig"><div data-fig="metoxipropano"></div><figcaption><b>1-metoxipropano</b></figcaption></figure>
+      </div>
+    </div>
+    <div class="card">
+      <h4>Tautomeria</h4>
+      <p>Caso especial: os isômeros coexistem em <b>equilíbrio dinâmico</b> pela migração de um H (ex.: equilíbrio ceto-enólico).</p>
+      <div class="figs">
+        <figure class="fig"><div data-fig="propanona"></div><figcaption><b>propanona</b> (ceto)</figcaption></figure>
+        <span class="arrow-sep">⇌</span>
+        <figure class="fig"><div data-fig="propenol"></div><figcaption><b>prop-1-en-2-ol</b> (enol)</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <h3>Como reconhecer isômeros constitucionais</h3>
+  <ol>
+    <li><b>Mesma fórmula molecular?</b> Conte C, H e heteroátomos. Se for diferente, não são isômeros.</li>
+    <li><b>Mesma conectividade?</b> Dê o nome IUPAC de cada estrutura. Nomes diferentes (sem considerar prefixos como R/S, cis/trans, E/Z) ⇒ isômeros constitucionais.</li>
+    <li>Cuidado com desenhos diferentes da <b>mesma</b> molécula: uma cadeia "dobrada" ou desenhada de trás para frente continua sendo a mesma substância.</li>
+  </ol>
+  <div class="box tip"><span class="box-title">Ferramenta útil: grau de insaturação</span>
+    Para listar isômeros, comece calculando o índice de deficiência de hidrogênio (IDH):
+    <div class="formula">IDH = (2C + 2 + N − H − X) / 2</div>
+    Cada ligação π ou anel conta 1. Ex.: C<sub>4</sub>H<sub>10</sub>O → IDH = (8 + 2 − 10)/2 = 0 ⇒ só ligações simples e nenhum anel (álcoois e éteres saturados).
+  </div>
+  <div class="box warn"><span class="box-title">E as conformações?</span>Diferentes conformações de uma molécula (por exemplo, as formas anti e gauche do butano) <b>não</b> mudam a conectividade e se interconvertem rapidamente. Por isso, normalmente não são contadas como isômeros distintos — veja a próxima seção.</div>
+</section>
+
+<section class="page" id="conf-conformacoes" data-tab="conf" data-title="Conformações e confôrmeros">
+  <span class="kicker">Conformações · 2</span>
+  <h2>Conformações e confôrmeros</h2>
+  <p class="lead">A ligação σ C–C tem simetria cilíndrica: a sobreposição dos orbitais é a mesma qualquer que seja a rotação em torno do eixo da ligação. Por isso, os grupos ligados aos dois carbonos podem <b>girar</b> sem quebrar a ligação.</p>
+  <div class="box def"><span class="box-title">Definições</span>
+    <p><b>Conformações</b> são os diferentes arranjos espaciais dos átomos de uma molécula que se interconvertem por <b>rotação em torno de ligações simples</b>.</p>
+    <p><b>Confôrmeros</b> (isômeros conformacionais) são as conformações que correspondem a <b>mínimos de energia</b> — as formas em que a molécula passa a maior parte do tempo.</p>
+  </div>
+  <p>A barreira de rotação no etano é de apenas ~12 kJ/mol: à temperatura ambiente, a energia térmica é suficiente para que cada ligação C–C gire <b>bilhões de vezes por segundo</b>. Por isso, em geral, confôrmeros não podem ser isolados: o que se observa é uma média ponderada pelas populações de cada um.</p>
+
+  <h3>Conformação × configuração</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th></th><th>Conformação</th><th>Configuração</th></tr></thead>
+    <tbody>
+      <tr><td>Como mudar</td><td>Girando ligações simples</td><td>Quebrando e refazendo ligações</td></tr>
+      <tr><td>Energia envolvida</td><td>Baixa (≈ 4–60 kJ/mol)</td><td>Alta (≈ 250–400 kJ/mol)</td></tr>
+      <tr><td>Isolável?</td><td>Em geral, não</td><td>Sim</td></tr>
+      <tr><td>Exemplos</td><td>anti/gauche do butano; cadeiras do ciclo-hexano</td><td>enantiômeros R/S; alcenos E/Z; cis/trans em anéis</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Ângulo diedro (ângulo de torção)</h3>
+  <p>Para descrever uma conformação usa-se o <b>ângulo diedro</b> θ: o ângulo entre duas ligações em carbonos vizinhos, observado ao longo da ligação C–C (é exatamente o ângulo que se vê na projeção de Newman). As conformações recebem nomes conforme θ:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>θ</th><th>Nome usual</th><th>Nome sistemático (Klyne–Prelog)</th></tr></thead>
+    <tbody>
+      <tr><td>0°</td><td>eclipsada (sin)</td><td>sinperiplanar</td></tr>
+      <tr><td>60°</td><td>alternada gauche</td><td>sinclinal</td></tr>
+      <tr><td>120°</td><td>eclipsada</td><td>anticlinal</td></tr>
+      <tr><td>180°</td><td>alternada anti</td><td>antiperiplanar</td></tr>
+    </tbody>
+  </table></div>
+  <p>Conformações <b>alternadas</b> (θ = 60°, 180°, 300°) têm as ligações dos dois carbonos o mais afastadas possível; nas <b>eclipsadas</b> (θ = 0°, 120°, 240°) as ligações ficam sobrepostas quando vistas ao longo do eixo C–C.</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="etanoNewmanAlt"></div><figcaption><b>Alternada</b> — mínimo de energia</figcaption></figure>
+    <figure class="fig"><div data-fig="etanoNewmanEcl"></div><figcaption><b>Eclipsada</b> — máximo de energia<br>(desenhada ligeiramente girada para mostrar os H de trás)</figcaption></figure>
+  </div>
+</section>
+
+<section class="page" id="conf-projecoes" data-tab="conf" data-title="Projeções de Newman e cavalete">
+  <span class="kicker">Conformações · 3</span>
+  <h2>Representando conformações: cunha, cavalete e Newman</h2>
+  <p class="lead">Desenhar moléculas tridimensionais no papel exige convenções. Três delas são usadas o tempo todo em análise conformacional.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h4>1. Cunha e tracejado</h4>
+      <p>Linhas comuns no plano do papel; <b>cunha cheia</b> = ligação para a frente (em direção ao leitor); <b>tracejado</b> = ligação para trás.</p>
+      <div class="figs"><figure class="fig"><div data-fig="etanoCunha"></div><figcaption>etano (alternado)</figcaption></figure></div>
+    </div>
+    <div class="card">
+      <h4>2. Cavalete (sawhorse)</h4>
+      <p>A ligação C–C é vista em perspectiva oblíqua: o carbono da <b>frente</b> fica embaixo, à esquerda; o de <b>trás</b>, em cima, à direita.</p>
+      <div class="figs"><figure class="fig"><div data-fig="etanoCavaleteAlt"></div><figcaption>etano alternado em cavalete</figcaption></figure></div>
+    </div>
+    <div class="card">
+      <h4>3. Projeção de Newman</h4>
+      <p>Olha-se exatamente ao longo da ligação C–C. Carbono da frente = <b>ponto</b> (ligações saem do centro); carbono de trás = <b>círculo</b> (ligações saem da borda).</p>
+      <div class="figs"><figure class="fig"><div data-fig="etanoNewmanAlt"></div><figcaption>etano alternado em Newman</figcaption></figure></div>
+    </div>
+  </div>
+
+  <h3>Como desenhar uma projeção de Newman</h3>
+  <ol>
+    <li>Escolha a ligação C–C de interesse e o carbono que ficará na frente.</li>
+    <li>Desenhe o círculo (carbono de trás) e as três ligações do carbono da frente, saindo do centro a 120° entre si (uma geralmente na vertical).</li>
+    <li>Desenhe as três ligações do carbono de trás saindo da borda do círculo: intercaladas (60° de defasagem) para a alternada ou sobrepostas para a eclipsada.</li>
+    <li>Coloque os substituintes nas pontas, mantendo as relações espaciais (quem está "acima", "à direita" etc.).</li>
+  </ol>
+  <div class="box tip"><span class="box-title">Do cavalete para o Newman</span>Imagine-se olhando o cavalete a partir do carbono da frente (embaixo, à esquerda), ao longo da ligação C–C. O que estiver para cima no cavalete continua para cima no Newman; o que estiver à direita continua à direita.</div>
+
+  <h3>Laboratório: gire a ligação C–C</h3>
+  <p>Escolha a molécula e mova o controle deslizante (ou clique em <b>Girar</b>). As três representações e o gráfico de energia são atualizados juntos. O cavalete também pode ser girado com o mouse para você conferir a relação entre as projeções.</p>
+  <div data-widget="newmanLab"></div>
+</section>
+
+<section class="page" id="conf-analise" data-tab="conf" data-title="Análise conformacional de alcanos">
+  <span class="kicker">Conformações · 4</span>
+  <h2>Análise conformacional: etano, propano e butano</h2>
+  <p class="lead">Nem todas as conformações têm a mesma energia. As diferenças vêm de três tipos de <b>tensão</b>.</p>
+
+  <div class="cards">
+    <div class="card"><h4>Tensão torsional (Pitzer)</h4><p>Repulsão entre os pares de elétrons das ligações de carbonos vizinhos quando elas ficam <b>eclipsadas</b>. Existe mesmo entre H pequenos.</p></div>
+    <div class="card"><h4>Tensão estérica (van der Waals)</h4><p>Repulsão que surge quando átomos ou grupos são forçados a ficar <b>mais próximos</b> do que a soma de seus raios de van der Waals (ex.: CH₃/CH₃ gauche).</p></div>
+    <div class="card"><h4>Tensão angular (Baeyer)</h4><p>Aumento de energia quando os ângulos de ligação se afastam do valor ideal (109,5° para C sp³). Importante em anéis pequenos.</p></div>
+  </div>
+
+  <h3>Etano</h3>
+  <p>A conformação eclipsada está ~<b>12 kJ/mol</b> (2,9 kcal/mol) acima da alternada. Como há três interações H/H eclipsadas, cada uma custa ≈ 4,0 kJ/mol. Essa energia é <b>exclusivamente torsional</b>: os H são pequenos demais para colidir.</p>
+
+  <h3>Propano</h3>
+  <p>Na rotação em torno de C1–C2, a eclipsada tem duas interações H/H (2 × 4,0) e uma CH₃/H (6,0): barreira ≈ <b>14 kJ/mol</b>.</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="propanoNewmanAlt"></div><figcaption>propano alternado (0 kJ/mol)</figcaption></figure>
+    <figure class="fig"><div data-fig="propanoNewmanEcl"></div><figcaption>propano eclipsado (≈ 14 kJ/mol)</figcaption></figure>
+  </div>
+
+  <h3>Custos de interações (valores de referência)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Interação</th><th>Causa</th><th class="num">kJ/mol</th><th class="num">kcal/mol</th></tr></thead>
+    <tbody>
+      <tr><td>H / H eclipsados</td><td>torsional</td><td class="num">4,0</td><td class="num">1,0</td></tr>
+      <tr><td>H / CH₃ eclipsados</td><td>principalmente torsional</td><td class="num">6,0</td><td class="num">1,4</td></tr>
+      <tr><td>CH₃ / CH₃ eclipsados</td><td>torsional + estérica</td><td class="num">11</td><td class="num">2,6</td></tr>
+      <tr><td>CH₃ / CH₃ gauche</td><td>estérica</td><td class="num">3,8</td><td class="num">0,9</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Butano (rotação em torno de C2–C3)</h3>
+  <p>Agora cada carbono central carrega um CH₃. Tomando como referência o diedro θ entre os dois metilas:</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="buAnti"></div><figcaption><b>Anti</b> (180°)<br>0 kJ/mol</figcaption></figure>
+    <figure class="fig"><div data-fig="buGauche"></div><figcaption><b>Gauche</b> (60°)<br>3,8 kJ/mol</figcaption></figure>
+    <figure class="fig"><div data-fig="buEcl120"></div><figcaption><b>Eclipsada</b> (120°)<br>2 × 6,0 + 4,0 = 16 kJ/mol</figcaption></figure>
+    <figure class="fig"><div data-fig="buSin"></div><figcaption><b>Totalmente eclipsada</b> (0°)<br>11 + 2 × 4,0 = 19 kJ/mol</figcaption></figure>
+  </div>
+  <figure class="fig wide plain"><div data-fig="buEnergia" style="width:100%"></div><figcaption>Energia potencial do butano em função do ângulo diedro CH₃–C2–C3–CH₃.</figcaption></figure>
+
+  <div class="box def"><span class="box-title">Conclusões para o butano</span>
+    <ul style="margin:0">
+      <li>A conformação <b>anti</b> é a mais estável (os metilas ficam o mais afastados possível).</li>
+      <li>As duas <b>gauche</b> são confôrmeros (mínimos locais), 3,8 kJ/mol acima da anti, por tensão estérica.</li>
+      <li>A maior barreira (19 kJ/mol) corresponde à conformação totalmente eclipsada.</li>
+      <li>A 25 °C, cerca de <b>70 % anti</b> e <b>30 % gauche</b> (somando as duas formas gauche).</li>
+    </ul>
+  </div>
+
+  <h3>Populações de confôrmeros</h3>
+  <p>A razão entre as populações de dois confôrmeros em equilíbrio é dada pela relação termodinâmica:</p>
+  <div class="formula">ΔG° = −RT ln K  ⇔  K = e<sup>−ΔG°/RT</sup></div>
+  <p>com R = 8,314 J·mol<sup>−1</sup>·K<sup>−1</sup> e RT ≈ 2,48 kJ/mol a 25 °C. Diferenças de alguns kJ/mol já produzem preferências marcantes: 5,7 kJ/mol ⇒ 10 : 1; 11,4 kJ/mol ⇒ 100 : 1.</p>
+
+  <div class="box tip"><span class="box-title">Alcanos maiores</span>Em cadeias longas, cada ligação C–C prefere a conformação anti. Por isso a forma mais estável é o <b>zigue-zague</b> com todas as ligações anti — exatamente o desenho usado nas fórmulas de esqueleto. Em solução, porém, há sempre uma fração de ligações gauche.</div>
+</section>
+
+<section class="page" id="conf-ex-alcanos" data-tab="conf" data-title="Exercícios: isômeros e alcanos" data-ex>
+  <span class="kicker">Conformações · Exercícios</span>
+  <h2>Exercícios — isômeros e conformações de alcanos</h2>
+
+  <h3>Exercícios resolvidos</h3>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R1</span><span>Desenhe todos os isômeros constitucionais de fórmula C<sub>5</sub>H<sub>12</sub> e dê seus nomes.</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>IDH = (10 + 2 − 12)/2 = 0: só ligações simples, sem anéis. Organize pela cadeia principal: 5 carbonos, depois 4 carbonos + 1 ramificação, depois 3 carbonos + 2 ramificações.</p>
+      <div class="figs">
+        <figure class="fig"><div data-fig="pentano"></div><figcaption><b>pentano</b> (PE 36 °C)</figcaption></figure>
+        <figure class="fig"><div data-fig="metilbutano"></div><figcaption><b>2-metilbutano</b> (PE 28 °C)</figcaption></figure>
+        <figure class="fig"><div data-fig="dimetilpropano"></div><figcaption><b>2,2-dimetilpropano</b> (PE 10 °C)</figcaption></figure>
+      </div>
+      <p>São <b>três</b> isômeros de cadeia. Note que o ponto de ebulição diminui com a ramificação (menor superfície de contato → forças de London mais fracas).</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R2</span><span>Quantos isômeros constitucionais têm fórmula C<sub>4</sub>H<sub>10</sub>O? Desenhe-os.</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>IDH = 0 → só álcoois e éteres saturados. <b>Álcoois</b> (O–H): o OH pode ficar nas duas cadeias de 4 carbonos (butano e 2-metilpropano), em carbonos não equivalentes:</p>
+      <div class="figs">
+        <figure class="fig"><div data-fig="butan1ol"></div><figcaption>butan-1-ol</figcaption></figure>
+        <figure class="fig"><div data-fig="butan2ol"></div><figcaption>butan-2-ol</figcaption></figure>
+        <figure class="fig"><div data-fig="metilpropan1ol"></div><figcaption>2-metilpropan-1-ol</figcaption></figure>
+        <figure class="fig"><div data-fig="metilpropan2ol"></div><figcaption>2-metilpropan-2-ol</figcaption></figure>
+      </div>
+      <p><b>Éteres</b> (C–O–C): divida os 4 carbonos entre os dois lados do oxigênio (1+3 ou 2+2):</p>
+      <div class="figs">
+        <figure class="fig"><div data-fig="metoxipropano"></div><figcaption>1-metoxipropano</figcaption></figure>
+        <figure class="fig"><div data-fig="metoxi2propano"></div><figcaption>2-metoxipropano</figcaption></figure>
+        <figure class="fig"><div data-fig="etoxietano"></div><figcaption>etoxietano</figcaption></figure>
+      </div>
+      <p>Total: <b>7 isômeros constitucionais</b> (4 álcoois + 3 éteres). Álcoois × éteres: isomeria de função; butan-1-ol × butan-2-ol: de posição; butan-1-ol × 2-metilpropan-1-ol: de cadeia; etoxietano × metoxipropano: de compensação.</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R3</span><span>Calcule a energia da conformação eclipsada do propano e explique por que ela é maior que a do etano.</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <div class="figs"><figure class="fig"><div data-fig="propanoNewmanEcl"></div><figcaption>propano eclipsado (C1–C2)</figcaption></figure></div>
+      <p>Na eclipsada do propano há <b>2 interações H/H</b> (2 × 4,0 = 8,0 kJ/mol) e <b>1 interação CH₃/H</b> (6,0 kJ/mol): total ≈ <b>14 kJ/mol</b>. No etano são 3 interações H/H = 12 kJ/mol. O grupo metila é maior que o H, e ao eclipsar um H soma tensão estérica à torsional.</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R4</span><span>Considere a rotação em torno da ligação C2–C3 do 2,3-dimetilbutano. Desenhe as três conformações alternadas em projeção de Newman, calcule a energia de cada uma e indique a mais estável.</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>Cada carbono (C2 e C3) carrega <b>um H e dois CH₃</b>. Nas alternadas só há interações gauche entre metilas (3,8 kJ/mol cada). Basta contar os pares CH₃/CH₃ a 60°:</p>
+      <div class="figs">
+        <figure class="fig"><div data-fig="dmbA"></div><figcaption><b>A</b>: H anti a H<br>2 gauche → 7,6 kJ/mol</figcaption></figure>
+        <figure class="fig"><div data-fig="dmbB"></div><figcaption><b>B</b>: 3 gauche → 11,4 kJ/mol</figcaption></figure>
+        <figure class="fig"><div data-fig="dmbC"></div><figcaption><b>C</b>: 3 gauche → 11,4 kJ/mol</figcaption></figure>
+      </div>
+      <p>A conformação <b>A</b> (com os dois H em anti) é a mais estável. B e C têm a mesma energia (são imagens especulares uma da outra).</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R5</span><span>A conformação gauche do butano está 3,8 kJ/mol acima da anti. Estime a porcentagem de moléculas na conformação anti a 25 °C.</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>Para cada forma gauche: [gauche]/[anti] = e<sup>−3800/(8,314 × 298)</sup> = e<sup>−1,53</sup> ≈ 0,22.</p>
+      <p>Mas existem <b>duas</b> conformações gauche (θ = 60° e 300°), de mesma energia. Então:</p>
+      <div class="formula">%anti = 1 / (1 + 2 × 0,22) = 1 / 1,44 ≈ 0,70 → 70 % anti e 30 % gauche</div>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R6</span><span>Desenhe, em Newman (ao longo de C1–C2), a conformação mais estável e a menos estável do 1-cloropropano.</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>C1 carrega Cl, H, H; C2 carrega CH₃, H, H. Raciocínio igual ao do butano: os dois grupos maiores devem ficar em <b>anti</b> (mais estável); a menos estável é a eclipsada com Cl sobre CH₃ (θ = 0°).</p>
+      <div class="figs"><figure class="fig"><div data-fig="cloropropanoAnti"></div><figcaption>conformação anti — mais estável</figcaption></figure></div>
+    </div></details>
+  </div>
+
+  <h3>Exercícios propostos</h3>
+  <p class="hint">Clique na alternativa para ver a correção comentada. Seu progresso fica salvo neste navegador.</p>
+  <div data-quiz="conf-alcanos"></div>
+
+  <h3>Para resolver no caderno</h3>
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">D1</span><span>Desenhe os cinco isômeros constitucionais de C<sub>6</sub>H<sub>14</sub> e classifique a relação entre hexano e 3-metilpentano.</span></div>
+    <details class="sol"><summary>Ver resposta</summary><div class="sol-body">
+      <div class="figs">
+        <figure class="fig"><div data-fig="hexano"></div><figcaption>hexano</figcaption></figure>
+        <figure class="fig"><div data-fig="metilpentano2"></div><figcaption>2-metilpentano</figcaption></figure>
+        <figure class="fig"><div data-fig="metilpentano3"></div><figcaption>3-metilpentano</figcaption></figure>
+        <figure class="fig"><div data-fig="dimetilbutano22"></div><figcaption>2,2-dimetilbutano</figcaption></figure>
+        <figure class="fig"><div data-fig="dimetilbutano23"></div><figcaption>2,3-dimetilbutano</figcaption></figure>
+      </div>
+      <p>Hexano e 3-metilpentano: isômeros de <b>cadeia</b>.</p>
+    </div></details>
+  </div>
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">D2</span><span>Esboce o gráfico de energia × ângulo diedro para a rotação em torno de C1–C2 do propano e indique o valor da barreira.</span></div>
+    <details class="sol"><summary>Ver resposta</summary><div class="sol-body"><p>Curva com três máximos iguais (eclipsadas, ≈ 14 kJ/mol) em 0°, 120° e 240° e três mínimos iguais (alternadas) em 60°, 180° e 300° — parecida com a do etano, porém com barreira maior. Use o laboratório da seção 3 (molécula: propano) para conferir.</p></div></details>
+  </div>
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">D3</span><span>Para o 2-metilbutano, analisando a ligação C2–C3, quantas interações gauche CH₃/CH₃ existem na conformação alternada mais estável?</span></div>
+    <details class="sol"><summary>Ver resposta</summary><div class="sol-body"><p>C2 tem H, CH₃, CH₃; C3 tem CH₃, H, H. Colocando o CH₃ de C3 em anti a um dos CH₃ de C2, ele fica gauche apenas ao outro CH₃: <b>1 interação gauche</b> (≈ 3,8 kJ/mol). Se o CH₃ de C3 ficar anti ao H de C2, ele fica gauche aos dois metilas (7,6 kJ/mol).</p></div></details>
+  </div>
+</section>
+
+<section class="page" id="conf-cicloalcanos" data-tab="conf" data-title="Cicloalcanos e tensão de anel">
+  <span class="kicker">Conformações · 5</span>
+  <h2>Cicloalcanos e tensão de anel</h2>
+  <p class="lead">Cicloalcanos (C<sub>n</sub>H<sub>2n</sub>) têm a rotação das ligações restringida pelo anel. Nem todos os anéis são igualmente estáveis.</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="ciclopropano"></div><figcaption>ciclopropano</figcaption></figure>
+    <figure class="fig"><div data-fig="ciclobutano"></div><figcaption>ciclobutano</figcaption></figure>
+    <figure class="fig"><div data-fig="ciclopentano"></div><figcaption>ciclopentano</figcaption></figure>
+    <figure class="fig"><div data-fig="ciclohexano"></div><figcaption>ciclo-hexano</figcaption></figure>
+  </div>
+
+  <h3>A teoria das tensões de Baeyer (1885)</h3>
+  <p>Baeyer supôs que os anéis fossem <b>planos</b>. Os ângulos internos seriam 60° (C3), 90° (C4), 108° (C5) e 120° (C6); quanto mais distante de 109,5°, maior a tensão angular. Ele previu corretamente que ciclopropano e ciclobutano são tensionados, mas errou ao prever tensão crescente para anéis maiores: os anéis com 6 ou mais carbonos <b>não são planos</b> e conseguem ângulos próximos de 109,5°.</p>
+  <p>A tensão real é medida pelos <b>calores de combustão</b>: compara-se o calor liberado por CH₂ com o de um alcano de cadeia aberta (≈ 658,6 kJ/mol por CH₂). O excesso é a tensão do anel.</p>
+  <figure class="fig wide plain"><div data-fig="tensaoAnel" style="width:100%;max-width:520px;margin:auto"></div><figcaption>Tensão de anel total (kJ/mol, valores aproximados).</figcaption></figure>
+
+  <div class="cards">
+    <div class="card"><h4>Ciclopropano (≈ 115 kJ/mol)</h4><p>Obrigatoriamente <b>plano</b>: ângulos de 60° e todos os H eclipsados. A sobreposição dos orbitais é ruim (ligações "banana", curvas), o que torna as ligações C–C mais fracas e reativas.</p></div>
+    <div class="card"><h4>Ciclobutano (≈ 110 kJ/mol)</h4><p>Ligeiramente <b>dobrado</b> (~25° fora do plano): os ângulos caem para ~88°, aumentando a tensão angular, mas a tensão torsional diminui.</p></div>
+    <div class="card"><h4>Ciclopentano (≈ 26 kJ/mol)</h4><p>Conformação <b>envelope</b>: quatro carbonos quase no plano e um "dobrado" para fora. Ângulos próximos de 108°; a tensão restante é principalmente torsional.</p></div>
+    <div class="card"><h4>Ciclo-hexano (≈ 0 kJ/mol)</h4><p>Adota a conformação em <b>cadeira</b>, com ângulos de ~111° e todas as ligações alternadas: praticamente livre de tensão. É o anel mais comum na natureza.</p></div>
+  </div>
+
+  <h3>Isomeria cis/trans em cicloalcanos</h3>
+  <p>Como as ligações do anel não giram livremente, dois substituintes podem ficar do <b>mesmo lado</b> do anel (<b>cis</b>) ou em <b>lados opostos</b> (<b>trans</b>). São estereoisômeros (diastereoisômeros) que só se interconvertem quebrando ligações.</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="cisCiclopentano"></div><figcaption><b>cis</b>-1,2-dimetilciclopentano</figcaption></figure>
+    <figure class="fig"><div data-fig="transCiclopentano"></div><figcaption><b>trans</b>-1,2-dimetilciclopentano</figcaption></figure>
+  </div>
+</section>
+
+<section class="page" id="conf-ciclohexano" data-tab="conf" data-title="Ciclo-hexano: a cadeira">
+  <span class="kicker">Conformações · 6</span>
+  <h2>Ciclo-hexano: a conformação em cadeira</h2>
+  <p class="lead">Se o ciclo-hexano fosse plano, teria ângulos de 120° e doze H eclipsados. Ao "dobrar" dois carbonos opostos — um para cima e outro para baixo — forma-se a <b>cadeira</b>: ângulos de ~111° e todas as ligações C–H alternadas.</p>
+
+  <h3>Hidrogênios axiais e equatoriais</h3>
+  <p>Na cadeira, os 12 H se dividem em dois conjuntos de 6:</p>
+  <div class="cards">
+    <div class="card"><h4 style="color:var(--ax)">Axiais (a)</h4><p>Paralelos ao eixo de simetria do anel (verticais no desenho). Alternam: um para cima, o seguinte para baixo, e assim por diante.</p></div>
+    <div class="card"><h4 style="color:var(--eq)">Equatoriais (e)</h4><p>Apontam para fora, aproximadamente no "equador" do anel, levemente inclinados para cima ou para baixo (sempre no sentido oposto ao axial do mesmo carbono).</p></div>
+  </div>
+  <div class="figs">
+    <figure class="fig"><div data-fig="cadeiraAE"></div><figcaption>H <b style="color:var(--ax)">axiais</b> e <b style="color:var(--eq)">equatoriais</b> (arraste para girar)</figcaption></figure>
+  </div>
+  <div class="box def"><span class="box-title">Regras fundamentais</span>
+    <ul style="margin:0">
+      <li>Cada carbono tem <b>uma</b> ligação axial e <b>uma</b> equatorial.</li>
+      <li>Cada carbono tem uma ligação "para cima" e outra "para baixo".</li>
+      <li>Nos carbonos que apontam para cima no anel, a ligação axial aponta para cima; nos que apontam para baixo, a axial aponta para baixo.</li>
+    </ul>
+  </div>
+
+  <h3>Como desenhar a cadeira</h3>
+  <div data-fig="passosCadeira"></div>
+  <div class="box tip"><span class="box-title">Truque das equatoriais</span>Cada ligação equatorial é paralela a duas ligações do anel: as ligações que estão "uma adiante" (não as que tocam o carbono). Se as equatoriais ficarem paralelas às axiais ou apontando para dentro, o desenho está errado.</div>
+
+  <h3>Explore em 3D</h3>
+  <p>Use o laboratório abaixo para ver os H axiais e equatoriais, olhar a cadeira de cima, ou alinhar a vista com a ligação C1–C2 — você verá uma projeção de Newman com todas as ligações <b>alternadas</b>, a razão da estabilidade da cadeira.</p>
+  <div data-widget="chairLab"></div>
+
+  <h3>Outras conformações do ciclo-hexano</h3>
+  <div class="cards">
+    <div class="card"><h4>Bote (≈ 29 kJ/mol)</h4><p>Os ângulos são bons, mas há quatro pares de H eclipsados e os dois H "<b>mastro</b>" (flagpole), nas pontas do bote, ficam muito próximos (~1,8 Å).</p></div>
+    <div class="card"><h4>Bote torcido (≈ 23 kJ/mol)</h4><p>Uma leve torção do bote afasta os H mastro e reduz os eclipsamentos. É um mínimo local de energia.</p></div>
+    <div class="card"><h4>Meia-cadeira (≈ 45 kJ/mol)</h4><p>Cinco carbonos quase no mesmo plano: grande tensão angular e torsional. É o <b>estado de transição</b> da interconversão.</p></div>
+  </div>
+  <figure class="fig wide plain"><div data-fig="cicloEnergia" style="width:100%;max-width:640px;margin:auto"></div><figcaption>Perfil de energia da interconversão cadeira ⇄ cadeira (valores aproximados).</figcaption></figure>
+  <p>A 25 °C, mais de 99,9 % das moléculas de ciclo-hexano estão em cadeira.</p>
+</section>
+
+<section class="page" id="conf-substituintes" data-tab="conf" data-title="Interconversão e monossubstituídos">
+  <span class="kicker">Conformações · 7</span>
+  <h2>Interconversão da cadeira e ciclo-hexanos monossubstituídos</h2>
+  <p class="lead">A barreira de ~45 kJ/mol é baixa: a cadeira se "inverte" cerca de <b>100 mil vezes por segundo</b> à temperatura ambiente (<i>ring flip</i>).</p>
+  <div class="box def"><span class="box-title">O que acontece na interconversão</span>
+    <ul style="margin:0">
+      <li>Todas as posições <b>axiais</b> tornam-se <b>equatoriais</b> e vice-versa.</li>
+      <li>Um grupo que apontava <b>para cima</b> continua apontando <b>para cima</b> (nenhuma ligação é quebrada).</li>
+      <li>Os carbonos que formavam a "ponta para cima" passam a formar a "ponta para baixo".</li>
+    </ul>
+  </div>
+  <p>No ciclo-hexano as duas cadeiras são idênticas. Com um substituinte, porém, elas deixam de ter a mesma energia.</p>
+
+  <h3>Metilciclo-hexano: interações 1,3-diaxiais</h3>
+  <div class="figs">
+    <figure class="fig"><div data-fig="cadeiraMetilAx"></div><figcaption>CH₃ <b>axial</b>: interações 1,3-diaxiais com os H axiais de C3 e C5 (tracejado)</figcaption></figure>
+    <span class="arrow-sep">⇌</span>
+    <figure class="fig"><div data-fig="cadeiraMetilEq"></div><figcaption>CH₃ <b>equatorial</b>: aponta para fora do anel, sem interações 1,3-diaxiais</figcaption></figure>
+  </div>
+  <p>Com o metila axial, ele fica a cerca de 2,7 Å dos H axiais dos carbonos 3 e 5, do mesmo lado do anel: são as <b>interações 1,3-diaxiais</b>, de natureza estérica. Cada uma custa ≈ 3,8 kJ/mol — exatamente o mesmo que uma interação gauche no butano. Não é coincidência: o CH₃ axial está <b>gauche</b> em relação às ligações C3–C2 e C5–C6 do anel; equatorial, ele fica <b>anti</b>.</p>
+  <div class="formula">ΔG° = 2 × 3,8 = 7,6 kJ/mol  ⇒  K = e<sup>7,6/2,48</sup> ≈ 21  ⇒  ≈ 95 % equatorial : 5 % axial</div>
+
+  <h3>Outros substituintes</h3>
+  <p>Quanto maior o grupo (perto do anel), maior a preferência pela posição equatorial. A tabela traz o custo de uma interação 1,3-diaxial H/Y; o custo total de deixar Y axial é o dobro (duas interações).</p>
+  <div data-widget="aValueTable"></div>
+  <div class="box warn"><span class="box-title">Repare</span>
+    <ul style="margin:0">
+      <li>O <b>terc-butila</b> praticamente "trava" o anel com ele em equatorial (≈ 99,99 %).</li>
+      <li>Halogênios, apesar de grandes, têm custo baixo: a ligação C–X é longa, afastando o halogênio dos H axiais.</li>
+      <li>CH₃, CH₂CH₃ e CH(CH₃)₂ têm custos parecidos porque etila e isopropila podem girar e apontar um H para dentro do anel. O t-Bu não tem essa opção.</li>
+    </ul>
+  </div>
+
+  <h3>Laboratório: escolha o substituinte e inverta a cadeira</h3>
+  <div data-widget="chairLab"></div>
+</section>
+
+<section class="page" id="conf-dissubstituidos" data-tab="conf" data-title="Ciclo-hexanos dissubstituídos">
+  <span class="kicker">Conformações · 8</span>
+  <h2>Ciclo-hexanos dissubstituídos: cis/trans e conformação</h2>
+  <p class="lead">Com dois substituintes, é preciso analisar <b>as duas cadeiras</b> de cada isômero e somar as interações.</p>
+
+  <h3>Desenhos planos × cadeiras</h3>
+  <p>Em desenhos planos, cunha = para cima, tracejado = para baixo. <b>cis</b>: ambos do mesmo lado; <b>trans</b>: lados opostos.</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="cis12"></div><figcaption><b>cis</b>-1,2-dimetil</figcaption></figure>
+    <figure class="fig"><div data-fig="trans12"></div><figcaption><b>trans</b>-1,2-dimetil</figcaption></figure>
+    <figure class="fig"><div data-fig="cis13"></div><figcaption><b>cis</b>-1,3-dimetil</figcaption></figure>
+    <figure class="fig"><div data-fig="trans14"></div><figcaption><b>trans</b>-1,4-dimetil</figcaption></figure>
+  </div>
+
+  <h3>Tabela-resumo das posições</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Relação</th><th>cis</th><th>trans</th></tr></thead>
+    <tbody>
+      <tr><td><b>1,2</b></td><td>(a,e) ⇄ (e,a)</td><td>(e,e) ⇄ (a,a)</td></tr>
+      <tr><td><b>1,3</b></td><td>(e,e) ⇄ (a,a)</td><td>(a,e) ⇄ (e,a)</td></tr>
+      <tr><td><b>1,4</b></td><td>(a,e) ⇄ (e,a)</td><td>(e,e) ⇄ (a,a)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box tip"><span class="box-title">Como lembrar sem decorar</span>Em cada carbono há uma ligação para cima e uma para baixo; em carbonos vizinhos, se a de cima é axial em um, no outro a de cima é equatorial. Assim: vizinhos (1,2) com a mesma face → (a,e); alternados (1,3) com a mesma face → (a,a) ou (e,e); opostos (1,4) se comportam como 1,2.</div>
+
+  <h3>Exemplo: trans-1,2-dimetilciclo-hexano</h3>
+  <div class="figs">
+    <figure class="fig"><div data-fig="trans12aa"></div><figcaption>(a,a): 4 interações 1,3-diaxiais<br>4 × 3,8 = 15,2 kJ/mol</figcaption></figure>
+    <span class="arrow-sep">⇌</span>
+    <figure class="fig"><div data-fig="trans12ee"></div><figcaption>(e,e): 1 interação gauche CH₃/CH₃<br>≈ 3,8 kJ/mol</figcaption></figure>
+  </div>
+  <p>A forma diequatorial é favorecida por ≈ 11,4 kJ/mol (> 99 %). Contorno vermelho = axial; azul = equatorial.</p>
+
+  <h3>Exemplo: cis-1,2-dimetilciclo-hexano</h3>
+  <div class="figs">
+    <figure class="fig"><div data-fig="cis12ae"></div><figcaption>(a,e): 2 × 3,8 + 3,8 (gauche) = 11,4 kJ/mol</figcaption></figure>
+    <span class="arrow-sep">⇌</span>
+    <figure class="fig"><div data-fig="cis12ea"></div><figcaption>(e,a): também 11,4 kJ/mol</figcaption></figure>
+  </div>
+  <p>As duas cadeiras têm a mesma energia (50 : 50). Comparando os isômeros: o trans (3,8) é mais estável que o cis (11,4) por ≈ 7,6 kJ/mol.</p>
+
+  <div class="box def"><span class="box-title">Regra prática</span>
+    <ol style="margin:0">
+      <li>Desenhe as duas cadeiras do isômero (mantendo cada grupo na sua face: cima/baixo).</li>
+      <li>Classifique cada grupo como axial ou equatorial.</li>
+      <li>A cadeira mais estável é a que deixa <b>equatorial o maior número de grupos</b>; se for obrigatório ter um grupo axial, que seja o <b>menor</b>.</li>
+    </ol>
+  </div>
+
+  <h3>Laboratório: compare as duas cadeiras</h3>
+  <div data-widget="disubLab"></div>
+
+  <div class="box tip"><span class="box-title">Curiosidade</span>Na β-D-glicose, todos os substituintes do anel (OH e CH₂OH) ficam em posições equatoriais na cadeira mais estável — uma das razões de ela ser a aldo-hexose mais abundante na natureza.</div>
+</section>
+
+<section class="page" id="conf-ex-ciclo" data-tab="conf" data-title="Exercícios: cicloalcanos" data-ex>
+  <span class="kicker">Conformações · Exercícios</span>
+  <h2>Exercícios — cicloalcanos e ciclo-hexano</h2>
+
+  <h3>Exercícios resolvidos</h3>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R1</span><span>Desenhe as duas cadeiras do clorociclo-hexano, indique a mais estável e calcule a composição de equilíbrio a 25 °C (1 interação H/Cl = 1,0 kJ/mol).</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>Cl axial: 2 interações 1,3-diaxiais → ΔG° = 2 × 1,0 = 2,0 kJ/mol a favor do Cl equatorial.</p>
+      <div class="formula">K = e<sup>2,0/2,48</sup> = e<sup>0,81</sup> ≈ 2,2  ⇒  2,2/3,2 ≈ 69 % equatorial e 31 % axial</div>
+      <p>Bem menos seletivo que o metila (95 %), porque a ligação C–Cl é longa e o Cl axial fica relativamente afastado dos H de C3 e C5.</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R2</span><span>Qual a porcentagem de isopropilciclo-hexano com o grupo em posição equatorial a 25 °C? (1 interação H/iPr = 4,6 kJ/mol)</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>ΔG° = 2 × 4,6 = 9,2 kJ/mol → K = e<sup>9,2/2,48</sup> = e<sup>3,71</sup> ≈ 41 → 41/42 ≈ <b>97,6 % equatorial</b>.</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R3</span><span>Desenhe a conformação mais estável do <b>cis</b>-1-terc-butil-4-metilciclo-hexano.</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>1,4-cis ⇒ uma cadeira (a,e) e outra (e,a): um dos grupos é obrigatoriamente axial. Comparando: t-Bu axial custa 22,8 kJ/mol; CH₃ axial custa 7,6 kJ/mol. A cadeira mais estável tem <b>t-Bu equatorial e CH₃ axial</b>.</p>
+      <div class="figs"><figure class="fig"><div data-fig="tBuMe"></div><figcaption>t-Bu equatorial (contorno azul), CH₃ axial (contorno vermelho)</figcaption></figure></div>
+      <p>Diferença entre as cadeiras ≈ 22,8 − 7,6 = 15,2 kJ/mol → praticamente só essa conformação existe.</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R4</span><span>Qual é mais estável, <b>cis</b>- ou <b>trans</b>-1,3-dimetilciclo-hexano? Justifique com as cadeiras.</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p><b>cis-1,3</b>: (e,e) ⇄ (a,a). A (e,e) não tem metilas axiais (≈ 0 kJ/mol); a (a,a) é muito desfavorável (os dois metilas axiais se repelem, ≈ 23 kJ/mol). Praticamente todo o cis está em (e,e).</p>
+      <p><b>trans-1,3</b>: (a,e) ⇄ (e,a), ambas com um metila axial (7,6 kJ/mol).</p>
+      <p>Logo, o <b>cis</b>-1,3 é mais estável que o trans-1,3, por ≈ 7,6 kJ/mol. (Repare: em 1,2 e 1,4 é o trans que é mais estável.)</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R5</span><span>No <b>cis</b>-1-etil-2-metilciclo-hexano, qual cadeira predomina? Estime a proporção.</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>1,2-cis ⇒ (a,e) ⇄ (e,a). Em ambas há uma interação gauche entre os grupos vizinhos (que se cancela na comparação). Resta comparar qual grupo fica axial:</p>
+      <ul><li>Et axial: 2 × 4,0 = 8,0 kJ/mol</li><li>CH₃ axial: 2 × 3,8 = 7,6 kJ/mol</li></ul>
+      <p>ΔG° ≈ 0,4 kJ/mol a favor do <b>CH₃ axial / Et equatorial</b>. K = e<sup>0,4/2,48</sup> ≈ 1,17 → ≈ 54 : 46. Quase meio a meio: grupos de tamanhos parecidos geram pouca preferência.</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R6</span><span>Por que o ciclobutano não é plano, se isso deixaria seus ângulos (90°) mais próximos de 109,5° do que os de uma forma dobrada (88°)?</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>No ciclobutano plano, todos os oito H estariam eclipsados (grande tensão torsional). Dobrando o anel (~25°), os H ficam parcialmente alternados. O pequeno aumento de tensão angular é compensado com folga pela redução da tensão torsional: a conformação real é a de menor energia <b>total</b>.</p>
+    </div></details>
+  </div>
+
+  <h3>Exercícios propostos</h3>
+  <p class="hint">Clique na alternativa para ver a correção comentada.</p>
+  <div data-quiz="conf-ciclo"></div>
+
+  <h3>Para resolver no caderno</h3>
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">D1</span><span>Desenhe as duas cadeiras do <b>trans</b>-1-terc-butil-3-metilciclo-hexano e indique a mais estável.</span></div>
+    <details class="sol"><summary>Ver resposta</summary><div class="sol-body"><p>1,3-trans ⇒ (a,e) ⇄ (e,a). A mais estável tem o <b>t-Bu equatorial e o CH₃ axial</b> (custo 7,6 kJ/mol contra 22,8 kJ/mol da outra cadeira). Confira no laboratório de dissubstituídos.</p></div></details>
+  </div>
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">D2</span><span>Coloque em ordem crescente de estabilidade: cis-1,2-, trans-1,2-, cis-1,4- e trans-1,4-dimetilciclo-hexano.</span></div>
+    <details class="sol"><summary>Ver resposta</summary><div class="sol-body"><p>Tensão estimada da cadeira mais estável: cis-1,2 ≈ 11,4; cis-1,4 ≈ 7,6; trans-1,2 ≈ 3,8; trans-1,4 ≈ 0 kJ/mol. Ordem crescente de estabilidade: <b>cis-1,2 &lt; cis-1,4 &lt; trans-1,2 &lt; trans-1,4</b>.</p></div></details>
+  </div>
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">D3</span><span>O mentol (do óleo de hortelã) é o 2-isopropil-5-metilciclo-hexan-1-ol em que, na cadeira mais estável, os três substituintes são equatoriais. Desenhe essa cadeira e diga se OH/iPr (C1/C2) e OH/CH₃ (C1/C5) são cis ou trans.</span></div>
+    <details class="sol"><summary>Ver resposta</summary><div class="sol-body"><p>Todos equatoriais: entre vizinhos (1,2) e entre posições 1,3 (C1 e C5 estão em relação 1,3), "todos equatoriais" corresponde a <b>trans</b> para 1,2 e <b>cis</b> para 1,3. Então OH e iPr são trans; OH e CH₃ são cis (e iPr/CH₃, em relação 1,4, são trans).</p></div></details>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- ESTEREOQUÍMICA                                                      -->
+<!-- ================================================================== -->
+
+<section class="page" id="est-intro" data-tab="estereo" data-title="Estereoisômeros: visão geral">
+  <span class="kicker">Estereoquímica · 1</span>
+  <h2>Estereoisômeros: visão geral</h2>
+  <p class="lead"><b>Estereoisômeros</b> têm a mesma fórmula molecular <b>e</b> a mesma conectividade, mas diferem no arranjo tridimensional dos átomos. Eles só se interconvertem quebrando ligações.</p>
+
+  <div class="tree">
+    <div class="node">Estereoisômeros</div>
+    <div class="branch">
+      <div class="col"><div class="node alt">Enantiômeros<small>imagens especulares não superponíveis</small></div></div>
+      <div class="col"><div class="node alt">Diastereoisômeros<small>estereoisômeros que <b>não</b> são imagens especulares</small></div>
+        <div class="branch">
+          <div class="node leaf">cis/trans (E/Z) em alcenos</div>
+          <div class="node leaf">cis/trans em anéis</div>
+          <div class="node leaf">compostos com 2 ou mais estereocentros</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Como relacionar duas estruturas</h3>
+  <p>Use este roteiro sempre que precisar classificar um par de estruturas:</p>
+  <div class="flow">
+    <div class="step"><div class="q">Mesma fórmula molecular?</div><span class="lbl">não →</span><div class="no"><b>Não são isômeros</b></div></div>
+    <div class="down">sim ↓</div>
+    <div class="step"><div class="q">Mesma conectividade (mesmo nome sem prefixos estereoquímicos)?</div><span class="lbl">não →</span><div class="no"><b>Isômeros constitucionais</b></div></div>
+    <div class="down">sim ↓ (são estereoisômeros… ou a mesma molécula)</div>
+    <div class="step"><div class="q">São superponíveis (girando a molécula ou ligações simples)?</div><span class="lbl">sim →</span><div class="no"><b>Mesmo composto</b> (talvez em conformações diferentes)</div></div>
+    <div class="down">não ↓</div>
+    <div class="step"><div class="q">Uma é a imagem especular da outra?</div><span class="lbl">sim →</span><div class="no"><b>Enantiômeros</b></div></div>
+    <div class="down">não ↓</div>
+    <div class="step"><div class="q" style="background:color-mix(in srgb,var(--accent-2) 12%,transparent);border-color:var(--accent-2)">Diastereoisômeros</div><span></span><span></span></div>
+  </div>
+  <div class="box tip"><span class="box-title">Atalho com descritores R/S</span>Depois de aprender R/S: se <b>todos</b> os estereocentros estão invertidos (R↔S), são <b>enantiômeros</b>; se só <b>alguns</b> estão invertidos, são <b>diastereoisômeros</b>; se nenhum está invertido, é o <b>mesmo composto</b>.</div>
+</section>
+
+<section class="page" id="est-quiralidade" data-tab="estereo" data-title="Quiralidade e estereocentros">
+  <span class="kicker">Estereoquímica · 2</span>
+  <h2>Quiralidade e estereocentros</h2>
+  <p class="lead">Suas mãos são imagens especulares uma da outra, mas não se sobrepõem: uma luva da mão direita não serve na esquerda. Objetos com essa propriedade são <b>quirais</b> (do grego <i>cheir</i>, mão).</p>
+  <div class="box def"><span class="box-title">Definições</span>
+    <p><b>Molécula quiral</b>: não é superponível à sua imagem especular. <b>Molécula aquiral</b>: é superponível à sua imagem especular.</p>
+    <p><b>Estereocentro</b> (centro quiral, carbono assimétrico): átomo em que a troca de dois ligantes gera um estereoisômero. O caso mais comum é o <b>carbono sp³ ligado a quatro grupos diferentes</b>, marcado com asterisco (*).</p>
+  </div>
+
+  <h3>Laboratório: tente sobrepor a molécula e sua imagem</h3>
+  <div data-widget="mirrorLab"></div>
+
+  <h3>Encontrando estereocentros</h3>
+  <p>Olhe cada carbono sp³ e verifique se os quatro grupos são diferentes — considerando o grupo <b>inteiro</b>, não só o átomo ligado. Descarte de imediato: CH₂, CH₃, carbonos de duplas/triplas e carbonos com dois substituintes iguais.</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="estereocentros"></div><figcaption><b>butan-2-ol</b>: C2 tem OH, H, CH₃, CH₂CH₃ → 1 estereocentro</figcaption></figure>
+    <figure class="fig"><div data-fig="metilhexano3"></div><figcaption><b>3-metil-hexano</b>: C3 tem H, CH₃, etila e propila → quiral</figcaption></figure>
+    <figure class="fig"><div data-fig="metilpentano3b"></div><figcaption><b>3-metilpentano</b>: C3 tem duas etilas iguais → aquiral</figcaption></figure>
+    <figure class="fig"><div data-fig="acidoLatico"></div><figcaption><b>ácido lático</b>: 1 estereocentro</figcaption></figure>
+    <figure class="fig"><div data-fig="ibuprofeno"></div><figcaption><b>ibuprofeno</b>: 1 estereocentro (o enantiômero S é o ativo)</figcaption></figure>
+  </div>
+
+  <h3>Plano de simetria</h3>
+  <p>Uma forma rápida de reconhecer moléculas aquirais: se existe um <b>plano de simetria</b> que divide a molécula em duas metades que são imagens especulares uma da outra, a molécula é aquiral. Ex.: no propan-2-ol, o plano que contém C–O, C–H e corta a molécula ao meio deixa um CH₃ de cada lado.</p>
+  <div class="box warn"><span class="box-title">Atenção a dois casos especiais</span>
+    <ul style="margin:0">
+      <li>Moléculas com <b>dois ou mais estereocentros</b> podem ser aquirais (compostos <b>meso</b>, seção 7).</li>
+      <li>Há moléculas quirais <b>sem estereocentro</b> em um átomo: alenos substituídos e bifenilas impedidas (quiralidade axial).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="page" id="est-enantiomeros" data-tab="estereo" data-title="Enantiômeros e atividade óptica">
+  <span class="kicker">Estereoquímica · 3</span>
+  <h2>Enantiômeros e atividade óptica</h2>
+  <p class="lead"><b>Enantiômeros</b> são estereoisômeros que são imagens especulares não superponíveis um do outro. Em um ambiente aquiral, eles são quase indistinguíveis.</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="butan2olA"></div><figcaption>(S)-butan-2-ol</figcaption></figure>
+    <span class="arrow-sep" title="espelho">┊</span>
+    <figure class="fig"><div data-fig="butan2olB"></div><figcaption>(R)-butan-2-ol</figcaption></figure>
+  </div>
+
+  <div class="cards">
+    <div class="card"><h4>Iguais nos enantiômeros</h4><p>Ponto de fusão e de ebulição, densidade, solubilidade em solventes comuns, espectros de IV e RMN, reatividade frente a reagentes aquirais.</p></div>
+    <div class="card"><h4>Diferentes nos enantiômeros</h4><p>O <b>sentido</b> da rotação do plano da luz polarizada e a interação com outras <b>entidades quirais</b> (enzimas, receptores, reagentes e solventes quirais).</p></div>
+  </div>
+  <p>Exemplos do dia a dia: a (R)-carvona tem cheiro de hortelã e a (S)-carvona, de cominho/alcaravia; no caso da talidomida, um enantiômero tem ação sedativa e o outro é teratogênico (e os dois se interconvertem no organismo). Por isso fármacos quirais são estudados enantiômero por enantiômero.</p>
+
+  <h3>Atividade óptica</h3>
+  <p>A luz comum oscila em todos os planos. Ao passar por um <b>polarizador</b>, ela passa a oscilar em um único plano (luz <b>plano-polarizada</b>). Substâncias quirais <b>giram</b> esse plano: são <b>opticamente ativas</b>. O ângulo α é medido em um <b>polarímetro</b>.</p>
+  <ul>
+    <li><b>Dextrorrotatória (+)</b> ou <i>d</i>: gira para a direita (sentido horário, para o observador).</li>
+    <li><b>Levorrotatória (−)</b> ou <i>l</i>: gira para a esquerda.</li>
+  </ul>
+  <p>Como α depende da concentração e do comprimento da cela, usa-se a <b>rotação específica</b>, uma propriedade característica:</p>
+  <div class="formula">[α]<sub>D</sub><sup>T</sup> = α / (ℓ · c)   (ℓ em dm; c em g/mL; D = linha do sódio, 589 nm)</div>
+  <div class="box warn"><span class="box-title">Não confunda</span>O sinal (+)/(−) é uma <b>medida experimental</b>. Os descritores R/S são uma <b>convenção geométrica</b> (seção 5). Não há relação simples entre eles: o (R)-gliceraldeído é (+), mas o (R)-ácido lático é (−).</div>
+
+  <h3>Misturas racêmicas e excesso enantiomérico</h3>
+  <p>Uma mistura 1:1 de enantiômeros é uma <b>mistura racêmica</b> (racemato), indicada por (±) ou <i>rac</i>-. Ela é opticamente inativa: as rotações se cancelam. Reações que criam um estereocentro a partir de reagentes aquirais geram racematos.</p>
+  <div class="formula">ee (%) = |%R − %S| = ([α]<sub>observada</sub> / [α]<sub>enantiômero puro</sub>) × 100</div>
+  <div data-widget="polarimeter"></div>
+  <p><b>Resolução</b> é a separação de um racemato. Como enantiômeros têm as mesmas propriedades físicas, reage-se o racemato com um composto enantiomericamente puro (ex.: um ácido + uma amina quiral), formando <b>diastereoisômeros</b> (que têm propriedades diferentes e podem ser separados, por exemplo por cristalização). Depois, regenera-se cada enantiômero.</p>
+</section>
+
+<section class="page" id="est-cip" data-tab="estereo" data-title="Regras de prioridade (CIP)">
+  <span class="kicker">Estereoquímica · 4</span>
+  <h2>Regras de prioridade de Cahn–Ingold–Prelog</h2>
+  <p class="lead">Para nomear estereoisômeros (R/S, E/Z) é preciso ordenar os ligantes por prioridade. As regras foram propostas por Cahn, Ingold e Prelog (CIP).</p>
+
+  <div class="box def"><span class="box-title">Regra 1 — número atômico</span>Compare os átomos diretamente ligados ao estereocentro. Maior número atômico = maior prioridade. Para isótopos, maior massa = maior prioridade.
+    <div class="formula" style="font-family:var(--sans);font-size:1rem">I &gt; Br &gt; Cl &gt; S &gt; F &gt; O &gt; N &gt; C &gt; D &gt; H</div>
+  </div>
+  <div class="box def"><span class="box-title">Regra 2 — primeiro ponto de diferença</span>Se houver empate, liste os três átomos ligados a cada um dos átomos empatados, em ordem decrescente, por exemplo (O,H,H) e (C,C,C). Compare os conjuntos <b>elemento a elemento</b>, a partir do maior: a decisão ocorre no <b>primeiro ponto de diferença</b>. Se ainda houver empate, avance para a próxima "camada" pelos ramos de maior prioridade.</div>
+  <div class="box def"><span class="box-title">Regra 3 — ligações múltiplas</span>Átomos em ligação dupla ou tripla são contados como se estivessem ligados a cópias ("duplicatas") do átomo parceiro: –CH=O conta como C(O,O,H); –CH=CH₂ como C(C,C,H); –C≡N como C(N,N,N).</div>
+
+  <h3>Exemplos de comparação</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Grupos</th><th>Conjuntos no 1º carbono</th><th>Vencedor</th></tr></thead>
+    <tbody>
+      <tr><td>–CH₂CH₃ × –CH₃</td><td>(C,H,H) × (H,H,H)</td><td>–CH₂CH₃</td></tr>
+      <tr><td>–CH(CH₃)₂ × –CH₂CH₂CH₃</td><td>(C,C,H) × (C,H,H)</td><td>–CH(CH₃)₂</td></tr>
+      <tr><td>–CH₂OH × –C(CH₃)₃</td><td>(O,H,H) × (C,C,C)</td><td>–CH₂OH (O &gt; C já no 1º elemento)</td></tr>
+      <tr><td>–CHO × –CH₂OH</td><td>(O,O,H) × (O,H,H)</td><td>–CHO</td></tr>
+      <tr><td>–COOH × –CHO</td><td>(O,O,O) × (O,O,H)</td><td>–COOH</td></tr>
+      <tr><td>–CH=CH₂ × –CH(CH₃)₂</td><td>(C,C,H) × (C,C,H) → empate; próxima camada: (C,H,H) × (H,H,H)</td><td>–CH=CH₂</td></tr>
+      <tr><td>–C≡N × –CH₂OH</td><td>(N,N,N) × (O,H,H)</td><td>–CH₂OH (O &gt; N)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box warn"><span class="box-title">Erros comuns</span>
+    <ul style="margin:0">
+      <li><b>Não</b> se soma números atômicos nem se conta o tamanho do grupo: –CH₂OH vence –C(CH₃)₃.</li>
+      <li>A comparação é feita no <b>primeiro ponto de diferença</b>, e não pelo grupo "mais pesado".</li>
+    </ul>
+  </div>
+
+  <h3>Ordem de alguns grupos comuns (decrescente)</h3>
+  <p style="line-height:2">–I &gt; –Br &gt; –Cl &gt; –SH &gt; –F &gt; –OCH₃ &gt; –OH &gt; –NH₂ &gt; –COOH &gt; –CHO &gt; –CH₂OH &gt; –C≡N &gt; –C₆H₅ &gt; –C(CH₃)₃ &gt; –CH=CH₂ &gt; –CH(CH₃)₂ &gt; –CH₂CH₃ &gt; –CH₃ &gt; –D &gt; –H</p>
+</section>
+
+<section class="page" id="est-rs" data-tab="estereo" data-title="Configuração R e S">
+  <span class="kicker">Estereoquímica · 5</span>
+  <h2>Configuração absoluta: R e S</h2>
+  <p class="lead">Os descritores R (<i>rectus</i>, direito) e S (<i>sinister</i>, esquerdo) indicam o arranjo espacial de um estereocentro.</p>
+  <div class="box def"><span class="box-title">Procedimento</span>
+    <ol style="margin:0">
+      <li>Atribua as prioridades 1 a 4 aos ligantes (regras CIP).</li>
+      <li>Oriente a molécula com o ligante de prioridade <b>4</b> apontando para <b>longe</b> do observador.</li>
+      <li>Trace o caminho <b>1 → 2 → 3</b>.</li>
+      <li>Sentido <b>horário</b> ⇒ <b>R</b>; sentido <b>anti-horário</b> ⇒ <b>S</b>.</li>
+    </ol>
+  </div>
+  <h3>Exemplo: alanina</h3>
+  <div class="figs">
+    <figure class="fig"><div data-fig="alanina"></div><figcaption>alanina</figcaption></figure>
+    <span class="arrow-sep">→</span>
+    <figure class="fig"><div data-fig="alaninaRanks"></div><figcaption>NH₂ (1) &gt; COOH (2) &gt; CH₃ (3) &gt; H (4)</figcaption></figure>
+  </div>
+  <p>O H (4) está no tracejado, ou seja, já aponta para trás. O caminho NH₂ (embaixo, à esquerda) → COOH (em cima, à esquerda) → CH₃ (em cima, à direita) é horário: <b>(R)-alanina</b>. (A alanina natural, L-alanina, é a S.)</p>
+
+  <h3>E quando o grupo 4 não está para trás?</h3>
+  <div class="cards">
+    <div class="card"><h4>Grupo 4 na cunha</h4><p>Leia o sentido 1 → 2 → 3 normalmente e <b>inverta</b> a resposta (você está olhando "pelo lado errado").</p></div>
+    <div class="card"><h4>Grupo 4 no plano</h4><p><b>Troque</b> o grupo 4 com o grupo que está no tracejado. Cada troca de dois ligantes inverte a configuração: determine a configuração da nova estrutura e <b>inverta</b>.</p></div>
+    <div class="card"><h4>Gire a molécula</h4><p>Você também pode girar mentalmente (ou com um modelo) até o grupo 4 ficar para trás. Uma rotação não altera a configuração.</p></div>
+  </div>
+  <div class="box tip"><span class="box-title">Regra de ouro das trocas</span>Trocar dois ligantes quaisquer <b>inverte</b> a configuração (R ⇄ S). Duas trocas sucessivas <b>restauram</b> a configuração original.</div>
+
+  <h3>Laboratório 3D: veja o sentido 1 → 2 → 3</h3>
+  <div data-widget="rs3dLab"></div>
+
+  <h3>Treino ilimitado</h3>
+  <p>Moléculas sorteadas, com os ligantes em posições aleatórias. Responda e veja a correção passo a passo.</p>
+  <div data-widget="rsTrainer"></div>
+</section>
+
+<section class="page" id="est-fischer" data-tab="estereo" data-title="Projeção de Fischer">
+  <span class="kicker">Estereoquímica · 6</span>
+  <h2>Projeção de Fischer</h2>
+  <p class="lead">Proposta por Emil Fischer para açúcares, é uma forma rápida de desenhar estereocentros, principalmente quando há vários em sequência.</p>
+  <div class="box def"><span class="box-title">Convenção</span>
+    <ul style="margin:0">
+      <li>O estereocentro fica no cruzamento das linhas (o C não é escrito).</li>
+      <li>Linhas <b>horizontais</b> = ligações que apontam <b>para o observador</b> (cunhas).</li>
+      <li>Linhas <b>verticais</b> = ligações que apontam <b>para trás</b> (tracejados).</li>
+      <li>A cadeia carbônica fica na vertical, com o carbono mais oxidado (C1) no topo.</li>
+    </ul>
+  </div>
+  <div class="figs">
+    <figure class="fig"><div data-fig="fischerPerspectiva"></div><figcaption>significado 3D</figcaption></figure>
+    <span class="arrow-sep">=</span>
+    <figure class="fig"><div data-fig="fischerGliceraldeidoD"></div><figcaption>projeção de Fischer<br>(R)-gliceraldeído = D-gliceraldeído</figcaption></figure>
+  </div>
+
+  <h3>R/S a partir da projeção de Fischer</h3>
+  <ol>
+    <li>Atribua as prioridades.</li>
+    <li>Trace 1 → 2 → 3 diretamente no desenho.</li>
+    <li>Se o grupo 4 está na <b>vertical</b> (para trás): a leitura vale. Se está na <b>horizontal</b> (para a frente): <b>inverta</b>.</li>
+  </ol>
+  <p>No gliceraldeído acima: OH (1, direita) → CHO (2, topo) → CH₂OH (3, base) é anti-horário (S aparente); o H está na horizontal, então a configuração é <b>R</b>.</p>
+
+  <h3>Manipulações permitidas e proibidas</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Operação</th><th>Efeito na configuração</th></tr></thead>
+    <tbody>
+      <tr><td>Girar 180° no plano do papel</td><td>✔ mantém</td></tr>
+      <tr><td>Girar 90° no plano do papel</td><td>✘ inverte (troca horizontais com verticais)</td></tr>
+      <tr><td>Trocar dois ligantes quaisquer</td><td>✘ inverte</td></tr>
+      <tr><td>Fixar um ligante e girar os outros três (horário ou anti-horário)</td><td>✔ mantém</td></tr>
+      <tr><td>Tirar a projeção do plano do papel (virá-la)</td><td>✘ proibido</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Nomenclatura D/L</h3>
+  <p>Para açúcares e aminoácidos ainda se usa o sistema D/L, baseado no gliceraldeído: na projeção de Fischer, se o OH (ou NH₂) do estereocentro <b>mais distante</b> do carbono mais oxidado está à <b>direita</b>, o composto é <b>D</b>; à esquerda, <b>L</b>. Os açúcares naturais são D e os aminoácidos naturais são L.</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="fischerGliceraldeidoL"></div><figcaption>L-gliceraldeído = (S)</figcaption></figure>
+    <figure class="fig"><div data-fig="fischerAlaninaL"></div><figcaption>L-alanina = (S)</figcaption></figure>
+  </div>
+  <div class="box warn"><span class="box-title">D/L ≠ R/S ≠ (+)/(−)</span>São três informações independentes. D/L compara com o gliceraldeído; R/S vem das regras CIP; (+)/(−) é medido no polarímetro. Ex.: a D-frutose é levorrotatória (−).</div>
+
+  <h3>Treino ilimitado</h3>
+  <div data-widget="fischerTrainer"></div>
+</section>
+
+<section class="page" id="est-diastereo" data-tab="estereo" data-title="Diastereoisômeros e compostos meso">
+  <span class="kicker">Estereoquímica · 7</span>
+  <h2>Mais de um estereocentro: diastereoisômeros e compostos meso</h2>
+  <p class="lead">Com <i>n</i> estereocentros, uma molécula pode ter até <b>2<sup>n</sup></b> estereoisômeros.</p>
+
+  <h3>Exemplo: 2-bromo-3-clorobutano (2 estereocentros → 4 estereoisômeros)</h3>
+  <p>Em C2: Br &gt; C3 &gt; CH₃ &gt; H. Em C3: Cl &gt; C2 &gt; CH₃ &gt; H. Os descritores de cada centro estão indicados em laranja.</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="bc1"></div><figcaption><b>I</b></figcaption></figure>
+    <figure class="fig"><div data-fig="bc2"></div><figcaption><b>II</b></figcaption></figure>
+    <figure class="fig"><div data-fig="bc3"></div><figcaption><b>III</b></figcaption></figure>
+    <figure class="fig"><div data-fig="bc4"></div><figcaption><b>IV</b></figcaption></figure>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Par</th><th>Relação</th><th>Por quê</th></tr></thead>
+    <tbody>
+      <tr><td>I e II</td><td>enantiômeros</td><td>os dois centros invertidos (imagens especulares)</td></tr>
+      <tr><td>III e IV</td><td>enantiômeros</td><td>os dois centros invertidos</td></tr>
+      <tr><td>I e III, I e IV, II e III, II e IV</td><td>diastereoisômeros</td><td>apenas um centro invertido</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box def"><span class="box-title">Diastereoisômeros</span>São estereoisômeros que <b>não</b> são imagens especulares. Diferentemente dos enantiômeros, têm <b>propriedades físicas e químicas diferentes</b> (PF, PE, solubilidade, [α] sem relação) e podem ser separados por métodos comuns. <b>Epímeros</b> são diastereoisômeros que diferem em um único estereocentro (ex.: D-glicose e D-galactose, em C4).</div>
+
+  <h3>Compostos meso: o ácido tartárico</h3>
+  <p>Quando os dois estereocentros têm os <b>mesmos quatro tipos de ligantes</b>, um dos estereoisômeros pode ter um <b>plano de simetria interno</b>. Ele é superponível à sua imagem especular: é um composto <b>meso</b>, aquiral e opticamente inativo.</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="tartRR"></div><figcaption>ácido (+)-tartárico</figcaption></figure>
+    <figure class="fig"><div data-fig="tartSS"></div><figcaption>ácido (−)-tartárico</figcaption></figure>
+    <figure class="fig"><div data-fig="tartMeso"></div><figcaption>ácido <b>meso</b>-tartárico</figcaption></figure>
+    <figure class="fig"><div data-fig="tartMeso2"></div><figcaption>…é idêntico a este (gire 180°)</figcaption></figure>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Ácido tartárico</th><th class="num">PF (°C)</th><th class="num">[α]<sub>D</sub></th><th class="num">Densidade (g/cm³)</th></tr></thead>
+    <tbody>
+      <tr><td>(+) — (2R,3R)</td><td class="num">168–170</td><td class="num">+12</td><td class="num">1,76</td></tr>
+      <tr><td>(−) — (2S,3S)</td><td class="num">168–170</td><td class="num">−12</td><td class="num">1,76</td></tr>
+      <tr><td>meso — (2R,3S)</td><td class="num">146–148</td><td class="num">0</td><td class="num">1,67</td></tr>
+      <tr><td>(±) racêmico</td><td class="num">206</td><td class="num">0</td><td class="num">1,79</td></tr>
+    </tbody>
+  </table></div>
+  <p>Note que o ácido tartárico tem apenas <b>3</b> estereoisômeros (e não 2² = 4): o par "(2R,3S)/(2S,3R)" é, na verdade, uma única substância meso. O meso e as formas (+)/(−) são diastereoisômeros, por isso têm PF diferentes. O racemato é uma mistura e pode ter propriedades próprias no estado sólido.</p>
+  <div class="box tip"><span class="box-title">Como reconhecer um meso</span>(1) A molécula tem estereocentros "iguais" (mesmos ligantes); (2) na projeção de Fischer ou em uma conformação eclipsada, aparece um plano de simetria horizontal; (3) os descritores são opostos em posições equivalentes, como (2R,3S) em uma cadeia simétrica.</div>
+
+  <h3>Estereoisomeria em anéis</h3>
+  <p>Os isômeros cis/trans de cicloalcanos dissubstituídos também são diastereoisômeros. Se os dois substituintes são iguais, o isômero cis-1,2 costuma ser meso (ex.: cis-1,2-dimetilciclo-hexano, (1R,2S)), enquanto o trans-1,2 é quiral e existe como par de enantiômeros, (1R,2R) e (1S,2S).</p>
+  <div class="figs">
+    <figure class="fig"><div data-fig="cis12"></div><figcaption>cis-1,2: meso (1R,2S)</figcaption></figure>
+    <figure class="fig"><div data-fig="trans12"></div><figcaption>trans-1,2: quiral</figcaption></figure>
+  </div>
+</section>
+
+<section class="page" id="est-ez" data-tab="estereo" data-title="Isomeria cis/trans e E/Z">
+  <span class="kicker">Estereoquímica · 8</span>
+  <h2>Isomeria cis/trans e o sistema E/Z</h2>
+  <p class="lead">A ligação π impede a rotação em torno da dupla C=C (girar exigiria quebrá-la, ~260 kJ/mol). Por isso, substituintes em lados diferentes da dupla dão origem a estereoisômeros — diastereoisômeros chamados de isômeros geométricos.</p>
+  <div class="box def"><span class="box-title">Condição</span>Cada carbono da dupla deve ter <b>dois ligantes diferentes</b>. Se um dos carbonos tiver dois ligantes iguais, não há isomeria.</div>
+  <div class="figs">
+    <figure class="fig"><div data-fig="cisBut2eno"></div><figcaption><b>cis</b>-but-2-eno<br>PE 3,7 °C</figcaption></figure>
+    <figure class="fig"><div data-fig="transBut2eno"></div><figcaption><b>trans</b>-but-2-eno<br>PE 0,9 °C</figcaption></figure>
+    <figure class="fig"><div data-fig="cisDicloro"></div><figcaption><b>cis</b>-1,2-dicloroeteno<br>PE 60 °C (polar)</figcaption></figure>
+    <figure class="fig"><div data-fig="transDicloro"></div><figcaption><b>trans</b>-1,2-dicloroeteno<br>PE 48 °C (μ = 0)</figcaption></figure>
+    <figure class="fig"><div data-fig="semIsomeria"></div><figcaption>2-metilbut-2-eno:<br><b>sem</b> isomeria geométrica</figcaption></figure>
+  </div>
+
+  <h3>O sistema E/Z</h3>
+  <p>Os termos cis/trans funcionam bem para alcenos dissubstituídos, mas ficam ambíguos com três ou quatro substituintes diferentes. O sistema E/Z resolve isso usando as regras CIP:</p>
+  <div class="box def"><span class="box-title">Procedimento</span>
+    <ol style="margin:0">
+      <li>Em <b>cada</b> carbono da dupla, determine qual dos dois ligantes tem maior prioridade (CIP).</li>
+      <li>Se os dois ligantes de maior prioridade estão do <b>mesmo lado</b> ⇒ <b>Z</b> (<i>zusammen</i>, "juntos").</li>
+      <li>Se estão em <b>lados opostos</b> ⇒ <b>E</b> (<i>entgegen</i>, "opostos").</li>
+    </ol>
+  </div>
+  <div class="figs">
+    <figure class="fig"><div data-fig="ezExemplo"></div><figcaption>Br &gt; H (esquerda); Cl &gt; CH₃ (direita); Br e Cl do mesmo lado ⇒ <b>(Z)</b>-1-bromo-2-cloroprop-1-eno</figcaption></figure>
+    <figure class="fig"><div data-fig="bromoclorofluoro"></div><figcaption>Br &gt; Cl; F &gt; H; Br e F do mesmo lado ⇒ <b>(Z)</b>-1-bromo-1-cloro-2-fluoroeteno</figcaption></figure>
+  </div>
+  <div class="box warn"><span class="box-title">cis nem sempre é Z</span>
+    <div class="figs" style="margin:6px 0">
+      <figure class="fig" style="background:transparent"><div data-fig="cloroButenoZ"></div></figure>
+    </div>
+    No 2-clorobut-2-eno acima, os carbonos da cadeia principal (os dois CH₃) estão em lados opostos (seria "trans"). Mas, em C2, Cl &gt; CH₃ e, em C3, CH₃ &gt; H: os grupos prioritários (Cl e CH₃ de C3) estão do mesmo lado ⇒ <b>(Z)</b>-2-clorobut-2-eno.
+  </div>
+  <p>Em compostos com várias duplas, cada uma recebe seu descritor com o localizador: (2Z,4E)-hexa-2,4-dieno.</p>
+</section>
+
+<section class="page" id="est-nomenclatura" data-tab="estereo" data-title="Nomenclatura estereoquímica">
+  <span class="kicker">Estereoquímica · 9</span>
+  <h2>Nomenclatura estereoquímica</h2>
+  <p class="lead">Os descritores estereoquímicos são escritos entre parênteses, antes do nome completo (ou da parte do nome a que se referem), separados por vírgulas e acompanhados dos localizadores.</p>
+  <div class="box def"><span class="box-title">Roteiro</span>
+    <ol style="margin:0">
+      <li>Dê o nome IUPAC da constituição (sem estereoquímica).</li>
+      <li>Identifique todos os elementos estereogênicos: estereocentros e duplas com isomeria.</li>
+      <li>Atribua R/S a cada estereocentro e E/Z a cada dupla.</li>
+      <li>Escreva os descritores em ordem crescente de localizador, entre parênteses, seguidos de hífen.</li>
+    </ol>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Situação</th><th>Exemplo de nome</th></tr></thead>
+    <tbody>
+      <tr><td>Um estereocentro</td><td>(R)-butan-2-ol; (S)-2-bromobutano</td></tr>
+      <tr><td>Vários estereocentros</td><td>(2R,3S)-2-bromo-3-clorobutano</td></tr>
+      <tr><td>Dupla ligação</td><td>(E)-pent-2-eno; (Z)-2-clorobut-2-eno</td></tr>
+      <tr><td>Dupla + estereocentro</td><td>(2E,4R)-4-cloropent-2-eno</td></tr>
+      <tr><td>Anéis (dissubstituídos)</td><td>cis-1,2-dimetilciclo-hexano ou (1R,2S)-1,2-dimetilciclo-hexano</td></tr>
+      <tr><td>Composto meso</td><td>ácido meso-tartárico = ácido (2R,3S)-2,3-di-hidroxibutanodioico</td></tr>
+      <tr><td>Racemato</td><td>(±)-butan-2-ol, rac-butan-2-ol ou (RS)-butan-2-ol</td></tr>
+      <tr><td>Com sinal de rotação</td><td>(S)-(+)-butan-2-ol</td></tr>
+      <tr><td>Açúcares e aminoácidos</td><td>D-glicose; L-alanina = ácido (S)-2-aminopropanoico</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Exemplo comentado</h3>
+  <div class="figs"><figure class="fig"><div data-fig="nome2bromobutano"></div><figcaption>Qual é o nome?</figcaption></figure></div>
+  <p>Constituição: 2-bromobutano. Prioridades no C2: Br (1) &gt; CH₂CH₃ (2) &gt; CH₃ (3) &gt; H (4). O H está na cunha (para a frente): o caminho Br (tracejado, embaixo à direita) → etila (em cima, à direita) → metila (em cima, à esquerda) é anti-horário, "S" aparente; invertendo, a configuração é a indicada em laranja na figura. O nome é <b>(R)-2-bromobutano</b>.</p>
+</section>
+
+<section class="page" id="est-exercicios" data-tab="estereo" data-title="Exercícios de estereoquímica" data-ex>
+  <span class="kicker">Estereoquímica · Exercícios</span>
+  <h2>Exercícios — estereoquímica</h2>
+
+  <h3>Exercícios resolvidos</h3>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R1</span><span>Quais compostos possuem estereocentro: (a) 2-bromobutano; (b) 3-metilpentano; (c) 1,2-dicloropropano; (d) 2-metilbutan-1-ol; (e) pentan-3-ol?</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <ul>
+        <li>(a) <b>Sim</b>: C2 ligado a Br, H, CH₃ e CH₂CH₃.</li>
+        <li>(b) Não: C3 tem duas etilas.</li>
+        <li>(c) <b>Sim</b>: C2 ligado a Cl, H, CH₃ e CH₂Cl.</li>
+        <li>(d) <b>Sim</b>: C2 ligado a H, CH₃, CH₂CH₃ e CH₂OH.</li>
+        <li>(e) Não: C3 tem duas etilas.</li>
+      </ul>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R2</span><span>Determine a configuração (R ou S) do estereocentro desenhado (2-bromobutano).</span></div>
+    <div class="ex-body"><div class="figs"><figure class="fig"><div data-fig="exRS1"></div></figure></div></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <div class="figs"><figure class="fig"><div data-fig="exRS1ranks"></div><figcaption>prioridades em azul, descritor em laranja</figcaption></figure></div>
+      <p>Br (1) &gt; CH₂CH₃ (2) &gt; CH₃ (3) &gt; H (4). O H está na <b>cunha</b>: lemos o caminho e invertemos. Br (em cima, à esquerda) → CH₂CH₃ (tracejado, embaixo à direita) → CH₃ (em cima, à direita): <b>anti-horário</b> → "S" aparente → configuração <b>R</b>: (R)-2-bromobutano.</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R3</span><span>Determine a configuração do ácido lático desenhado abaixo.</span></div>
+    <div class="ex-body"><div class="figs"><figure class="fig"><div data-fig="exRS2"></div></figure></div></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <div class="figs"><figure class="fig"><div data-fig="exRS2ranks"></div></figure></div>
+      <p>OH (1) &gt; COOH (2) &gt; CH₃ (3) &gt; H (4). Aqui o H está <b>no plano</b> (para cima). Truque: trocamos o H com o grupo do tracejado (COOH). Na nova estrutura o H está para trás e o caminho OH (embaixo, à esquerda) → COOH (agora em cima) → CH₃ (cunha, à direita) é horário (R). Como fizemos uma troca, a molécula original tem a configuração oposta: <b>S</b> — é o ácido (S)-lático, conforme o descritor em laranja.</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R4</span><span>Uma solução de (S)-butan-2-ol puro ([α]<sub>D</sub> = +13,5°) com 0,10 g/mL, em cela de 2,0 dm, teria que rotação observada? Uma amostra sintética, nas mesmas condições, apresentou α = +1,35°. Qual o ee e a composição da amostra?</span></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>α = [α] · ℓ · c = 13,5 × 2,0 × 0,10 = <b>+2,70°</b> para o enantiômero puro.</p>
+      <p>ee = 1,35 / 2,70 × 100 = <b>50 %</b> (em favor do S, porque o sinal é +). Se %S − %R = 50 e %S + %R = 100 ⇒ <b>75 % S e 25 % R</b>.</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R5</span><span>Quantos estereoisômeros tem o pentano-2,4-diol? Classifique-os.</span></div>
+    <div class="ex-body"><div class="figs"><figure class="fig"><div data-fig="pentanodiol"></div><figcaption>estereocentros destacados</figcaption></figure></div></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>Há dois estereocentros (C2 e C4), cada um com OH, H, CH₃ e CH₂CH(OH)CH₃. Pela regra 2ⁿ seriam 4: (2R,4R), (2S,4S), (2R,4S) e (2S,4R). Mas a molécula é <b>simétrica</b>: (2R,4S) e (2S,4R) são o mesmo composto <b>meso</b> (há um plano de simetria passando por C3).</p>
+      <p>Total: <b>3 estereoisômeros</b> — um par de enantiômeros [(2R,4R) e (2S,4S)] e um composto meso, diastereoisômero de ambos.</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R6</span><span>Dê o descritor E ou Z do 3-metilpent-2-eno desenhado.</span></div>
+    <div class="ex-body"><div class="figs"><figure class="fig"><div data-fig="metilpentenoZ"></div></figure></div></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>C2 (esquerda): CH₃ &gt; H → CH₃ (em cima). C3 (direita): CH₂CH₃ (C,H,H) &gt; CH₃ (H,H,H) → etila (em cima). Os dois grupos prioritários estão do mesmo lado: <b>(Z)-3-metilpent-2-eno</b>.</p>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R7</span><span>Dê o nome completo (com estereodescritores) do estereoisômero I do 2-bromo-3-clorobutano e identifique seu enantiômero e seus diastereoisômeros.</span></div>
+    <div class="ex-body"><div class="figs"><figure class="fig"><div data-fig="bc1"></div><figcaption>I</figcaption></figure></div></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p><b>C2</b>: Br (1, direita), C3 (2, base), CH₃ (3, topo), H (4, esquerda). Caminho direita → base → topo: horário ("R" aparente); H na horizontal ⇒ inverter ⇒ <b>S</b>.</p>
+      <p><b>C3</b>: Cl (1, direita), C2 (2, topo), CH₃ (3, base), H (4, esquerda). Caminho direita → topo → base: anti-horário ("S" aparente); H na horizontal ⇒ <b>R</b>.</p>
+      <p>Nome: <b>(2S,3R)-2-bromo-3-clorobutano</b>. Enantiômero: (2R,3S) (estrutura II). Diastereoisômeros: (2R,3R) e (2S,3S) (III e IV).</p>
+      <div class="figs">
+        <figure class="fig"><div data-fig="bc2"></div><figcaption>II</figcaption></figure>
+        <figure class="fig"><div data-fig="bc3"></div><figcaption>III</figcaption></figure>
+        <figure class="fig"><div data-fig="bc4"></div><figcaption>IV</figcaption></figure>
+      </div>
+    </div></details>
+  </div>
+
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">R8</span><span>Determine a configuração do gliceraldeído representado em Fischer e diga se ele é D ou L.</span></div>
+    <div class="ex-body"><div class="figs"><figure class="fig"><div data-fig="fischerGliceraldeidoL"></div></figure></div></div>
+    <details class="sol"><summary>Ver resolução</summary><div class="sol-body">
+      <p>OH (1, esquerda) → CHO (2, topo) → CH₂OH (3, base): da esquerda para o topo e então para a base passando pela direita — sentido <b>horário</b>, "R" aparente. O H está na horizontal ⇒ inverter ⇒ <b>S</b>. Como o OH está à esquerda, é o <b>L</b>-gliceraldeído: (S)-gliceraldeído.</p>
+    </div></details>
+  </div>
+
+  <h3>Exercícios propostos</h3>
+  <p class="hint">Clique na alternativa para ver a correção comentada. Para treinar R/S sem limite, use os treinos das seções 5 e 6.</p>
+  <div data-quiz="estereo"></div>
+
+  <h3>Para resolver no caderno</h3>
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">D1</span><span>Desenhe a treonina (ácido 2-amino-3-hidroxibutanoico) em projeção de Fischer para os seus quatro estereoisômeros e indique os pares de enantiômeros.</span></div>
+    <details class="sol"><summary>Ver resposta</summary><div class="sol-body"><p>Dois estereocentros distintos (C2 e C3) ⇒ 4 estereoisômeros: (2R,3R), (2S,3S), (2R,3S), (2S,3R). Enantiômeros: (2R,3R)/(2S,3S) e (2R,3S)/(2S,3R). Não há meso, porque os dois centros têm ligantes diferentes. A L-treonina natural é (2S,3R).</p></div></details>
+  </div>
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">D2</span><span>O 2,3-dibromobutano tem quantos estereoisômeros? Algum é meso?</span></div>
+    <details class="sol"><summary>Ver resposta</summary><div class="sol-body"><p>Três: o par (2R,3R)/(2S,3S) e o composto meso (2R,3S), que tem plano de simetria (como no ácido tartárico).</p></div></details>
+  </div>
+  <div class="ex">
+    <div class="ex-head"><span class="ex-num">D3</span><span>O hexa-2,4-dieno apresenta quantos estereoisômeros? Escreva os nomes.</span></div>
+    <details class="sol"><summary>Ver resposta</summary><div class="sol-body"><p>Três: (2E,4E), (2Z,4Z) e (2Z,4E). Como a molécula é simétrica, "(2E,4Z)" e "(2Z,4E)" são a mesma substância; a IUPAC manda numerar de modo que o descritor Z fique com o menor localizador, daí o nome (2Z,4E)-hexa-2,4-dieno.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>
+
+<footer class="site">
+  Material didático de Química Orgânica · Conformações &amp; Estereoquímica · valores de energia aproximados, de livros-texto de referência.
+</footer>
+
+<script src="js/draw.js"></script>
+<script src="js/figures.js"></script>
+<script src="js/widgets.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

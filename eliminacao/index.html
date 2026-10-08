@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E1 e E2 · Reações de Eliminação</title>
+  <meta name="description" content="Plataforma interativa de Química Orgânica I sobre reações de eliminação E1 e E2: mecanismos em 3D, geometria anti-periplanar, Zaitsev e Hofmann, estereoquímica, carbocátions e rearranjos, competição SN1/SN2/E1/E2, simuladores, exercícios e quiz.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fd4f5"/><stop offset="1" stop-color="#3ddc97"/></linearGradient></defs><rect width="40" height="40" rx="10" fill="#131f36" stroke="url(#lg1)" stroke-width="2"/><line x1="11" y1="22" x2="29" y2="22" stroke="#3ddc97" stroke-width="2.4"/><line x1="11" y1="26" x2="29" y2="26" stroke="#3ddc97" stroke-width="2.4"/><circle cx="11" cy="24" r="4" fill="#8a929f"/><circle cx="29" cy="24" r="4" fill="#8a929f"/><circle cx="12" cy="10" r="3.6" fill="#ff4fa3"/><circle cx="29" cy="11" r="2.6" fill="#2fd4f5"/></svg>
+      <span>E1 × E2<small>Química Orgânica I</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#fundamentos">Fundamentos</a></li>
+        <li><a href="#e2">Reação E2</a></li>
+        <li><a href="#geometria">Geometria da E2</a></li>
+        <li><a href="#regioquimica">Regioquímica</a></li>
+        <li><a href="#estereo">Estereoquímica</a></li>
+        <li><a href="#e1">Reação E1</a></li>
+        <li><a href="#carbocations">Carbocátions e Rearranjos</a></li>
+        <li><a href="#e1xe2">E1 × E2</a></li>
+        <li><a href="#sn-vs-e">SN1 × SN2 × E1 × E2</a></li>
+        <li><a href="#laboratorio">Laboratório 3D</a></li>
+        <li><a href="#simulador">Simulador</a></li>
+        <li><a href="#resolvidos">Resolvidos</a></li>
+        <li><a href="#propostos">Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ============================================================ 1 INÍCIO -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica I · mecanismos</span>
+      <h1>Reações de Eliminação: <span class="g">E1 e E2</span></h1>
+      <p class="sub">Entenda os mecanismos, visualize a geometria molecular e aprenda a prever quando substituição ou eliminação será favorecida.</p>
+      <div class="cta">
+        <a class="btn primary lg" href="#fundamentos">Começar →</a>
+        <a class="btn lg" href="#laboratorio">Explorar moléculas em 3D</a>
+      </div>
+      <p class="eq">B:⁻ + H–Cβ–Cα–X → Cβ=Cα + B–H + X⁻</p>
+      <div class="legend">
+        <span><i style="background:#3ddc97"></i>C–H e C–X se rompem → C=C se forma</span>
+      </div>
+    </div>
+    <div class="viewer" data-w="hero" data-3d aria-label="Animação 3D: etóxido removendo o hidrogênio beta do 2-bromobutano enquanto o brometo sai e forma-se o alceno"></div>
+  </div>
+  <div class="modules">
+    <a href="#fundamentos"><b>Fundamentos</b><span>carbonos α e β, hidrogênios β, o que é eliminação</span></a>
+    <a href="#e2"><b>Reação E2</b><span>mecanismo concertado em 3D, estado de transição, bases</span></a>
+    <a href="#geometria"><b>Geometria da E2</b><span>anti-periplanar, orbitais, Newman, cadeira</span></a>
+    <a href="#regioquimica"><b>Regioquímica</b><span>Zaitsev × Hofmann, estabilidade de alcenos</span></a>
+    <a href="#estereo"><b>Estereoquímica</b><span>E ou Z: a conformação decide</span></a>
+    <a href="#e1"><b>Reação E1</b><span>carbocátion, duas etapas, temperatura</span></a>
+    <a href="#carbocations"><b>Carbocátions</b><span>estabilidade e rearranjos seguidos de eliminação</span></a>
+    <a href="#e1xe2"><b>E1 × E2</b><span>tabela, perfis de energia comparados</span></a>
+    <a href="#sn-vs-e"><b>SN1 × SN2 × E1 × E2</b><span>matriz de decisão, fluxograma, estudos de caso</span></a>
+    <a href="#laboratorio"><b>Laboratório 3D</b><span>diedros, rotação Cα–Cβ, Newman, cadeiras</span></a>
+    <a href="#simulador"><b>Simulador</b><span>escolha o Hβ · monte a reação</span></a>
+    <a href="#resolvidos"><b>Exercícios</b><span>22 resolvidos e 40 propostos</span></a>
+    <a href="#quiz"><b>Quiz e desafio</b><span>25 questões sorteadas + "SN1, SN2, E1 ou E2?"</span></a>
+  </div>
+</section>
+
+<!-- ============================================================ 2 FUNDAMENTOS -->
+<section class="section" id="fundamentos" data-title="Fundamentos">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>Fundamentos da eliminação</h2><p class="lead">Numa <b>reação de eliminação</b>, dois átomos ou grupos são removidos de carbonos vizinhos e forma-se uma <b>ligação π</b>. Nas eliminações β de haloalcanos, saem um <b>hidrogênio do carbono β</b> e o <b>grupo abandonador do carbono α</b>.</p></div></div>
+  <nav class="subnav" aria-label="Nesta seção"><a href="#fund-def">Conceito</a><a href="#fund-roles">Cα, Cβ, Hβ</a><a href="#fund-beta">Desafio dos Hβ</a><a href="#fund-3d">Em 3D</a></nav>
+
+  <div class="block" id="fund-def">
+    <div class="formula"><span class="big">R–CH₂–CHX–R′ → R–CH=CH–R′ + HX</span><br><small style="color:var(--muted)">(na prática, a base captura o H⁺: B⁻ + H–C–C–X → C=C + B–H + X⁻)</small></div>
+    <div class="figs" data-fig="general"></div>
+    <div class="grid3">
+      <div class="defbox"><b>Carbono α (Cα)</b>o carbono ligado ao <b>grupo abandonador</b> (X = Br, Cl, I, OTs…).</div>
+      <div class="defbox"><b>Carbono β (Cβ)</b>cada carbono <b>vizinho</b> do Cα. Um substrato pode ter vários carbonos β.</div>
+      <div class="defbox m"><b>Hidrogênio β (Hβ)</b>hidrogênio ligado a um carbono β: é o H removido pela base.</div>
+    </div>
+    <div class="note key"><b class="t">Conceito-chave</b>Na eliminação β, o par de elétrons da ligação <b>Cβ–H</b> passa a formar a ligação <b>π</b> entre Cβ e Cα, enquanto o grupo abandonador sai com o par da ligação <b>Cα–X</b>.</div>
+    <div class="note err"><b class="t">Erro comum</b>Achar que qualquer H da molécula pode ser eliminado. Os <b>H do próprio Cα (Hα)</b> e os de carbonos mais distantes (γ, δ…) <b>não</b> levam ao alceno: só o Hβ coloca o par eletrônico ao lado do carbono que perde X.</div>
+  </div>
+
+  <div class="block" id="fund-roles">
+    <h3 class="block-title">Identifique Cα, Cβ, Hβ e o grupo abandonador <span class="tag">interativo</span></h3>
+    <div data-w="rolesPick"></div>
+  </div>
+
+  <div class="block" id="fund-beta">
+    <h3 class="block-title">Clique em todos os hidrogênios β disponíveis <span class="tag">desafio</span></h3>
+    <div data-w="betaPick"></div>
+    <div class="note think"><b class="t">Pense nisso</b>O 1-bromo-2,2-dimetilpropano tem 9 hidrogênios, mas quantos são β? O que isso significa para a eliminação?</div>
+  </div>
+
+  <div class="block" id="fund-3d">
+    <h3 class="block-title">Hidrogênios β em 3D <span class="tag">3D</span></h3>
+    <div class="split">
+      <div class="viewer" data-w="fund3d" data-3d></div>
+      <div>
+        <p>2-bromo-2-metilbutano. O carbono α (centro) tem o Br e três carbonos β: dois CH₃ e um CH₂.</p>
+        <ul>
+          <li><b style="color:var(--green)">verde</b>: Hβ dos CH₃ (6 H, periféricos e acessíveis);</li>
+          <li><b style="color:var(--orange)">laranja</b>: Hβ do CH₂ (2 H, mais impedidos);</li>
+          <li>brancos: H do CH₃ terminal (γ) — não são β.</li>
+        </ul>
+        <div class="controls"><button class="btn sm" type="button" data-act="fund3d-space" aria-pressed="false">space-filling</button></div>
+        <div class="note quick" data-q="Quantos alcenos diferentes podem se formar a partir do 2-bromo-2-metilbutano?" data-o="1;2;3" data-a="1" data-e="Os dois CH₃ são equivalentes: H do CH₃ → 2-metilbut-1-eno; H do CH₂ → 2-metilbut-2-eno."></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 3 E2 -->
+<section class="section" id="e2" data-title="Reação E2">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>A reação E2</h2><p class="lead">Eliminação bimolecular: a base remove o Hβ, a ligação π se forma e o grupo abandonador sai — <b>tudo em uma única etapa</b>.</p></div></div>
+  <nav class="subnav" aria-label="Nesta seção"><a href="#e2-def">Definição</a><a href="#e2-anim">Mecanismo 3D</a><a href="#e2-2d">Setas curvas</a><a href="#e2-ts">Estado de transição</a><a href="#e2-energy">Energia</a><a href="#e2-bases">Bases</a></nav>
+
+  <div class="block" id="e2-def">
+    <div class="acronym">
+      <div><div class="L c">E</div><span>eliminação</span></div>
+      <div><div class="L o">2</div><span>bimolecular: substrato <b>e</b> base na etapa determinante</span></div>
+    </div>
+    <div class="formula"><span class="big">v = k [RX] [Base]</span></div>
+    <div class="grid3">
+      <div class="defbox"><b>Concertada</b>uma única etapa; um único estado de transição.</div>
+      <div class="defbox o"><b>Sem carbocátion</b>não há intermediário; portanto <b>não há rearranjos</b>.</div>
+      <div class="defbox m"><b>Base forte</b>HO⁻, RO⁻, t-BuO⁻, NH₂⁻, DBU…</div>
+    </div>
+    <div class="note err"><b class="t">Erro comum</b>"E2 significa que a reação ocorre em duas etapas." <b>Não!</b> O "2" indica a <b>molecularidade</b> (duas espécies na etapa determinante). A E2 tem <b>uma</b> etapa.</div>
+  </div>
+
+  <div class="block" id="e2-anim">
+    <h3 class="block-title">2-bromobutano + etóxido em 3D <span class="tag">animação</span></h3>
+    <div data-w="e2Lab" data-3d></div>
+  </div>
+
+  <div class="block" id="e2-2d">
+    <h3 class="block-title">Mecanismo com setas curvas</h3>
+    <div data-w="e2Player"></div>
+    <div class="legend"><span><i style="background:#ff9f43"></i>base → Hβ</span><span><i style="background:#2fd4f5"></i>Cβ–H → nova ligação π</span><span><i style="background:#ff4fa3"></i>Cα–Br → Br⁻</span></div>
+    <div class="note care"><b class="t">Cuidado</b>As três setas representam movimentos <b>simultâneos</b>. Cada seta começa em um par de elétrons (par livre ou ligação) e termina onde esse par vai ficar.</div>
+  </div>
+
+  <div class="block" id="e2-ts">
+    <h3 class="block-title">O estado de transição da E2 <span class="tag">3D</span></h3>
+    <div class="split">
+      <div class="viewer" data-w="ts3d" data-3d></div>
+      <div>
+        <p>No estado de transição (‡), cinco "meias-ligações" coexistem:</p>
+        <ul>
+          <li>O···H se formando (base–hidrogênio);</li>
+          <li>H···Cβ se rompendo;</li>
+          <li>Cα···Cβ com caráter parcial de ligação π;</li>
+          <li>Cα···Br se rompendo;</li>
+          <li>cargas parciais δ− na base e no Br.</li>
+        </ul>
+        <div class="note err"><b class="t">Atenção</b><b>O estado de transição não é um intermediário isolável.</b> É um máximo de energia, com tempo de vida da ordem de uma vibração molecular. Também não existe "carbono pentavalente estável".</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="e2-energy">
+    <h3 class="block-title">Perfil de energia da E2</h3>
+    <div data-w="energyE2"></div>
+    <p>Um único máximo (ET) e nenhum vale intermediário. Compare com a E1 no módulo <a href="#e1xe2">E1 × E2</a>.</p>
+  </div>
+
+  <div class="block" id="e2-bases">
+    <h3 class="block-title">Bases usadas em E2</h3>
+    <div data-w="bases"></div>
+    <div class="note key"><b class="t">Conceito-chave</b><b>Basicidade ≠ nucleofilicidade.</b> Basicidade é uma propriedade termodinâmica (afinidade por H⁺, medida pelo pKa do ácido conjugado). Nucleofilicidade é cinética (velocidade de ataque a um carbono) e sofre muito com o impedimento estérico.</div>
+    <h4>Base pequena × base volumosa em 3D</h4>
+    <div class="viewer short" data-w="bases3d" data-3d></div>
+    <div class="controls"><button class="btn sm" type="button" data-act="bases-space" aria-pressed="false">space-filling</button></div>
+    <p>O O⁻ do terc-butóxido está cercado por três metilas: ele alcança com facilidade um H periférico, mas tem dificuldade de se aproximar de um carbono (SN2).</p>
+    <div class="note quick" data-q="Qual base favorece E2 mesmo com um haleto primário?" data-o="CH₃O⁻;(CH₃)₃CO⁻;I⁻" data-a="1" data-e="O terc-butóxido é base forte e nucleófilo fraco por ser volumoso."></div>
+  </div>
+</section>
+
+<!-- ============================================================ 4 GEOMETRIA -->
+<section class="section" id="geometria" data-title="Geometria da E2">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Geometria da E2: anti-periplanar</h2><p class="lead">A E2 é mais rápida quando <b>Hβ</b> e o <b>grupo abandonador</b> estão no <b>mesmo plano</b> e em <b>lados opostos</b> da ligação Cα–Cβ (diedro H–Cβ–Cα–X ≈ 180°).</p></div></div>
+  <nav class="subnav" aria-label="Nesta seção"><a href="#geo-anti">Diedro em 3D</a><a href="#geo-newman">Newman</a><a href="#geo-chair">Ciclo-hexano</a></nav>
+
+  <div class="block" id="geo-anti">
+    <h3 class="block-title">Gire Cβ e encontre a geometria anti-periplanar <span class="tag">3D</span></h3>
+    <div data-w="anti3d" data-3d></div>
+    <div class="note key"><b class="t">Por que 180°?</b>Na conformação anti-periplanar, o orbital σ da ligação C–H fica <b>paralelo</b> ao orbital σ* da ligação C–Br. À medida que o H sai, esses orbitais se transformam nos dois orbitais <b>p</b> paralelos que formam a ligação <b>π</b>. Além disso, a conformação anti é alternada (menor energia) e mantém a base longe do grupo abandonador.</div>
+    <div class="note care"><b class="t">Cuidado</b>A eliminação sin-periplanar (0°) é possível em casos especiais (sistemas rígidos), mas é muito mais lenta: a conformação é eclipsada.</div>
+  </div>
+
+  <div class="block" id="geo-newman">
+    <h3 class="block-title">Projeção de Newman interativa <span class="tag">interativo</span></h3>
+    <div data-w="newmanE2"></div>
+  </div>
+
+  <div class="block" id="geo-chair">
+    <h3 class="block-title">E2 em ciclo-hexanos: exigência trans-diaxial <span class="tag">3D</span></h3>
+    <p>No ciclo-hexano, dois substituintes em carbonos vizinhos só ficam anti-periplanares se forem <b>ambos axiais</b> e em <b>faces opostas</b> (trans-diaxiais). Ligações equatoriais vizinhas formam diedros de ~60°.</p>
+    <div data-w="chair3d" data-3d></div>
+    <div class="figs" data-fig="chairs"></div>
+    <div class="note quick" data-q="No trans-1-bromo-4-terc-butilciclo-hexano, na cadeira preferida (t-Bu equatorial), o Br está:" data-o="axial;equatorial" data-a="1" data-e="Com t-Bu equatorial, o Br trans fica equatorial: não há Hβ anti → E2 lenta."></div>
+    <div class="note quick" data-q="Qual estereoisômero sofre E2 mais rápido com NaOEt?" data-o="cis-1-bromo-4-terc-butilciclo-hexano;trans-1-bromo-4-terc-butilciclo-hexano" data-a="0" data-e="No cis, com t-Bu equatorial, o Br é axial: há H trans-diaxiais."></div>
+  </div>
+</section>
+
+<!-- ============================================================ 5 REGIOQUÍMICA -->
+<section class="section" id="regioquimica" data-title="Regioquímica">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Regioquímica: Zaitsev × Hofmann</h2><p class="lead">Quando há mais de um tipo de Hβ, mais de um alceno pode se formar. Qual predomina depende da <b>estabilidade do alceno</b> e do <b>tamanho da base</b>.</p></div></div>
+  <nav class="subnav" aria-label="Nesta seção"><a href="#reg-zh">Qual alceno?</a><a href="#reg-3d">Hofmann em 3D</a><a href="#reg-stab">Estabilidade</a></nav>
+
+  <div class="block" id="reg-zh">
+    <h3 class="block-title">Qual alceno será formado? <span class="tag">interativo</span></h3>
+    <div data-w="zaitsev"></div>
+    <div class="grid2">
+      <div class="defbox"><b>Tendência de Zaitsev</b>com bases pequenas (HO⁻, MeO⁻, EtO⁻), o alceno <b>mais substituído</b> (mais estável) costuma predominar, pois o ET da E2 já tem caráter de dupla ligação.</div>
+      <div class="defbox o"><b>Tendência de Hofmann</b>com bases volumosas (t-BuO⁻, LDA, DBU…), aumenta o alceno <b>menos substituído</b>: a base remove o Hβ mais acessível (geralmente de CH₃).</div>
+    </div>
+    <div class="note care"><b class="t">Cuidado</b>Zaitsev e Hofmann são <b>tendências</b>, não leis. Grupo abandonador (F, ⁺NR₃), solvente, temperatura e restrições geométricas (ciclos) também influenciam.</div>
+  </div>
+
+  <div class="block" id="reg-3d">
+    <h3 class="block-title">Por que a base volumosa prefere o CH₃? <span class="tag">3D</span></h3>
+    <div class="split">
+      <div class="viewer" data-w="hof3d" data-3d></div>
+      <div>
+        <p>No 2-bromo-2-metilbutano, os Hβ dos dois CH₃ (verdes) estão na periferia e são seis. Os Hβ do CH₂ (laranja) ficam entre o Br, as metilas e o CH₃ terminal.</p>
+        <p>Um terc-butóxido, com seu volume, encontra maior repulsão ao se aproximar do CH₂: a remoção do H do CH₃ fica relativamente mais rápida e o <b>2-metilbut-1-eno</b> passa a predominar (~72%).</p>
+        <div class="controls"><button class="btn sm" type="button" data-act="hof-space" aria-pressed="false">space-filling</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="reg-stab">
+    <h3 class="block-title">Estabilidade relativa de alcenos</h3>
+    <div class="formula">tetrassubstituído &gt; trissubstituído &gt; dissubstituído &gt; monossubstituído &gt; eteno<br><small style="color:var(--muted)">entre dissubstituídos: trans (E) &gt; cis (Z)</small></div>
+    <div data-w="stability"></div>
+    <div class="note key"><b class="t">Hiperconjugação</b>As ligações σ C–H e C–C dos grupos alquila vizinhos à dupla doam densidade eletrônica ao sistema π (orbital π*), estabilizando o alceno. Mais grupos alquila → mais estabilização. No isômero Z, a repulsão entre grupos do mesmo lado reduz a estabilidade.</div>
+  </div>
+</section>
+
+<!-- ============================================================ 6 ESTEREOQUÍMICA -->
+<section class="section" id="estereo" data-title="Estereoquímica">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Estereoquímica da E2</h2><p class="lead">A E2 é <b>estereoespecífica</b>: como Hβ e grupo abandonador precisam estar anti-periplanares, os grupos que sobram em cada carbono ficam "travados" e determinam se o alceno é <b>E</b> ou <b>Z</b>.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Mesma molécula, duas conformações anti, dois alcenos <span class="tag">3D</span></h3>
+    <div data-w="stereo3d" data-3d></div>
+    <div class="figs" data-fig="stereoNewman"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Na conformação anti-periplanar reativa, dois grupos <b>gauche</b> (60°) entre Cα e Cβ terminam do <b>mesmo lado</b> da ligação dupla; dois grupos <b>anti</b> (180°) terminam em <b>lados opostos</b>.</div>
+    <div class="note think"><b class="t">Pense nisso</b>No 2-bromobutano, por que o (E)-but-2-eno predomina sobre o (Z)? (Dica: compare a tensão das duas conformações reativas.)</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Diastereoisômeros dão alcenos diferentes</h3>
+    <p>Quando <b>ambos</b> os carbonos são estereogênicos e cada um tem só um H β utilizável, cada diastereoisômero leva a um único alceno. Exemplo clássico: o <b>meso</b>-1,2-dibromo-1,2-difeniletano dá (E)-1-bromo-1,2-difeniletileno, enquanto o par (R,R)/(S,S) dá o isômero (Z). Veja a resolução detalhada nos <a href="#resolvidos">exercícios resolvidos</a>.</p>
+    <div class="grid2">
+      <div class="defbox"><b>Estereoespecífica (E2)</b>estereoisômeros diferentes do reagente dão estereoisômeros diferentes do produto.</div>
+      <div class="defbox o"><b>Estereosseletiva (E1)</b>forma preferencialmente o alceno mais estável (geralmente E), independentemente da configuração inicial, pois o carbocátion é plano.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 7 E1 -->
+<section class="section" id="e1" data-title="Reação E1">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>A reação E1</h2><p class="lead">Eliminação unimolecular: primeiro o grupo abandonador sai e forma um <b>carbocátion</b>; depois uma base fraca remove um Hβ.</p></div></div>
+  <nav class="subnav" aria-label="Nesta seção"><a href="#e1-def">Definição</a><a href="#e1-anim">Mecanismo 3D</a><a href="#e1-2d">Setas curvas</a><a href="#e1-energy">Energia</a><a href="#e1-temp">Temperatura</a></nav>
+
+  <div class="block" id="e1-def">
+    <div class="acronym">
+      <div><div class="L c">E</div><span>eliminação</span></div>
+      <div><div class="L o">1</div><span>unimolecular: só o substrato na etapa determinante</span></div>
+    </div>
+    <div class="formula"><span class="big">v = k [RX]</span></div>
+    <div class="grid3">
+      <div class="defbox"><b>Etapa 1 (lenta)</b>ionização: C–X se rompe heteroliticamente → carbocátion + X⁻.</div>
+      <div class="defbox o"><b>Etapa 2 (rápida)</b>base fraca (H₂O, ROH) remove um Hβ → alceno.</div>
+      <div class="defbox m"><b>Condições típicas</b>substrato 3° (ou 2°), solvente polar prótico, sem base forte, aquecimento.</div>
+    </div>
+    <div class="note err"><b class="t">Erro comum</b>"E1 significa que existe apenas uma etapa." <b>Não!</b> A E1 tem <b>duas</b> etapas. O "1" diz que a etapa determinante envolve uma só espécie.</div>
+  </div>
+
+  <div class="block" id="e1-anim">
+    <h3 class="block-title">E1 do brometo de terc-butila em 3D <span class="tag">passo a passo</span></h3>
+    <div data-w="e1Lab" data-3d></div>
+  </div>
+
+  <div class="block" id="e1-2d">
+    <h3 class="block-title">Mecanismo com setas curvas</h3>
+    <div data-w="e1Player"></div>
+    <div class="note care"><b class="t">Cuidado</b>Na E1 o carbocátion pode ser capturado pelo solvente (SN1) em vez de perder um H⁺ (E1). As duas reações <b>competem</b> e partem do mesmo intermediário.</div>
+  </div>
+
+  <div class="block" id="e1-energy">
+    <h3 class="block-title">Perfil de energia da E1</h3>
+    <div data-w="energyE1"></div>
+    <p>Dois estados de transição (ET1 e ET2) e um intermediário (carbocátion). <b>ET1 é o mais alto</b>: a ionização determina a velocidade.</p>
+  </div>
+
+  <div class="block" id="e1-temp">
+    <h3 class="block-title">Efeito da temperatura <span class="tag">modelo qualitativo</span></h3>
+    <div data-w="temperature"></div>
+    <div class="note quick" data-q="Para aumentar a proporção de alceno na solvólise de (CH₃)₃CBr em etanol, sem adicionar base, deve-se:" data-o="resfriar;aquecer;adicionar mais água" data-a="1" data-e="Temperatura alta favorece a eliminação (ΔS mais positivo)."></div>
+  </div>
+</section>
+
+<!-- ============================================================ 8 CARBOCÁTIONS -->
+<section class="section" id="carbocations" data-title="Carbocátions e Rearranjos">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Carbocátions e rearranjos</h2><p class="lead">O carbocátion é o coração da E1 (e da SN1). Sua estabilidade controla a velocidade, e sua tendência a <b>rearranjar</b> pode mudar o esqueleto do produto.</p></div></div>
+  <nav class="subnav" aria-label="Nesta seção"><a href="#cat-3d">Geometria</a><a href="#cat-stab">Estabilidade</a><a href="#cat-h">Hidreto</a><a href="#cat-me">Alquila</a><a href="#cat-ring">Expansão de anel</a></nav>
+
+  <div class="block" id="cat-3d">
+    <h3 class="block-title">De sp³ a sp²: o orbital p vazio <span class="tag">3D</span></h3>
+    <div data-w="cation" data-3d></div>
+  </div>
+
+  <div class="block" id="cat-stab">
+    <h3 class="block-title">Estabilidade de carbocátions</h3>
+    <div class="formula">benzílico ≈ alílico ≈ 3° &gt; 2° ≫ 1° &gt; metílico<br><small style="color:var(--muted)">ordem usual; não é absoluta (benzílicos/alílicos secundários e terciários são ainda mais estáveis)</small></div>
+    <div class="grid3">
+      <div class="defbox"><b>Hiperconjugação</b>ligações σ C–H/C–C vizinhas, alinhadas com o orbital p vazio, doam densidade eletrônica.</div>
+      <div class="defbox o"><b>Efeito indutivo</b>grupos alquila são levemente doadores de elétrons.</div>
+      <div class="defbox m"><b>Ressonância</b>em cátions alílicos e benzílicos, a carga + se deslocaliza pelo sistema π.</div>
+    </div>
+    <div class="note care"><b class="t">Cuidado</b>Carbocátions primários e metílicos praticamente não se formam em solução: substratos 1° não sofrem E1/SN1 (exceto quando estabilizados por ressonância, ou após rearranjo concertado).</div>
+  </div>
+
+  <div class="block" id="cat-h">
+    <h3 class="block-title">Deslocamento 1,2 de hidreto → eliminação <span class="tag">mecanismo</span></h3>
+    <div data-w="rearrH"></div>
+  </div>
+  <div class="block" id="cat-me">
+    <h3 class="block-title">Deslocamento 1,2 de metila → eliminação <span class="tag">mecanismo</span></h3>
+    <div data-w="rearrM"></div>
+  </div>
+  <div class="block" id="cat-ring">
+    <h3 class="block-title">Expansão de anel → eliminação <span class="tag">mecanismo</span></h3>
+    <div data-w="ringExp"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Rearranjos ocorrem quando levam a um carbocátion <b>mais estável</b> (2° → 3°, ou alívio de tensão de anel). Como exigem carbocátion, aparecem em <b>E1 e SN1</b>, nunca em E2 ou SN2.</div>
+    <div class="note quick" data-q="Em qual mecanismo um rearranjo de carbocátion pode aparecer?" data-o="E2;E1;SN2" data-a="1" data-e="Só E1 e SN1 têm carbocátion intermediário."></div>
+  </div>
+</section>
+
+<!-- ============================================================ 9 E1 × E2 -->
+<section class="section" id="e1xe2" data-title="E1 × E2">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>E1 × E2</h2><p class="lead">Mesmo produto (alceno), caminhos muito diferentes.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Tabela comparativa <span class="tag">clique nas linhas</span></h3>
+    <div data-w="e1e2Table"></div>
+  </div>
+  <div class="block" id="energia">
+    <h3 class="block-title">Perfis de energia: SN1, SN2, E1 e E2 <span class="tag">compare dois</span></h3>
+    <div data-w="energyCmp"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Substituição ou eliminação?</h3>
+    <div class="grid2">
+      <div class="defbox"><b>Favorecem eliminação</b>base forte (sobretudo volumosa) · substrato mais substituído (3°, 2°) · temperatura alta · Hβ disponíveis e alinhados.</div>
+      <div class="defbox o"><b>Favorecem substituição</b>nucleófilo forte e pouco básico (I⁻, N₃⁻, CN⁻, RS⁻) · substrato metílico/1° · temperatura baixa · solvente polar aprótico (SN2).</div>
+    </div>
+    <div class="note think"><b class="t">Pense nisso</b>O mesmo íon HO⁻ pode atuar como nucleófilo (SN2) ou base (E2). O que decide? O acesso ao carbono α (substrato) e as condições.</div>
+  </div>
+</section>
+
+<!-- ============================================================ 10 SN × E -->
+<section class="section" id="sn-vs-e" data-title="SN1 × SN2 × E1 × E2">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>SN1 × SN2 × E1 × E2</h2><p class="lead">Ferramentas para decidir qual mecanismo é mais provável — sempre como tendência, nunca como regra absoluta.</p></div></div>
+  <nav class="subnav" aria-label="Nesta seção"><a href="#sne-table">Tabela</a><a href="#sne-matrix">Matriz de decisão</a><a href="#sne-flow">Fluxograma</a><a href="#sne-cases">Estudos de caso</a></nav>
+  <div class="block" id="sne-table">
+    <h3 class="block-title">Os quatro mecanismos</h3>
+    <div data-w="mech4Table"></div>
+  </div>
+  <div class="block" id="sne-matrix">
+    <h3 class="block-title">Qual mecanismo é mais provável? <span class="tag">matriz de decisão</span></h3>
+    <div data-w="matrix"></div>
+  </div>
+  <div class="block" id="sne-flow">
+    <h3 class="block-title">Fluxograma por tipo de substrato</h3>
+    <div data-w="flowchart"></div>
+  </div>
+  <div class="block" id="sne-cases">
+    <h3 class="block-title">Estudos de caso</h3>
+    <div data-w="cases"></div>
+  </div>
+</section>
+
+<!-- ============================================================ 11 LABORATÓRIO -->
+<section class="section" id="laboratorio" data-title="Laboratório 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Laboratório Molecular 3D</h2><p class="lead">Gire, aproxime, troque a representação, destaque α/β/Hβ, meça diedros, gire em torno de Cα–Cβ, veja em projeção de Newman e inverta cadeiras.</p></div></div>
+  <div class="block"><div data-w="lab" data-3d></div></div>
+</section>
+
+<!-- ============================================================ 12 SIMULADOR -->
+<section class="section" id="simulador" data-title="Simulador">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Simulador de reações</h2><p class="lead">Dois simuladores: no primeiro <b>você</b> escolhe qual Hβ a base remove; no segundo, monte a reação completa e analise os fatores.</p></div></div>
+  <nav class="subnav" aria-label="Nesta seção"><a href="#sim-e2">Simulador E2</a><a href="#sim-monte">Monte a reação</a></nav>
+  <div class="block" id="sim-e2">
+    <h3 class="block-title">Simulador E2: escolha o Hβ <span class="tag">interativo</span></h3>
+    <div data-w="e2Sim"></div>
+  </div>
+  <div class="block" id="sim-monte">
+    <h3 class="block-title">Monte a reação: SN1, SN2, E1 ou E2? <span class="tag">análise</span></h3>
+    <div data-w="analyzer"></div>
+  </div>
+</section>
+
+<!-- ============================================================ 13 RESOLVIDOS -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Exercícios resolvidos</h2><p class="lead">22 exercícios em 6 níveis. Tente resolver antes de abrir a dica e a resolução.</p></div></div>
+  <div class="levels" data-w="levelChips"></div>
+  <div data-w="solved"></div>
+</section>
+
+<!-- ============================================================ 14 PROPOSTOS -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Exercícios propostos</h2><p class="lead">40 exercícios: múltipla escolha, V/F, associação, ordenação (arraste), complete as setas, clique nos Hβ, Newman, cadeiras e "o que está errado neste mecanismo?".</p></div>
+    <button class="btn sm" type="button" data-action="redo">↺ Refazer exercícios</button></div>
+  <nav class="subnav" aria-label="Nesta seção"><a href="#prop-easy">Fáceis (10)</a><a href="#prop-mid">Intermediários (15)</a><a href="#prop-hard">Avançados (15)</a></nav>
+  <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+  <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+  <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+</section>
+
+<!-- ============================================================ 15 QUIZ -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Quiz final</h2><p class="lead">25 questões sorteadas de um banco sobre SN1, SN2, E1 e E2. Ao final: porcentagem, classificação e tópicos para revisar.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio">
+    <h3 class="block-title">Desafio: SN1, SN2, E1 ou E2? <span class="tag">pontos e sequência</span></h3>
+    <div data-w="challenge"></div>
+  </div>
+</section>
+
+<!-- ============================================================ 16 MAPA -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Mapa conceitual e resumo</h2><p class="lead">Tudo conectado: substrato, reagente, solvente e temperatura decidem o caminho.</p></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block">
+    <h3 class="block-title">Resumo visual</h3>
+    <div class="grid2" data-w="summaries"></div>
+  </div>
+  <div class="block">
+    <div class="cards4">
+      <div class="big4" style="border-color:var(--orange);background:rgba(255,159,67,.07)"><h3 class="c-sn1">SN1</h3><p><b>carbocátion</b> + <b>substituição</b></p><small>3°, prótico, Nu fraco; racemização; rearranjos.</small></div>
+      <div class="big4" style="border-color:var(--cyan);background:rgba(47,212,245,.07)"><h3 class="c-sn2">SN2</h3><p><b>backside attack</b> + <b>substituição</b></p><small>metílico/1°, Nu forte, aprótico; inversão.</small></div>
+      <div class="big4" style="border-color:var(--violet);background:rgba(177,140,255,.07)"><h3 class="c-e1">E1</h3><p><b>carbocátion</b> + <b>eliminação</b></p><small>3°, prótico, base fraca, Δ; Zaitsev; rearranjos.</small></div>
+      <div class="big4" style="border-color:var(--green);background:rgba(61,220,151,.07)"><h3 class="c-e2">E2</h3><p><b>anti-periplanar</b> + <b>eliminação</b></p><small>base forte; uma etapa; estereoespecífica.</small></div>
+    </div>
+    <div class="formula" style="margin-top:18px;font-family:var(--sans);font-weight:800;font-size:1.2rem">Não memorize apenas regras: analise <span class="c-sn2">estrutura</span> + <span class="c-sn1">reagente</span> + <span class="c-e1">solvente</span> + <span class="c-e2">temperatura</span>.</div>
+  </div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica I</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

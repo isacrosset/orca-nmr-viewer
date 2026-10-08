@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reações de Compostos Aromáticos · Química Orgânica II</title>
+  <meta name="description" content="Laboratório virtual de Substituição Eletrofílica Aromática (SEA): mecanismo, complexo σ, perfil de energia, halogenação, nitração, sulfonação, Friedel–Crafts, efeitos de substituintes, orientação orto/meta/para, regiosseletividade e síntese, com modelos 3D e simuladores.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><polygon points="17,9 26.5,14.5 26.5,25.5 17,31 7.5,25.5 7.5,14.5" fill="none" stroke="#e8eef9" stroke-width="2"/><circle cx="17" cy="20" r="5.6" fill="none" stroke="#ff4fa3" stroke-width="2"/><circle cx="32" cy="10" r="4" fill="#ff9f43"/></svg>
+      <span>Reações de Aromáticos<small>Química Orgânica II · SEA</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#revisao">Por que substituição?</a></li>
+        <li><a href="#reacao">Reação Geral da SEA</a></li>
+        <li><a href="#mecanismo">Mecanismo Geral</a></li>
+        <li><a href="#complexo">Complexo σ</a></li>
+        <li><a href="#energia">Perfil Energético</a></li>
+        <li><a href="#halogenacao">Halogenação</a></li>
+        <li><a href="#nitracao">Nitração</a></li>
+        <li><a href="#sulfonacao">Sulfonação</a></li>
+        <li><a href="#alquilacao">Alquilação de Friedel–Crafts</a></li>
+        <li><a href="#acilacao">Acilação de Friedel–Crafts</a></li>
+        <li><a href="#substituidos">Benzenos Substituídos</a></li>
+        <li><a href="#ativadores">Ativadores e Desativadores</a></li>
+        <li><a href="#inducao">Efeito Indutivo</a></li>
+        <li><a href="#ressonancia">Efeito de Ressonância</a></li>
+        <li><a href="#orto">Diretores Orto/Para</a></li>
+        <li><a href="#meta">Diretores Meta</a></li>
+        <li><a href="#halogenios">Halogênios</a></li>
+        <li><a href="#regio">Regiosseletividade</a></li>
+        <li><a href="#esterico">Efeito Estérico</a></li>
+        <li><a href="#dissubstituidos">Anéis Dissubstituídos</a></li>
+        <li><a href="#conflito">Conflito entre Diretores</a></li>
+        <li><a href="#sintese">Planejamento Sintético</a></li>
+        <li><a href="#mapareacoes">Mapa Geral das SEA</a></li>
+        <li><a href="#lab3d">Laboratório Aromático 3D</a></li>
+        <li><a href="#simregio">Simulador de Regiosseletividade</a></li>
+        <li><a href="#simmec">Simulador de Mecanismos</a></li>
+        <li><a href="#resolvidos">Exercícios Resolvidos</a></li>
+        <li><a href="#propostos">Exercícios Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1 -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica II · substituição eletrofílica aromática</span>
+      <h1>Reações de <span class="g">Compostos Aromáticos</span></h1>
+      <p class="sub">Mecanismo, reatividade e regiosseletividade na Substituição Eletrofílica Aromática</p>
+      <div data-w="heroEq"></div>
+      <div class="cta"><a class="btn primary lg" href="#revisao">Começar →</a><a class="btn lg" href="#mecanismo">Explorar o mecanismo</a><a class="btn lg" href="#simregio">Prever orientação</a></div>
+    </div>
+    <div class="heroview" data-w="hero" data-3d></div>
+  </div>
+  <div class="bigqs">
+    <div class="chcard"><span class="kicker">Pergunta 1</span><h3>Como o benzeno substitui um hidrogênio sem perder permanentemente sua aromaticidade?</h3></div>
+    <div class="chcard"><span class="kicker">Pergunta 2</span><h3>Como um substituinte já presente no anel decide a velocidade e a posição da próxima reação?</h3></div>
+  </div>
+  <div class="modules">
+    <a href="#mecanismo"><b>Mecanismo sincronizado</b><span>2D + 3D + perfil de energia, etapa por etapa</span></a>
+    <a href="#complexo"><b>Complexo σ</b><span>perda e restauração da aromaticidade em 3D</span></a>
+    <a href="#halogenacao"><b>Cinco reações</b><span>halogenação, nitração, sulfonação, Friedel–Crafts</span></a>
+    <a href="#orto"><b>Orto, meta ou para?</b><span>comparador de complexos σ</span></a>
+    <a href="#halogenios"><b>Halogênios</b><span>desativadores, mas orto/para</span></a>
+    <a href="#dissubstituidos"><b>Dois substituintes</b><span>concordantes, conflitantes, estérica</span></a>
+    <a href="#sintese"><b>Síntese</b><span>em que ordem introduzir os grupos?</span></a>
+    <a href="#lab3d"><b>Laboratório 3D</b><span>15 moléculas, mapas, posições o/m/p</span></a>
+    <a href="#simmec"><b>Simulador de mecanismo</b><span>desenhe as setas; o sistema confere</span></a>
+    <a href="#resolvidos"><b>Exercícios</b><span>38 resolvidos e 70 propostos</span></a>
+    <a href="#quiz"><b>Quiz e desafios</b><span>40 questões + 4 modos cronometrados</span></a>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="section" id="revisao" data-title="Revisão: por que substituição?">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>Revisão: por que substituição?</h2><p class="lead">O benzeno tem ≈ 150 kJ/mol de estabilização aromática. Uma adição a destruiria no produto; a substituição só a perde por um instante.</p></div></div>
+  <div class="block"><div data-w="addVsSub"></div></div>
+  <div class="block"><h3 class="block-title">Os dois caminhos a partir do complexo σ</h3><div data-w="subAddEnergy"></div>
+    <div class="note err"><b class="t">Erro comum</b>Achar que a aromaticidade é mantida o tempo todo. Ela é <b>temporariamente perdida</b> durante a formação do complexo σ.</div></div>
+</section>
+
+<!-- 3 -->
+<section class="section" id="reacao" data-title="Reação Geral da SEA">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Reação geral da substituição eletrofílica aromática</h2><p class="lead"><b>Ar–H + E⁺ → Ar–E + H⁺</b>: um hidrogênio do anel é substituído por um eletrófilo.</p></div></div>
+  <div class="block"><div data-w="generalEq"></div></div>
+  <div class="block"><h3 class="block-title">Por que o benzeno pode atuar como nucleófilo?</h3><div data-w="nucleophile" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>O sistema π contém densidade eletrônica capaz de interagir com um eletrófilo — mas é um nucleófilo <b>fraco</b>: atacar custa a aromaticidade. Por isso a SEA exige eletrófilos fortes, gerados com catalisadores.</div>
+    <div class="note quick" data-q="Na SEA, quem doa o par de elétrons na etapa de ataque?" data-o="o eletrófilo;o sistema π do anel;o catalisador;a base" data-a="1" data-e="O par π do anel ataca o E."></div></div>
+</section>
+
+<!-- 4 -->
+<section class="section" id="mecanismo" data-title="Mecanismo Geral">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Mecanismo geral da SEA</h2><p class="lead">Estrutura 2D, modelo 3D, setas curvas e perfil de energia sincronizados: cada etapa atualiza todas as representações.</p></div></div>
+  <div class="block"><ol class="flowsteps"><li><b>1</b>Geração do eletrófilo<small>E–X + catalisador → E⁺ (ou espécie muito polarizada)</small></li><li><b>2</b>Ataque do anel<small>par π → E (etapa lenta)</small></li><li><b>3</b>Complexo σ<small>intermediário não aromático</small></li><li><b>4</b>Desprotonação<small>base remove o H do C sp³</small></li><li><b>5</b>Aromaticidade restaurada<small>C–H → sistema π</small></li></ol></div>
+  <div class="block"><h3 class="block-title">Animação do mecanismo</h3><div data-w="mechSync" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>As espécies “E⁺” são, em vários casos, <b>representações mecanísticas simplificadas</b>: na bromação o eletrófilo é o complexo Br₂·FeBr₃ polarizado, não um Br⁺ livre.</div></div>
+</section>
+
+<!-- 5 -->
+<section class="section" id="complexo" data-title="Complexo σ">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Complexo σ (íon arênio, intermediário de Wheland)</h2><p class="lead">O carbono que recebe E passa de sp² a ≈ sp³: o sistema de orbitais p contínuo é interrompido.</p></div></div>
+  <div class="block"><h3 class="block-title">Perda temporária de aromaticidade</h3><div data-w="sigmaVs" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Ressonância do complexo σ</h3><div data-w="sigmaRes"></div>
+    <div class="note err"><b class="t">Erro comum</b>Desenhar o complexo σ ainda como aromático, ou tratar as três formas como três intermediários diferentes. É <b>um</b> intermediário, não aromático, com a carga distribuída em orto e para ao C sp³.</div></div>
+  <div class="block"><h3 class="block-title">Restauração da aromaticidade</h3><div data-w="restore" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>A restauração da aromaticidade fornece forte força motriz para a desprotonação.</div></div>
+</section>
+
+<!-- 6 -->
+<section class="section" id="energia" data-title="Perfil Energético">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Perfil energético da SEA</h2><p class="lead">Reagentes → ET₁ → complexo σ → ET₂ → produtos. Arraste o cursor: estrutura 2D, modelo 3D e aromaticidade acompanham.</p></div></div>
+  <div class="block"><div data-w="energySync" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>A formação do complexo σ exige perder a estabilização aromática: custo energético alto (ET₁, normalmente a maior barreira). Na etapa seguinte a aromaticidade é restaurada e a energia cai. Evidência: na nitração, kH/kD ≈ 1 — a ligação C–H não se rompe na etapa lenta.</div>
+    <div class="note quick" data-q="Qual etapa costuma ter a maior barreira na SEA?" data-o="desprotonação;formação do complexo σ;geração do catalisador" data-a="1" data-e="Perda temporária da aromaticidade."></div></div>
+</section>
+
+<!-- 7 -->
+<section class="section" id="halogenacao" data-title="Halogenação">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Halogenação</h2><p class="lead">Br₂/FeBr₃ → bromobenzeno · Cl₂/FeCl₃ (ou AlCl₃) → clorobenzeno.</p></div></div>
+  <div class="block"><h3 class="block-title">Por que Br₂ sozinho não basta?</h3><div data-w="genBrom"></div>
+    <div class="note care"><b class="t">Cuidado</b>O FeBr₃ (ácido de Lewis) recebe um par do Br₂ e polariza a ligação Br–Br, gerando uma espécie bromante fortemente eletrofílica. Não se deve imaginar Br⁺ livre e isolado em solução.</div></div>
+  <div class="block"><h3 class="block-title">Mecanismo da bromação (2D + 3D)</h3><div data-w="mechBrom" data-3d></div></div>
+</section>
+
+<!-- 8 -->
+<section class="section" id="nitracao" data-title="Nitração">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Nitração</h2><p class="lead">HNO₃ + H₂SO₄ → NO₂⁺ (íon nitrônio) → nitrobenzeno.</p></div></div>
+  <div class="block"><h3 class="block-title">Formação do íon nitrônio</h3><div class="grid2"><div data-w="genNitr"></div><div data-w="nitronium3d" data-3d></div></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo da nitração</h3><div data-w="mechNitr" data-3d></div>
+    <div class="note quick" data-q="Qual é o eletrófilo efetivo da nitração?" data-o="NO₃⁻;HNO₃;NO₂⁺;H₂SO₄" data-a="2" data-e="NO₂⁺, linear."></div></div>
+</section>
+
+<!-- 9 -->
+<section class="section" id="sulfonacao" data-title="Sulfonação">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Sulfonação</h2><p class="lead">SO₃/H₂SO₄ (ácido sulfúrico fumegante) → ácido benzenossulfônico.</p></div></div>
+  <div class="block"><h3 class="block-title">A espécie sulfonante</h3><div class="grid2"><div data-w="genSulf"></div><div data-w="so3" data-3d></div></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="mechSulf" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Reversibilidade</h3><div data-w="sulfRev"></div>
+    <div class="note key"><b class="t">Conceito importante</b>A sulfonação pode ser <b>reversível</b>. Isso permite usar –SO₃H como <b>grupo bloqueador temporário</b> (ver Planejamento Sintético).</div></div>
+</section>
+
+<!-- 10 -->
+<section class="section" id="alquilacao" data-title="Alquilação de Friedel–Crafts">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Alquilação de Friedel–Crafts</h2><p class="lead">Ar–H + R–X / AlCl₃ → Ar–R. O AlCl₃ gera um eletrófilo carbônico com forte caráter carbocatiônico.</p></div></div>
+  <div class="block"><h3 class="block-title">Ativação do haleto</h3><div data-w="genAlq"></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="mechAlq" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Rearranjos</h3><div data-w="rearrange"></div>
+    <div class="note err"><b class="t">Erro comum</b>Esperar sempre o produto “pretendido”: a alquilação de Friedel–Crafts pode sofrer <b>rearranjos</b> (migração de hidreto ou alquila) e <b>polialquilação</b>.</div></div>
+  <div class="block"><h3 class="block-title">Polialquilação</h3><div data-w="polyalk"></div></div>
+  <div class="block"><h3 class="block-title">Limitações</h3>
+    <ul class="limits"><li><b>Anéis fortemente desativados</b> (–NO₂, –CN, –COR, –SO₃H…) geralmente não reagem.</li><li><b>Rearranjos</b> do eletrófilo carbocatiônico.</li><li><b>Polialquilação</b> (o produto é mais reativo).</li><li><b>Grupos básicos</b> (–NH₂, –NHR, –NR₂) complexam o AlCl₃.</li><li><b>Haletos de vinila e de arila</b> não geram o eletrófilo adequadamente.</li></ul>
+    <p class="hint3">Tendências gerais: há exceções e variantes (outros catalisadores, alcenos/álcoois como fonte de carbocátion).</p></div>
+</section>
+
+<!-- 11 -->
+<section class="section" id="acilacao" data-title="Acilação de Friedel–Crafts">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Acilação de Friedel–Crafts</h2><p class="lead">Ar–H + RCOCl / AlCl₃ → Ar–COR, via <b>íon acílio</b> R–C≡O⁺ ↔ R–C⁺=O.</p></div></div>
+  <div class="block"><h3 class="block-title">Formação do íon acílio</h3><div data-w="genAcil"></div></div>
+  <div class="block"><h3 class="block-title">Íon acílio</h3><div data-w="acylium" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="mechAcil" data-3d></div>
+    <div class="cmp2"><div class="chcard"><h4>Sem rearranjo</h4><p>O íon acílio é estabilizado por ressonância e não sofre os rearranjos carbocatiônicos típicos de algumas alquilações.</p></div><div class="chcard"><h4>Sem poliacilação importante</h4><p>O grupo –COR retira densidade (−I, −R): o produto é <b>menos</b> reativo que o substrato — o oposto do grupo alquila.</p></div></div></div>
+  <div class="block"><h3 class="block-title">Alquilação × acilação</h3><div data-w="fcTable"></div></div>
+  <div class="block"><h3 class="block-title">Acilação + redução</h3><div data-w="acylRed"></div></div>
+</section>
+
+<!-- 12 -->
+<section class="section" id="substituidos" data-title="Benzenos Substituídos">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>O que acontece quando o benzeno já possui um substituinte?</h2><p class="lead">Todos reagem com a mesma velocidade? O novo substituinte entra em orto, meta ou para?</p></div></div>
+  <div class="block"><div data-w="secondQ"></div></div>
+  <div class="block"><h3 class="block-title">Duas consequências de um substituinte</h3><div data-w="twoEffects"></div></div>
+</section>
+
+<!-- 13 -->
+<section class="section" id="ativadores" data-title="Ativadores e Desativadores">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Grupos ativadores e desativadores</h2><p class="lead"><b>Ativadores</b> aumentam a velocidade da SEA em relação ao benzeno (doam densidade / estabilizam o complexo σ). <b>Desativadores</b> diminuem (retiram densidade / desestabilizam o complexo σ).</p></div></div>
+  <div class="block"><h3 class="block-title">Escala qualitativa de reatividade</h3><div data-w="reactScale"></div></div>
+  <div class="block"><h3 class="block-title">Matriz efeito × orientação</h3><div data-w="matrix"></div></div>
+</section>
+
+<!-- 14 -->
+<section class="section" id="inducao" data-title="Efeito Indutivo">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Efeito indutivo</h2><p class="lead">Transmitido pelas ligações <b>σ</b>, por diferença de eletronegatividade. +I: doa (alquilas); −I: retira (halogênios, CF₃, NR₃⁺, grupos com átomos eletronegativos).</p></div></div>
+  <div class="block"><div data-w="inductive" data-3d></div></div>
+</section>
+
+<!-- 15 -->
+<section class="section" id="ressonancia" data-title="Efeito de Ressonância">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Efeito de ressonância</h2><p class="lead">Transmitido por <b>conjugação</b> com o sistema π. +R: par isolado conjugado (–OH, –OR, –NH₂, –NHR, –NR₂). −R: grupo π aceptor (–NO₂, –CHO, –COR, –COOH, –COOR, –CONH₂, –CN, –SO₃H).</p></div></div>
+  <div class="block"><h3 class="block-title">Formas de ressonância substituinte–anel</h3><div data-w="groundRes"></div></div>
+  <div class="block"><h3 class="block-title">Mapas de densidade: anisol × benzeno × nitrobenzeno</h3><div data-w="espCompare" data-3d></div></div>
+</section>
+
+<!-- 16 -->
+<section class="section" id="orto" data-title="Diretores Orto/Para">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Por que doadores dirigem orto/para?</h2><p class="lead">Compare os complexos σ dos ataques orto, meta e para: nos ataques o/p, o substituinte fornece estabilização adicional por ressonância.</p></div></div>
+  <div class="block"><h3 class="block-title">Comparador de complexos σ</h3><div data-w="cmpOCH3"></div>
+    <div class="note key"><b class="t">Estabilização extra</b>No ataque orto ou para, uma forma canônica tem a carga + no carbono ligado ao heteroátomo; o par isolado forma <b>X⁺=C</b> — contribuinte adicional com octetos completos. No ataque meta isso não aparece.</div></div>
+  <div class="block"><h3 class="block-title">Diagramas de energia orto/meta/para</h3><div data-w="pathOMe"></div></div>
+  <div class="block"><h3 class="block-title">Diretores orto/para</h3><div data-w="opTable"></div>
+    <div class="note"><b class="t">Grupos alquila</b>–CH₃, –R: ativação relativamente moderada por <b>hiperconjugação</b> e <b>efeito indutivo doador</b>; no ataque o/p, uma forma tem a carga + num carbono terciário ligado ao alquila.</div></div>
+</section>
+
+<!-- 17 -->
+<section class="section" id="meta" data-title="Diretores Meta">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>Por que muitos grupos retiradores dirigem meta?</h2><p class="lead">Nitrobenzeno: nos ataques orto e para, um contribuinte coloca a carga + no carbono ligado ao N⁺ — cargas positivas vizinhas, muito desfavorável. No ataque meta isso nunca acontece.</p></div></div>
+  <div class="block"><h3 class="block-title">Comparador de complexos σ</h3><div data-w="cmpNO2"></div>
+    <div class="note err"><b class="t">Erro comum</b>Meta não é favorecido porque “tem menos carga” de forma genérica. A orientação vem da comparação da estabilidade dos intermediários/caminhos possíveis: <b>meta é o menos desfavorecido</b> (todos são mais lentos que no benzeno).</div></div>
+  <div class="block"><h3 class="block-title">Diagrama de energia</h3><div data-w="pathNO2"></div></div>
+  <div class="block"><h3 class="block-title">Diretores meta</h3><div data-w="metaTable"></div></div>
+</section>
+
+<!-- 18 -->
+<section class="section" id="halogenios" data-title="O Caso Especial dos Halogênios">
+  <div class="section-head"><div><span class="kicker">Módulo 18</span><h2>O caso especial dos halogênios</h2><p class="lead">F, Cl, Br, I: <b>desativadores, mas diretores orto/para</b>.</p></div></div>
+  <div class="block"><div data-w="halogen"></div></div>
+  <div class="block"><h3 class="block-title">Complexos σ do clorobenzeno</h3><div data-w="cmpCl"></div></div>
+  <div class="block"><div data-w="pathCl"></div>
+    <div class="note err"><b class="t">Erro comum · ativação ≠ orientação</b>Um grupo ser diretor orto/para não significa que ele ativa o anel. Halogênios são <b>desativadores + orto/para diretores</b>.</div>
+    <div class="note quick" data-q="O clorobenzeno, comparado ao benzeno, em SEA:" data-o="reage mais rápido, orto/para;reage mais devagar, orto/para;reage mais devagar, meta" data-a="1" data-e="−I desativa; +R orienta o/p."></div></div>
+</section>
+
+<!-- 19 -->
+<section class="section" id="regio" data-title="Regiosseletividade">
+  <div class="section-head"><div><span class="kicker">Módulo 19</span><h2>Regiosseletividade nasce da estabilidade relativa dos caminhos</h2></div></div>
+  <div class="block"><div class="centralphrase">Orto, meta e para não são regras arbitrárias: refletem diferenças de energia entre os intermediários e estados de transição correspondentes.</div>
+    <h3 class="block-title">Escolha o substituinte</h3><div data-w="pathAny"></div></div>
+  <div class="block"><h3 class="block-title">Raciocínio (em vez de tabela decorada)</h3>
+    <ol class="flowv reasoning"><li>Qual substituinte já existe?</li><li>Ele doa ou retira densidade eletrônica?</li><li>Por indução, ressonância ou ambos?</li><li>O anel fica mais ou menos reativo?</li><li>Como são os complexos σ orto, meta e para?</li><li>Qual caminho é mais estabilizado?</li><li>Há efeito estérico relevante?</li><li class="arom">Qual produto é majoritário?</li></ol>
+    <div class="centralphrase small">estrutura eletrônica → estabilidade dos intermediários → energia de ativação → velocidade + regiosseletividade</div></div>
+</section>
+
+<!-- 20 -->
+<section class="section" id="esterico" data-title="Efeito Estérico">
+  <div class="section-head"><div><span class="kicker">Módulo 20</span><h2>Orto × para: efeito estérico</h2><p class="lead">Mesmo quando o grupo dirige orto/para, o volume do substituinte (e do eletrófilo) pode favorecer relativamente o produto <b>para</b>.</p></div></div>
+  <div class="block"><div data-w="steric" data-3d></div></div>
+</section>
+
+<!-- 21 -->
+<section class="section" id="dissubstituidos" data-title="Anéis Dissubstituídos">
+  <div class="section-head"><div><span class="kicker">Módulo 21</span><h2>E quando já existem dois substituintes?</h2><p class="lead"><b>Diretores concordantes</b>: os dois grupos apontam para as mesmas posições — previsão relativamente simples.</p></div></div>
+  <div class="block"><div data-w="disubConc"></div></div>
+</section>
+
+<!-- 22 -->
+<section class="section" id="conflito" data-title="Conflito entre Diretores">
+  <div class="section-head"><div><span class="kicker">Módulo 22</span><h2>Conflito entre diretores</h2><p class="lead">Avalie: força ativadora/desativadora de cada grupo, qual é o mais ativador, efeito estérico e posições disponíveis.</p></div></div>
+  <div class="block"><div data-w="disubConf"></div>
+    <div class="note care"><b class="t">Regra prática (não absoluta)</b>Em muitos casos, o grupo que <b>mais ativa</b> o anel domina a orientação; a previsão deve considerar toda a estrutura.</div></div>
+  <div class="block"><h3 class="block-title">Posição fortemente congestionada</h3><div data-w="congested" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Anéis fortemente desativados e Friedel–Crafts</h3><p>Nitrobenzeno, benzonitrila, acetofenona: a Friedel–Crafts geralmente não funciona adequadamente.</p>
+    <h3 class="block-title">Avançado: anilina e ácidos de Lewis</h3><div data-w="anilineAlCl3"></div>
+    <h3 class="block-title">Proteção do grupo amino</h3><div data-w="protect"></div></div>
+</section>
+
+<!-- 23 -->
+<section class="section" id="sintese" data-title="Planejamento Sintético">
+  <div class="section-head"><div><span class="kicker">Módulo 23</span><h2>Em que ordem devo introduzir os substituintes?</h2><p class="lead">A ordem determina a <b>posição</b>, a <b>reatividade</b> e a <b>viabilidade</b> de cada etapa.</p></div></div>
+  <div class="block"><h3 class="block-title">Planejador: escolha a sequência</h3><div data-w="planner"></div></div>
+  <div class="block"><h3 class="block-title">Friedel–Crafts + redução</h3><div data-w="acylRed"></div></div>
+  <div class="block"><h3 class="block-title">Grupo bloqueador sulfônico</h3><div data-w="blocking"></div></div>
+</section>
+
+<!-- 24 -->
+<section class="section" id="mapareacoes" data-title="Mapa Geral das SEA">
+  <div class="section-head"><div><span class="kicker">Módulo 24</span><h2>Mapa geral das reações do benzeno</h2><p class="lead">Clique em cada reação: eletrófilo, condições, limitações e produto.</p></div></div>
+  <div class="block"><div data-w="rxMap"></div></div>
+  <div class="block"><h3 class="block-title">Comparador de reações</h3><div data-w="rxCompare"></div></div>
+  <div class="block"><h3 class="block-title">Tabela mestre das reações</h3><div data-w="masterTable"></div></div>
+</section>
+
+<!-- 25 -->
+<section class="section" id="lab3d" data-title="Laboratório Aromático 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 25</span><h2>Laboratório aromático 3D</h2><p class="lead">Gire, aproxime, alterne bola-vareta/preenchimento, orbitais p, nuvem π, mapa de densidade e posições orto/meta/para. Clique nas posições do anel.</p></div></div>
+  <div class="block"><div data-w="lab3d" data-3d></div>
+    <div class="note care"><b class="t">Mapas eletrostáticos</b>Os mapas são <b>qualitativos</b> e servem de apoio visual. A regiosseletividade deve ser explicada pela energia dos caminhos (complexos σ), não pela cor de um mapa estático.</div></div>
+</section>
+
+<!-- 26 -->
+<section class="section" id="simregio" data-title="Simulador de Regiosseletividade">
+  <div class="section-head"><div><span class="kicker">Módulo 26</span><h2>Simulador de regiosseletividade</h2><p class="lead">Observe → preveja → justifique → teste → compare.</p></div></div>
+  <div class="block"><h3 class="block-title">Simulador de substituintes</h3><div data-w="subSim" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Onde ocorrerá a nova substituição?</h3><div data-w="regioSim"></div></div>
+  <div class="block"><h3 class="block-title">Comparador de complexos σ</h3><div data-w="cmpAny"></div></div>
+</section>
+
+<!-- 27 -->
+<section class="section" id="simmec" data-title="Simulador de Mecanismos">
+  <div class="section-head"><div><span class="kicker">Módulo 27</span><h2>Simulador de mecanismos</h2><p class="lead">Identifique o eletrófilo, desenhe as setas curvas, construa o complexo σ e suas formas de ressonância, remova o H e restaure a aromaticidade. Setas mecanisticamente incorretas não são aceitas.</p></div></div>
+  <div class="block"><div data-w="mechSim" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Modo “Restaure a aromaticidade” (3D)</h3><div data-w="restore" data-3d></div></div>
+</section>
+
+<!-- 28 -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 28</span><h2>Exercícios resolvidos</h2><p class="lead">15 níveis, 38 exercícios. Tente resolver primeiro; depois a dica e a resolução passo a passo.</p></div></div>
+  <div class="block"><div class="chips" data-w="levelChips"></div><div data-w="solved"></div></div>
+</section>
+
+<!-- 29 -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 29</span><h2>Exercícios propostos</h2><p class="lead">70 exercícios: 20 fáceis, 30 intermediários e 20 avançados (eletrófilos, mecanismo, ativação, orientação, Friedel–Crafts, síntese, “Detecte o erro” e arrastar e soltar). <button class="btn sm" type="button" data-action="redo">↺ Refazer todos</button></p></div></div>
+  <nav class="subnav"><a href="#prop-easy">Fáceis</a><a href="#prop-mid">Intermediários</a><a href="#prop-hard">Avançados</a></nav>
+  <div class="block">
+    <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+    <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+    <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+  </div>
+</section>
+
+<!-- 30 -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 30</span><h2>Quiz final</h2><p class="lead">40 questões sorteadas: mecanismo, energia, halogenação, nitração, sulfonação, Friedel–Crafts, efeitos eletrônicos, orientação, múltiplos substituintes e síntese.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">Modo desafio <span class="tag">pontos · sequência</span></h3><div data-w="challenge"></div></div>
+</section>
+
+<!-- 31 -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 31</span><h2>Mapa conceitual</h2></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block"><h3 class="block-title">Resumo do mecanismo geral</h3>
+    <ol class="flowv big"><li class="step">GERAR ELETRÓFILO</li><li>ANEL π ATACA</li><li class="non">COMPLEXO σ</li><li class="non">PERDA TEMPORÁRIA DA AROMATICIDADE</li><li class="step">DESPROTONAÇÃO</li><li class="arom">RESTAURAÇÃO DA AROMATICIDADE</li><li class="arom">PRODUTO SUBSTITUÍDO</li></ol></div>
+  <div class="block"><h3 class="block-title">Resumo de regiosseletividade</h3>
+    <div class="grid3"><div class="clscard arom"><h4>Grupo doador</h4><p>estabiliza especialmente os caminhos orto/para</p><b>↓ orto/para diretor</b></div><div class="clscard anti"><h4>Grupo retirador</h4><p>desestabiliza especialmente os caminhos orto/para (em muitos casos)</p><b>↓ meta diretor</b></div><div class="clscard non"><h4>Halogênio</h4><p>−I desativa · +R favorece orto/para</p><b>↓ desativador orto/para diretor</b></div></div></div>
+  <div class="block"><h3 class="block-title">Tabela mestre de orientação (clique para a justificativa)</h3><div data-w="orientTable"></div></div>
+  <div class="block"><h3 class="block-title">Tabela mestre das reações</h3><div data-w="masterTable"></div></div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica II</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

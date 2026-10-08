@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alcenos e Alcinos · Química Orgânica I</title>
+  <meta name="description" content="Plataforma interativa de Química Orgânica I sobre alcenos e alcinos: estrutura, nomenclatura, estabilidade, isomeria E/Z, reações de adição, regio e estereoquímica, mecanismos em 3D, simuladores, exercícios e quiz.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><line x1="8" y1="15" x2="22" y2="15" stroke="#2fd4f5" stroke-width="2.4"/><line x1="8" y1="19" x2="22" y2="19" stroke="#2fd4f5" stroke-width="2.4"/><line x1="18" y1="25" x2="33" y2="25" stroke="#3ddc97" stroke-width="2"/><line x1="18" y1="28.5" x2="33" y2="28.5" stroke="#3ddc97" stroke-width="2"/><line x1="18" y1="32" x2="33" y2="32" stroke="#3ddc97" stroke-width="2"/></svg>
+      <span>Alcenos e Alcinos<small>Química Orgânica I</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#estrutura-alcenos">Estrutura de Alcenos</a></li>
+        <li><a href="#nomenclatura-alcenos">Nomenclatura de Alcenos</a></li>
+        <li><a href="#estabilidade">Estabilidade e Isomeria</a></li>
+        <li><a href="#reatividade">Reatividade da π</a></li>
+        <li><a href="#reacoes-alcenos">Reações de Alcenos</a></li>
+        <li><a href="#estrutura-alcinos">Estrutura de Alcinos</a></li>
+        <li><a href="#nomenclatura-alcinos">Nomenclatura de Alcinos</a></li>
+        <li><a href="#acidez">Acidez de Alcinos</a></li>
+        <li><a href="#reacoes-alcinos">Reações de Alcinos</a></li>
+        <li><a href="#comparacao">Alcenos × Alcinos</a></li>
+        <li><a href="#laboratorio">Laboratório 3D</a></li>
+        <li><a href="#simulador">Simulador</a></li>
+        <li><a href="#resolvidos">Resolvidos</a></li>
+        <li><a href="#propostos">Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ===================================================== 1 INÍCIO -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica I · hidrocarbonetos insaturados</span>
+      <h1>Alcenos e Alcinos: <span class="g">Estrutura, Reatividade e Reações</span></h1>
+      <p class="sub">Explore ligações π, visualize mecanismos em 3D e aprenda a prever produtos de reações orgânicas.</p>
+      <div class="cta"><a class="btn primary lg" href="#estrutura-alcenos">Começar →</a><a class="btn lg" href="#laboratorio">Explorar em 3D</a></div>
+      <p class="eq">estrutura → mecanismo → intermediário → regioquímica → estereoquímica → produto</p>
+    </div>
+    <div data-w="hero" data-3d class="grid2" style="gap:12px"></div>
+  </div>
+  <div class="modules">
+    <a href="#estrutura-alcenos"><b>Estrutura de alcenos</b><span>sp², orbitais p, ligação π, rotação restrita</span></a>
+    <a href="#nomenclatura-alcenos"><b>Nomenclatura</b><span>cadeia principal, numeração, dienos, cicloalcenos</span></a>
+    <a href="#estabilidade"><b>Estabilidade e isomeria</b><span>cis/trans, E/Z, CIP, calores de hidrogenação</span></a>
+    <a href="#reatividade"><b>Reatividade da π</b><span>por que alcenos reagem com eletrófilos</span></a>
+    <a href="#reacoes-alcenos"><b>Reações de alcenos</b><span>15 reações com mecanismo, 3D e mapa</span></a>
+    <a href="#estrutura-alcinos"><b>Alcinos</b><span>sp, duas π, nomenclatura, acidez, acetiletos</span></a>
+    <a href="#reacoes-alcinos"><b>Reações de alcinos</b><span>Lindlar × Na/NH₃, hidratações, tautomeria</span></a>
+    <a href="#laboratorio"><b>Laboratório 3D</b><span>11 moléculas, orbitais, ângulos, σ/π</span></a>
+    <a href="#simulador"><b>Simulador</b><span>preveja produtos, monte mecanismos, compare</span></a>
+    <a href="#resolvidos"><b>Exercícios</b><span>28 resolvidos e 50 propostos</span></a>
+    <a href="#quiz"><b>Quiz e desafio</b><span>30 questões sorteadas + "Qual é o produto?"</span></a>
+    <a href="#mapa"><b>Mapa conceitual</b><span>tudo conectado</span></a>
+  </div>
+</section>
+
+<!-- ===================================================== 2 ESTRUTURA DE ALCENOS -->
+<section class="section" id="estrutura-alcenos" data-title="Estrutura de Alcenos">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>Estrutura dos alcenos</h2><p class="lead">Alcenos são hidrocarbonetos com ao menos uma ligação dupla C=C (fórmula geral dos acíclicos com uma dupla: C<sub>n</sub>H<sub>2n</sub>).</p></div></div>
+  <nav class="subnav"><a href="#est-revisao">Revisão</a><a href="#est-3d">Eteno em 3D</a><a href="#est-rot">Rotação restrita</a></nav>
+  <div class="block" id="est-revisao">
+    <div class="formula"><span class="big">C=C = 1 ligação σ + 1 ligação π</span></div>
+    <div class="grid3">
+      <div class="defbox"><b>Carbono sp²</b>três orbitais híbridos sp² (no plano, 120°) + um orbital p não hibridizado, perpendicular ao plano.</div>
+      <div class="defbox o"><b>Ligação σ</b>sobreposição <b>frontal</b> sp²–sp² ao longo do eixo C–C. Forte (≈ 350 kJ/mol).</div>
+      <div class="defbox m"><b>Ligação π</b>sobreposição <b>lateral</b> dos orbitais p paralelos: densidade acima e abaixo do plano. Mais fraca (≈ 270 kJ/mol).</div>
+    </div>
+    <div class="note key"><b class="t">Revisão rápida</b>Hibridização sp³ → 109,5°; sp² → 120°; sp → 180°. Quanto maior o caráter s, mais curta a ligação e mais próximos do núcleo ficam os elétrons.</div>
+  </div>
+  <div class="block" id="est-3d">
+    <h3 class="block-title">Eteno: geometria trigonal planar e orbitais p <span class="tag">3D</span></h3>
+    <div data-w="ethene3d" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>Os seis átomos do eteno estão no mesmo plano. Por quê? (Dica: só assim os dois orbitais p ficam paralelos.)</div>
+  </div>
+  <div class="block" id="est-rot">
+    <h3 class="block-title">Por que não há rotação livre em torno da C=C? <span class="tag">animação</span></h3>
+    <div data-w="rotation" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Girar um carbono em relação ao outro desalinha os orbitais p. A 90° a sobreposição é nula: a ligação π estaria <b>rompida</b> (≈ 270 kJ/mol). Por isso cis e trans não se interconvertem à temperatura ambiente → <a href="#estabilidade">isomeria E/Z</a>.</div>
+  </div>
+</section>
+
+<!-- ===================================================== 3 NOMENCLATURA DE ALCENOS -->
+<section class="section" id="nomenclatura-alcenos" data-title="Nomenclatura de Alcenos">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Nomenclatura IUPAC de alcenos</h2><p class="lead">Sufixo <b>-eno</b>; a ligação dupla define a cadeia principal e a numeração.</p></div></div>
+  <div class="block">
+    <ol>
+      <li><b>Cadeia principal</b>: a mais longa que contém <b>os dois carbonos da C=C</b>.</li>
+      <li><b>Numeração</b>: a partir da extremidade que dá o <b>menor localizador à dupla</b> (só depois aos substituintes).</li>
+      <li><b>Localizador da dupla</b>: o menor número dos dois carbonos (ex.: but-<b>2</b>-eno).</li>
+      <li><b>Substituintes</b>: em ordem alfabética, com seus localizadores.</li>
+      <li><b>Mais de uma dupla</b>: dieno, trieno (com "a" de eufonia: hexa-1,3-dieno).</li>
+      <li><b>Cicloalcenos</b>: os carbonos da dupla são C1 e C2; numere para dar menores números aos substituintes.</li>
+    </ol>
+    <div class="note err"><b class="t">Erro comum</b>Escolher a cadeia mais longa ignorando a dupla. A cadeia principal precisa conter a ligação dupla (regras IUPAC tradicionais, usadas em Química Orgânica I).</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Treino: clique na cadeia, numere e monte o nome <span class="tag">interativo</span></h3>
+    <div data-w="nomAlk"></div>
+  </div>
+</section>
+
+<!-- ===================================================== 4 ESTABILIDADE E ISOMERIA -->
+<section class="section" id="estabilidade" data-title="Estabilidade e Isomeria">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Isomeria geométrica e estabilidade</h2><p class="lead">A rotação restrita gera isômeros cis/trans (E/Z); o grau de substituição determina a estabilidade.</p></div></div>
+  <nav class="subnav"><a href="#iso-ct">cis/trans</a><a href="#iso-ez">E/Z</a><a href="#iso-stab">Estabilidade</a><a href="#iso-hid">Calores de hidrogenação</a></nav>
+  <div class="block" id="iso-ct">
+    <h3 class="block-title">cis-2-buteno × trans-2-buteno <span class="tag">3D</span></h3>
+    <div data-w="cistrans" data-3d></div>
+    <div class="grid2">
+      <div class="defbox"><b>cis/trans</b>use quando os dois carbonos da dupla têm um substituinte em comum (ou H e H): cis = mesmo lado; trans = lados opostos.</div>
+      <div class="defbox o"><b>E/Z</b>sistema geral: em cada carbono, defina o grupo de <b>maior prioridade (CIP)</b>; Z (zusammen) = mesmo lado; E (entgegen) = lados opostos.</div>
+    </div>
+    <div class="note err"><b class="t">Erro comum</b>Achar que cis = Z sempre. Em geral coincidem em alcenos simples, mas não necessariamente: E/Z depende das prioridades CIP, não da "semelhança" dos grupos.</div>
+  </div>
+  <div class="block" id="iso-ez">
+    <h3 class="block-title">E ou Z? <span class="tag">atividade</span></h3>
+    <ol><li>Em cada carbono da dupla, compare os átomos ligados diretamente: maior número atômico = maior prioridade.</li><li>Empate? Compare os conjuntos de átomos seguintes até o <b>primeiro ponto de diferença</b>.</li><li>Ligações múltiplas contam como átomos duplicados.</li></ol>
+    <div data-w="ez"></div>
+    <div class="note err"><b class="t">Erro comum</b>Alcinos não apresentam isomeria E/Z na ligação tripla, porque os carbonos sp apresentam geometria linear.</div>
+  </div>
+  <div class="block" id="iso-stab">
+    <h3 class="block-title">Estabilidade relativa</h3>
+    <div class="formula">tetrassubstituído &gt; trissubstituído &gt; dissubstituído &gt; monossubstituído &gt; eteno<br><small style="color:var(--muted)">dissubstituídos: trans (E) &gt; cis (Z), por repulsão estérica no cis</small></div>
+    <div class="grid3">
+      <div class="defbox"><b>Hiperconjugação</b>ligações σ C–H/C–C dos grupos alquila vizinhos interagem com o sistema π (π*): estabilização.</div>
+      <div class="defbox o"><b>Efeitos eletrônicos</b>carbonos sp² são mais eletronegativos que sp³: ligações C(sp²)–C(sp³) são mais fortes, favorecendo mais grupos alquila na dupla.</div>
+      <div class="defbox m"><b>Impedimento estérico</b>grupos volumosos do mesmo lado (cis) se repelem → isômero cis menos estável.</div>
+    </div>
+    <div data-w="stability"></div>
+  </div>
+  <div class="block" id="iso-hid">
+    <h3 class="block-title">Calores de hidrogenação e estabilidade</h3>
+    <p>alceno <b>menos estável</b> → <b>maior</b> liberação de energia; alceno <b>mais estável</b> → <b>menor</b> liberação. A comparação é válida quando os alcenos dão o <b>mesmo alcano</b>.</p>
+    <div data-w="hydrogLevels"></div>
+    <div class="note quick" data-q="Qual libera mais calor ao ser hidrogenado a butano?" data-o="(E)-but-2-eno;(Z)-but-2-eno;but-1-eno" data-a="2" data-e="O but-1-eno (monossubstituído) é o menos estável: −127 kJ/mol."></div>
+  </div>
+</section>
+
+<!-- ===================================================== 5 REATIVIDADE -->
+<section class="section" id="reatividade" data-title="Reatividade da Ligação π">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Reatividade da ligação π</h2><p class="lead">A ligação π é mais fraca e mais exposta que a σ: os elétrons π atuam como <b>nucleófilo</b> frente a <b>eletrófilos</b>.</p></div></div>
+  <div class="block">
+    <div class="grid3">
+      <div class="defbox"><b>Elétrons expostos</b>a densidade π fica acima e abaixo do plano, longe dos núcleos: acessível a eletrófilos (H⁺, Br₂, BH₃, Hg²⁺…).</div>
+      <div class="defbox o"><b>Ligação mais fraca</b>romper a π custa menos que romper a σ; formar duas novas σ libera mais energia → adições são favoráveis (ΔH &lt; 0).</div>
+      <div class="defbox m"><b>Adição</b>a π se rompe e formam-se duas novas ligações σ: C=C + A–B → A–C–C–B.</div>
+    </div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Esquema geral de adição <span class="tag">setas curvas</span></h3>
+    <div data-w="genAdd"></div>
+    <div class="legend"><span><i style="background:#2fd4f5"></i>elétrons π (nucleófilo)</span><span><i style="background:#ff9f43"></i>eletrófilo</span><span><i style="background:#ff4fa3"></i>grupo adicionado</span></div>
+    <div class="note care"><b class="t">Cuidado</b>Este é um esquema <b>geral</b>. O caminho real depende do reagente: carbocátion (HX, H₃O⁺), íon halônio (X₂), íon mercurínio (Hg²⁺), estado de transição concertado (BH₃, perácidos), superfície metálica (H₂/Pd). Cada caminho explica uma regio e estereoquímica diferentes.</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Intermediário × estado de transição</h3>
+    <div class="grid2"><div class="defbox"><b>Intermediário</b>mínimo local de energia, com tempo de vida finito (carbocátion, bromônio, enol).</div><div class="defbox o"><b>Estado de transição (‡)</b>máximo de energia; ligações parciais; não isolável.</div></div>
+    <div data-w="energyMk"></div>
+  </div>
+</section>
+
+<!-- ===================================================== 6 REAÇÕES DE ALCENOS -->
+<section class="section" id="reacoes-alcenos" data-title="Reações de Alcenos">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Reações de alcenos</h2><p class="lead">Para cada reação: mecanismo → intermediário → regioquímica → estereoquímica → produto.</p></div></div>
+  <nav class="subnav"><a href="#hidrogenacao">Hidrogenação</a><a href="#halogenacao">Halogenação</a><a href="#hidrohalogenacao">HX</a><a href="#markovnikov">Markovnikov</a><a href="#rearranjos">Rearranjos</a><a href="#hidratacao">H₃O⁺</a><a href="#oximercuracao">Oximercuração</a><a href="#hidroboracao">Hidroboração</a><a href="#hidratacoes">Comparação</a><a href="#haloidrina">Haloidrina</a><a href="#epoxidacao">Epoxidação</a><a href="#dihidroxilacao">Di-hidroxilação</a><a href="#ozonolise">Ozonólise</a><a href="#permanganato">KMnO₄</a><a href="#polimeros">Polímeros</a><a href="#mapa-alcenos">Mapa</a></nav>
+
+  <div class="block" id="hidrogenacao">
+    <h3 class="block-title">Hidrogenação catalítica <span class="tag">syn</span></h3>
+    <div class="formula">alceno + H₂ <small>(Pd, Pt ou Ni)</small> → alcano</div>
+    <div data-w="hydrog3d" data-3d></div>
+    <div class="figs" data-fig="hydrogCyclo"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>H₂ é adsorvido e dissociado na superfície; o alceno adsorve por uma face e recebe os dois H dessa mesma face → <b>adição syn</b>. O catalisador abaixa a energia de ativação, mas não altera o ΔH.</div>
+    <div data-w="energyCat"></div>
+  </div>
+
+  <div class="block" id="halogenacao">
+    <h3 class="block-title">Halogenação (Br₂, Cl₂) via íon halônio <span class="tag">anti</span></h3>
+    <div data-w="brom3d" data-3d></div>
+    <div data-w="bromPlayer"></div>
+    <div class="note err"><b class="t">Erro comum</b>Desenhar um carbocátion livre na bromação. O intermediário é o <b>íon bromônio</b> em ponte: ele bloqueia uma face, explica a adição <b>anti</b> e a ausência de rearranjos.</div>
+    <div class="grid2" style="align-items:center">
+      <div class="note care" style="margin:0"><b class="t">Teste de insaturação</b>Uma solução de Br₂ (castanho-avermelhada) descora ao reagir com alcenos ou alcinos; alcanos não reagem nas mesmas condições (no escuro). É só um <b>indício qualitativo</b> — não substitui o estudo do mecanismo.</div>
+      <div data-w="bromTest"></div>
+    </div>
+  </div>
+
+  <div class="block" id="hidrohalogenacao">
+    <h3 class="block-title">Hidro-halogenação (HCl, HBr, HI) <span class="tag">Markovnikov</span></h3>
+    <ol><li>Protonação da dupla (etapa lenta) → carbocátion.</li><li>Ataque do haleto ao carbocátion.</li></ol>
+    <div data-w="hbrPlayer"></div>
+    <div class="note err"><b class="t">Erro comum</b>Markovnikov não é uma regra independente do mecanismo. A orientação do produto decorre da diferença de estabilidade entre possíveis intermediários ou estados de transição.</div>
+  </div>
+
+  <div class="block" id="markovnikov">
+    <h3 class="block-title">Onde entra o H? Onde entra o X?</h3>
+    <div class="figs" data-fig="cations"></div>
+    <div data-w="energyMk2"></div>
+    <div data-w="markov"></div>
+  </div>
+
+  <div class="block" id="rearranjos">
+    <h3 class="block-title">Rearranjos em hidro-halogenação</h3>
+    <h4>Migração de hidreto: 3-metilbut-1-eno + HBr</h4>
+    <div data-w="rearrH"></div>
+    <div class="figs" data-fig="rearrCompare"></div>
+    <h4>Migração de metila: 3,3-dimetilbut-1-eno + HCl</h4>
+    <div data-w="rearrM"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Carbocátions rearranjam quando um deslocamento 1,2 (H⁻ ou R⁻ com o par de elétrons) gera um cátion mais estável (2° → 3°).</div>
+  </div>
+
+  <div class="block" id="hidratacao">
+    <h3 class="block-title">Hidratação ácido-catalisada <span class="tag">Markovnikov · rearranjo possível</span></h3>
+    <div class="formula">alceno + H₂O <small>(H⁺ cat.)</small> → álcool</div>
+    <div data-w="hydrPlayer"></div>
+  </div>
+
+  <div class="block" id="oximercuracao">
+    <h3 class="block-title">Oximercuração-desmercuração <span class="tag">Markovnikov · sem rearranjo</span></h3>
+    <div data-w="oxyPlayer"></div>
+    <div class="grid3"><div class="defbox"><b>Markovnikov</b>a água ataca o carbono mais substituído do íon mercurínio (maior δ+).</div><div class="defbox o"><b>Sem carbocátion livre</b>o Hg em ponte mantém os dois carbonos ligados ao metal.</div><div class="defbox m"><b>Rearranjos evitados</b>útil quando H₃O⁺ levaria a produto rearranjado.</div></div>
+  </div>
+
+  <div class="block" id="hidroboracao">
+    <h3 class="block-title">Hidroboração-oxidação <span class="tag">anti-Markovnikov + syn</span></h3>
+    <div data-w="hb3d" data-3d></div>
+    <div data-w="hbPlayer"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>B (eletrófilo, orbital vazio) vai para o carbono <b>menos impedido</b>; o estado de transição tem leve δ+ no carbono mais substituído. Concertado → <b>sem carbocátion, sem rearranjo, syn</b>. Na oxidação, o OH ocupa o lugar do B com <b>retenção</b>.</div>
+  </div>
+
+  <div class="block" id="hidratacoes">
+    <h3 class="block-title">Comparação das hidratações <span class="tag">tabela interativa</span></h3>
+    <div data-w="hydrTable"></div>
+  </div>
+
+  <div class="block" id="haloidrina">
+    <h3 class="block-title">Formação de haloidrinas (Br₂/H₂O) <span class="tag">anti</span></h3>
+    <div data-w="halohPlayer"></div>
+    <div class="note care"><b class="t">Cuidado</b>Com água em excesso (solvente), ela compete com o Br⁻ e abre o bromônio pelo carbono mais substituído: OH no carbono mais substituído, Br no menos substituído, anti.</div>
+  </div>
+
+  <div class="block" id="epoxidacao">
+    <h3 class="block-title">Epoxidação com perácidos (mCPBA) <span class="tag">concertada · syn</span></h3>
+    <div data-w="epoxPlayer"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>O oxigênio é transferido em <b>uma etapa</b> (estado de transição "borboleta"): a geometria do alceno é mantida no epóxido (cis → cis).</div>
+  </div>
+
+  <div class="block" id="dihidroxilacao">
+    <h3 class="block-title">Di-hidroxilação syn (OsO₄ ou KMnO₄ diluído/frio) <span class="tag">syn</span></h3>
+    <div data-w="faces3d" data-3d></div>
+    <div data-w="osmPlayer"></div>
+  </div>
+
+  <div class="block" id="ozonolise">
+    <h3 class="block-title">Ozonólise: corte a ligação dupla <span class="tag">clivagem</span></h3>
+    <div data-w="ozPlayer"></div>
+    <div data-w="ozCut"></div>
+  </div>
+
+  <div class="block" id="permanganato">
+    <h3 class="block-title">Oxidação com permanganato</h3>
+    <div class="grid2">
+      <div class="defbox"><b>KMnO₄ diluído, frio, OH⁻</b>di-hidroxilação <b>syn</b> (éster manganato cíclico), como o OsO₄ (rendimentos menores).</div>
+      <div class="defbox o"><b>KMnO₄ concentrado, quente (H₃O⁺)</b><b>clivagem oxidativa</b>: C com H → ácido carboxílico; =CH₂ → CO₂; C sem H → cetona.</div>
+    </div>
+    <div class="figs" data-fig="kmno4"></div>
+  </div>
+
+  <div class="block" id="polimeros">
+    <h3 class="block-title">Polimerização de alcenos</h3>
+    <div data-w="polymer"></div>
+  </div>
+
+  <div class="block" id="mapa-alcenos">
+    <h3 class="block-title">Mapa de reações de alcenos <span class="tag">clique nas setas</span></h3>
+    <div data-w="mapAlkene"></div>
+  </div>
+</section>
+
+<!-- ===================================================== 7 ESTRUTURA DE ALCINOS -->
+<section class="section" id="estrutura-alcinos" data-title="Estrutura de Alcinos">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Estrutura dos alcinos</h2><p class="lead">Ligação tripla C≡C = <b>1 σ + 2 π</b>; carbonos <b>sp</b>, geometria <b>linear</b>.</p></div></div>
+  <div class="block">
+    <div class="grid3"><div class="defbox"><b>Carbono sp</b>dois híbridos sp (180°) + dois orbitais p perpendiculares.</div><div class="defbox o"><b>Duas ligações π</b>formadas por dois pares de orbitais p mutuamente perpendiculares: densidade "cilíndrica" em torno do eixo.</div><div class="defbox m"><b>Comprimento</b>C≡C ≈ 1,20 Å &lt; C=C ≈ 1,34 Å &lt; C–C ≈ 1,54 Å.</div></div>
+    <div data-w="alkyne3d" data-3d></div>
+  </div>
+</section>
+
+<!-- ===================================================== 8 NOMENCLATURA DE ALCINOS -->
+<section class="section" id="nomenclatura-alcinos" data-title="Nomenclatura de Alcinos">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Nomenclatura de alcinos</h2><p class="lead">Sufixo <b>-ino</b>; mesmas regras dos alcenos.</p></div></div>
+  <div class="block">
+    <ul>
+      <li>Cadeia principal: a mais longa contendo a C≡C; menor localizador para a tripla.</li>
+      <li>Mais de uma tripla: <b>-di-ino</b> (hexa-1,5-di-ino).</li>
+      <li>Dupla e tripla: <b>-en-…-ino</b>; menor conjunto de localizadores para as duas; em caso de empate, a <b>dupla</b> recebe o menor número (pent-1-en-4-ino).</li>
+    </ul>
+    <div data-w="nomYne"></div>
+  </div>
+</section>
+
+<!-- ===================================================== 9 ACIDEZ -->
+<section class="section" id="acidez" data-title="Acidez de Alcinos Terminais">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Acidez de alcinos terminais e acetiletos</h2><p class="lead">O H ligado a carbono sp (≡C–H) é muito mais ácido que H em C sp² ou sp³.</p></div></div>
+  <div class="block">
+    <div class="grid3"><div class="defbox"><b>sp³ (25% s)</b>etano, pKa ≈ 50</div><div class="defbox o"><b>sp² (33% s)</b>eteno, pKa ≈ 44</div><div class="defbox m"><b>sp (50% s)</b>etino, pKa ≈ 25</div></div>
+    <p>Mais caráter s → o par de elétrons do ânion fica mais próximo do núcleo → carbânion mais estável → ácido mais forte.</p>
+    <div data-w="pka"></div>
+  </div>
+  <div class="block" id="acetileto">
+    <h3 class="block-title">Formação de acetileto e alquilação (SN2)</h3>
+    <div class="formula">RC≡C–H + NaNH₂ → RC≡C:⁻ Na⁺ + NH₃ &nbsp;&nbsp;·&nbsp;&nbsp; RC≡C:⁻ + R′–X → RC≡C–R′ + X⁻</div>
+    <div data-w="acetPlayer"></div>
+    <div class="note care"><b class="t">Cuidado</b>Acetiletos são bases fortes. Use haletos <b>metílicos ou primários</b>: com secundários e terciários, a <b>E2</b> compete ou predomina.</div>
+    <div class="note key"><b class="t">Conceito-chave</b>A alquilação de acetiletos forma uma nova ligação <b>C–C</b>: é uma ferramenta central de síntese (alongar cadeias).</div>
+  </div>
+</section>
+
+<!-- ===================================================== 10 REAÇÕES DE ALCINOS -->
+<section class="section" id="reacoes-alcinos" data-title="Reações de Alcinos">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Reações de alcinos</h2><p class="lead">Duas ligações π: uma ou duas adições, com controle de estereoquímica e formação de enóis.</p></div></div>
+  <nav class="subnav"><a href="#hidrog-alcino">Hidrogenação</a><a href="#lindlar">Lindlar × Na/NH₃</a><a href="#hx-alcino">HX</a><a href="#hidratacao-alcino">Hidratação</a><a href="#hidroboracao-alcino">Hidroboração</a><a href="#tautomeria">Tautomeria</a><a href="#halogenacao-alcino">Halogenação</a><a href="#clivagem-alcino">Clivagem</a><a href="#mapa-alcinos">Mapa</a></nav>
+  <div class="block" id="hidrog-alcino">
+    <h3 class="block-title">Hidrogenação completa</h3>
+    <div class="figs" data-fig="alkyneH2"></div>
+    <p>Com Pd, Pt ou Ni e excesso de H₂, as <b>duas</b> ligações π são reduzidas (alcino → alceno → alcano); o alceno intermediário não se acumula.</p>
+  </div>
+  <div class="block" id="lindlar">
+    <h3 class="block-title">Lindlar → cis · Na/NH₃ → trans <span class="tag">3D</span></h3>
+    <div data-w="reduction" data-3d></div>
+    <div class="grid2">
+      <div class="defbox" id="nanh3-l"><b>H₂, Pd-Lindlar</b>Pd/CaCO₃ "envenenado" (Pb(OAc)₂, quinolina): reduz alcinos mas não alcenos. Os dois H vêm da superfície → <b>adição syn → alceno Z</b>.</div>
+      <div class="defbox o" id="nanh3"><b>Na ou Li, NH₃(l)</b>transferência de elétrons e prótons em etapas: radical-ânion → radical vinílico → <b>ânion vinílico trans</b> (menos repulsão) → <b>alceno E</b> (adição anti global).</div>
+    </div>
+    <div data-w="dissPlayer"></div>
+    <div class="note err"><b class="t">Erro comum</b>Trocar os dois: Lindlar forma alceno <b>cis</b>; Na/NH₃ forma alceno <b>trans</b>.</div>
+  </div>
+  <div class="block" id="hx-alcino">
+    <h3 class="block-title">Adição de HX</h3>
+    <div class="figs" data-fig="hxAlkyne"></div>
+    <p><b>1 equiv.</b>: haleto vinílico (Markovnikov). <b>2 equiv.</b>: di-haleto <b>geminal</b> — o segundo X entra no carbono que já tem X, pois o cátion ali é estabilizado pelo par livre do halogênio (ressonância).</p>
+  </div>
+  <div class="block" id="hidratacao-alcino">
+    <h3 class="block-title">Hidratação catalisada por Hg²⁺</h3>
+    <div class="figs" data-fig="hydrAlkyne"></div>
+    <p>Adição Markovnikov de água forma um <b>enol</b>, que tautomeriza à <b>cetona</b>. Alcinos terminais dão <b>metilcetonas</b>.</p>
+  </div>
+  <div class="block" id="hidroboracao-alcino">
+    <h3 class="block-title">Hidroboração-oxidação de alcinos</h3>
+    <div class="figs" data-fig="hbAlkyne"></div>
+    <div class="grid2"><div class="defbox"><b>HgSO₄, H₂SO₄, H₂O</b>alcino terminal → <b>metilcetona</b> (Markovnikov)</div><div class="defbox o"><b>(Sia)₂BH ou 9-BBN; H₂O₂, OH⁻</b>alcino terminal → <b>aldeído</b> (anti-Markovnikov). Boranas volumosas param após uma adição.</div></div>
+  </div>
+  <div class="block" id="tautomeria">
+    <h3 class="block-title">Tautomeria ceto-enólica</h3>
+    <div data-w="tautoPlayer"></div>
+    <div data-w="energyTaut"></div>
+    <div class="note err"><b class="t">Erro comum</b>Enol e cetona <b>não</b> são estruturas de ressonância: são tautômeros (isômeros constitucionais em equilíbrio rápido), que diferem na posição de um H e de uma ligação π.</div>
+  </div>
+  <div class="block" id="halogenacao-alcino">
+    <h3 class="block-title">Halogenação de alcinos</h3>
+    <div class="figs" data-fig="halAlkyne"></div>
+    <p>1 equiv. de Br₂ → di-haloalceno (geralmente <b>E</b>, adição anti); excesso → tetra-haloalcano.</p>
+  </div>
+  <div class="block" id="clivagem-alcino">
+    <h3 class="block-title">Clivagem oxidativa de alcinos</h3>
+    <div class="figs" data-fig="cleavAlkyne"></div>
+    <p>O₃ ou KMnO₄ (condições vigorosas) quebram a C≡C: carbonos internos → ácidos carboxílicos; ≡C–H terminal → CO₂.</p>
+  </div>
+  <div class="block" id="mapa-alcinos">
+    <h3 class="block-title">Mapa de reações de alcinos <span class="tag">clique nas setas</span></h3>
+    <div data-w="mapAlkyne"></div>
+  </div>
+</section>
+
+<!-- ===================================================== 11 COMPARAÇÃO -->
+<section class="section" id="comparacao" data-title="Alcenos × Alcinos">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Alcenos × Alcinos</h2></div></div>
+  <div class="block"><div data-w="alkTable"></div></div>
+</section>
+
+<!-- ===================================================== 12 LABORATÓRIO -->
+<section class="section" id="laboratorio" data-title="Laboratório 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Laboratório Molecular 3D</h2><p class="lead">Gire, aproxime, troque a representação, veja orbitais p, destaque σ/π, identifique carbonos sp²/sp e meça ângulos.</p></div></div>
+  <div class="block"><div data-w="lab" data-3d></div></div>
+</section>
+
+<!-- ===================================================== 13 SIMULADOR -->
+<section class="section" id="simulador" data-title="Simulador">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Simulador de reações</h2></div></div>
+  <nav class="subnav"><a href="#sim-prev">Preveja o produto</a><a href="#sim-mec">Monte o mecanismo</a><a href="#sim-tab">Tabela mestre</a><a href="#sim-cmp">Comparador</a></nav>
+  <div class="block" id="sim-prev"><h3 class="block-title">Escolha o substrato + reagente → preveja o produto</h3><div data-w="sim"></div></div>
+  <div class="block" id="sim-mec"><h3 class="block-title">Monte o mecanismo <span class="tag">setas curvas</span></h3><p>Clique na <b>origem</b> dos elétrons (par livre ou ligação) e depois no <b>destino</b>. Em seguida escolha intermediário e produto quando houver.</p><div data-w="puzzles"></div></div>
+  <div class="block" id="sim-tab"><h3 class="block-title">Tabela mestre de reações</h3><div data-w="master"></div></div>
+  <div class="block" id="sim-cmp"><h3 class="block-title">Comparador de reações</h3><div data-w="comparator"></div></div>
+</section>
+
+<!-- ===================================================== 14 RESOLVIDOS -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Exercícios resolvidos</h2><p class="lead">28 exercícios em 7 níveis. Tente antes de abrir a dica e a resolução.</p></div></div>
+  <div class="levels" data-w="levelChips"></div>
+  <div data-w="solved"></div>
+</section>
+
+<!-- ===================================================== 15 PROPOSTOS -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Exercícios propostos</h2><p class="lead">50 exercícios: identificação de produto, escolha de reagentes, síntese, setas curvas, associação, ordenação e "detecte o erro".</p></div><button class="btn sm" type="button" data-action="redo">↺ Refazer exercícios</button></div>
+  <nav class="subnav"><a href="#prop-easy">Fáceis (15)</a><a href="#prop-mid">Intermediários (20)</a><a href="#prop-hard">Avançados (15)</a></nav>
+  <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+  <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+  <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+</section>
+
+<!-- ===================================================== 16 QUIZ -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Quiz final</h2><p class="lead">30 questões sorteadas de todos os temas.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">Modo desafio: Qual é o produto? <span class="tag">tempo + sequência</span></h3><div data-w="challenge"></div></div>
+</section>
+
+<!-- ===================================================== 17 MAPA -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>Mapa conceitual</h2><p class="lead">estrutura → mecanismo → regioquímica → estereoquímica → produto</p></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica I</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

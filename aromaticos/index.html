@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compostos Aromáticos e Aromaticidade · Química Orgânica II</title>
+  <meta name="description" content="Aplicação interativa sobre compostos aromáticos: estrutura do benzeno, ressonância, orbitais p e sistema π em 3D, estabilidade, regra de Hückel, íons e heteroaromáticos, e por que o benzeno prefere substituição a adição (SEA).">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><polygon points="20,7 31.3,13.5 31.3,26.5 20,33 8.7,26.5 8.7,13.5" fill="none" stroke="#e8eef9" stroke-width="2.2"/><circle cx="20" cy="20" r="7" fill="none" stroke="#ff4fa3" stroke-width="2.4"/></svg>
+      <span>Compostos Aromáticos<small>Química Orgânica II</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#aromaticidade">O que é aromaticidade?</a></li>
+        <li><a href="#estrutura">Estrutura do benzeno</a></li>
+        <li><a href="#kekule">Kekulé e ressonância</a></li>
+        <li><a href="#orbitais">Orbitais p e sistema π</a></li>
+        <li><a href="#deslocalizacao">Deslocalização eletrônica</a></li>
+        <li><a href="#estabilidade">Estabilidade termodinâmica</a></li>
+        <li><a href="#hidrogenacao">Calor de hidrogenação</a></li>
+        <li><a href="#adicao">Por que adição é desfavorecida?</a></li>
+        <li><a href="#substituicao">Por que substituição é favorecida?</a></li>
+        <li><a href="#criterios">Critérios de aromaticidade</a></li>
+        <li><a href="#huckel">Regra de Hückel</a></li>
+        <li><a href="#classes">Aromático × Anti × Não</a></li>
+        <li><a href="#ions">Íons aromáticos</a></li>
+        <li><a href="#hetero">Heteroaromáticos</a></li>
+        <li><a href="#policiclicos">Sistemas policíclicos</a></li>
+        <li><a href="#sea">Introdução à SEA</a></li>
+        <li><a href="#complexo">Complexo σ</a></li>
+        <li><a href="#restauracao">Restauração da aromaticidade</a></li>
+        <li><a href="#lab3d">Laboratório Aromático 3D</a></li>
+        <li><a href="#simhuckel">Simulador de Hückel</a></li>
+        <li><a href="#simarom">Simulador de Aromaticidade</a></li>
+        <li><a href="#resolvidos">Exercícios Resolvidos</a></li>
+        <li><a href="#propostos">Exercícios Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1 -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica II · compostos aromáticos</span>
+      <h1>Compostos Aromáticos e <span class="g">Aromaticidade</span></h1>
+      <p class="sub">Por que o benzeno é tão estável e prefere substituição a adição?</p>
+      <div class="cta"><a class="btn primary lg" href="#aromaticidade">Começar →</a><a class="btn lg" href="#lab3d">Explorar o benzeno em 3D</a><a class="btn lg" href="#simarom">Testar aromaticidade</a></div>
+      <p class="eq">orbitais p paralelos → sistema π cíclico → 4n+2 elétrons → estabilização aromática → substituição (SEA) em vez de adição</p>
+    </div>
+    <div class="heroview" data-w="hero" data-3d></div>
+  </div>
+  <div class="modules">
+    <a href="#estrutura"><b>Benzeno</b><span>estrutura, Kekulé, híbrido de ressonância</span></a>
+    <a href="#orbitais"><b>Sistema π em 3D</b><span>orbitais p, fases, nuvem π, OM de Hückel</span></a>
+    <a href="#hidrogenacao"><b>Estabilidade</b><span>calores de hidrogenação e diagrama de energia</span></a>
+    <a href="#adicao"><b>Adição × substituição</b><span>quebre e restaure a aromaticidade</span></a>
+    <a href="#criterios"><b>Critérios e Hückel</b><span>cíclico, planar, conjugado, 4n+2</span></a>
+    <a href="#classes"><b>Aromático, anti, não</b><span>ciclobutadieno, COT, íons</span></a>
+    <a href="#hetero"><b>Heteroaromáticos</b><span>piridina, pirrol, furano, tiofeno</span></a>
+    <a href="#sea"><b>SEA</b><span>complexo σ, perfil de energia, tipos de reação</span></a>
+    <a href="#lab3d"><b>Laboratório 3D</b><span>16 espécies com análise sincronizada</span></a>
+    <a href="#simarom"><b>Simuladores</b><span>monte um anel de 3 a 8 átomos e analise</span></a>
+    <a href="#resolvidos"><b>Exercícios</b><span>33 resolvidos e 60 propostos</span></a>
+    <a href="#quiz"><b>Quiz e desafios</b><span>35 questões + 2 modos cronometrados</span></a>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="section" id="aromaticidade" data-title="O que é aromaticidade?">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>Por que o benzeno reage de forma diferente de um alceno comum?</h2><p class="lead">Ambos têm ligações C=C desenhadas. Mas, diante do bromo, se comportam de maneira totalmente diferente.</p></div></div>
+  <div class="block"><div class="rxgrid" data-w="centralQ"></div></div>
+  <div class="block">
+    <div class="cmp2">
+      <div class="chcard"><h4>Alceno</h4><p class="big">→ <b>adição</b></p></div>
+      <div class="chcard good"><h4>Benzeno</h4><p class="big">→ <b>substituição</b></p></div>
+    </div>
+    <div class="note key"><b class="t">Conceito-chave</b><b>Aromaticidade</b> é a estabilidade especial de certos sistemas <b>cíclicos, planares e totalmente conjugados</b> com <b>4n + 2 elétrons π</b> deslocalizados. A resposta ao “por quê?” está nessa estabilidade: o benzeno reage de modo a <b>não perdê-la</b>.</div>
+    <div class="note think"><b class="t">Pense nisso</b>O nome “aromático” vem do aroma de compostos como benzaldeído e vanilina. Hoje o termo é <b>eletrônico</b>, não olfativo: muitos aromáticos não têm cheiro marcante.</div>
+    <div class="note quick" data-q="O benzeno descora a água de bromo à temperatura ambiente, sem catalisador?" data-o="Sim, por adição;Não: não ocorre adição simples;Sim, por substituição" data-a="1" data-e="Sem ácido de Lewis, o benzeno não reage com Br₂ nessas condições."></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="section" id="estrutura" data-title="Estrutura do benzeno">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Estrutura do benzeno</h2><p class="lead">C₆H₆: seis carbonos <b>sp²</b> num hexágono regular <b>plano</b>, ângulos de 120°, um orbital <b>p</b> por carbono, todos paralelos.</p></div></div>
+  <div class="block"><div data-w="benzStructure" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Comprimentos de ligação</h3><div data-w="bondLengths"></div>
+    <div class="note err"><b class="t">Erro comum</b>Pensar que o benzeno tem três ligações duplas fixas alternadas com três simples. As seis ligações C–C são <b>idênticas</b> (≈ 1,39 Å): não existem duplas localizadas.</div>
+    <div class="note quick" data-q="Quantos comprimentos de ligação C–C diferentes existem no benzeno?" data-o="1;2;3;6" data-a="0" data-e="Todas as C–C medem ≈ 1,39 Å."></div></div>
+</section>
+
+<!-- 4 -->
+<section class="section" id="kekule" data-title="Kekulé e ressonância">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Estruturas de Kekulé e ressonância</h2><p class="lead">Kekulé A ↔ Kekulé B: mesmos átomos, elétrons π em posições diferentes. A molécula real é o <b>híbrido</b>.</p></div></div>
+  <div class="block"><div data-w="kekule"></div>
+    <div class="note err"><b class="t">Erro comum</b>Imaginar que o benzeno “alterna” entre A e B. As formas de ressonância <b>não existem separadamente</b> e não estão em equilíbrio: são representações limite de uma única estrutura real.</div>
+    <div class="note care"><b class="t">Cuidado</b>O círculo no hexágono é uma notação conveniente para os 6 elétrons π deslocalizados, mas não permite contar pares de elétrons em mecanismos. Para setas curvas, use uma forma de Kekulé.</div>
+    <div class="note quick" data-q="Ao passar de Kekulé A para Kekulé B, o que se move?" data-o="Os átomos de carbono;Os elétrons π;Os hidrogênios;As ligações σ" data-a="1" data-e="Só elétrons π (e pares isolados, quando houver) se movem entre formas de ressonância."></div></div>
+</section>
+
+<!-- 5 -->
+<section class="section" id="orbitais" data-title="Orbitais p e sistema π">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Orbitais p e sistema π</h2><p class="lead">Seis orbitais p paralelos (um por carbono), perpendiculares ao plano do anel. Gire, ative/desative e observe as fases.</p></div></div>
+  <div class="block"><div data-w="pOrbitals" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Do conjunto de orbitais p ao sistema π deslocalizado</h3><div data-w="cloud" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>As cores dos lobos indicam o <b>sinal (fase)</b> da função de onda, não carga elétrica.</div></div>
+</section>
+
+<!-- 6 -->
+<section class="section" id="deslocalizacao" data-title="Deslocalização eletrônica">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Deslocalização eletrônica</h2><p class="lead">Seis orbitais p combinam-se em seis <b>orbitais moleculares π</b>: três ligantes (ocupados) e três antiligantes (vazios).</p></div></div>
+  <div class="block"><h3 class="block-title">Diagrama qualitativo de OM π do benzeno</h3><div data-w="moBenzene" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Os 6 elétrons π preenchem completamente os três OM ligantes: <b>camada fechada</b>. Isso é a base eletrônica da estabilidade aromática.</div></div>
+  <div class="block"><h3 class="block-title">Benzeno ≠ três alcenos</h3><div data-w="threeEthenes"></div>
+    <div class="note quick" data-q="Quantos OM π antiligantes estão ocupados no benzeno?" data-o="0;1;2;3" data-a="0" data-e="Os 6 elétrons cabem nos 3 OM ligantes."></div></div>
+</section>
+
+<!-- 7 -->
+<section class="section" id="estabilidade" data-title="Estabilidade termodinâmica">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Estabilidade termodinâmica</h2><p class="lead">O benzeno real tem energia muito mais baixa que um hipotético “ciclo-hexatrieno” com três C=C localizadas. Essa diferença é a <b>estabilização aromática</b>.</p></div></div>
+  <div class="block"><div data-w="thermo"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>O benzeno <b>não é inerte</b>: ele reage. Mas qualquer reação que destrua a aromaticidade tem um <b>custo energético</b> elevado — por isso ele prefere caminhos que a preservem.</div>
+    <div class="note care"><b class="t">Cuidado com o termo</b>Prefira <b>“estabilização aromática”</b> a “energia de ressonância”: o valor depende da referência escolhida e não é a energia de nenhuma estrutura real.</div></div>
+  <div class="block"><h3 class="block-title">Alceno × benzeno</h3><div data-w="alkeneVsBenzene" data-3d></div></div>
+</section>
+
+<!-- 8 -->
+<section class="section" id="hidrogenacao" data-title="Calor de hidrogenação">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Calor de hidrogenação</h2><p class="lead">Comparar o ΔH de hidrogenação a cicloexano revela quanto o benzeno é mais estável do que o esperado.</p></div></div>
+  <div class="block"><div data-w="hydro"></div>
+    <div class="note think"><b class="t">Pense nisso</b>O ciclo-hexa-1,3-dieno libera ≈ 232 kJ/mol, quase 2 × 120. A conjugação simples estabiliza pouco; o ganho grande do benzeno vem do sistema <b>cíclico</b> com 6 elétrons π.</div>
+    <div class="note quick" data-q="Se 3 C=C isoladas liberam ≈ 360 kJ/mol e o benzeno libera ≈ 208 kJ/mol, a estabilização é aproximadamente:" data-o="≈ 50 kJ/mol;≈ 150 kJ/mol;≈ 360 kJ/mol;≈ 568 kJ/mol" data-a="1" data-e="360 − 208 ≈ 152 kJ/mol."></div></div>
+</section>
+
+<!-- 9 -->
+<section class="section" id="adicao" data-title="Por que adição é desfavorecida?">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Por que a adição é desfavorecida?</h2><p class="lead">No cicloexeno, a adição troca uma ligação π isolada por duas σ — nada especial é perdido. No benzeno, adicionar a uma “dupla” converte dois carbonos sp² em <b>sp³</b> e <b>destrói o sistema π cíclico</b>.</p></div></div>
+  <div class="block"><h3 class="block-title">Quebre a aromaticidade</h3><div data-w="breakArom" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>O produto de adição <b>não é aromático</b>: perder ≈ 150 kJ/mol de estabilização torna a adição termodinamicamente desfavorável (nas condições usuais).</div>
+    <div class="note quick" data-q="Na adição hipotética de Br₂ ao benzeno, os carbonos que recebem Br ficam:" data-o="sp²;sp³;sp;carbocátions" data-a="1" data-e="Quatro ligações σ → sp³, sem orbital p."></div></div>
+</section>
+
+<!-- 10 -->
+<section class="section" id="substituicao" data-title="Por que substituição é favorecida?">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Por que a substituição é favorecida?</h2><p class="lead">A substituição também passa por um intermediário não aromático, mas a perda é <b>temporária</b>: o produto final volta a ser aromático.</p></div></div>
+  <div class="block"><div data-w="subVsAdd"></div></div>
+  <div class="block"><h3 class="block-title">Energética comparada</h3><div data-w="subAddEnergy"></div>
+    <div class="note care"><b class="t">Importante</b>Isso não significa que aromáticos “nunca” sofrem adição. A hidrogenação catalítica (H₂, Ni/Pt/Rh, alta pressão e temperatura) leva a cicloexano, e há adições radicalares (ex.: Cl₂ com luz UV). O que muda é o custo: essas reações exigem condições bem mais severas.</div></div>
+</section>
+
+<!-- 11 -->
+<section class="section" id="criterios" data-title="Critérios de aromaticidade">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Critérios de aromaticidade</h2><p class="lead">1. <b>cíclico</b> · 2. <b>planar</b> · 3. <b>totalmente conjugado</b> (orbital p em todos os átomos do anel) · 4. <b>4n + 2 elétrons π</b>.</p></div></div>
+  <div class="block"><h3 class="block-title">Checklist interativo</h3><div data-w="criteria"></div></div>
+  <div class="block"><h3 class="block-title">1. Cíclico</h3><div data-w="openVsRing"></div></div>
+  <div class="block"><h3 class="block-title">2. Planar</h3><div data-w="planarity" data-3d></div></div>
+  <div class="block"><h3 class="block-title">3. Conjugação contínua</h3><div data-w="conjCheck"></div>
+    <div class="note err"><b class="t">Erro comum</b>Considerar “conjugado” um anel com um CH₂ sp³: basta um átomo sem orbital p para interromper o ciclo de sobreposição.</div></div>
+</section>
+
+<!-- 12 -->
+<section class="section" id="huckel" data-title="Regra de Hückel">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Regra de Hückel: 4n + 2</h2><p class="lead">Um sistema cíclico, planar e totalmente conjugado é aromático quando tem <b>4n + 2</b> elétrons π (n = 0, 1, 2…).</p></div></div>
+  <div class="block"><div data-w="huckelSeq"></div></div>
+  <div class="block"><h3 class="block-title">Círculo de Frost: por que 4n + 2?</h3><div data-w="frost"></div></div>
+  <div class="block"><h3 class="block-title">Ciclobutadieno: OM π com 4 elétrons</h3><div data-w="moCbd" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>A contagem sozinha não basta: a regra só se aplica se os critérios estruturais (cíclico, planar, conjugado) forem satisfeitos.</div>
+    <div class="note quick" data-q="Qual desses números de elétrons π satisfaz 4n + 2?" data-o="4;8;10;12" data-a="2" data-e="10 = 4(2) + 2."></div></div>
+</section>
+
+<!-- 13 -->
+<section class="section" id="classes" data-title="Aromático × Antiaromático × Não aromático">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Aromático × antiaromático × não aromático</h2><p class="lead">Aromático: estabilizado. Antiaromático: <b>desestabilizado</b> (cíclico, planar, conjugado, 4n). Não aromático: não satisfaz algum critério estrutural.</p></div></div>
+  <div class="block"><div data-w="classes"></div></div>
+  <div class="block"><h3 class="block-title">Ciclo-octatetraeno (COT)</h3><div data-w="cot" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Mesmo número de elétrons π ≠ mesma classificação</h3><div data-w="sameE"></div></div>
+  <div class="block"><h3 class="block-title">Como contar elétrons π</h3>
+    <div class="table-wrap"><table class="cmp"><thead><tr><th>Átomo no anel</th><th>Elétrons π</th><th>Exemplo</th></tr></thead><tbody>
+      <tr><td>C em C=C</td><td>1 (2 por dupla)</td><td>benzeno</td></tr>
+      <tr><td>C⁺ (carbocátion sp²)</td><td>0 (p vazio, mas mantém o ciclo)</td><td>tropílio</td></tr>
+      <tr><td>C⁻ (carbânion)</td><td>2 (par no orbital p)</td><td>ciclopentadienila</td></tr>
+      <tr><td>N em C=N (tipo piridina)</td><td>1 (par no plano, fora do π)</td><td>piridina</td></tr>
+      <tr><td>N–H / O / S (tipo pirrol, furano, tiofeno)</td><td>2 (um par no orbital p)</td><td>pirrol, furano</td></tr>
+      <tr><td>C sp³ (CH₂)</td><td>— sem orbital p: interrompe</td><td>ciclopentadieno</td></tr>
+    </tbody></table></div>
+    <div class="note err"><b class="t">Erro comum</b>Contar <b>todos</b> os pares isolados de um heteroátomo. Um orbital p comporta no máximo 2 elétrons: no furano, só um par do O entra no sistema π.</div></div>
+</section>
+
+<!-- 14 -->
+<section class="section" id="ions" data-title="Íons aromáticos">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Íons aromáticos</h2><p class="lead">Carbocátions (p vazio) e carbânions (par em p) podem completar um ciclo conjugado: ciclopropenílio (2 e), ciclopentadienila (6 e), tropílio (6 e).</p></div></div>
+  <div class="block"><div data-w="ions" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>O radical ciclopentadienila (5 elétrons π) tem número ímpar de elétrons: não se encaixa na classificação simples 4n+2 / 4n.</div>
+    <div class="note quick" data-q="O cátion ciclopentadienila (C₅H₅⁺) é:" data-o="aromático;antiaromático;não aromático" data-a="1" data-e="4 elétrons π num ciclo plano e conjugado."></div></div>
+  <div class="block"><h3 class="block-title">Acidez do ciclopentadieno</h3><div data-w="conjCheck"></div></div>
+</section>
+
+<!-- 15 -->
+<section class="section" id="hetero" data-title="Heteroaromáticos">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Heteroaromáticos</h2><p class="lead">Átomos como N, O e S podem fazer parte do anel aromático. A pergunta decisiva: <b>o par isolado está no orbital p (sistema π) ou no plano?</b></p></div></div>
+  <div class="block"><h3 class="block-title">Piridina × pirrol</h3><div data-w="pyrVsPyrrole" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Furano: dois pares, papéis diferentes</h3><div data-w="furanPairs" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="hetero" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Qual par participa?</h3><div data-w="whichPair"></div></div>
+  <div class="block"><h3 class="block-title">Densidade π qualitativa</h3><div data-w="espCompare" data-3d></div>
+    <div class="note quick" data-q="Qual é mais básico?" data-o="pirrol;piridina" data-a="1" data-e="O par da piridina está fora do sistema π, disponível para o H⁺."></div></div>
+</section>
+
+<!-- 16 -->
+<section class="section" id="policiclicos" data-title="Sistemas policíclicos">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Sistemas policíclicos</h2><p class="lead">Naftaleno (10 elétrons π), antraceno e fenantreno (14 elétrons π): anéis fundidos, planos e totalmente conjugados.</p></div></div>
+  <div class="block"><div data-w="fused" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>A regra de Hückel foi formulada para sistemas <b>monocíclicos</b>. Em sistemas fundidos, a contagem total é útil como guia, mas a análise é qualitativa: as ligações não são todas iguais e a estabilização por anel é menor que no benzeno (o anel central do antraceno sofre adição com relativa facilidade).</div></div>
+</section>
+
+<!-- 17 -->
+<section class="section" id="sea" data-title="Introdução à SEA">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>Substituição eletrofílica aromática (SEA)</h2><p class="lead">A nuvem π ataca um eletrófilo forte E⁺; forma-se um intermediário não aromático; a perda de H⁺ restaura o anel.</p></div></div>
+  <div class="block"><div data-w="seaSteps"></div></div>
+  <div class="block"><h3 class="block-title">Tipos de SEA</h3><div data-w="seaTypes" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Os reagentes (Br₂, HNO₃, R–Cl…) não são os eletrófilos efetivos: o catalisador ou o ácido gera uma espécie muito mais eletrofílica.</div></div>
+</section>
+
+<!-- 18 -->
+<section class="section" id="complexo" data-title="Complexo σ">
+  <div class="section-head"><div><span class="kicker">Módulo 18</span><h2>Complexo σ e perda temporária de aromaticidade</h2><p class="lead">O <b>complexo σ</b> (íon arênio, intermediário de Wheland): um carbono sp³ com H e E; carga + deslocalizada em três posições.</p></div></div>
+  <div class="block"><div data-w="areniumForms"></div></div>
+  <div class="block"><h3 class="block-title">Em 3D</h3><div data-w="arenium3d" data-3d></div>
+    <div class="note err"><b class="t">Erro comum</b>Dizer que o complexo σ é aromático por ter carga deslocalizada. Deslocalização não basta: o C sp³ interrompe o ciclo.</div></div>
+  <div class="block"><h3 class="block-title">Perfil de energia</h3><div data-w="seaProfile"></div>
+    <div class="note quick" data-q="A carga + do íon arênio NUNCA aparece na posição:" data-o="orto;meta;para" data-a="1" data-e="Formas de ressonância: orto, para, orto."></div></div>
+</section>
+
+<!-- 19 -->
+<section class="section" id="restauracao" data-title="Restauração da aromaticidade">
+  <div class="section-head"><div><span class="kicker">Módulo 19</span><h2>Restauração da aromaticidade</h2><p class="lead">Uma base remove o H⁺ do carbono sp³: o par da ligação C–H volta ao anel e o sistema π cíclico se refaz.</p></div></div>
+  <div class="block"><h3 class="block-title">Restaure a aromaticidade</h3><div data-w="restore" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>A substituição preserva a aromaticidade <b>global</b> (reagente e produto são aromáticos); a adição a destrói no produto final.</div></div>
+  <div class="block"><h3 class="block-title">Substituição × adição: energética</h3><div data-w="subAddEnergy"></div></div>
+</section>
+
+<!-- 20 -->
+<section class="section" id="lab3d" data-title="Laboratório Aromático 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 20</span><h2>Laboratório aromático 3D</h2><p class="lead">Escolha a espécie: gire, aproxime, alterne bola-vareta/preenchimento, orbitais p, nuvem π, plano molecular, pares isolados e elétrons π por átomo. A estrutura 2D e a análise de aromaticidade acompanham.</p></div></div>
+  <div class="block"><div data-w="lab3d" data-3d></div></div>
+</section>
+
+<!-- 21 -->
+<section class="section" id="simhuckel" data-title="Simulador de Hückel">
+  <div class="section-head"><div><span class="kicker">Módulo 21</span><h2>Simulador de Hückel</h2><p class="lead">Digite o número de elétrons π e resolva 4n + 2 e 4n. Depois, veja no círculo de Frost como os elétrons ocupam os OM.</p></div></div>
+  <div class="block"><div data-w="huckelSolver"></div></div>
+  <div class="block"><h3 class="block-title">Círculo de Frost</h3><div data-w="frost4"></div></div>
+</section>
+
+<!-- 22 -->
+<section class="section" id="simarom" data-title="Simulador de Aromaticidade">
+  <div class="section-head"><div><span class="kicker">Módulo 22</span><h2>Simulador de aromaticidade</h2><p class="lead">Monte um anel de 3 a 8 átomos: ligações duplas, cargas, heteroátomos e carbonos sp³. A análise é feita em tempo real, em 2D e em 3D.</p></div></div>
+  <div class="block"><div data-w="builder" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Marque os orbitais p</h3><div data-w="pPicker"></div></div>
+  <div class="block"><h3 class="block-title">Aromático ou não? (passo a passo)</h3><div data-w="criteria"></div></div>
+</section>
+
+<!-- 23 -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 23</span><h2>Exercícios resolvidos</h2><p class="lead">13 níveis. Tente resolver primeiro; depois a dica e a resolução passo a passo.</p></div></div>
+  <div class="block"><div class="chips" data-w="levelChips"></div><div data-w="solved"></div></div>
+</section>
+
+<!-- 24 -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 24</span><h2>Exercícios propostos</h2><p class="lead">60 exercícios: 20 fáceis, 20 intermediários e 20 avançados (incluindo “Detecte o erro” e arrastar e soltar). <button class="btn sm" type="button" data-action="redo">↺ Refazer todos</button></p></div></div>
+  <nav class="subnav"><a href="#prop-easy">Fáceis</a><a href="#prop-mid">Intermediários</a><a href="#prop-hard">Avançados</a></nav>
+  <div class="block">
+    <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+    <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+    <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+  </div>
+</section>
+
+<!-- 25 -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 25</span><h2>Quiz final</h2><p class="lead">35 questões sorteadas: estrutura, ressonância, orbitais, estabilidade, critérios, Hückel, íons, heteroaromáticos, policíclicos e SEA.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">Modo desafio <span class="tag">pontos · sequência</span></h3><div data-w="challenge"></div></div>
+</section>
+
+<!-- 26 -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 26</span><h2>Mapa conceitual</h2><p class="lead">Da estrutura à reatividade: sistema π cíclico → elétrons → consequência → reatividade → exemplos.</p></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block"><h3 class="block-title">Painel-resumo</h3><div data-w="summary"></div></div>
+  <div class="block"><h3 class="block-title">Alceno × benzeno: a resposta à pergunta central</h3><div data-w="finalCompare"></div></div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica II</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

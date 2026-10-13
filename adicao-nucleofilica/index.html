@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adição Nucleofílica à Carbonila · Química Orgânica II</title>
+  <meta name="description" content="Laboratório virtual de adição nucleofílica à C=O: reversibilidade, catálise, gem-dióis, hemiacetais e acetais, glicose e sacarose, grupos protetores, tioacetais, iminas, enaminas, oximas, hidrazonas, cianoidrinas, Wittig e HWE, com modelos 3D, mecanismos animados e simuladores.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><line x1="10" y1="29" x2="21" y2="22" stroke="#e8eef9" stroke-width="2.4"/><line x1="32" y1="29" x2="21" y2="22" stroke="#e8eef9" stroke-width="2.4"/><line x1="19.6" y1="21" x2="19.6" y2="10" stroke="#2fd4f5" stroke-width="2.4"/><line x1="22.4" y1="21" x2="22.4" y2="10" stroke="#2fd4f5" stroke-width="2.4"/><circle cx="21" cy="22" r="3" fill="#ff9f43"/><circle cx="21" cy="8.5" r="3.2" fill="#2fd4f5"/><path d="M5 12 Q7 22 17 22" fill="none" stroke="#ff4fa3" stroke-width="2"/><circle cx="5" cy="10" r="2.4" fill="#3ddc97"/></svg>
+      <span>Adição Nucleofílica à C=O<small>Química Orgânica II · aldeídos e cetonas</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#revisao">Revisão da Carbonila</a></li>
+        <li><a href="#mecanismo">Mecanismo Geral</a></li>
+        <li><a href="#reversibilidade">Reversibilidade e Equilíbrio</a></li>
+        <li><a href="#catalise">Catálise Ácida e Básica</a></li>
+        <li><a href="#hidratacao">Hidratação da Carbonila</a></li>
+        <li><a href="#gemdiois">Gem-dióis</a></li>
+        <li><a href="#alcoois">Adição de Álcoois</a></li>
+        <li><a href="#hemiacetais">Hemiacetais e Hemicetais</a></li>
+        <li><a href="#acetais">Acetais e Cetais</a></li>
+        <li><a href="#mec-acetal">Mecanismo de Acetais</a></li>
+        <li><a href="#hidrolise">Hidrólise de Acetais</a></li>
+        <li><a href="#intramolecular">Reações Intramoleculares</a></li>
+        <li><a href="#ciclicos">Hemiacetais Cíclicos</a></li>
+        <li><a href="#glicose">Glicose</a></li>
+        <li><a href="#sacarose">Sacarose e Ligações Glicosídicas</a></li>
+        <li><a href="#protecao">Grupos Protetores</a></li>
+        <li><a href="#tioacetais">Tioacetais e Tiocetais</a></li>
+        <li><a href="#aminas">Aminas + Carbonilas</a></li>
+        <li><a href="#iminas">Iminas</a></li>
+        <li><a href="#enaminas">Enaminas</a></li>
+        <li><a href="#oximas">Oximas</a></li>
+        <li><a href="#hidrazonas">Hidrazonas</a></li>
+        <li><a href="#cianoidrinas">Cianoidrinas</a></li>
+        <li><a href="#cc">Formação de Ligações C–C</a></li>
+        <li><a href="#wittig">Reação de Wittig</a></li>
+        <li><a href="#ilideos">Ilídeos de Fósforo</a></li>
+        <li><a href="#mec-wittig">Mecanismo de Wittig</a></li>
+        <li><a href="#hwe">Horner–Wadsworth–Emmons</a></li>
+        <li><a href="#wittig-hwe">Wittig × HWE</a></li>
+        <li><a href="#mapa-geral">Mapa Geral das Reações</a></li>
+        <li><a href="#lab3d">Laboratório Carbonílico 3D</a></li>
+        <li><a href="#simequilibrio">Simulador de Equilíbrio</a></li>
+        <li><a href="#simmec">Simulador de Mecanismos</a></li>
+        <li><a href="#simprotecao">Simulador de Grupos Protetores</a></li>
+        <li><a href="#simsintese">Simulador de Síntese</a></li>
+        <li><a href="#resolvidos">Exercícios Resolvidos</a></li>
+        <li><a href="#propostos">Exercícios Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1 -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica II · aldeídos e cetonas</span>
+      <h1>Adição Nucleofílica <span class="g">à Carbonila</span></h1>
+      <p class="sub">De hemiacetais e iminas à formação de novas ligações C–C</p>
+      <p class="legendline"><span class="oxy">● O / nucleófilos oxigenados</span> <span class="el">● C eletrofílico</span> <span class="mv">● setas</span> <span class="pr">● produtos</span> <span class="it">● intermediários</span> <span class="hy">● novas C–C</span></p>
+      <div class="cta"><a class="btn primary lg" href="#revisao">Começar →</a><a class="btn lg" href="#mecanismo">Explorar mecanismo</a><a class="btn lg" href="#simsintese">Escolher um nucleófilo</a></div>
+    </div>
+    <div class="heroview" data-w="hero" data-3d></div>
+  </div>
+  <div class="centralq"><span class="kicker">Pergunta central</span><h2>O que acontece quando diferentes nucleófilos atacam uma carbonila?</h2>
+    <ol class="flowsteps"><li><b>1</b>Qual é o nucleófilo?<small>O, N ou C?</small></li><li><b>2</b>Centro eletrofílico<small>C da C=O (δ+, π*)</small></li><li><b>3</b>Intermediário tetraédrico<small>sp² → sp³</small></li><li><b>4</b>Reversível?<small>⇌ · Le Châtelier</small></li><li><b>5</b>Permanece tetraédrico ou elimina?<small>adição · condensação · olefinação</small></li><li><b>6</b>C–O, C–N ou C–C?<small>aplicação sintética</small></li></ol></div>
+  <div class="modules">
+    <a href="#mecanismo"><b>Mecanismo geral</b><span>2D + 3D + energia sincronizados</span></a>
+    <a href="#reversibilidade"><b>Equilíbrio</b><span>ΔG°, K, Le Châtelier</span></a>
+    <a href="#mec-acetal"><b>Acetais</b><span>mecanismo completo, protonações explícitas</span></a>
+    <a href="#glicose"><b>Glicose e sacarose</b><span>hemiacetal cíclico, anômeros, 3D</span></a>
+    <a href="#protecao"><b>Grupos protetores</b><span>proteger → reagir → desproteger</span></a>
+    <a href="#iminas"><b>Iminas e enaminas</b><span>carbinolamina, imínio, pH</span></a>
+    <a href="#cianoidrinas"><b>Cianoidrinas</b><span>nova C–C, duas faces</span></a>
+    <a href="#mec-wittig"><b>Wittig e HWE</b><span>oxafosfetano, C=C, E/Z</span></a>
+    <a href="#mapa-geral"><b>Mapa geral</b><span>todos os caminhos de uma carbonila</span></a>
+    <a href="#lab3d"><b>Laboratório 3D</b><span>26 estruturas otimizadas</span></a>
+    <a href="#simmec"><b>Simuladores</b><span>setas curvas, equilíbrio, proteção, síntese</span></a>
+    <a href="#quiz"><b>Exercícios e quiz</b><span>50 resolvidos · 90 propostos · 45 questões</span></a>
+  </div>
+</section>
+<!-- 2 -->
+<section class="section" id="revisao" data-title="Revisão da Carbonila">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>Por que a carbonila é eletrofílica?</h2><p class="lead">O oxigênio, mais eletronegativo, polariza a ligação (Cδ+=Oδ−); o orbital π* vazio, com maior lobo no carbono, recebe o par do nucleófilo.</p></div></div>
+  <div class="block"><h3 class="block-title">Polarização, potencial e π*</h3><div data-w="espPair" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>C δ+ (eletrófilo) e π* acessível: é no <b>carbono</b> que o nucleófilo forma a nova ligação.</div></div>
+  <div class="block"><h3 class="block-title">Geometria: sp² → sp³ durante o ataque</h3><div data-w="geoTet" data-3d></div>
+    <div class="note err"><b class="t">Erro comum</b>Desenhar o carbono carbonílico como tetraédrico antes do ataque. Ele é <b>trigonal planar (≈ 120°)</b>; só fica tetraédrico após a adição.</div>
+    <div class="note quick" data-q="Hibridização do C carbonílico antes do ataque:" data-o="sp;sp²;sp³" data-a="1" data-e="Trigonal planar."></div></div>
+</section>
+<!-- 3 -->
+<section class="section" id="mecanismo" data-title="Mecanismo Geral">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Mecanismo geral de adição nucleofílica</h2><p class="lead">Nu⁻ + R₂C=O → R₂C(O⁻)Nu → (protonação) → R₂C(OH)Nu. Duas setas na etapa de ataque: Nu → C e π C=O → O.</p></div></div>
+  <div class="block"><h3 class="block-title">O que acontece quando diferentes nucleófilos atacam uma carbonila?</h3><div data-w="pathsABC"></div></div>
+  <div class="block"><h3 class="block-title">Ataque em condições básicas (nucleófilo aniônico) · 2D + 3D + energia</h3><div data-w="baseMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Ataque em condições ácidas (nucleófilo neutro)</h3><div data-w="acidMech" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>Por que nucleófilos fortemente básicos (CN⁻, RO⁻, R₂N⁻) não convivem com meio fortemente ácido? Eles seriam <b>protonados</b> e perderiam o par disponível. A catálise ácida funciona com nucleófilos neutros e fracos.</div>
+    <div class="note quick" data-q="Em meio ácido, quem é ativado?" data-o="o nucleófilo;a carbonila (por protonação do O);o solvente" data-a="1" data-e="A carbonila protonada é mais eletrofílica."></div></div>
+</section>
+<!-- 4 -->
+<section class="section" id="reversibilidade" data-title="Reversibilidade e Equilíbrio">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Reversibilidade e equilíbrio</h2><p class="lead">Muitas adições à C=O são reversíveis: carbonila + Nu ⇌ aduto. A posição depende da carbonila, do nucleófilo, da estabilidade do produto, do solvente, do pH, das concentrações e da remoção de produtos.</p></div></div>
+  <div class="block"><h3 class="block-title">Controle termodinâmico: ΔG° e K</h3><div data-w="dGK"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>K > 1 → produto favorecido; K < 1 → reagentes favorecidos. ΔG° = −RT ln K.</div></div>
+  <div class="block"><h3 class="block-title">Equilíbrio não é velocidade</h3><div data-w="catVsEq"></div>
+    <div class="note err"><b class="t">Erro comum</b>Achar que o catalisador “desloca” o equilíbrio. Ele só acelera a chegada a ele.</div></div>
+  <div class="block"><h3 class="block-title">Princípio de Le Châtelier: C=O + 2 ROH ⇌ acetal + H₂O</h3><div data-w="leChat"></div>
+    <div class="note err"><b class="t">Erro comum</b>A formação de acetais é uma reação de <b>equilíbrio</b>; remover água pode favorecer o produto, e adicionar água favorece a hidrólise.</div></div>
+</section>
+<!-- 5 -->
+<section class="section" id="catalise" data-title="Catálise Ácida e Básica">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Catálise ácida e básica</h2><p class="lead">O ácido ativa a carbonila (eletrófilo); a base gera ou é o nucleófilo aniônico. Ambos são regenerados.</p></div></div>
+  <div class="block"><h3 class="block-title">Comparação dos mecanismos</h3><div data-w="acidBaseCompare"></div></div>
+  <div class="block"><h3 class="block-title">Por que meio muito ácido pode atrapalhar?</h3><div data-w="phWindow"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>A catálise exige equilíbrio entre <b>ativação da carbonila</b> (precisa de H⁺) e <b>disponibilidade do nucleófilo</b> (que não pode estar protonado).</div></div>
+</section>
+<!-- 6 -->
+<section class="section" id="hidratacao" data-title="Hidratação da Carbonila">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Hidratação de aldeídos e cetonas</h2><p class="lead">R₂C=O + H₂O ⇌ R₂C(OH)₂ (gem-diol, ou hidrato). Catalisada por ácido ou base.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismos ácido e básico</h3><div data-w="hydMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div>
+    <div class="note quick" data-q="Na hidratação em base, o nucleófilo é:" data-o="H₂O;HO⁻;H₃O⁺" data-a="1" data-e="Ânion hidróxido."></div></div>
+</section>
+<!-- 7 -->
+<section class="section" id="gemdiois" data-title="Gem-dióis">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Gem-dióis</h2><p class="lead">Dois grupos OH no mesmo carbono. A posição do equilíbrio carbonila ⇌ hidrato varia enormemente.</p></div></div>
+  <div class="block"><h3 class="block-title">Carbonila × gem-diol em 3D</h3><div data-w="gemdiol3d" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Equilíbrio carbonila × gem-diol</h3><div data-w="hydBars"></div>
+    <div class="note think"><b class="t">Pense nisso</b>Por que aldeídos hidratam mais que muitas cetonas? <b>Menor impedimento</b> no aduto tetraédrico e <b>menor doação eletrônica</b> (menos grupos alquila estabilizando a C=O). Grupos retiradores (CCl₃, CF₃) favorecem o hidrato. Tendência, não regra absoluta.</div>
+    <div class="note quick" data-q="Qual tem maior fração de hidrato?" data-o="acetona;formaldeído;acetaldeído" data-a="1" data-e="Sem grupos alquila."></div></div>
+</section>
+<!-- 8 -->
+<section class="section" id="alcoois" data-title="Adição de Álcoois">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Adição de álcoois</h2><p class="lead">Primeiro produto: <b>hemiacetal/hemicetal</b>. Com excesso de álcool e catálise ácida: <b>acetal/cetal</b>.</p></div></div>
+  <div class="block"><h3 class="block-title">Aldeído/cetona + ROH</h3><div data-w="alcoholOverview"></div></div>
+  <div class="block"><h3 class="block-title">Duas etapas, dois tipos de processo</h3><div class="grid2"><div class="chcard"><h4>1. Adição</h4><p>ROH + C=O ⇌ hemiacetal (ácido ou base).</p></div><div class="chcard"><h4>2. Substituição do OH por OR</h4><p>Só em <b>ácido</b>: OH protonado → saída de H₂O → oxocarbênio → 2º ROH.</p></div></div></div>
+</section>
+<!-- 9 -->
+<section class="section" id="hemiacetais" data-title="Hemiacetais e Hemicetais">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Hemiacetais e hemicetais</h2><p class="lead">Terminologia e reconhecimento estrutural.</p></div></div>
+  <div class="block"><h3 class="block-title">Terminologia</h3><div data-w="terminology"></div></div>
+  <div class="block"><h3 class="block-title">Visualização comparativa (2D + 3D)</h3><div data-w="compareRow" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Formação do hemicetal (acetona + CH₃OH, H⁺)</h3><div data-w="hemiMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Teste: hemiacetal, acetal, hemicetal ou cetal?</h3><div data-w="classifyQuiz"></div>
+    <div class="note err"><b class="t">Erro comum</b>Um acetal não é simplesmente um hemiacetal com outro nome: no acetal o carbono possui <b>dois grupos OR</b> e <b>não possui OH</b>.</div></div>
+</section>
+<!-- 10 -->
+<section class="section" id="acetais" data-title="Acetais e Cetais">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Acetais e cetais</h2><p class="lead">O antigo carbono carbonílico com dois OR. Formação: excesso de álcool, catálise ácida, remoção de água.</p></div></div>
+  <div class="block"><h3 class="block-title">Hemicetal × cetal em 3D</h3><div data-w="acetalCompare3d" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Por que é preciso ácido?</h3><p>No hemiacetal, o OH teria de sair como <b>HO⁻</b> (péssimo grupo de saída). Protonado, sai como <b>H₂O</b>, e o par do OR vizinho estabiliza o carbono que perde o grupo.</p>
+    <div class="note err"><b class="t">Erro comum</b>Na formação de acetal, o OH deve ser <b>ativado por protonação</b> antes de sair como água.</div></div>
+</section>
+<!-- 11 -->
+<section class="section" id="mec-acetal" data-title="Mecanismo de Acetais">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Mecanismo de formação de acetais</h2><p class="lead">Mecanismo completo (cada transferência de próton explícita) ou simplificado, sincronizado com 3D e perfil de energia.</p></div></div>
+  <div class="block"><div data-w="acetalMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Não represente um carbocátion “nu” localizado no carbono: a espécie é o <b>íon oxocarbênio</b>, estabilizado pelo par do oxigênio (C=O⁺R ↔ C⁺–OR).</div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Quem deve ser protonado agora?</h3><div data-w="protTrainer"></div></div>
+</section>
+<!-- 12 -->
+<section class="section" id="hidrolise" data-title="Hidrólise de Acetais">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Hidrólise de acetais</h2><p class="lead">Acetal + H₂O (H⁺) ⇌ carbonila + 2 ROH: o mesmo mecanismo, percorrido ao contrário, com excesso de água.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo inverso</h3><div data-w="hydrolysisMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Estabilidade: base × ácido</h3><div data-w="protStab"></div>
+    <div class="note key"><b class="t">Conceito-chave</b><b>Acetais são geralmente estáveis em condições básicas, mas são hidrolisados em meio ácido aquoso.</b> É isso que os torna grupos protetores.</div></div>
+</section>
+<!-- 13 -->
+<section class="section" id="intramolecular" data-title="Reações Intramoleculares">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Reações intramoleculares</h2><p class="lead">Quando o OH e a C=O estão na mesma molécula, o ataque pode ser intramolecular, formando hemiacetais/hemicetais cíclicos.</p></div></div>
+  <div class="block"><h3 class="block-title">Simulador: nucleófilo → eletrófilo → tamanho do anel</h3><div data-w="intraSim" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Tamanho do anel</h3><div data-w="ringSize"></div>
+    <div class="note think"><b class="t">Pense nisso</b>Geometria (ângulos), entropia (o nucleófilo já está “ligado” ao eletrófilo) e tensão de anel explicam a preferência por 5 e 6 membros.</div></div>
+</section>
+<!-- 14 -->
+<section class="section" id="ciclicos" data-title="Hemiacetais Cíclicos">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Hemiacetais cíclicos</h2><p class="lead">Hidroxialdeídos e hidroxicetonas com anéis de 5–6 membros existem, em grande parte, na forma cíclica.</p></div></div>
+  <div class="block"><h3 class="block-title">Aberto × cíclico (3D)</h3><div data-w="cyclicHemi" data-3d></div>
+    <div class="note quick" data-q="4-Hidroxibutanal cicliza a um anel de:" data-o="4;5;6" data-a="1" data-e="O + 4 carbonos."></div></div>
+</section>
+<!-- 15 -->
+<section class="section" id="glicose" data-title="Glicose">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Glicose</h2><p class="lead">Integra carbonila, ataque nucleofílico, hemiacetal, intramolecularidade, estereoquímica e equilíbrio.</p></div></div>
+  <div class="block"><h3 class="block-title">Forma aberta → glucopiranose</h3><div data-w="glucoseOpen"></div></div>
+  <div class="block"><h3 class="block-title">Teste</h3><div data-w="anomerQuiz"></div></div>
+  <div class="block"><h3 class="block-title">Glicose em 3D: aberta, α e β</h3><div data-w="glucose3d" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>C1 (ex-aldeído) torna-se o <b>carbono anomérico</b>, um novo centro estereogênico: α (OH axial) e β (OH equatorial).</div></div>
+  <div class="block"><h3 class="block-title">Equilíbrio em solução</h3><div data-w="glucoseEq"></div>
+    <div class="note err"><b class="t">Erro comum</b>A glicose cíclica é um <b>hemiacetal intramolecular</b> (não um acetal).</div>
+    <div class="note think"><b class="t">Pense nisso</b>Mutarrotação (introdutório): uma solução de α-glicose pura muda sua rotação óptica até o equilíbrio α/β, porque interconverte via forma aberta.</div></div>
+</section>
+<!-- 16 -->
+<section class="section" id="sacarose" data-title="Sacarose e Ligações Glicosídicas">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Sacarose e ligações glicosídicas</h2><p class="lead">Glicose + frutose unidas por uma ligação glicosídica entre seus <b>carbonos anoméricos</b> (C1 da glicose e C2 da frutose).</p></div></div>
+  <div class="block"><h3 class="block-title">Estrutura</h3><div data-w="sucrose2d"></div></div>
+  <div class="block"><h3 class="block-title">Sacarose em 3D</h3><div data-w="sucrose3d" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Glicose × sacarose</h3><div data-w="sugarCompare"></div>
+    <div class="note err"><b class="t">Erro comum</b>A sacarose não deve ser tratada como simples hemiacetal livre; <b>ambos</b> os centros anoméricos estão envolvidos na ligação glicosídica (acetal/cetal).</div></div>
+</section>
+<!-- 17 -->
+<section class="section" id="protecao" data-title="Grupos Protetores">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>Acetais e cetais como grupos protetores</h2><p class="lead">Proteger → reagir em outra função → desproteger.</p></div></div>
+  <div class="block"><h3 class="block-title">Por que proteger uma carbonila?</h3><div data-w="protectFlow"></div></div>
+  <div class="block"><h3 class="block-title">Etilenoglicol × 1,3-propanodiol</h3><div data-w="diolCompare" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Compatibilidade do grupo protetor</h3><div data-w="compatPanel"></div>
+    <div class="note think"><b class="t">Pense nisso</b>A escolha do grupo protetor depende das condições futuras: acetais suportam base, nucleófilos e hidretos; não suportam ácido aquoso.</div></div>
+</section>
+<!-- 18 -->
+<section class="section" id="tioacetais" data-title="Tioacetais e Tiocetais">
+  <div class="section-head"><div><span class="kicker">Módulo 18</span><h2>Tioacetais e tiocetais</h2><p class="lead">S no lugar de O: carbonila + ditiol (catálise ácida) → tioacetal/tiocetal, por mecanismo análogo ao do acetal.</p></div></div>
+  <div class="block"><h3 class="block-title">Formação com 1,2-etanoditiol</h3><div data-w="thioMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Uso sintético: proteção e dessulfurização (C=O → CH₂)</h3><div data-w="mozingo" data-3d></div></div>
+</section>
+<!-- 19 -->
+<section class="section" id="aminas" data-title="Aminas + Carbonilas">
+  <div class="section-head"><div><span class="kicker">Módulo 19</span><h2>Aminas + carbonilas</h2><p class="lead">Amina primária → imina; amina secundária → enamina. Mesmo início (adição + desidratação), destinos diferentes.</p></div></div>
+  <div class="block"><div data-w="amineSplit"></div>
+    <div class="note err"><b class="t">Erro comum</b>Amina primária normalmente leva a <b>imina</b>; amina secundária normalmente leva a <b>enamina</b>.</div></div>
+  <div class="block"><h3 class="block-title">Comparação de derivados nitrogenados</h3><div data-w="nTable"></div></div>
+</section>
+<!-- 20 -->
+<section class="section" id="iminas" data-title="Iminas">
+  <div class="section-head"><div><span class="kicker">Módulo 20</span><h2>Iminas</h2><p class="lead">R₂C=O + RNH₂ ⇌ R₂C=N–R + H₂O.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo completo (9 etapas)</h3><div data-w="imineMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Carbinolamina (análoga ao hemiacetal) e íon imínio</h3><div data-w="carbinolCompare" data-3d></div></div>
+  <div class="block"><h3 class="block-title">pH ideal para formação de imina</h3><div data-w="phWindow"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Catálise ácida <b>moderada</b>: muito ácido protona a amina; pouco ácido não desidrata a carbinolamina.</div>
+    <div class="note think"><b class="t">Pense nisso</b>Reversibilidade: carbonila + amina ⇌ imina + H₂O. Remover água favorece a imina; H₃O⁺ a hidrolisa. Isomeria E/Z: a C=N, aproximadamente planar, não gira livremente (módulo opcional).</div></div>
+</section>
+<!-- 21 -->
+<section class="section" id="enaminas" data-title="Enaminas">
+  <div class="section-head"><div><span class="kicker">Módulo 21</span><h2>Enaminas</h2><p class="lead">Carbonila + amina secundária → íon imínio → remoção de H<sub>α</sub> → enamina (C=C–NR₂).</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo completo</h3><div data-w="enamineMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Imina × enamina</h3><div class="table-wrap"><table class="cmp"><thead><tr><th>Reagente nitrogenado</th><th>Produto típico</th><th>Condições/limitações</th></tr></thead><tbody><tr><th>NH₃</th><td>imina simples (N–H)</td><td>frequentemente instável/hidrolisável</td></tr><tr><th>RNH₂</th><td>imina</td><td>ácido moderado, remoção de H₂O</td></tr><tr><th>R₂NH</th><td>enamina</td><td>precisa de H no carbono α</td></tr></tbody></table></div></div>
+  <div class="block"><h3 class="block-title">Carbonila assimétrica (avançado)</h3><div data-w="enamineRegio"></div></div>
+</section>
+<!-- 22 -->
+<section class="section" id="oximas" data-title="Oximas">
+  <div class="section-head"><div><span class="kicker">Módulo 22</span><h2>Oximas</h2><p class="lead">Carbonila + NH₂OH → oxima (C=N–OH) + H₂O, por mecanismo análogo ao da imina.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo (resumo)</h3><div data-w="oximeMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Aldoximas e cetoximas</h3><div data-w="oximeFigs" data-3d></div></div>
+</section>
+<!-- 23 -->
+<section class="section" id="hidrazonas" data-title="Hidrazonas">
+  <div class="section-head"><div><span class="kicker">Módulo 23</span><h2>Hidrazonas</h2><p class="lead">Carbonila + NH₂NH₂ → hidrazona (C=N–NH₂) + H₂O.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo (resumo)</h3><div data-w="hydrazoneMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Exemplos e derivados de hidrazina</h3><div data-w="hydrazoneFigs" data-3d></div></div>
+</section>
+<!-- 24 -->
+<section class="section" id="cianoidrinas" data-title="Cianoidrinas">
+  <div class="section-head"><div><span class="kicker">Módulo 24</span><h2>Cianoidrinas</h2><p class="lead">R₂C=O + HCN/CN⁻ ⇌ R₂C(OH)CN.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo (CN⁻ ataca; HCN protona)</h3><div data-w="cyanoMech" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b><b>A formação de cianoidrina cria uma nova ligação carbono–carbono.</b></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Estereoquímica: ataque pelas duas faces</h3><div data-w="cyanoFaces" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Reversibilidade</h3><div data-w="cyanoEq"></div></div>
+</section>
+<!-- 25 -->
+<section class="section" id="cc" data-title="Formação de Ligações C–C">
+  <div class="section-head"><div><span class="kicker">Módulo 25</span><h2>Formação de ligações C–C</h2><p class="lead">Nucleófilos de carbono: CN⁻ (adição), ilídeos de fósforo (Wittig) e ânions de fosfonato (HWE).</p></div></div>
+  <div class="block"><div data-w="ccOverview"></div>
+    <div class="note think"><b class="t">Pense nisso</b>A nova ligação C–C aparece em amarelo nas figuras. Cianoidrina: o carbono fica sp³. Wittig/HWE: C=O é substituída por C=C (sp²).</div></div>
+</section>
+<!-- 26 -->
+<section class="section" id="wittig" data-title="Reação de Wittig">
+  <div class="section-head"><div><span class="kicker">Módulo 26</span><h2>Reação de Wittig</h2><p class="lead">Aldeído/cetona → <b>alceno</b>: R₂C=O + Ph₃P=CR′₂ → R₂C=CR′₂ + Ph₃P=O.</p></div></div>
+  <div class="block"><div data-w="wittigOverview"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Substitui C=O por C=C, forma nova ligação C–C e permite planejar a posição da dupla.</div>
+    <div class="note err"><b class="t">Erro comum</b>Wittig e HWE <b>não</b> são reduções: são reações de olefinação que substituem C=O por C=C.</div></div>
+</section>
+<!-- 27 -->
+<section class="section" id="ilideos" data-title="Ilídeos de Fósforo">
+  <div class="section-head"><div><span class="kicker">Módulo 27</span><h2>Ilídeos de fósforo</h2><p class="lead">Ph₃P⁺–C⁻R₂ ↔ Ph₃P=CR₂: carbono nucleofílico. Preparo: PPh₃ + haleto (SN2) → sal de fosfônio → base forte → ilídeo.</p></div></div>
+  <div class="block"><h3 class="block-title">Formação do ilídeo</h3><div data-w="ylideMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Ilídeo em 3D</h3><div data-w="ylide3d" data-3d></div></div>
+</section>
+<!-- 28 -->
+<section class="section" id="mec-wittig" data-title="Mecanismo de Wittig">
+  <div class="section-head"><div><span class="kicker">Módulo 28</span><h2>Mecanismo de Wittig</h2><p class="lead">O carbono do ilídeo liga-se ao C carbonílico; forma-se o oxafosfetano (C–C–P–O), que colapsa em alceno + Ph₃P=O.</p></div></div>
+  <div class="block"><div data-w="wittigMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>A betaína é uma representação didática; para muitos ilídeos (sem sais de lítio) as evidências favorecem a formação direta do oxafosfetano. Os detalhes dependem do sistema.</div>
+    <div class="note key"><b class="t">Conceito-chave</b>Força motriz: a ligação <b>P=O</b>, muito forte.</div></div>
+  <div class="block"><h3 class="block-title">Estereosseletividade (introdução)</h3><div class="grid2"><div class="chcard"><h4>Ilídeos não estabilizados</h4><p>(R = alquila) tendem a dar alcenos <b>Z</b> com aldeídos, em condições sem sais.</p></div><div class="chcard"><h4>Ilídeos estabilizados</h4><p>(R = CO₂Et, COR) são menos reativos e tendem a dar alcenos <b>E</b>.</p></div></div>
+    <div class="note care"><b class="t">Cuidado</b>Tendências, não regras absolutas: solvente, sais, temperatura e substrato alteram a seletividade.</div></div>
+</section>
+<!-- 29 -->
+<section class="section" id="hwe" data-title="Horner–Wadsworth–Emmons">
+  <div class="section-head"><div><span class="kicker">Módulo 29</span><h2>Horner–Wadsworth–Emmons</h2><p class="lead">Fosfonato estabilizado + base → carbânion → ataque à carbonila → oxafosfetano → alceno + fosfato.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="hweMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente explícito e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">HWE e seletividade E</h3><div data-w="ezCompare" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>Com fosfonatos estabilizados, a reação tende a formar o alceno <b>E</b>; a seletividade depende da estrutura e das condições.</div></div>
+</section>
+<!-- 30 -->
+<section class="section" id="wittig-hwe" data-title="Wittig × HWE">
+  <div class="section-head"><div><span class="kicker">Módulo 30</span><h2>Wittig × HWE</h2><p class="lead">Mesma ideia (C=O → C=C), reagentes e subprodutos diferentes.</p></div></div>
+  <div class="block"><h3 class="block-title">Comparação</h3><div data-w="wittigHweTable"></div></div>
+  <div class="block"><h3 class="block-title">Qual método?</h3><div data-w="wittigOrHwe"></div></div>
+  <div class="block"><h3 class="block-title">Retrossíntese: onde desconectar a C=C?</h3><div data-w="wittigRetro"></div></div>
+</section>
+<!-- 31 -->
+<section class="section" id="mapa-geral" data-title="Mapa Geral das Reações">
+  <div class="section-head"><div><span class="kicker">Módulo 31</span><h2>Mapa geral das reações</h2><p class="lead">Todos os caminhos partem de uma mesma carbonila: o nucleófilo ataca o C=O e, depois, os mecanismos divergem.</p></div></div>
+  <div class="block"><h3 class="block-title">Clique em um nucleófilo</h3><div data-w="reactionMap"></div></div>
+  <div class="block"><h3 class="block-title">Adição × condensação × olefinação</h3><div data-w="typesCompare"></div></div>
+  <div class="block"><h3 class="block-title">Tabela mestre das reações (clique na linha)</h3><div data-w="masterTable"></div></div>
+  <div class="block"><h3 class="block-title">Tabela mestre de condições</h3><div data-w="condPanel"></div></div>
+</section>
+<!-- 32 -->
+<section class="section" id="lab3d" data-title="Laboratório Carbonílico 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 32</span><h2>Laboratório carbonílico 3D</h2><p class="lead">Rotação, zoom, esfera-bastão ou preenchimento espacial, C eletrofílico, pares isolados, π/π*, mapa de potencial e hibridização.</p></div></div>
+  <div class="block"><div data-w="lab3d" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Modo “antes e depois”</h3><div data-w="beforeAfter" data-3d></div></div>
+</section>
+<!-- 33 -->
+<section class="section" id="simequilibrio" data-title="Simulador de Equilíbrio">
+  <div class="section-head"><div><span class="kicker">Módulo 33</span><h2>Simulador de equilíbrio e de reversibilidade</h2><p class="lead">Altere água, álcool, acidez e temperatura.</p></div></div>
+  <div class="block"><h3 class="block-title">Equilíbrio do acetal</h3><div data-w="eqSim"></div></div>
+  <div class="block"><h3 class="block-title">Reversível? O que acontece se…</h3><div data-w="revSim"></div></div>
+</section>
+<!-- 34 -->
+<section class="section" id="simmec" data-title="Simulador de Mecanismos">
+  <div class="section-head"><div><span class="kicker">Módulo 34</span><h2>Simulador de mecanismos</h2><p class="lead">Construa o mecanismo com setas curvas: origem (par isolado ou ligação) → destino. Origem, destino, cargas, protonações, saída de H₂O e formação de C=N/C=C são validados.</p></div></div>
+  <div class="block"><div data-w="mechSim"></div></div>
+  <div class="block"><h3 class="block-title">Controle de protonações: quem deve ser protonado agora?</h3><div data-w="protTrainer"></div></div>
+</section>
+<!-- 35 -->
+<section class="section" id="simprotecao" data-title="Simulador de Grupos Protetores">
+  <div class="section-head"><div><span class="kicker">Módulo 35</span><h2>Simulador de grupos protetores</h2><p class="lead">Proteger? Com quê? Qual reagente? Quando desproteger?</p></div></div>
+  <div class="block"><div data-w="protectSim"></div></div>
+  <div class="block"><h3 class="block-title">Painel de compatibilidade</h3><div data-w="compatPanel"></div></div>
+</section>
+<!-- 36 -->
+<section class="section" id="simsintese" data-title="Simulador de Síntese">
+  <div class="section-head"><div><span class="kicker">Módulo 36</span><h2>Simulador de síntese</h2><p class="lead">Escolha o nucleófilo e preveja o produto; depois resolva problemas de 1–3 etapas.</p></div></div>
+  <div class="block"><h3 class="block-title">Escolha o nucleófilo</h3><div data-w="chooseNu"></div></div>
+  <div class="block"><h3 class="block-title">Problemas de síntese</h3><div data-w="synthProblems"></div></div>
+</section>
+<!-- 37 -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 37</span><h2>Exercícios resolvidos</h2><p class="lead">20 níveis, 50 exercícios. Tente resolver primeiro; depois veja a dica e a resolução passo a passo.</p></div></div>
+  <div class="block"><div class="chips" data-w="levelChips"></div><div data-w="solved"></div></div>
+</section>
+<!-- 38 -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 38</span><h2>Exercícios propostos</h2><p class="lead">90 exercícios: 30 fáceis, 35 intermediários e 25 avançados — produto, reagente, mecanismo, equilíbrio, estereoquímica, proteção, carboidratos, síntese, “Detecte o erro”, ordenação e arrastar e soltar. <button class="btn sm" type="button" data-action="redo">↺ Refazer todos</button></p></div></div>
+  <nav class="subnav"><a href="#prop-easy">Fáceis</a><a href="#prop-mid">Intermediários</a><a href="#prop-hard">Avançados</a></nav>
+  <div class="block">
+    <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+    <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+    <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+  </div>
+</section>
+<!-- 39 -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 39</span><h2>Quiz final</h2><p class="lead">45 questões sorteadas: mecanismos, equilíbrio, hemiacetais, acetais, carboidratos, proteção, iminas, enaminas, cianoidrinas, Wittig e HWE. Ao final: percentual, tópicos com mais erros e módulos recomendados.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">Modo desafio <span class="tag">pontos · sequência</span></h3><div data-w="challenge"></div></div>
+</section>
+<!-- 40 -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 40</span><h2>Mapa conceitual</h2></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block"><h3 class="block-title">Resumo visual dos mecanismos</h3>
+    <div class="grid3"><div class="clscard arom"><h4>Adição</h4><p>Nu → C=O · π → O</p><b>↓ intermediário tetraédrico → protonação</b></div><div class="clscard non"><h4>Condensação</h4><p>adição → transferências de H⁺ → eliminação de H₂O</p><b>↓ C=N, C=O⁺R → acetal, imina, enamina…</b></div><div class="clscard anti"><h4>Olefinação</h4><p>nucleófilo de carbono (P) → carbonila → anel C–C–P–O</p><b>↓ C=C + P=O</b></div></div></div>
+  <div class="block"><h3 class="block-title">Diretriz central</h3>
+    <ol class="flowv big"><li class="step">QUAL É O NUCLEÓFILO?</li><li>QUAL É O CENTRO ELETROFÍLICO?</li><li class="non">QUAL INTERMEDIÁRIO O ATAQUE GERA?</li><li class="non">A REAÇÃO É REVERSÍVEL?</li><li class="step">PERMANECE TETRAÉDRICO OU ELIMINA?</li><li class="arom">FORMA C–O, C–N OU C–C?</li><li class="arom">COMO CONTROLAR O EQUILÍBRIO? QUAL A APLICAÇÃO?</li></ol></div>
+  <div class="block"><h3 class="block-title">Tabela mestre das reações</h3><div data-w="masterTable"></div></div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica II</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

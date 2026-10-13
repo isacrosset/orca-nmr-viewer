@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fundamentos da Química Orgânica · Química Orgânica I</title>
+  <meta name="description" content="Laboratório virtual de estrutura molecular e eletrônica: configuração eletrônica, Lewis, carga formal, ressonância, VSEPR, orbitais atômicos e moleculares, ligações σ e π e hibridização sp³, sp² e sp, com modelos 3D e orbitais calculados.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><ellipse cx="20" cy="13" rx="4.5" ry="7" fill="#2fd4f5" opacity=".85"/><ellipse cx="20" cy="27" rx="4.5" ry="7" fill="#ffd45c" opacity=".85"/><circle cx="20" cy="20" r="2.6" fill="#fff"/><path d="M6 20 H14 M26 20 H34" stroke="#ff9f43" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span>Fundamentos da Q. Orgânica<small>Química Orgânica I</small></span>
+    </a>
+    <label class="qsel" title="Qualidade gráfica dos orbitais 3D">3D <select id="quality" aria-label="Qualidade gráfica dos orbitais"><option value="28">baixa</option><option value="40">média</option><option value="54">alta</option></select></label>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#porque">Por que estrutura eletrônica?</a></li>
+        <li><a href="#atomos">Átomos e Elétrons</a></li>
+        <li><a href="#configuracao">Configuração Eletrônica</a></li>
+        <li><a href="#valencia">Elétrons de Valência</a></li>
+        <li><a href="#octeto">Regra do Octeto</a></li>
+        <li><a href="#covalente">Ligação Covalente</a></li>
+        <li><a href="#lewis">Estruturas de Lewis</a></li>
+        <li><a href="#cargaformal">Carga Formal</a></li>
+        <li><a href="#ressonancia">Ressonância</a></li>
+        <li><a href="#vsepr">VSEPR</a></li>
+        <li><a href="#geometria">Geometria Molecular</a></li>
+        <li><a href="#quantica">Teoria Quântica</a></li>
+        <li><a href="#orbitais">Orbitais Atômicos</a></li>
+        <li><a href="#orbitaissp">Orbitais s e p</a></li>
+        <li><a href="#orbmoleculares">Orbitais Moleculares</a></li>
+        <li><a href="#ligantes">Ligantes e Antiligantes</a></li>
+        <li><a href="#sigmapi">Ligações σ e π</a></li>
+        <li><a href="#sp3">Hibridização sp³</a></li>
+        <li><a href="#sp2">Hibridização sp²</a></li>
+        <li><a href="#sp">Hibridização sp</a></li>
+        <li><a href="#carbono">Carbono em Moléculas</a></li>
+        <li><a href="#comparacao">sp³ × sp² × sp</a></li>
+        <li><a href="#lab3d">Laboratório 3D</a></li>
+        <li><a href="#laborbitais">Laboratório de Orbitais</a></li>
+        <li><a href="#construtorlewis">Construtor de Lewis</a></li>
+        <li><a href="#simvsepr">Simulador VSEPR</a></li>
+        <li><a href="#simhib">Simulador de Hibridização</a></li>
+        <li><a href="#resolvidos">Resolvidos</a></li>
+        <li><a href="#propostos">Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1 -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica I · módulo introdutório</span>
+      <h1>Fundamentos da <span class="g">Química Orgânica</span></h1>
+      <p class="sub">Dos elétrons à estrutura tridimensional das moléculas</p>
+      <div class="cta"><a class="btn primary lg" href="#porque">Começar →</a><a class="btn lg" href="#lab3d">Explorar moléculas em 3D</a><a class="btn lg" href="#laborbitais">Explorar orbitais</a></div>
+      <p class="eq">elétrons → orbitais → ligações → Lewis → carga formal → ressonância → geometria → orbitais moleculares → hibridização → σ e π → 3D</p>
+    </div>
+    <div class="herogrid2" data-w="hero" data-3d></div>
+  </div>
+  <div class="modules">
+    <a href="#configuracao"><b>Elétrons e configuração</b><span>Aufbau, Pauli, Hund — construtor interativo</span></a>
+    <a href="#lewis"><b>Lewis e carga formal</b><span>passo a passo, contador de elétrons, calculadora</span></a>
+    <a href="#ressonancia"><b>Ressonância</b><span>só os elétrons se movem; híbrido</span></a>
+    <a href="#vsepr"><b>VSEPR e geometria</b><span>domínios, ângulos, simulador 3D</span></a>
+    <a href="#orbitais"><b>Orbitais atômicos</b><span>isosuperfícies reais de 1s, 2s, 2p</span></a>
+    <a href="#orbmoleculares"><b>Orbitais moleculares</b><span>σ, σ*, ordem de ligação</span></a>
+    <a href="#sigmapi"><b>Ligações σ e π</b><span>sobreposição frontal × lateral, rotação</span></a>
+    <a href="#sp3"><b>Hibridização</b><span>sp³, sp², sp em 3D</span></a>
+    <a href="#comparacao"><b>Etano × eteno × etino</b><span>a tela de síntese</span></a>
+    <a href="#construtorlewis"><b>Do Lewis ao 3D</b><span>monte a estrutura e gere a geometria</span></a>
+    <a href="#resolvidos"><b>Exercícios</b><span>42 resolvidos e 80 propostos</span></a>
+    <a href="#quiz"><b>Quiz e desafios</b><span>40 questões + 4 modos cronometrados</span></a>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="section" id="porque" data-title="Por que estudar estrutura eletrônica?">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>Por que o carbono consegue formar tantas moléculas diferentes?</h2><p class="lead">Esta é a pergunta que guia toda a aplicação: <b>como a distribuição dos elétrons determina a estrutura tridimensional e as propriedades das moléculas orgânicas?</b></p></div></div>
+  <div class="block"><div data-w="whyCarbon"></div></div>
+  <div class="block">
+    <h3 class="block-title">A resposta tem cinco ingredientes</h3>
+    <ol class="ladder"><li>configuração eletrônica (4 elétrons de valência)</li><li>ligações covalentes fortes, inclusive C–C</li><li>orbitais atômicos e moleculares</li><li>hibridização (sp³, sp², sp)</li><li>geometria (tetraédrica, plana, linear)</li></ol>
+    <div class="note key"><b class="t">Conceito-chave</b>O mesmo átomo de carbono pode ser tetraédrico, plano ou linear, conforme forme ligações simples, duplas ou triplas — e isso decide a forma e a reatividade das moléculas.</div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="section" id="atomos" data-title="Átomos e Elétrons">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Átomos e elétrons</h2><p class="lead">Núcleo (prótons e nêutrons) muito pequeno e denso; elétrons descritos pela mecânica quântica em termos de <b>estados</b> e <b>distribuições de probabilidade</b>.</p></div></div>
+  <div class="block"><div data-w="atomCard"></div>
+    <div class="note err"><b class="t">Erro comum</b>Imaginar o elétron como uma bolinha girando em órbita. O modelo planetário não descreve fisicamente o átomo: o elétron não tem trajetória definida.</div></div>
+</section>
+
+<!-- 4 -->
+<section class="section" id="configuracao" data-title="Configuração Eletrônica">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Configuração eletrônica</h2><p class="lead">Camadas n = 1, 2, 3… e subníveis s, p, d, f. Em Química Orgânica, o foco é <b>1s, 2s e 2p</b>.</p></div></div>
+  <div class="block"><div class="grid2"><div data-w="energyLadder"></div><div>
+    <div class="rules"><div><b>Aufbau</b>: preencha primeiro os subníveis de menor energia.</div><div><b>Pauli</b>: no máximo 2 elétrons por orbital, com spins opostos.</div><div><b>Hund</b>: em orbitais de mesma energia, um elétron em cada (spins paralelos) antes de emparelhar.</div></div>
+  </div></div></div>
+  <div class="block"><h3 class="block-title">Exemplos e diagramas de orbitais</h3><div data-w="configTable"></div></div>
+  <div class="block"><h3 class="block-title">Construtor de configuração eletrônica</h3><div data-w="configBuilder"></div>
+    <div class="note quick" data-q="Quantos elétrons desemparelhados tem o oxigênio no estado fundamental?" data-o="0;2;4;6" data-a="1" data-e="2p⁴: ↑↓ ↑ ↑."></div></div>
+</section>
+
+<!-- 5 -->
+<section class="section" id="valencia" data-title="Elétrons de Valência">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Elétrons de valência e símbolos de Lewis</h2><p class="lead">Os elétrons da camada mais externa participam das ligações: H → 1, C → 4, N → 5, O → 6, F → 7.</p></div></div>
+  <div class="block"><h3 class="block-title">Quantos elétrons de valência?</h3><div data-w="valQuiz"></div></div>
+  <div class="block"><h3 class="block-title">Monte o símbolo de Lewis</h3><div data-w="lewisSymbol"></div></div>
+</section>
+
+<!-- 6 -->
+<section class="section" id="octeto" data-title="Regra do Octeto">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Regra do octeto</h2><p class="lead">Muitos elementos representativos tendem a formar estruturas com 8 elétrons na camada de valência. O hidrogênio segue o <b>dueto</b>.</p></div></div>
+  <div class="block"><h3 class="block-title">Conte os elétrons ao redor de cada átomo</h3><div data-w="octetCounter"></div></div>
+  <div class="block">
+    <div class="note care"><b class="t">Cuidado: o octeto é um modelo útil, não uma lei universal.</b>Há espécies deficientes em elétrons (BF₃, carbocátions), radicais com número ímpar de elétrons (NO) e elementos do 3º período em diante que aparecem com octeto expandido em representações de Lewis (PCl₅, SF₆).</div>
+    <div data-w="octetLimits"></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="section" id="covalente" data-title="Ligação Covalente">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Ligação covalente</h2><p class="lead"><b>Ligação covalente = compartilhamento de densidade eletrônica entre átomos.</b> H• + •H → H–H.</p></div></div>
+  <div class="block"><h3 class="block-title">Energia × distância internuclear</h3><div data-w="bondEnergy"></div></div>
+  <div class="block"><h3 class="block-title">Simples, dupla e tripla</h3><div data-w="bondCompare"></div></div>
+</section>
+
+<!-- 8 -->
+<section class="section" id="lewis" data-title="Estruturas de Lewis">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Estruturas de Lewis</h2><p class="lead">Um procedimento em 8 passos, aplicado a CH₄, NH₃, H₂O, CO₂, HCN, CH₂O, CH₃OH, CH₃OCH₃ e CH₃COOH.</p></div></div>
+  <div class="block"><div data-w="lewisSteps"></div></div>
+  <div class="block"><h3 class="block-title">Contador de elétrons (inclusive íons)</h3><div data-w="eCount"></div></div>
+  <div class="block"><a class="btn primary" href="#construtorlewis">Construa você mesmo no Construtor de Lewis →</a></div>
+</section>
+
+<!-- 9 -->
+<section class="section" id="cargaformal" data-title="Carga Formal">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Carga formal</h2><p class="lead"><b>CF = elétrons de valência − elétrons não ligantes − ½ (elétrons ligantes)</b> — ou: V − (pontos) − (traços).</p></div></div>
+  <div class="block"><h3 class="block-title">Calculadora visual</h3><div data-w="fcCalc"></div></div>
+  <div class="block"><h3 class="block-title">Estruturas mais plausíveis</h3>
+    <ul class="checklist"><li>octetos completos quando apropriado</li><li>menor separação desnecessária de cargas</li><li>carga negativa preferencialmente no átomo mais eletronegativo (entre estruturas comparáveis)</li></ul>
+    <div data-w="plausible"></div>
+    <div class="note care"><b class="t">Cuidado</b>São tendências, não regras absolutas: no CO, a melhor estrutura (:C≡O:) tem a carga negativa no C, porque assim os dois átomos completam o octeto.</div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="section" id="ressonancia" data-title="Ressonância">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Ressonância</h2><p class="lead">Quando uma única estrutura de Lewis não descreve adequadamente a distribuição eletrônica, usamos <b>formas canônicas</b> de ressonância.</p></div></div>
+  <div class="block"><h3 class="block-title">Formas canônicas e híbrido</h3><div data-w="resForms"></div></div>
+  <div class="block"><h3 class="block-title">O que muda? Só os elétrons</h3><div data-w="resAnim"></div>
+    <div class="note err big"><b class="t">Erro comum</b>As formas canônicas <b>não</b> são moléculas diferentes interconvertendo rapidamente (não é equilíbrio). A molécula real é <b>um único híbrido de ressonância</b>; nenhuma forma isolada existe.</div></div>
+  <div class="block"><h3 class="block-title">Avaliando contribuintes</h3><div class="rules"><div>octetos completos pesam mais</div><div>menor separação de cargas</div><div>cargas em átomos apropriados (eletronegatividade)</div><div>formas equivalentes contribuem igualmente</div></div>
+    <a class="btn primary" href="#ressim">Simulador de ressonância ↓</a></div>
+  <div class="block" id="ressim"><h3 class="block-title">Simulador de ressonância: encontre outra forma canônica</h3><div data-w="resSim"></div></div>
+</section>
+
+<!-- 11 -->
+<section class="section" id="vsepr" data-title="VSEPR">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>VSEPR — repulsão dos pares de elétrons da camada de valência</h2><p class="lead">Regiões de densidade eletrônica (<b>domínios eletrônicos</b>) ao redor de um átomo central adotam orientações que minimizam as repulsões.</p></div></div>
+  <div class="block"><div class="rules"><div>ligação simples = 1 domínio</div><div>ligação dupla = 1 domínio</div><div>ligação tripla = 1 domínio</div><div>par isolado = 1 domínio</div></div>
+    <div class="note err"><b class="t">Erro comum</b>Em VSEPR, uma ligação dupla conta como <b>um</b> domínio eletrônico, não dois.</div></div>
+  <div class="block"><h3 class="block-title">Atividade: conte os domínios</h3><div data-w="domainQuiz"></div></div>
+</section>
+
+<!-- 12 -->
+<section class="section" id="geometria" data-title="Geometria Molecular">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Geometria molecular</h2><p class="lead">2 domínios → linear (180°); 3 → trigonal planar (120°); 4 → tetraédrica (109,5°). Pares isolados mudam a geometria molecular e comprimem os ângulos.</p></div></div>
+  <div class="block"><h3 class="block-title">CH₄ (109,5°) · NH₃ (≈107°) · H₂O (≈104,5°) — e CO₂, BF₃, SO₂</h3><div data-w="geo3" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Geometria eletrônica × molecular</h3>
+    <div class="cmp2"><div class="chcard"><h4>Geometria eletrônica</h4><p>Considera <b>todos</b> os domínios (átomos ligados e pares isolados). NH₃: tetraédrica.</p></div><div class="chcard"><h4>Geometria molecular</h4><p>Descreve apenas as <b>posições dos átomos</b>. NH₃: piramidal trigonal. Só coincidem quando não há pares isolados no átomo central.</p></div></div>
+  </div>
+  <div class="block"><h3 class="block-title">Modo “Qual é a geometria?”</h3><div data-w="geoMode"></div></div>
+</section>
+
+<!-- 13 -->
+<section class="section" id="quantica" data-title="Introdução à Teoria Quântica">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Introdução à teoria quântica</h2><p class="lead">Na mecânica quântica, elétrons não seguem órbitas clássicas: são descritos por <b>funções de onda ψ</b>; |ψ|² relaciona-se à densidade de probabilidade, e apenas certos estados de energia são permitidos.</p></div></div>
+  <div class="block"><h3 class="block-title">Do modelo de Bohr ao modelo quântico</h3><div data-w="bohrVsQuantum"></div>
+    <div class="note err"><b class="t">Erro comum</b>Orbitais não são trajetórias percorridas pelos elétrons.</div></div>
+</section>
+
+<!-- 14 -->
+<section class="section" id="orbitais" data-title="Orbitais Atômicos">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Orbitais atômicos</h2><p class="lead"><b>Orbital atômico</b> é uma função de onda associada a um estado eletrônico de um átomo; sua representação espacial pode indicar regiões de maior probabilidade de encontrar o elétron.</p></div></div>
+  <div class="block"><h3 class="block-title">Orbital 1s em 3D <span class="tag">isosuperfície de ψ</span></h3><div data-w="ao1s" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>As superfícies mostradas são <b>isovalores da função de onda</b> (|ψ| = constante), calculadas para um átomo hidrogenoide: representação qualitativa. Dentro delas está a maior parte da probabilidade.</div></div>
+  <div class="block"><h3 class="block-title">Densidade radial</h3><div data-w="radialPlot"></div></div>
+</section>
+
+<!-- 15 -->
+<section class="section" id="orbitaissp" data-title="Orbitais s e p">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Orbitais s e p</h2><p class="lead">1s e 2s são esféricos (o 2s tem um nó radial); os 2p têm dois lóbulos de fases opostas e um plano nodal.</p></div></div>
+  <div class="block"><h3 class="block-title">1s × 2s</h3><div data-w="s12Compare" data-3d></div></div>
+  <div class="block"><h3 class="block-title">2pₓ, 2pᵧ, 2p_z</h3><div data-w="ao2p" data-3d></div>
+    <div class="note care"><b class="t">Cuidado — o que significa fase orbital?</b>As duas cores de um orbital p <b>não</b> representam regiões positiva e negativa de carga. Representam sinais (fases) opostos da função de onda. Isso será essencial para entender a combinação de orbitais.</div></div>
+</section>
+
+<!-- 16 -->
+<section class="section" id="orbmoleculares" data-title="Orbitais Moleculares">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Orbitais moleculares</h2><p class="lead">Combinação de orbitais atômicos: H 1s + H 1s. Em fase → orbital <b>ligante</b> σ1s; fora de fase → <b>antiligante</b> σ*1s.</p></div></div>
+  <div class="block"><div data-w="moH2" data-3d></div></div>
+</section>
+
+<!-- 17 -->
+<section class="section" id="ligantes" data-title="Ligantes e Antiligantes">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>Orbitais ligantes e antiligantes; ordem de ligação</h2><p class="lead">O ligante acumula densidade entre os núcleos; o antiligante tem um nó entre eles. <b>Ordem de ligação = ½(n ligantes − n antiligantes)</b>.</p></div></div>
+  <div class="block"><div data-w="moDiagram"></div></div>
+</section>
+
+<!-- 18 -->
+<section class="section" id="sigmapi" data-title="Ligações σ e π">
+  <div class="section-head"><div><span class="kicker">Módulo 18</span><h2>Ligações σ e π</h2><p class="lead"><b>σ</b>: sobreposição frontal, densidade ao longo do eixo internuclear. <b>π</b>: sobreposição lateral de orbitais p paralelos, com plano nodal contendo o eixo.</p></div></div>
+  <div class="block"><h3 class="block-title">Sobreposição interativa</h3><div data-w="overlapLab" data-3d></div></div>
+  <div class="block">
+    <div class="table-wrap"><table><thead><tr><th>Característica</th><th>σ</th><th>π</th></tr></thead><tbody>
+      <tr><td>Sobreposição</td><td>frontal</td><td>lateral</td></tr><tr><td>Eixo internuclear</td><td>densidade ao longo dele</td><td>nó no eixo</td></tr><tr><td>Ligação simples</td><td>presente</td><td>ausente</td></tr><tr><td>Dupla</td><td>1 σ</td><td>1 π</td></tr><tr><td>Tripla</td><td>1 σ</td><td>2 π</td></tr>
+    </tbody></table></div>
+    <div class="note err"><b class="t">Erro comum</b>Uma ligação dupla não corresponde a duas ligações σ: contém uma σ e uma π. Uma tripla contém uma σ e duas π.</div>
+  </div>
+  <div class="block"><h3 class="block-title">Etano, eteno e etino: σ e π em 3D</h3><div data-w="sigmaPi3d" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Rotação e ligação π</h3><div data-w="piRotation" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Contador σ/π</h3><div data-w="spCounter" data-3d></div></div>
+</section>
+
+<!-- 19 -->
+<section class="section" id="sp3" data-title="Hibridização sp³">
+  <div class="section-head"><div><span class="kicker">Módulo 19</span><h2>Hibridização sp³</h2><p class="lead"><b>O problema do carbono:</b> na configuração 1s² 2s² 2p² há só dois elétrons desemparelhados. Como o C forma quatro ligações <b>equivalentes</b> no metano?</p></div></div>
+  <div class="block"><div data-w="hybEnergy3"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Hibridização é um <b>modelo matemático</b>: combinações de orbitais atômicos do mesmo átomo geram orbitais híbridos orientados de modo adequado para descrever as ligações.</div>
+    <div class="note err"><b class="t">Erro comum</b>Hibridização não é um processo físico no qual os orbitais mudam de forma antes de uma reação.</div></div>
+  <div class="block"><h3 class="block-title">s + pₓ + pᵧ + p_z → quatro sp³</h3><div data-w="hybrid3" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Metano</h3><div data-w="orbCH4" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Etano</h3><div data-w="orbEtano" data-3d></div></div>
+</section>
+
+<!-- 20 -->
+<section class="section" id="sp2" data-title="Hibridização sp²">
+  <div class="section-head"><div><span class="kicker">Módulo 20</span><h2>Hibridização sp²</h2><p class="lead">1 s + 2 p → 3 sp² (trigonal planar, 120°) + 1 p não hibridizado, perpendicular ao plano.</p></div></div>
+  <div class="block"><div data-w="hybEnergy2"></div><div data-w="hybrid2" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Eteno: σ(sp²–sp²) + π(p–p)</h3><div data-w="orbEteno" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Planaridade do eteno</h3><div data-w="etenoPlane" data-3d></div></div>
+</section>
+
+<!-- 21 -->
+<section class="section" id="sp" data-title="Hibridização sp">
+  <div class="section-head"><div><span class="kicker">Módulo 21</span><h2>Hibridização sp</h2><p class="lead">1 s + 1 p → 2 sp (lineares, 180°) + 2 p não hibridizados, perpendiculares entre si.</p></div></div>
+  <div class="block"><div data-w="hybEnergy1"></div><div data-w="hybrid1" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Etino: σ(sp–sp) + 2 π</h3><div data-w="orbEtino" data-3d></div></div>
+</section>
+
+<!-- 22 -->
+<section class="section" id="carbono" data-title="Carbono em Moléculas Orgânicas">
+  <div class="section-head"><div><span class="kicker">Módulo 22</span><h2>Carbono (e N, O) em moléculas orgânicas</h2><p class="lead">Regra rápida para carbono neutro: <b>4 domínios → sp³ · 3 → sp² · 2 → sp</b>. Uma ligação múltipla conta como um domínio.</p></div></div>
+  <div class="block"><h3 class="block-title">Carbono carbonílico (C=O)</h3><div data-w="orbCH2O" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Nitrogênio e oxigênio</h3><div data-w="otherSpecies" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Benzeno: ponte para a deslocalização</h3><div data-w="benzeneCloud" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Ressonância × orbitais</h3><div data-w="allylBridge" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Modo “Qual é a hibridização?”</h3><div data-w="hybMode"></div></div>
+</section>
+
+<!-- 23 -->
+<section class="section" id="comparacao" data-title="Comparação sp³ × sp² × sp">
+  <div class="section-head"><div><span class="kicker">Módulo 23</span><h2>CH₃–CH₃ × CH₂=CH₂ × HC≡CH</h2><p class="lead">A tela de síntese: Lewis, modelo 3D, orbitais, hibridização, geometria, ângulo, σ/π e comprimento C–C.</p></div></div>
+  <div class="block"><div data-w="compare3" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Tabela mestre de hibridização</h3><div data-w="hybTable" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Resumo visual</h3><div data-w="summaryCards"></div></div>
+  <div class="block"><h3 class="block-title">Do orbital à molécula</h3><div data-w="orbToMol"></div></div>
+</section>
+
+<!-- 24 -->
+<section class="section" id="lab3d" data-title="Laboratório Molecular 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 24</span><h2>Laboratório molecular 3D</h2><p class="lead">Selecione um átomo no modelo: Lewis, VSEPR, hibridização e orbitais são atualizados juntos.</p></div></div>
+  <div class="block"><div data-w="lab3d" data-3d></div></div>
+</section>
+
+<!-- 25 -->
+<section class="section" id="laborbitais" data-title="Laboratório de Orbitais">
+  <div class="section-head"><div><span class="kicker">Módulo 25</span><h2>Laboratório de orbitais</h2><p class="lead">1s, 2s, 2pₓ, 2pᵧ, 2p_z, sp³, sp² e sp: gire, corte, ajuste a transparência, ative/desative as fases e compare.</p></div></div>
+  <div class="block"><div data-w="aoLab" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Comparar dois orbitais</h3><div data-w="orbCompare" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Sobreposição: fase correta e incorreta</h3><div data-w="overlapLab" data-3d></div></div>
+</section>
+
+<!-- 26 -->
+<section class="section" id="construtorlewis" data-title="Construtor de Lewis">
+  <div class="section-head"><div><span class="kicker">Módulo 26</span><h2>Construtor de Lewis · Do Lewis ao 3D</h2><p class="lead">Monte a estrutura (ligações, pares, cargas); a aplicação verifica elétrons, octetos, valências e cargas. Depois, <b>Gerar geometria</b>: domínios → VSEPR → 3D → hibridização → σ/π.</p></div></div>
+  <div class="block"><div data-w="lewisBuilder" data-3d></div></div>
+</section>
+
+<!-- 27 -->
+<section class="section" id="simvsepr" data-title="Simulador VSEPR">
+  <div class="section-head"><div><span class="kicker">Módulo 27</span><h2>Simulador VSEPR</h2><p class="lead">Escolha o número de átomos ligados e de pares isolados: AXₙEₘ, geometria eletrônica, geometria molecular e ângulos.</p></div></div>
+  <div class="block"><div data-w="vseprSim" data-3d></div></div>
+</section>
+
+<!-- 28 -->
+<section class="section" id="simhib" data-title="Simulador de Hibridização">
+  <div class="section-head"><div><span class="kicker">Módulo 28</span><h2>Simulador de hibridização e construtor molecular</h2><p class="lead">Clique em um átomo: quantos domínios? qual geometria? qual hibridização? Depois veja os orbitais.</p></div></div>
+  <div class="block"><div data-w="hybSim" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Construtor molecular — experimente CH₃CH=CHC≡N</h3><div data-w="molBuilder" data-3d></div></div>
+</section>
+
+<!-- 29 -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 29</span><h2>Exercícios resolvidos</h2><p class="lead">16 níveis. Tente resolver primeiro; depois a dica e a resolução passo a passo.</p></div></div>
+  <div class="block"><div class="chips" data-w="levelChips"></div><div data-w="solved"></div></div>
+</section>
+
+<!-- 30 -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 30</span><h2>Exercícios propostos</h2><p class="lead">80 exercícios: 25 fáceis, 30 intermediários e 25 avançados (incluindo “Detecte o erro”). <button class="btn sm" type="button" data-action="redo">↺ Refazer todos</button></p></div></div>
+  <nav class="subnav"><a href="#prop-easy">Fáceis</a><a href="#prop-mid">Intermediários</a><a href="#prop-hard">Avançados</a></nav>
+  <div class="block">
+    <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+    <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+    <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+  </div>
+</section>
+
+<!-- 31 -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 31</span><h2>Quiz final</h2><p class="lead">40 questões sorteadas: estrutura eletrônica, Lewis, ressonância, VSEPR, orbitais, σ/π e hibridização.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">Modo desafio <span class="tag">pontos · sequência</span></h3><div data-w="challenge"></div></div>
+</section>
+
+<!-- 32 -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 32</span><h2>Mapa conceitual</h2><p class="lead">Configuração eletrônica determina os elétrons de valência, que participam de ligações representáveis por estruturas de Lewis; estas permitem analisar pares eletrônicos e ressonância, que ajudam a compreender a geometria; a teoria orbital explica σ e π; a hibridização explica sp³, sp² e sp — e a geometria das moléculas orgânicas.</p></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block"><h3 class="block-title">Resumo: sp³ · sp² · sp</h3><div data-w="summaryCards"></div></div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica I</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

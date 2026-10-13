@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conformações de Moléculas Orgânicas · Química Orgânica I</title>
+  <meta name="description" content="Laboratório virtual de análise conformacional: rotação em ligações simples, projeções de Newman e cavalete, energia conformacional, cicloalcanos, ciclo-hexano em cadeira, axial/equatorial, inversão de cadeira e cicloexanos substituídos em 3D.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><circle cx="20" cy="20" r="8" fill="none" stroke="#ff4fa3" stroke-width="2.2"/><line x1="20" y1="20" x2="20" y2="6" stroke="#ff9f43" stroke-width="2.4"/><line x1="20" y1="20" x2="32" y2="27" stroke="#ff9f43" stroke-width="2.4"/><line x1="20" y1="20" x2="8" y2="27" stroke="#ff9f43" stroke-width="2.4"/><circle cx="20" cy="20" r="2.2" fill="#fff"/></svg>
+      <span>Conformações<small>Química Orgânica I</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#conformacoes">O que são conformações?</a></li>
+        <li><a href="#rotacao">Rotação em ligações simples</a></li>
+        <li><a href="#newman">Projeção de Newman</a></li>
+        <li><a href="#cavalete">Projeção em Cavalete</a></li>
+        <li><a href="#etano">Etano</a></li>
+        <li><a href="#butano">Butano</a></li>
+        <li><a href="#anti-gauche">Anti, Gauche e Eclipsada</a></li>
+        <li><a href="#energia">Diagramas de Energia</a></li>
+        <li><a href="#cicloalcanos">Cicloalcanos</a></li>
+        <li><a href="#cicloexano">Ciclo-hexano</a></li>
+        <li><a href="#cadeira">Conformação Cadeira</a></li>
+        <li><a href="#axial">Axial × Equatorial</a></li>
+        <li><a href="#inversao">Inversão de Cadeira</a></li>
+        <li><a href="#monossubstituidos">Monossubstituídos</a></li>
+        <li><a href="#dissubstituidos">Dissubstituídos</a></li>
+        <li><a href="#cis-trans">Cis × Trans</a></li>
+        <li><a href="#laboratorio">Laboratório 3D</a></li>
+        <li><a href="#conversor">Conversor</a></li>
+        <li><a href="#simulador">Simulador de Cadeira</a></li>
+        <li><a href="#resolvidos">Resolvidos</a></li>
+        <li><a href="#propostos">Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1 INÍCIO -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero hero-stack">
+    <div>
+      <span class="kicker">Química Orgânica I · análise conformacional</span>
+      <h1>Conformações de <span class="g">Moléculas Orgânicas</span></h1>
+      <p class="sub">Visualize rotações, projeções de Newman, cavalete e conformações de cicloexanos em 3D.</p>
+      <div class="cta"><a class="btn primary lg" href="#conformacoes">Começar →</a><a class="btn lg" href="#laboratorio">Explorar em 3D</a></div>
+      <p class="eq">gire a ligação → observe o 3D → veja a Newman → veja o cavalete → observe a energia</p>
+    </div>
+    <div data-w="hero" data-3d class="grid3 herogrid"></div>
+  </div>
+  <div class="modules">
+    <a href="#rotacao"><b>Rotação e diedro</b><span>3D + Newman + cavalete + energia sincronizados</span></a>
+    <a href="#newman"><b>Newman e cavalete</b><span>passo a passo, olhar ao longo da ligação, conversão</span></a>
+    <a href="#butano"><b>Etano e butano</b><span>alternada, eclipsada, anti, gauche, perfis de energia</span></a>
+    <a href="#cicloalcanos"><b>Cicloalcanos</b><span>tensão angular e torsional; C3, C4, C5</span></a>
+    <a href="#cadeira"><b>Cadeira</b><span>axial/equatorial, up/down, inversão animada</span></a>
+    <a href="#dissubstituidos"><b>Substituintes</b><span>1,3-diaxiais, valores A, cis/trans 1,2 · 1,3 · 1,4</span></a>
+    <a href="#laboratorio"><b>Laboratório</b><span>16 moléculas para girar, medir e comparar</span></a>
+    <a href="#simulador"><b>Construtores</b><span>monte Newman e cadeiras; compare as conformações</span></a>
+    <a href="#resolvidos"><b>Exercícios</b><span>29 resolvidos e 50 propostos</span></a>
+    <a href="#quiz"><b>Quiz e desafio</b><span>30 questões + "Conformação em 10 segundos"</span></a>
+  </div>
+</section>
+
+<!-- 2 CONFORMAÇÕES -->
+<section class="section" id="conformacoes" data-title="O que são conformações?">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>O que são conformações?</h2><p class="lead">Diferentes arranjos espaciais de uma mesma molécula obtidos por <b>rotação em torno de ligações simples σ</b>, sem quebra de ligações.</p></div></div>
+  <div class="block">
+    <div class="grid3">
+      <div class="defbox"><b>Revisão: ligação σ</b>sobreposição frontal de orbitais ao longo do eixo: a densidade é simétrica em torno do eixo, por isso a rotação não rompe a ligação.</div>
+      <div class="defbox o"><b>Conformação</b>arranjo obtido por rotação; conformações interconvertem-se rapidamente (barreiras baixas).</div>
+      <div class="defbox m"><b>Configuração</b>arranjo que só muda quebrando ligações (cis/trans em anéis, R/S).</div>
+    </div>
+    <div class="grid2" data-fig="confcfg"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Conformações podem, em geral, interconverter-se por rotação de ligações simples.</div>
+    <div class="note err"><b class="t">Erro comum</b>Uma projeção de Newman não é uma molécula diferente. É apenas uma forma de visualizar a mesma molécula ao longo de uma ligação.</div>
+  </div>
+</section>
+
+<!-- 3 ROTAÇÃO -->
+<section class="section" id="rotacao" data-title="Rotação em ligações simples">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Rotação em torno da ligação C–C</h2><p class="lead">Gire um CH₃ do etano em relação ao outro e acompanhe tudo ao mesmo tempo.</p></div></div>
+  <nav class="subnav"><a href="#rot-etano">Etano em 3D</a><a href="#rot-diedro">Ângulo diedro</a></nav>
+  <div class="block" id="rot-etano">
+    <h3 class="block-title">Etano: 3D + Newman + cavalete + energia <span class="tag">sincronizado</span></h3>
+    <div data-w="rotEthane" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>Por que o gráfico se repete a cada 120°?</div>
+  </div>
+  <div class="block" id="rot-diedro">
+    <h3 class="block-title">Ângulo diedro <span class="tag">planos em 3D</span></h3>
+    <div class="formula">ângulo diedro A–B–C–D = ângulo entre os planos A–B–C e B–C–D</div>
+    <p>No 1,2-dicloroetano: A = Cl, B = C1, C = C2, D = Cl. Os planos aparecem em laranja (frente) e magenta (trás); na Newman, o diedro é o ângulo entre as duas ligações C–Cl.</p>
+    <div data-w="dihedral" data-3d></div>
+  </div>
+</section>
+
+<!-- 4 NEWMAN -->
+<section class="section" id="newman" data-title="Projeção de Newman">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Projeção de Newman</h2><p class="lead">Olhe ao longo de uma ligação C–C: carbono da frente = <span class="cf">ponto</span>; carbono de trás = <span class="cb">círculo</span>.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Passo a passo</h3>
+    <div data-w="newmanSteps" data-3d></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Olhar ao longo da ligação · girar o carbono de trás <span class="tag">3D</span></h3>
+    <p>Clique em <b>👁 Ver Newman</b>: a câmera se alinha ao eixo C–C e o modelo 3D coincide com a projeção. Use o controle para girar o carbono de trás.</p>
+    <div data-w="newman3d" data-3d></div>
+    <div class="note quick" data-q="Quantas ligações saem do ponto (carbono da frente) numa Newman do butano?" data-o="2;3;4" data-a="1" data-e="Três substituintes; a quarta ligação é a própria C–C, ao longo da linha de visão."></div>
+  </div>
+</section>
+
+<!-- 5 CAVALETE -->
+<section class="section" id="cavalete" data-title="Projeção em Cavalete">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Projeção em cavalete</h2><p class="lead">A ligação C–C é vista em perspectiva, inclinada: o carbono da frente fica embaixo à esquerda.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">A mesma conformação em 3D, Newman e cavalete</h3>
+    <div data-w="cavalete" data-3d></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Conversão Newman ↔ Cavalete <span class="tag">animação</span></h3>
+    <div data-w="convert"></div>
+    <div class="note care"><b class="t">Cuidado</b>Ao converter, mantenha os ângulos relativos. Um grupo "para cima" no carbono da frente continua para cima no cavalete; o diedro não muda.</div>
+  </div>
+</section>
+
+<!-- 6 ETANO -->
+<section class="section" id="etano" data-title="Etano">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Etano: alternada × eclipsada</h2></div></div>
+  <div class="block">
+    <div class="figs" data-fig="ethaneSet"></div>
+    <div class="grid2">
+      <div class="defbox"><b>Alternada (60°)</b>H desencontrados; ligações C–H o mais afastadas possível: menor tensão torsional e menor energia.</div>
+      <div class="defbox m"><b>Eclipsada (0°)</b>ligações C–H alinhadas; repulsão entre os pares eletrônicos: tensão torsional, ≈ 12 kJ/mol acima.</div>
+    </div>
+    <h3 class="block-title">Tensão torsional <span class="tag">3D</span></h3>
+    <div data-w="ethaneCmp" data-3d></div>
+    <p class="hint3">Representação qualitativa: as nuvens das ligações C–H "se encaram" na eclipsada. (Parte da preferência pela alternada também é atribuída à hiperconjugação σ<sub>C–H</sub> → σ*<sub>C–H</sub>.)</p>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Perfil energético do etano <span class="tag">linha móvel</span></h3>
+    <div data-w="ethaneProfile" data-3d></div>
+  </div>
+</section>
+
+<!-- 7 BUTANO -->
+<section class="section" id="butano" data-title="Butano">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Butano: olhando ao longo de C2–C3</h2><p class="lead">Na Newman: dois CH₃ e quatro H. Gire 360° e observe a energia.</p></div></div>
+  <div class="block">
+    <div data-w="butane" data-3d></div>
+    <div class="note err"><b class="t">Erro comum</b>Trocar a direção de visualização sem perceber. Olhar C3 → C2 em vez de C2 → C3 troca frente/trás e espelha o desenho (use o botão de direção).</div>
+  </div>
+</section>
+
+<!-- 8 ANTI GAUCHE -->
+<section class="section" id="anti-gauche" data-title="Anti, Gauche e Eclipsada">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Anti, gauche e eclipsadas</h2></div></div>
+  <nav class="subnav"><a href="#ag-conf">Conformações</a><a href="#ag-tab">Comparação</a><a href="#ag-est">Tensão estérica</a><a href="#ag-ex">Exercícios</a></nav>
+  <div class="block" id="ag-conf">
+    <div class="figs" data-fig="butaneSet"></div>
+    <div data-w="butaneQuick" data-3d></div>
+    <div class="grid2">
+      <div class="defbox"><b>Anti (180°)</b>geralmente a mais estável: menor interação estérica entre as metilas.</div>
+      <div class="defbox o"><b>Gauche (60°)</b>também alternada, mas com as metilas próximas: ≈ 3,8 kJ/mol acima da anti.</div>
+      <div class="defbox m"><b>Eclipsada CH₃/H (120°)</b>tensão torsional + estérica: ≈ 16 kJ/mol.</div>
+      <div class="defbox"><b>Totalmente eclipsada (0°)</b>CH₃ sobre CH₃: ≈ 19 kJ/mol, a de maior energia.</div>
+    </div>
+  </div>
+  <div class="block" id="ag-tab">
+    <div class="table-wrap"><table class="cmp"><thead><tr><th>Conformação</th><th>Característica</th><th>Estabilidade</th></tr></thead><tbody>
+      <tr><td><b>Anti</b></td><td>alternada, grupos grandes separados</td><td class="okc"><b>maior</b></td></tr>
+      <tr><td><b>Gauche</b></td><td>alternada, grupos grandes próximos</td><td>intermediária</td></tr>
+      <tr><td><b>Eclipsada</b></td><td>tensão torsional</td><td>menor</td></tr>
+      <tr><td><b>Totalmente eclipsada</b></td><td>grupos grandes sobrepostos</td><td class="hic">menor ainda</td></tr>
+    </tbody></table></div>
+    <div class="note care"><b class="t">Cuidado</b>Os valores (3,8; 16; 19 kJ/mol) valem para o butano. Outras moléculas têm valores diferentes, e em alguns casos (ex.: grupos que fazem ligação de H ou efeitos eletrônicos) a gauche pode até ser preferida.</div>
+  </div>
+  <div class="block" id="ag-est">
+    <h3 class="block-title">Tensão estérica: H/H, H/CH₃, CH₃/CH₃, t-Bu/t-Bu <span class="tag">space-filling</span></h3>
+    <div data-w="steric" data-3d></div>
+  </div>
+  <div class="block" id="ag-ex">
+    <h3 class="block-title">Qual destas projeções corresponde à molécula? <span class="tag">3D</span></h3>
+    <div data-w="newmanMatch" data-3d></div>
+    <h3 class="block-title">Monte a projeção de Newman <span class="tag">arrastar e soltar</span></h3>
+    <div data-w="buildNewman"></div>
+    <h3 class="block-title">Direção de visualização: C2 → C3 ou C3 → C2? <span class="tag">treino</span></h3>
+    <div class="figs" data-fig="dirFig"></div>
+    <div data-w="dirMatch" data-3d></div>
+  </div>
+</section>
+
+<!-- 9 ENERGIA -->
+<section class="section" id="energia" data-title="Diagramas de Energia">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Diagramas de energia conformacional</h2><p class="lead">Passe o mouse no gráfico: a Newman correspondente aparece. Clique para levar a molécula até aquele ângulo.</p></div></div>
+  <div class="block"><div data-w="energyAll" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Que conformação é este ponto?</h3><div data-w="energyPoint"></div></div>
+</section>
+
+<!-- 10 CICLOALCANOS -->
+<section class="section" id="cicloalcanos" data-title="Cicloalcanos">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Cicloalcanos</h2><p class="lead">Tensão angular (ângulos longe de 109,5°) + tensão torsional (ligações eclipsadas) → anéis não planos.</p></div></div>
+  <div class="block"><div data-w="rings" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Ciclopropano</h3><div data-w="ring3" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Ciclobutano: dobra do anel <span class="tag">animação</span></h3><div data-w="ring4" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Ciclopentano: envelope ⇌ meia-cadeira <span class="tag">animação</span></h3><div data-w="ring5" data-3d></div></div>
+</section>
+
+<!-- 11 CICLO-HEXANO -->
+<section class="section" id="cicloexano" data-title="Ciclo-hexano">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Ciclo-hexano: cadeira, barco, barco torcido e meia-cadeira</h2></div></div>
+  <div class="block"><div data-w="hexConfs" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Barco: interações de mastro (flagpole) <span class="tag">space-filling</span></h3><div data-w="boat" data-3d></div>
+    <p>No barco, os dois H "de mastro" (em amarelo) apontam um para o outro, e quatro pares de ligações C–H estão eclipsados. A torção do <b>barco torcido</b> afasta esses H e reduz o eclipsamento: ele é mais estável que o barco, mas ainda ≈ 23 kJ/mol acima da cadeira.</p></div>
+</section>
+
+<!-- 12 CADEIRA -->
+<section class="section" id="cadeira" data-title="Conformação Cadeira">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Conformação cadeira</h2></div></div>
+  <div class="block">
+    <div class="grid2">
+      <div class="defbox"><b>Ângulos ≈ 111°</b>próximos de 109,5°: baixa tensão angular.</div>
+      <div class="defbox o"><b>Tudo alternado</b>olhando ao longo de qualquer C–C do anel, as ligações estão alternadas: baixa tensão torsional.</div>
+    </div>
+    <h3 class="block-title">Cadeira em três representações <span class="tag">sincronizadas</span></h3>
+    <div data-w="chairReps" data-3d></div>
+  </div>
+</section>
+
+<!-- 13 AXIAL -->
+<section class="section" id="axial" data-title="Axial × Equatorial">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Axial × equatorial</h2><p class="lead">12 ligações C–H: 6 axiais (paralelas ao eixo do anel) e 6 equatoriais (ao redor do "equador").</p></div></div>
+  <div class="block"><div data-w="axialEq" data-3d></div></div>
+  <div class="block">
+    <h3 class="block-title">up/down × axial/equatorial</h3>
+    <div class="split">
+      <div class="figs" data-fig="updown"></div>
+      <div class="table-wrap"><table class="cmp"><thead><tr><th>Carbono</th><th>axial</th><th>equatorial</th></tr></thead><tbody>
+        <tr><td>C1, C3, C5</td><td class="axc">up</td><td class="eqc">down</td></tr>
+        <tr><td>C2, C4, C6</td><td class="axc">down</td><td class="eqc">up</td></tr>
+      </tbody></table><p class="hint3">Cadeira com o C1 "para cima". Combinações possíveis: axial up, axial down, equatorial up, equatorial down.</p></div>
+    </div>
+    <div class="note err"><b class="t">Erro comum</b>Axial/equatorial não é sinônimo de up/down. "Up" e "down" dizem de que face do anel o grupo sai; "axial" e "equatorial" dizem a direção da ligação naquela cadeira.</div>
+  </div>
+</section>
+
+<!-- 14 INVERSÃO -->
+<section class="section" id="inversao" data-title="Inversão de Cadeira">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Inversão de cadeira (flip)</h2><p class="lead">cadeira → meia-cadeira → barco torcido → barco → barco torcido → meia-cadeira → cadeira invertida</p></div></div>
+  <div class="block">
+    <div data-w="flipPlain" data-3d></div>
+    <div class="grid2">
+      <div class="defbox"><b>O que muda</b>axial → equatorial · equatorial → axial.</div>
+      <div class="defbox o"><b>O que NÃO muda</b>up permanece up · down permanece down (e, portanto, cis/trans).</div>
+    </div>
+    <div class="note err"><b class="t">Erro comum</b>Ao realizar flip de cadeira, um substituinte up não se torna down.</div>
+  </div>
+</section>
+
+<!-- 15 MONO -->
+<section class="section" id="monossubstituidos" data-title="Monossubstituídos">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Ciclo-hexanos monossubstituídos</h2></div></div>
+  <div class="block">
+    <h3 class="block-title">Metilciclo-hexano: axial × equatorial</h3>
+    <div class="figs" data-fig="mono"></div>
+    <h3 class="block-title">Interações 1,3-diaxiais <span class="tag">3D</span></h3>
+    <div data-w="diaxial" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Um grupo axial em C1 fica próximo dos H axiais de C3 e C5, na mesma face. Quanto maior o grupo, maior essa repulsão — por isso grupos volumosos preferem a posição equatorial.</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Valores A (preferência equatorial, aproximados)</h3>
+    <div data-w="aValues"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">terc-Butilciclo-hexano <span class="tag">space-filling</span></h3>
+    <div data-w="tbu" data-3d></div>
+  </div>
+</section>
+
+<!-- 16 DISSUBSTITUÍDOS -->
+<section class="section" id="dissubstituidos" data-title="Dissubstituídos">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Ciclo-hexanos dissubstituídos</h2><p class="lead">Escolha 1,2 / 1,3 / 1,4, cis ou trans, e os grupos. Compare as duas cadeiras: diequatorial × diaxial.</p></div></div>
+  <div class="block"><div data-w="disub" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Substituintes diferentes: qual fica equatorial?</h3><div data-w="mixed"></div>
+    <div class="note key"><b class="t">Trava conformacional</b>O t-butila (valor A ≈ 21 kJ/mol) praticamente obriga a cadeira em que ele é equatorial: o outro grupo fica axial ou equatorial conforme a relação cis/trans.</div></div>
+</section>
+
+<!-- 17 CIS TRANS -->
+<section class="section" id="cis-trans" data-title="Cis × Trans">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>Cis × trans em ciclo-hexanos</h2></div></div>
+  <div class="block">
+    <div class="grid2">
+      <div class="defbox"><b>cis</b>substituintes do mesmo lado do anel (ambos up ou ambos down).</div>
+      <div class="defbox o"><b>trans</b>lados opostos (um up e outro down).</div>
+    </div>
+    <div class="table-wrap"><table class="cmp"><thead><tr><th></th><th>cis</th><th>trans</th></tr></thead><tbody>
+      <tr><td><b>1,2</b></td><td>(a,e) ⇌ (e,a)</td><td class="okc">(a,a) ⇌ <b>(e,e)</b></td></tr>
+      <tr><td><b>1,3</b></td><td class="okc">(a,a) ⇌ <b>(e,e)</b></td><td>(a,e) ⇌ (e,a)</td></tr>
+      <tr><td><b>1,4</b></td><td>(a,e) ⇌ (e,a)</td><td class="okc">(a,a) ⇌ <b>(e,e)</b></td></tr>
+    </tbody></table></div>
+    <div class="note err"><b class="t">Erro comum</b>cis/trans NÃO significa diretamente axial/equatorial. O trans-1,2 pode ser diequatorial; o cis-1,3 também.</div>
+    <div data-w="cisTransEx"></div>
+  </div>
+</section>
+
+<!-- 18 LAB -->
+<section class="section" id="laboratorio" data-title="Laboratório 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 18</span><h2>Laboratório Conformacional</h2><p class="lead">Escolha uma molécula: gire, aproxime, troque a representação, gire a ligação, meça o diedro, veja Newman e cavalete, execute o flip e identifique axial/equatorial e up/down.</p></div></div>
+  <div class="block"><div data-w="lab" data-3d></div></div>
+</section>
+
+<!-- 19 CONVERSOR -->
+<section class="section" id="conversor" data-title="Conversor">
+  <div class="section-head"><div><span class="kicker">Módulo 19</span><h2>Conversor 3D ↔ Newman ↔ Cavalete</h2><p class="lead">Monte uma projeção de Newman (grupos da frente, de trás e diedro): o cavalete e a molécula 3D são gerados automaticamente.</p></div></div>
+  <div class="block"><h3 class="block-title">Construtor de Newman</h3><div data-w="newmanBuilder" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Caminho inverso: qual modelo 3D corresponde à Newman? <span class="tag">3D</span></h3><div data-w="inverse3d" data-3d></div></div>
+</section>
+
+<!-- 20 SIMULADOR -->
+<section class="section" id="simulador" data-title="Simulador de Cadeira">
+  <div class="section-head"><div><span class="kicker">Módulo 20</span><h2>Simulador de cadeira</h2><p class="lead">Coloque substituintes (up/down) nos carbonos C1–C6; a aplicação decide axial/equatorial, faz o flip e compara as duas cadeiras.</p></div></div>
+  <div class="block"><div data-w="chairBuilder" data-3d></div></div>
+</section>
+
+<!-- 21 RESOLVIDOS -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 21</span><h2>Exercícios resolvidos</h2><p class="lead">29 exercícios em 8 níveis. Tente antes de abrir a dica e a resolução.</p></div></div>
+  <div class="levels" data-w="levelChips"></div>
+  <div data-w="solved"></div>
+</section>
+
+<!-- 22 PROPOSTOS -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 22</span><h2>Exercícios propostos</h2><p class="lead">50 exercícios (15 fáceis, 20 intermediários, 15 avançados) + atividades interativas.</p></div><button class="btn sm" type="button" data-action="redo">↺ Refazer exercícios</button></div>
+  <nav class="subnav"><a href="#prop-int">Interativos</a><a href="#prop-easy">Fáceis</a><a href="#prop-mid">Intermediários</a><a href="#prop-hard">Avançados</a></nav>
+  <div class="block" id="prop-int">
+    <h3 class="block-title">Qual é o ângulo diedro? <span class="tag">3D</span></h3><div data-w="dihedralGuess" data-3d></div>
+    <h3 class="block-title">Ponto no perfil → Newman</h3><div data-w="energyPoint"></div>
+    <h3 class="block-title">Desenhe a Newman <span class="tag">arrastar e soltar</span></h3><div data-w="buildNewman"></div>
+  </div>
+  <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+  <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+  <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+</section>
+
+<!-- 23 QUIZ -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 23</span><h2>Quiz final</h2><p class="lead">30 questões sorteadas de todos os temas.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">Conformação em 10 segundos <span class="tag">pontos + sequência</span></h3><div data-w="challenge"></div></div>
+</section>
+
+<!-- 24 MAPA -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 24</span><h2>Mapa conceitual e resumo</h2></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block">
+    <h3 class="block-title">Regras essenciais</h3>
+    <div class="rules">
+      <div>Ligação simples C–C → <b>pode girar</b></div>
+      <div><b>Alternada</b> é mais estável que eclipsada</div>
+      <div><b>Anti</b> é geralmente mais estável que gauche</div>
+      <div><b>Cadeira</b> é a conformação mais estável do ciclo-hexano</div>
+      <div>Substituintes volumosos preferem a posição <b>equatorial</b></div>
+      <div>Flip: <b>axial ↔ equatorial</b></div>
+      <div>Flip: <b>up permanece up; down permanece down</b></div>
+      <div><b>Cis/trans</b> descreve orientação relativa, não axial/equatorial</div>
+    </div>
+  </div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica I</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ácidos Carboxílicos e Derivados · Química Orgânica II</title>
+  <meta name="description" content="Laboratório virtual de ácidos carboxílicos e derivados: acidez, ressonância, escada de reatividade, substituição nucleofílica acílica, SOCl₂, anidridos, Fischer, saponificação, lactonas, amidas, lactamas, nitrilas e descarboxilação, com modelos 3D, mecanismos animados e simuladores.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><line x1="8" y1="27" x2="18" y2="21" stroke="#e8eef9" stroke-width="2.4"/><line x1="18" y1="21" x2="28" y2="27" stroke="#ffd45c" stroke-width="2.4"/><line x1="16.6" y1="20" x2="16.6" y2="10" stroke="#2fd4f5" stroke-width="2.4"/><line x1="19.4" y1="20" x2="19.4" y2="10" stroke="#2fd4f5" stroke-width="2.4"/><circle cx="18" cy="21" r="3" fill="#ff9f43"/><circle cx="18" cy="8.5" r="3.2" fill="#2fd4f5"/><circle cx="30" cy="28" r="3.2" fill="#ffd45c"/></svg>
+      <span>Ácidos Carboxílicos e Derivados<small>Química Orgânica II · SNAc</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#acidos">Ácidos Carboxílicos</a></li>
+        <li><a href="#estrutura">Estrutura e Ressonância</a></li>
+        <li><a href="#acidez">Acidez dos Ácidos Carboxílicos</a></li>
+        <li><a href="#propriedades">Propriedades Físicas</a></li>
+        <li><a href="#derivados">Derivados de Ácidos Carboxílicos</a></li>
+        <li><a href="#reatividade">Reatividade dos Derivados</a></li>
+        <li><a href="#snac">Substituição Nucleofílica Acílica</a></li>
+        <li><a href="#tetraedrico">Intermediário Tetraédrico</a></li>
+        <li><a href="#cloretos">Cloretos de Acila</a></li>
+        <li><a href="#socl2">Síntese com SOCl₂</a></li>
+        <li><a href="#oxalila">Síntese com (COCl)₂</a></li>
+        <li><a href="#pcl">Síntese com PCl₃/PCl₅</a></li>
+        <li><a href="#reacoes-cloretos">Reações de Cloretos de Acila</a></li>
+        <li><a href="#anidridos">Anidridos</a></li>
+        <li><a href="#sintese-anidridos">Síntese de Anidridos</a></li>
+        <li><a href="#reacoes-anidridos">Reações de Anidridos</a></li>
+        <li><a href="#esteres">Ésteres</a></li>
+        <li><a href="#fischer">Esterificação de Fischer</a></li>
+        <li><a href="#ester-cloreto">Ésteres a partir de Cloretos de Acila</a></li>
+        <li><a href="#ester-anidrido">Ésteres a partir de Anidridos</a></li>
+        <li><a href="#hidrolise-acida">Hidrólise Ácida de Ésteres</a></li>
+        <li><a href="#saponificacao">Saponificação</a></li>
+        <li><a href="#lactonas">Lactonas</a></li>
+        <li><a href="#amidas">Amidas</a></li>
+        <li><a href="#amida-cloreto">Amidas a partir de Cloretos de Acila</a></li>
+        <li><a href="#amida-anidrido">Amidas a partir de Anidridos</a></li>
+        <li><a href="#aminolise">Aminólise de Ésteres</a></li>
+        <li><a href="#amida-acido">Amidas a partir de Ácidos Carboxílicos</a></li>
+        <li><a href="#hidrolise-amidas">Hidrólise de Amidas</a></li>
+        <li><a href="#lactamas">Lactamas</a></li>
+        <li><a href="#nitrilas">Nitrilas</a></li>
+        <li><a href="#desidratacao">Desidratação de Amidas</a></li>
+        <li><a href="#nitrila-acida">Hidrólise Ácida de Nitrilas</a></li>
+        <li><a href="#nitrila-basica">Hidrólise Básica de Nitrilas</a></li>
+        <li><a href="#descarboxilacao">Descarboxilação</a></li>
+        <li><a href="#mapa-inter">Mapa de Interconversões</a></li>
+        <li><a href="#lab3d">Laboratório Acílico 3D</a></li>
+        <li><a href="#simreat">Simulador de Reatividade</a></li>
+        <li><a href="#simmec">Simulador de Mecanismos</a></li>
+        <li><a href="#simsintese">Simulador de Síntese</a></li>
+        <li><a href="#resolvidos">Exercícios Resolvidos</a></li>
+        <li><a href="#propostos">Exercícios Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1 -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica II · substituição nucleofílica acílica</span>
+      <h1>Ácidos Carboxílicos <span class="g">e seus Derivados</span></h1>
+      <p class="sub">Estrutura, reatividade e substituição nucleofílica acílica</p>
+      <p class="legendline"><span class="oxy">● O / nucleófilos oxigenados</span> <span class="el">● C acílico</span> <span class="mv">● setas</span> <span class="pr">● produtos</span> <span class="it">● intermediários</span> <span class="hy">● grupos de saída</span></p>
+      <div class="cta"><a class="btn primary lg" href="#acidos">Começar →</a><a class="btn lg" href="#reatividade">Comparar reatividade</a><a class="btn lg" href="#tetraedrico">Explorar mecanismo em 3D</a></div>
+    </div>
+    <div class="heroview" data-w="hero" data-3d></div>
+  </div>
+  <div class="centralq"><span class="kicker">Pergunta central</span><h2>Por que os diferentes derivados de ácidos carboxílicos apresentam reatividades tão diferentes?</h2>
+    <ol class="flowsteps"><li><b>1</b>Que derivado?<small>R–C(=O)–Y</small></li><li><b>2</b>Quão eletrofílica?<small>doação de Y</small></li><li><b>3</b>Nucleófilo ataca<small>C acílico</small></li><li><b>4</b>Tetraédrico<small>sp³</small></li><li><b>5</b>Quem sai?<small>grupo de saída</small></li><li><b>6</b>Desce a escada?<small>ou precisa de ativação</small></li></ol></div>
+  <div class="block"><h3 class="block-title">Ataque → intermediário tetraédrico → eliminação → novo derivado</h3><div data-w="heroFlow"></div></div>
+  <div class="modules">
+    <a href="#acidez"><b>Acidez</b><span>ressonância e efeito indutivo</span></a>
+    <a href="#reatividade"><b>Escada de reatividade</b><span>ressonância + grupo de saída</span></a>
+    <a href="#tetraedrico"><b>Intermediário tetraédrico</b><span>sp² → sp³ → sp² em 3D</span></a>
+    <a href="#socl2"><b>SOCl₂</b><span>ácido → cloreto de acila</span></a>
+    <a href="#fischer"><b>Fischer</b><span>mecanismo + simulador de equilíbrio</span></a>
+    <a href="#saponificacao"><b>Saponificação</b><span>por que é irreversível</span></a>
+    <a href="#amidas"><b>Amidas</b><span>ressonância, planaridade, hidrólise</span></a>
+    <a href="#nitrilas"><b>Nitrilas</b><span>desidratação e hidrólise</span></a>
+    <a href="#descarboxilacao"><b>Descarboxilação</b><span>ciclo de 6 membros</span></a>
+    <a href="#mapa-inter"><b>Mapa de interconversões</b><span>todas as rotas</span></a>
+    <a href="#simreat"><b>Simuladores</b><span>reatividade, setas curvas, síntese</span></a>
+    <a href="#quiz"><b>Exercícios e quiz</b><span>53 resolvidos · 100 propostos · 45 questões</span></a>
+  </div>
+</section>
+<!-- 2 -->
+<section class="section" id="acidos" data-title="Ácidos Carboxílicos">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>O que são ácidos carboxílicos?</h2><p class="lead">Grupo <b>carboxila</b>, R–COOH: carbonila + hidroxila no mesmo carbono.</p></div></div>
+  <div class="block"><div data-w="acidIntro" data-3d></div></div>
+</section>
+<!-- 3 -->
+<section class="section" id="estrutura" data-title="Estrutura e Ressonância">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Estrutura e ressonância</h2><p class="lead">Carbono sp², trigonal planar. Desprotonação: RCOOH ⇌ RCOO⁻ + H⁺; o carboxilato é estabilizado por ressonância.</p></div></div>
+  <div class="block"><h3 class="block-title">Ressonância do carboxilato</h3><div data-w="carboxylateRes"></div></div>
+  <div class="block"><h3 class="block-title">Comprimentos C–O: ácido × carboxilato</h3><div data-w="bondLengths" data-3d></div>
+    <div class="note quick" data-q="No acetato, as duas ligações C–O são:" data-o="diferentes;praticamente iguais;ambas duplas" data-a="1" data-e="Ressonância equivalente."></div></div>
+</section>
+<!-- 4 -->
+<section class="section" id="acidez" data-title="Acidez dos Ácidos Carboxílicos">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Acidez dos ácidos carboxílicos</h2><p class="lead">Por que RCOOH (pKₐ ≈ 4–5) é muito mais ácido que ROH (pKₐ ≈ 16)?</p></div></div>
+  <div class="block"><h3 class="block-title">Alcóxido × carboxilato</h3><div data-w="acidity" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Efeito indutivo na acidez</h3><div data-w="inductive" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>Grupos retiradores próximos ao carboxilato estabilizam ainda mais a carga negativa. O efeito diminui com a distância.</div></div>
+</section>
+<!-- 5 -->
+<section class="section" id="propriedades" data-title="Propriedades Físicas">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Propriedades físicas</h2><p class="lead">Muito polares, doadores e aceptores de ligação de H; formam dímeros em fase gasosa e solventes apolares; pontos de ebulição elevados.</p></div></div>
+  <div class="block"><h3 class="block-title">Pontos de ebulição (massas semelhantes)</h3><div data-w="bpChart"></div></div>
+  <div class="block"><h3 class="block-title">Dímero do ácido acético em 3D</h3><div data-w="dimer3d" data-3d></div></div>
+</section>
+<!-- 6 -->
+<section class="section" id="derivados" data-title="Derivados de Ácidos Carboxílicos">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Derivados de ácidos carboxílicos</h2><p class="lead">Estrutura geral <b>R–C(=O)–Y</b>: o grupo Y define o derivado.</p></div></div>
+  <div class="block"><div data-w="derivCards"></div></div>
+</section>
+<!-- 7 -->
+<section class="section" id="reatividade" data-title="Reatividade dos Derivados">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Por que os derivados têm reatividades tão diferentes?</h2><p class="lead">Dois fatores: (1) quanto Y doa por ressonância à C=O e (2) quão bom grupo de saída é Y⁻.</p></div></div>
+  <div class="block"><h3 class="block-title">Hierarquia de reatividade</h3><div data-w="ladder"></div></div>
+  <div class="block"><h3 class="block-title">Os dois fatores</h3><div data-w="twoFactors"></div></div>
+  <div class="block"><h3 class="block-title">Visualização comparativa de ressonância e mapas de potencial</h3><div data-w="resCompare" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Mapas de potencial qualitativos (eletronegatividade): apoio visual, não explicação única.</div></div>
+  <div class="block"><h3 class="block-title">Grupos de saída e basicidade</h3><div data-w="lgCompare"></div></div>
+  <div class="block"><h3 class="block-title">Resumo</h3><div class="grid2"><div class="clscard arom"><h4>Bom grupo de saída + carbonila eletrofílica</h4><b>= derivado MAIS reativo</b></div><div class="clscard anti"><h4>Forte doação por ressonância + grupo de saída ruim</h4><b>= derivado MENOS reativo</b></div></div></div>
+</section>
+<!-- 8 -->
+<section class="section" id="snac" data-title="Substituição Nucleofílica Acílica">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Substituição nucleofílica acílica</h2><p class="lead">Nu⁻ → C=O; π → O → intermediário tetraédrico → O⁻ refaz C=O; C–Y → Y⁻ → produto. <b>Nu substitui Y.</b></p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo geral sincronizado (2D + 3D + energia + escada)</h3><div data-w="nasMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+  <div class="block"><h3 class="block-title">Diferença para aldeídos e cetonas</h3><div data-w="vsAldehyde"></div></div>
+
+    <div class="note think"><b class="t">Se um nucleófilo atacar um derivado de ácido, o que determina se haverá substituição?</b>Se, no intermediário tetraédrico, existir um grupo que saia <b>melhor</b> que o próprio nucleófilo que entrou. Caso contrário, o tetraédrico simplesmente volta ao reagente.</div></section>
+<!-- 9 -->
+<section class="section" id="tetraedrico" data-title="Intermediário Tetraédrico">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Intermediário tetraédrico</h2><p class="lead">sp² → sp³ → sp². Pause em cada etapa: reagente, ataque, intermediário, colapso, produto.</p></div></div>
+  <div class="block"><h3 class="block-title">Simulador do intermediário tetraédrico</h3><div data-w="tetraSim" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Conversões favoráveis e desfavoráveis</h3><div data-w="conversions"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>É geralmente fácil converter um derivado <b>mais reativo</b> em um <b>menos reativo</b>. Subir a escada exige <b>ativação</b> (ex.: ácido → RCOCl com SOCl₂).</div></div>
+  <div class="block"><h3 class="block-title">Escada de derivados</h3><div data-w="stairs"></div></div>
+</section>
+<!-- 10 -->
+<section class="section" id="cloretos" data-title="Cloretos de Acila">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Cloretos de acila</h2><p class="lead">R–COCl: os derivados mais reativos. Preparados a partir de ácidos com SOCl₂, (COCl)₂, PCl₃ ou PCl₅.</p></div></div>
+  <div class="block"><div data-w="acylChloride" data-3d></div></div>
+</section>
+<!-- 11 -->
+<section class="section" id="socl2" data-title="Síntese com SOCl₂">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Síntese com cloreto de tionila (SOCl₂)</h2><p class="lead">RCOOH + SOCl₂ → RCOCl + SO₂↑ + HCl↑. Os subprodutos gasosos dirigem a reação.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo didático detalhado (2D + 3D)</h3><div data-w="socl2Mech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística: modelo didático adotado. Existem variantes (p. ex., ataque pelo O carbonílico, catálise por DMF/piridina).</div></div>
+  <div class="block"><h3 class="block-title">SOCl₂ e acil clorossulfito em 3D</h3><div data-w="socl2Species" data-3d></div></div>
+</section>
+<!-- 12 -->
+<section class="section" id="oxalila" data-title="Síntese com (COCl)₂">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Síntese com cloreto de oxalila</h2><p class="lead">Alternativa para ácido → cloreto de acila.</p></div></div>
+  <div class="block"><div data-w="oxalyl" data-3d></div></div>
+</section>
+<!-- 13 -->
+<section class="section" id="pcl" data-title="Síntese com PCl₃/PCl₅">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Síntese com PCl₃ e PCl₅</h2><p class="lead">Outros reagentes que convertem COOH → COCl.</p></div></div>
+  <div class="block"><div data-w="pclx" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Comparador de reagentes para RCOCl</h3><div data-w="clReagents"></div>
+    <div class="note care"><b class="t">Cuidado</b>Comparação conceitual; não é protocolo experimental. Esses reagentes reagem violentamente com água e liberam HCl.</div></div>
+</section>
+<!-- 14 -->
+<section class="section" id="reacoes-cloretos" data-title="Reações de Cloretos de Acila">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Reações de cloretos de acila</h2><p class="lead">RCOCl + H₂O → RCOOH; + ROH → éster; + amina → amida; + RCOO⁻ → anidrido.</p></div></div>
+  <div class="block"><h3 class="block-title">Mapa de reações (clique)</h3><div data-w="chlorideMap"></div></div>
+</section>
+<!-- 15 -->
+<section class="section" id="anidridos" data-title="Anidridos">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Anidridos</h2><p class="lead">Duas carbonilas ligadas a um mesmo O: dois centros acílicos.</p></div></div>
+  <div class="block"><div data-w="anhydrideStruct" data-3d></div></div>
+</section>
+<!-- 16 -->
+<section class="section" id="sintese-anidridos" data-title="Síntese de Anidridos">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Síntese de anidridos</h2><p class="lead">Cloreto de acila + carboxilato → anidrido + Cl⁻.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="anhydrideSynth" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+</section>
+<!-- 17 -->
+<section class="section" id="reacoes-anidridos" data-title="Reações de Anidridos">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>Reações de anidridos</h2><p class="lead">H₂O → ácidos; ROH → éster + ácido; amina → amida + carboxilato.</p></div></div>
+  <div class="block"><div data-w="anhydrideRx"></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo: anidrido + CH₃OH</h3><div data-w="anhydrideMech" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>O carboxilato é estabilizado por ressonância e é grupo abandonador muito melhor que RO⁻ ou R₂N⁻.</div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+</section>
+<!-- 18 -->
+<section class="section" id="esteres" data-title="Ésteres">
+  <div class="section-head"><div><span class="kicker">Módulo 18</span><h2>Ésteres</h2><p class="lead">R–C(=O)–OR′: o par do O alcoxila doa à carbonila.</p></div></div>
+  <div class="block"><div data-w="esterStruct" data-3d></div></div>
+</section>
+<!-- 19 -->
+<section class="section" id="fischer" data-title="Esterificação de Fischer">
+  <div class="section-head"><div><span class="kicker">Módulo 19</span><h2>Esterificação de Fischer</h2><p class="lead">Ácido carboxílico + álcool ⇌ éster + água (H⁺): <b>reversível e catalisada por ácido</b>.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo detalhado</h3><div data-w="fischerMech" data-3d></div>
+    <div class="note err"><b class="t">Erro comum</b>OH⁻ não deve ser mostrado simplesmente saindo do ácido. O grupo precisa ser <b>ativado por protonação</b> para sair como H₂O.</div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+  <div class="block"><h3 class="block-title">Simulador do equilíbrio de Fischer</h3><div data-w="fischerSim"></div></div>
+</section>
+<!-- 20 -->
+<section class="section" id="ester-cloreto" data-title="Ésteres a partir de Cloretos de Acila">
+  <div class="section-head"><div><span class="kicker">Módulo 20</span><h2>Ésteres a partir de cloretos de acila</h2><p class="lead">RCOCl + R′OH → RCOOR′ (+ HCl, neutralizado por base como piridina).</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="chlorideEster" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+</section>
+<!-- 21 -->
+<section class="section" id="ester-anidrido" data-title="Ésteres a partir de Anidridos">
+  <div class="section-head"><div><span class="kicker">Módulo 21</span><h2>Ésteres a partir de anidridos</h2><p class="lead">Anidrido + ROH → éster + ácido carboxílico.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="anhydrideMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+  <div class="block"><h3 class="block-title">Comparação das rotas para ésteres</h3><div data-w="esterRoutes"></div></div>
+</section>
+<!-- 22 -->
+<section class="section" id="hidrolise-acida" data-title="Hidrólise Ácida de Ésteres">
+  <div class="section-head"><div><span class="kicker">Módulo 22</span><h2>Hidrólise ácida de ésteres</h2><p class="lead">Éster + H₂O ⇌ ácido + álcool (H⁺): a reação inversa da esterificação de Fischer.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="acidHydMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+  <div class="block"><h3 class="block-title">Reversibilidade: os dois mecanismos lado a lado</h3><div data-w="sideBySide"></div></div>
+</section>
+<!-- 23 -->
+<section class="section" id="saponificacao" data-title="Saponificação">
+  <div class="section-head"><div><span class="kicker">Módulo 23</span><h2>Saponificação (hidrólise básica de ésteres)</h2><p class="lead">RCOOR′ + HO⁻ → RCOO⁻ + R′OH.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="saponMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+  <div class="block"><h3 class="block-title">Hidrólise ácida × saponificação</h3><div data-w="saponTable"></div>
+    <div class="note err"><b class="t">Erro comum</b>Saponificação não deve ser tratada simplesmente como a reação inversa da esterificação de Fischer: o carboxilato formado a torna <b>efetivamente irreversível</b>.</div></div>
+</section>
+<!-- 24 -->
+<section class="section" id="lactonas" data-title="Lactonas">
+  <div class="section-head"><div><span class="kicker">Módulo 24</span><h2>Lactonas</h2><p class="lead">Ésteres cíclicos, formados por esterificação intramolecular de hidroxiácidos.</p></div></div>
+  <div class="block"><div data-w="lactoneIntro"></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo de lactonização</h3><div data-w="lactoneMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+  <div class="block"><h3 class="block-title">Tamanho do anel</h3><div data-w="lactoneRing"></div></div>
+  <div class="block"><h3 class="block-title">Hidroxiácido ↔ lactona em 3D</h3><div data-w="lactone3d" data-3d></div></div>
+</section>
+<!-- 25 -->
+<section class="section" id="amidas" data-title="Amidas">
+  <div class="section-head"><div><span class="kicker">Módulo 25</span><h2>Amidas</h2><p class="lead">Primárias, secundárias e terciárias; forte ressonância O=C–N ↔ ⁻O–C=N⁺.</p></div></div>
+  <div class="block"><div data-w="amideTypes"></div></div>
+  <div class="block"><h3 class="block-title">Estrutura, ressonância e planaridade (3D)</h3><div data-w="amideRes" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Por que amidas são pouco reativas?</h3><div data-w="amideWhy"></div></div>
+</section>
+<!-- 26 -->
+<section class="section" id="amida-cloreto" data-title="Amidas a partir de Cloretos de Acila">
+  <div class="section-head"><div><span class="kicker">Módulo 26</span><h2>Amidas a partir de cloretos de acila</h2><p class="lead">RCOCl + NH₃ / RNH₂ / R₂NH → amidas 1ª/2ª/3ª. Base ou excesso de amina neutraliza o HCl.</p></div></div>
+  <div class="block"><h3 class="block-title">Exemplos e mecanismo</h3><div data-w="amideFromCl" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+</section>
+<!-- 27 -->
+<section class="section" id="amida-anidrido" data-title="Amidas a partir de Anidridos">
+  <div class="section-head"><div><span class="kicker">Módulo 27</span><h2>Amidas a partir de anidridos</h2><p class="lead">Anidrido + amina → amida + carboxilato.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="amideFromAnh" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+</section>
+<!-- 28 -->
+<section class="section" id="aminolise" data-title="Aminólise de Ésteres">
+  <div class="section-head"><div><span class="kicker">Módulo 28</span><h2>Aminólise de ésteres</h2><p class="lead">Éster + amina → amida + álcool, em condições adequadas (mais lenta).</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="aminolysis" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>Por que é mais lenta que com cloreto de acila? O éster é menos eletrofílico e RO⁻ é pior grupo de saída que Cl⁻ — posição na escada.</div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+</section>
+<!-- 29 -->
+<section class="section" id="amida-acido" data-title="Amidas a partir de Ácidos Carboxílicos">
+  <div class="section-head"><div><span class="kicker">Módulo 29</span><h2>Amidas a partir de ácidos carboxílicos</h2><p class="lead">Ácido carboxílico + amina <b>não</b> gera simplesmente amida em condições brandas.</p></div></div>
+  <div class="block"><h3 class="block-title">Primeiro: reação ácido-base</h3><div data-w="acidAmine" data-3d></div>
+    <div class="note err"><b class="t">Erro comum</b>Aminas não convertem automaticamente ácidos carboxílicos em amidas em condições brandas. A primeira reação costuma ser <b>ácido-base</b>.</div></div>
+  <div class="block"><h3 class="block-title">Agentes de acoplamento (complementar): DCC/EDC</h3><div data-w="dccMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div>
+    <div class="note think"><b class="t">Condensação direta</b>Sais de amônio de carboxilatos podem formar amidas por aquecimento forte com remoção de água, mas este não é um método universal.</div></div>
+  <div class="block"><h3 class="block-title">Comparador de rotas para amidas</h3><div data-w="amideRoutes"></div></div>
+</section>
+<!-- 30 -->
+<section class="section" id="hidrolise-amidas" data-title="Hidrólise de Amidas">
+  <div class="section-head"><div><span class="kicker">Módulo 30</span><h2>Hidrólise de amidas</h2><p class="lead">Amida → ácido/carboxilato + amina/amônio, em meio ácido ou básico, com aquecimento.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismos ácido e básico</h3><div data-w="amideHyd" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Em meio ácido, protonar o N transforma o péssimo grupo de saída R₂N⁻ em uma <b>amina neutra</b>, que sai com muito mais facilidade.</div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+  <div class="block"><h3 class="block-title">Amida × éster na hidrólise</h3><div data-w="amideVsEster"></div></div>
+</section>
+<!-- 31 -->
+<section class="section" id="lactamas" data-title="Lactamas">
+  <div class="section-head"><div><span class="kicker">Módulo 31</span><h2>Lactamas</h2><p class="lead">Amidas cíclicas.</p></div></div>
+  <div class="block"><div data-w="lactamIntro"></div></div>
+  <div class="block"><h3 class="block-title">Formação</h3><div data-w="lactamForm"></div></div>
+  <div class="block"><h3 class="block-title">Lactamas em 3D e tensão em β-lactamas</h3><div data-w="lactam3d" data-3d></div></div>
+</section>
+<!-- 32 -->
+<section class="section" id="nitrilas" data-title="Nitrilas">
+  <div class="section-head"><div><span class="kicker">Módulo 32</span><h2>Nitrilas</h2><p class="lead">R–C≡N: carbono sp, linear; 1 σ + 2 π.</p></div></div>
+  <div class="block"><div data-w="nitrile3d" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Nitrila como equivalente sintético de ácido</h3><div data-w="nitrileSynth"></div></div>
+</section>
+<!-- 33 -->
+<section class="section" id="desidratacao" data-title="Desidratação de Amidas">
+  <div class="section-head"><div><span class="kicker">Módulo 33</span><h2>Desidratação de amidas</h2><p class="lead">RCONH₂ → RC≡N (SOCl₂, P₂O₅, POCl₃…): perda dos elementos de H₂O.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo (SOCl₂, modelo didático)</h3><div data-w="dehydMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+  <div class="block"><h3 class="block-title">Amida → nitrila: sp² (≈ 120°) → sp (180°)</h3><div data-w="geomChange" data-3d></div></div>
+</section>
+<!-- 34 -->
+<section class="section" id="nitrila-acida" data-title="Hidrólise Ácida de Nitrilas">
+  <div class="section-head"><div><span class="kicker">Módulo 34</span><h2>Hidrólise ácida de nitrilas</h2><p class="lead">RCN + H₂O/H⁺ → RCONH₂ → RCOOH (+ NH₄⁺).</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo detalhado ou simplificado</h3><div data-w="nitAcid" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>A <b>amida</b> é um intermediário importante: nitrila → amida → ácido.</div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+</section>
+<!-- 35 -->
+<section class="section" id="nitrila-basica" data-title="Hidrólise Básica de Nitrilas">
+  <div class="section-head"><div><span class="kicker">Módulo 35</span><h2>Hidrólise básica de nitrilas</h2><p class="lead">RCN + HO⁻/H₂O → amida → carboxilato (+ NH₃); após acidificação, ácido carboxílico.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo</h3><div data-w="nitBase" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+</section>
+<!-- 36 -->
+<section class="section" id="descarboxilacao" data-title="Descarboxilação">
+  <div class="section-head"><div><span class="kicker">Módulo 36</span><h2>Descarboxilação</h2><p class="lead">Perda de CO₂ de um ácido carboxílico, quando estruturalmente favorecida.</p></div></div>
+  <div class="block"><h3 class="block-title">β-cetoácidos: mecanismo cíclico de 6 membros</h3><div data-w="decarbMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons e solvação omitidos.</div></div>
+  <div class="block"><h3 class="block-title">Ciclo de 6 em 3D</h3><div data-w="decarbTS" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Ácidos malônicos</h3><div data-w="malonic"></div></div>
+  <div class="block"><h3 class="block-title">Qual descarboxila?</h3><div data-w="decarbQuiz"></div></div>
+</section>
+<!-- 37 -->
+<section class="section" id="mapa-inter" data-title="Mapa de Interconversões">
+  <div class="section-head"><div><span class="kicker">Módulo 37</span><h2>Mapa geral das interconversões</h2><p class="lead">Clique em uma classe para ver de onde vem e para onde vai.</p></div></div>
+  <div class="block"><div data-w="interMap"></div></div>
+  <div class="block"><h3 class="block-title">Tabela mestre dos derivados</h3><div data-w="masterDeriv"></div></div>
+  <div class="block"><h3 class="block-title">Tabela mestre de interconversões</h3><div data-w="masterInter"></div></div>
+</section>
+<!-- 38 -->
+<section class="section" id="lab3d" data-title="Laboratório Acílico 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 38</span><h2>Laboratório acílico 3D</h2><p class="lead">Rotação, zoom, esfera-bastão ou preenchimento, C acílico, δ±, pares isolados, π*, potencial, hibridização e grupo de saída.</p></div></div>
+  <div class="block"><div data-w="lab3d" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Comparação 3D: cloreto × éster × amida</h3><div data-w="compare3" data-3d></div></div>
+</section>
+<!-- 39 -->
+<section class="section" id="simreat" data-title="Simulador de Reatividade">
+  <div class="section-head"><div><span class="kicker">Módulo 39</span><h2>Simulador de reatividade</h2><p class="lead">Escolha o derivado e o nucleófilo: o simulador prevê facilidade, produto, mecanismo e necessidade de catálise.</p></div></div>
+  <div class="block"><div data-w="reactSim"></div></div>
+  <div class="block"><h3 class="block-title">Essa reação acontece?</h3><div data-w="happens"></div></div>
+  <div class="block"><h3 class="block-title">Escada interativa: ordene os derivados</h3><div data-w="ladderDnD"></div>
+    <div class="note think"><b class="t">Pense nisso</b>Por que não subir facilmente a escada? Converter um derivado menos reativo em um mais reativo exige <b>ativação</b> (ex.: ácido → RCOCl com SOCl₂).</div></div>
+  <div class="block"><h3 class="block-title">Quem sai?</h3><div data-w="whoLeaves"></div></div>
+  <div class="block"><h3 class="block-title">Protonação como ativação</h3><div data-w="protonActivation"></div></div>
+</section>
+<!-- 40 -->
+<section class="section" id="simmec" data-title="Simulador de Mecanismos">
+  <div class="section-head"><div><span class="kicker">Módulo 40</span><h2>Simulador de mecanismos</h2><p class="lead">Construa: Nu → C; π → O; tetraédrico; O⁻ → C=O; C–Y → Y. O sistema verifica valência, cargas, origem/destino das setas e grupo de saída.</p></div></div>
+  <div class="block"><div data-w="mechSim"></div></div>
+</section>
+<!-- 41 -->
+<section class="section" id="simsintese" data-title="Simulador de Síntese">
+  <div class="section-head"><div><span class="kicker">Módulo 41</span><h2>Simulador de síntese</h2><p class="lead">Qual precursor e quais reagentes formam o alvo?</p></div></div>
+  <div class="block"><h3 class="block-title">Síntese reversa</h3><div data-w="synthSim"></div></div>
+  <div class="block"><h3 class="block-title">Síntese em múltiplas etapas</h3><div data-w="multiStep"></div></div>
+</section>
+<!-- 42 -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 42</span><h2>Exercícios resolvidos</h2><p class="lead">19 níveis, 53 exercícios. Para cada um: nucleófilo, eletrófilo, intermediário, grupo de saída, produto e condições.</p></div></div>
+  <div class="block"><div class="chips" data-w="levelChips"></div><div data-w="solved"></div></div>
+</section>
+<!-- 43 -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 43</span><h2>Exercícios propostos</h2><p class="lead">100 exercícios: 30 fáceis, 40 intermediários e 30 avançados — reconhecimento, produto, reagente, mecanismo, rankings, síntese, retrossíntese, “Detecte o erro”, ordenação e arrastar e soltar. <button class="btn sm" type="button" data-action="redo">↺ Refazer todos</button></p></div></div>
+  <nav class="subnav"><a href="#prop-easy">Fáceis</a><a href="#prop-mid">Intermediários</a><a href="#prop-hard">Avançados</a></nav>
+  <div class="block">
+    <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+    <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+    <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+  </div>
+</section>
+<!-- 44 -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 44</span><h2>Quiz final</h2><p class="lead">45 questões sorteadas: acidez, reatividade, mecanismo, cloretos, anidridos, ésteres, amidas, nitrilas, lactonas, lactamas, descarboxilação e síntese. Ao final: percentual, tópicos com mais erros e módulos recomendados.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">Modo desafio <span class="tag">pontos · sequência</span></h3><div data-w="challenge"></div></div>
+</section>
+<!-- 45 -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 45</span><h2>Mapa conceitual</h2></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block"><h3 class="block-title">Resumo visual do mecanismo geral</h3>
+    <ol class="flowv big"><li class="step">Nu: + R–C(=O)–Y</li><li>ATAQUE</li><li class="non">R–C(O⁻)(Nu)–Y</li><li>COLAPSO</li><li class="arom">R–C(=O)–Nu + Y⁻</li><li class="arom">Nu SUBSTITUI Y</li></ol></div>
+  <div class="block"><h3 class="block-title">Resumo visual da reatividade</h3>
+    <div class="grid2"><div class="clscard arom"><h4>BOM GRUPO DE SAÍDA + CARBONILA ELETROFÍLICA</h4><b>= DERIVADO MAIS REATIVO</b></div><div class="clscard anti"><h4>FORTE DOAÇÃO POR RESSONÂNCIA + GRUPO DE SAÍDA RUIM</h4><b>= DERIVADO MENOS REATIVO</b></div></div></div>
+  <div class="block"><h3 class="block-title">Diretriz central</h3>
+    <ol class="flowv big"><li class="step">QUE DERIVADO DE ÁCIDO EU TENHO?</li><li>QUÃO ELETROFÍLICA É SUA CARBONILA?</li><li>QUAL NUCLEÓFILO ESTÁ PRESENTE? ELE CONSEGUE ATACAR?</li><li class="non">QUAL INTERMEDIÁRIO TETRAÉDRICO?</li><li class="non">QUAL GRUPO PODE SAIR?</li><li class="step">DESCE A ESCADA OU EXIGE ATIVAÇÃO?</li><li class="arom">QUAL SERÁ O PRODUTO?</li></ol></div>
+  <div class="block"><h3 class="block-title">Tabela mestre dos derivados</h3><div data-w="masterDeriv"></div></div>
+  <div class="block"><h3 class="block-title">Tabela mestre de interconversões</h3><div data-w="masterInter"></div></div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica II</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

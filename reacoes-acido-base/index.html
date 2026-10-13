@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Introdução às Reações Orgânicas · Química Orgânica I</title>
+  <meta name="description" content="Laboratório virtual de fundamentos de mecanismos orgânicos: quebra de ligações, radicais, carbocátions, carbânions, ácidos e bases, eletrófilos e nucleófilos, setas curvas, pKa, fatores de acidez, K e ΔG, diagramas de energia e mecanismos, com modelos 3D e mapas de potencial eletrostático.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><circle cx="10" cy="24" r="4" fill="#2fd4f5"/><circle cx="31" cy="24" r="4" fill="#ff9f43"/><path d="M11 18 Q20 4 28 17" fill="none" stroke="#ff4fa3" stroke-width="2.4"/><path d="M28 17 l-5 -1 l4 -3 z" fill="#ff4fa3"/></svg>
+      <span>Reações Orgânicas<small>Química Orgânica I</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#pensar">Como Pensar uma Reação</a></li>
+        <li><a href="#quebra">Homólise e Heterólise</a></li>
+        <li><a href="#especies">Radicais, Cátions e Ânions</a></li>
+        <li><a href="#bronsted">Brønsted–Lowry</a></li>
+        <li><a href="#lewis">Lewis</a></li>
+        <li><a href="#eletrofilos">Eletrófilos e Nucleófilos</a></li>
+        <li><a href="#setas">Setas Curvas</a></li>
+        <li><a href="#forca">Força de Ácidos e Bases</a></li>
+        <li><a href="#pka">pKa e Equilíbrio</a></li>
+        <li><a href="#basecj">Base Conjugada</a></li>
+        <li><a href="#ressonancia">Ressonância</a></li>
+        <li><a href="#eletroneg">Eletronegatividade</a></li>
+        <li><a href="#tamanho">Tamanho Atômico</a></li>
+        <li><a href="#hibridizacao">Hibridização</a></li>
+        <li><a href="#ligacao">Força de Ligação</a></li>
+        <li><a href="#indutivo">Efeito Indutivo</a></li>
+        <li><a href="#integracao">Integração dos Fatores</a></li>
+        <li><a href="#kdg">K, ΔG e Equilíbrio</a></li>
+        <li><a href="#diagramas">Diagramas de Energia</a></li>
+        <li><a href="#intermediarios">Intermediários e ET</a></li>
+        <li><a href="#mecanismos">Mecanismos</a></li>
+        <li><a href="#laboratorio">Laboratório 3D</a></li>
+        <li><a href="#simacido">Simulador Ácido-Base</a></li>
+        <li><a href="#simsetas">Simulador de Setas</a></li>
+        <li><a href="#resolvidos">Resolvidos</a></li>
+        <li><a href="#propostos">Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1 INÍCIO -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica I · fundamentos de mecanismos</span>
+      <h1>Introdução às <span class="g">Reações Orgânicas</span></h1>
+      <p class="sub">Ácido-base, movimento de elétrons, intermediários e mecanismos</p>
+      <div class="cta"><a class="btn primary lg" href="#pensar">Começar →</a><a class="btn lg" href="#setas">Explorar movimento de elétrons</a></div>
+      <p class="eq">distribuição eletrônica → polarização → quebra/formação de ligações → movimento de elétrons → estabilidade → termodinâmica → mecanismo</p>
+    </div>
+    <div data-w="hero" data-3d></div>
+  </div>
+  <div class="modules">
+    <a href="#quebra"><b>Quebra de ligações</b><span>homólise, heterólise, setas de meia ponta</span></a>
+    <a href="#especies"><b>Espécies reativas</b><span>radicais, carbocátions e carbânions em 3D</span></a>
+    <a href="#bronsted"><b>Ácidos e bases</b><span>Brønsted–Lowry e Lewis</span></a>
+    <a href="#eletrofilos"><b>Eletrófilos e nucleófilos</b><span>mapas de potencial eletrostático</span></a>
+    <a href="#setas"><b>Setas curvas</b><span>elétrons em movimento, quadro a quadro</span></a>
+    <a href="#pka"><b>pKa e equilíbrio</b><span>régua interativa, previsão de equilíbrio</span></a>
+    <a href="#basecj"><b>Fatores de acidez</b><span>ressonância, eletronegatividade, tamanho, hibridização, indução</span></a>
+    <a href="#kdg"><b>K e ΔG</b><span>ΔG° = −RT ln K, gráfico interativo</span></a>
+    <a href="#diagramas"><b>Energia e mecanismos</b><span>ET, intermediários, etapa determinante</span></a>
+    <a href="#laboratorio"><b>Laboratório e simuladores</b><span>3D, ácido-base, setas, monte o mecanismo</span></a>
+    <a href="#resolvidos"><b>Exercícios</b><span>36 resolvidos e 70 propostos</span></a>
+    <a href="#quiz"><b>Quiz e desafios</b><span>40 questões + 3 modos cronometrados</span></a>
+  </div>
+</section>
+
+<!-- 2 PENSAR -->
+<section class="section" id="pensar" data-title="Como Pensar uma Reação Orgânica">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>Como pensar uma reação orgânica</h2><p class="lead">Para compreender um mecanismo orgânico, pergunte sempre: <b>de onde vêm os elétrons e para onde eles vão?</b></p></div></div>
+  <div class="block">
+    <div class="flowbig"><span class="rich">região rica em elétrons</span><span class="ar">→</span><span class="poor">região pobre em elétrons</span></div>
+    <div class="flowbig sm"><span class="rich">nucleófilo · Nu:⁻</span><span class="ar">→</span><span class="poor">eletrófilo · E⁺</span></div>
+    <h3 class="block-title">Formação de ligação Nu → E <span class="tag">elétrons em movimento</span></h3>
+    <div data-w="mech" data-k="nuE"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Muitas reações orgânicas são o encontro de um par de elétrons disponível (nucleófilo/base) com um centro pobre em elétrons (eletrófilo/ácido).</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Sequência de raciocínio que usaremos em todo o curso</h3>
+    <ol class="ladder">
+      <li>Onde estão os elétrons?</li><li>Qual região é rica ou pobre em elétrons?</li><li>Quem é nucleófilo e quem é eletrófilo?</li><li>Qual ligação pode quebrar?</li><li>Para onde vão os elétrons?</li><li>Quais espécies são formadas?</li><li>Essas espécies são estáveis?</li><li>O equilíbrio é favorável?</li><li>Qual é o mecanismo plausível?</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3 QUEBRA -->
+<section class="section" id="quebra" data-title="Quebra de Ligações">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Quebra de ligações: homólise e heterólise</h2><p class="lead">Uma ligação covalente simples é um par de elétrons compartilhado. Ao romper, esse par pode ser dividido ou ficar inteiro com um dos átomos.</p></div></div>
+  <nav class="subnav"><a href="#q-rev">Revisão</a><a href="#q-homo">Homólise</a><a href="#q-hetero">Heterólise</a><a href="#q-cmp">Comparação</a><a href="#q-ex">Exercícios</a></nav>
+  <div class="block" id="q-rev">
+    <h3 class="block-title">A ligação A–B</h3>
+    <div data-w="bondEl"></div>
+  </div>
+  <div class="block" id="q-homo">
+    <h3 class="block-title">Homólise <span class="tag">setas de meia ponta</span></h3>
+    <p><b>Na quebra homolítica, cada átomo recebe um elétron da ligação.</b> Usa-se a seta de meia ponta (<i>fishhook</i>), que representa o movimento de <b>um</b> elétron.</p>
+    <div class="grid2"><div data-w="mech" data-k="homoAB"></div><div data-w="mech" data-k="clcl"></div></div>
+  </div>
+  <div class="block" id="q-hetero">
+    <h3 class="block-title">Heterólise <span class="tag">seta completa</span></h3>
+    <p><b>Na quebra heterolítica, os dois elétrons da ligação ficam com o mesmo átomo</b> — em geral o mais eletronegativo, que já polarizava a ligação, e de forma a gerar os íons mais estáveis.</p>
+    <div class="grid2"><div data-w="mech" data-k="heteroAB"></div><div data-w="mech" data-k="tbuBr"></div></div>
+    <div class="grid2"><div data-w="mech" data-k="hcl"></div><div data-w="mech" data-k="oxonium"></div></div>
+  </div>
+  <div class="block" id="q-cmp">
+    <h3 class="block-title">Homólise × heterólise <span class="tag">lado a lado</span></h3>
+    <div data-w="homoHetero"></div>
+    <div class="table-wrap"><table class="cmp"><thead><tr><th>Característica</th><th>Homólise</th><th>Heterólise</th></tr></thead><tbody>
+      <tr><td>Elétrons da ligação</td><td>um para cada átomo</td><td>dois para um átomo</td></tr>
+      <tr><td>Produtos típicos</td><td>radicais</td><td>íons</td></tr>
+      <tr><td>Seta</td><td>meia ponta (1 e⁻)</td><td>curva completa (2 e⁻)</td></tr>
+      <tr><td>Favorecida por</td><td>calor/luz em certos casos; ligações pouco polares</td><td>polarização da ligação; solvente polar que estabiliza os íons</td></tr>
+    </tbody></table></div>
+    <div class="note quick" data-q="A quebra Cl–Cl por luz é:" data-o="homolítica;heterolítica" data-a="0" data-e="Ligação apolar: forma 2 Cl•."></div>
+  </div>
+  <div class="block" id="q-ex"><h3 class="block-title">Que espécies se formam?</h3><div data-w="homoEx"></div></div>
+</section>
+
+<!-- 4 ESPÉCIES -->
+<section class="section" id="especies" data-title="Radicais, Carbocátions e Carbânions">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Radicais, carbocátions e carbânions</h2><p class="lead">Três espécies reativas de carbono, que diferem no número de elétrons ao redor do C.</p></div></div>
+  <nav class="subnav"><a href="#e-rad">Radicais</a><a href="#e-cat">Carbocátions</a><a href="#e-estab">Estabilidade</a><a href="#e-an">Carbânions</a><a href="#e-cmp">Comparação</a></nav>
+  <div class="block"><div class="figs" data-fig="species"></div></div>
+  <div class="block" id="e-rad">
+    <h3 class="block-title">Radicais <span class="tag">3D</span></h3>
+    <p><b>Radical = espécie contendo elétron desemparelhado.</b> O radical metila é aproximadamente plano; o elétron fica em um orbital p (representação qualitativa).</p>
+    <div data-w="radical3d" data-3d></div>
+    <div class="chips" data-fig="radicals"></div>
+    <p class="hint3">A estabilidade cresce de metílico a terciário; alílicos e benzílicos são estabilizados por ressonância. Mecanismos radicalares serão estudados mais adiante.</p>
+  </div>
+  <div class="block" id="e-cat">
+    <h3 class="block-title">Carbocátions <span class="tag">orbital p vazio</span></h3>
+    <p><b>Carbocátion = espécie com carbono deficiente em elétrons e carga formal positiva</b> (R₃C⁺): trigonal plano, ≈ sp², com um orbital p <b>vazio</b> perpendicular ao plano.</p>
+    <div data-w="cation3d" data-3d></div>
+  </div>
+  <div class="block" id="e-estab">
+    <h3 class="block-title">Estabilidade de carbocátions</h3>
+    <div class="formula">3° &gt; 2° &gt; 1° &gt; metílico &nbsp;(quando comparáveis)</div>
+    <div class="grid3">
+      <div class="defbox"><b>Hiperconjugação</b>ligações C–H e C–C vizinhas doam densidade ao orbital p vazio.</div>
+      <div class="defbox o"><b>Efeito indutivo</b>grupos alquila doam densidade pelas ligações σ.</div>
+      <div class="defbox m"><b>Ressonância</b>cátions alílico e benzílico distribuem a carga + por vários carbonos.</div>
+    </div>
+    <div data-w="mech" data-k="allyl"></div>
+    <p class="hint3">No cátion benzílico (C₆H₅CH₂⁺), a carga se distribui pelo CH₂ e pelas posições orto e para do anel (quatro formas de ressonância).</p>
+  </div>
+  <div class="block" id="e-an">
+    <h3 class="block-title">Carbânions</h3>
+    <p><b>Carbânion = espécie em que o carbono apresenta carga formal negativa e um par eletrônico não ligante</b> (R₃C:⁻). Um carbânion alquílico simples é piramidal (≈ sp³). Fatores que estabilizam carga negativa (eletronegatividade, caráter s, ressonância, grupos retiradores) <b>não</b> são os mesmos que estabilizam carga positiva — grupos alquila, que estabilizam carbocátions, <b>desestabilizam</b> carbânions.</p>
+    <div data-w="anion3d" data-3d></div>
+  </div>
+  <div class="block" id="e-cmp">
+    <h3 class="block-title">Carbocátion × carbânion</h3>
+    <div class="table-wrap"><table class="cmp"><thead><tr><th>Característica</th><th>Carbocátion</th><th>Carbânion</th></tr></thead><tbody>
+      <tr><td>Carga</td><td>+</td><td>−</td></tr><tr><td>Densidade eletrônica</td><td>baixa</td><td>alta</td></tr><tr><td>Papel típico</td><td class="elc">eletrófilo</td><td class="nuc">nucleófilo/base</td></tr><tr><td>Orbital relevante</td><td>p vazio</td><td>par eletrônico</td></tr><tr><td>Geometria típica</td><td>trigonal plana</td><td>piramidal</td></tr>
+    </tbody></table></div>
+    <div data-w="compare3d" data-3d></div>
+  </div>
+</section>
+
+<!-- 5 BRØNSTED -->
+<section class="section" id="bronsted" data-title="Ácidos e Bases de Brønsted–Lowry">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Ácidos e bases de Brønsted–Lowry</h2><p class="lead"><b>Ácido = doador de próton</b> · <b>Base = receptor de próton</b></p></div></div>
+  <div class="block">
+    <div class="formula big">HA + B ⇌ A⁻ + BH⁺</div>
+    <p class="hint3">HA/A⁻ e BH⁺/B são pares conjugados: diferem por um H⁺.</p>
+    <h3 class="block-title">Identifique os papéis</h3>
+    <div data-w="clickRoles"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Pares conjugados</h3>
+    <div data-w="conjPairs"></div>
+  </div>
+</section>
+
+<!-- 6 LEWIS -->
+<section class="section" id="lewis" data-title="Ácidos e Bases de Lewis">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Ácidos e bases de Lewis</h2><p class="lead"><b>Ácido de Lewis = receptor de par eletrônico</b> · <b>Base de Lewis = doador de par eletrônico</b></p></div></div>
+  <div class="block">
+    <h3 class="block-title">BF₃ + :NH₃ <span class="tag">par do N → B</span></h3>
+    <div data-w="mech" data-k="bf3"></div>
+    <div data-w="bf3_3d" data-3d></div>
+    <div class="grid2"><div class="defbox"><b>base de Lewis ≈ doador eletrônico</b>NH₃, H₂O, ROH, RO⁻, éteres, aminas, ligações π.</div><div class="defbox o"><b>ácido de Lewis ≈ receptor eletrônico</b>BF₃, AlCl₃, H⁺, carbocátions, C de carbonila.</div></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Brønsted–Lowry × Lewis</h3>
+    <p>Uma reação ácido-base de Brønsted é um caso particular de interação de pares eletrônicos: em :OH⁻ + H–Cl, o HO⁻ é <b>base de Brønsted</b> (recebe H⁺) e <b>base de Lewis</b> (doa o par); o H da ligação H–Cl é o centro eletrofílico.</p>
+    <div data-w="mech" data-k="hoHcl"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Toda base de Brønsted é base de Lewis. O conceito de Lewis é mais amplo: inclui reações sem transferência de próton (como BF₃ + NH₃).</div>
+  </div>
+</section>
+
+<!-- 7 ELETRÓFILOS/NUCLEÓFILOS -->
+<section class="section" id="eletrofilos" data-title="Eletrófilos e Nucleófilos">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Eletrófilos e nucleófilos</h2></div></div>
+  <div class="block">
+    <div class="grid2">
+      <div class="defbox o"><b>Eletrófilo</b>espécie ou região <b>pobre em elétrons</b> capaz de aceitar densidade eletrônica.</div>
+      <div class="defbox"><b>Nucleófilo</b>espécie <b>rica em elétrons</b> capaz de doar um par para formar ligação.</div>
+    </div>
+    <h4>Eletrófilos</h4><div class="figs" data-fig="elList"></div>
+    <h4>Nucleófilos <small class="hint3">(pares não ligantes, cargas negativas, ligações π)</small></h4><div class="figs" data-fig="nuList"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Mapas de potencial eletrostático <span class="tag">3D qualitativo</span></h3>
+    <div data-w="espGallery" data-3d></div>
+    <p class="hint3">Mapas qualitativos, gerados a partir de cargas parciais estimadas: servem para visualizar δ+, δ− e os sítios nucleofílicos/eletrofílicos, não para medidas.</p>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Nucleófilo × base · eletrófilo × ácido de Lewis</h3>
+    <div class="grid2">
+      <div class="defbox"><b>Nucleofilicidade e basicidade não são exatamente a mesma coisa</b>basicidade é termodinâmica (posição do equilíbrio com H⁺, pKa); nucleofilicidade é cinética (velocidade de ataque a um eletrófilo, geralmente um carbono). Em geral andam juntas, mas tamanho, solvente e impedimento podem separá-las.</div>
+      <div class="defbox o"><b>Eletrófilos geralmente são ácidos de Lewis; nucleófilos geralmente são bases de Lewis</b>os termos enfatizam contextos diferentes: "ácido/base" fala de equilíbrio e de pares; "eletrófilo/nucleófilo", de reatividade, quase sempre com carbono.</div>
+    </div>
+    <div data-w="classifyEx"></div>
+  </div>
+</section>
+
+<!-- 8 SETAS -->
+<section class="section" id="setas" data-title="Setas Curvas e Movimento de Elétrons">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Setas curvas e movimento de elétrons</h2><p class="lead"><b>Setas curvas mostram movimento de pares de elétrons.</b> A cauda começa em um <b>par eletrônico</b> ou em uma <b>ligação</b>; a ponta termina no <b>átomo</b> ou na posição onde a nova ligação se forma.</p></div></div>
+  <nav class="subnav"><a href="#s-err">Erro comum</a><a href="#s-form">Formação</a><a href="#s-que">Quebra</a><a href="#s-pt">Transferência de próton</a><a href="#s-sim">Pratique</a></nav>
+  <div class="block" id="s-err">
+    <div class="note err"><b class="t">Erro comum</b>A seta curva representa movimento de <b>elétrons</b>, não movimento de átomos.</div>
+    <div data-w="arrowWrongRight"></div>
+  </div>
+  <div class="block" id="s-form"><h3 class="block-title">Formação de ligação: :Nu⁻ + E⁺ → Nu–E</h3><div data-w="mech" data-k="nuE"></div></div>
+  <div class="block" id="s-que"><h3 class="block-title">Quebra de ligação: A–B → A⁺ + :B⁻</h3><div data-w="mech" data-k="heteroAB"></div><p class="hint3">A seta parte da ligação e termina em B: os elétrons permanecem com B.</p></div>
+  <div class="block" id="s-pt">
+    <h3 class="block-title">Transferência de próton: :B⁻ + H–A → B–H + A⁻</h3>
+    <div data-w="mech" data-k="hoHcl"></div>
+    <div class="note care"><b class="t">Cuidado</b>Duas setas simultâneas: uma forma B–H, outra quebra H–A. O hidrogênio não pode exceder <b>uma</b> ligação (dois elétrons).</div>
+  </div>
+  <div class="block" id="s-sim">
+    <h3 class="block-title">Desenhe as setas <span class="tag">arraste da origem ao destino</span></h3>
+    <div data-w="arrowSim"></div>
+    <a class="btn" href="#simsetas">Mais no Simulador de Setas →</a>
+  </div>
+</section>
+
+<!-- 9 FORÇA -->
+<section class="section" id="forca" data-title="Força de Ácidos e Bases">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Força de ácidos e bases</h2></div></div>
+  <div class="block">
+    <div class="grid2"><div class="defbox"><b>ácido forte → base conjugada relativamente fraca</b>o ácido cede H⁺ facilmente porque A⁻ é estável.</div><div class="defbox o"><b>ácido fraco → base conjugada relativamente mais forte</b>A⁻ instável "quer" o H⁺ de volta.</div></div>
+    <div class="formula big">HA + B⁻ ⇌ A⁻ + HB</div>
+    <p>A posição do equilíbrio depende das forças relativas: os dois ácidos (HA e HB) "competem" pelo próton, e as duas bases (B⁻ e A⁻) também.</p>
+    <h3 class="block-title">Ka</h3>
+    <div class="formula">Ka = [H₃O⁺][A⁻] / [HA] &nbsp;(em água)</div>
+    <p>Ka maior → ácido mais forte (mais dissociado no equilíbrio).</p>
+    <div class="note err"><b class="t">Erro comum</b>Um ácido forte possui uma base conjugada relativamente <b>fraca</b>.</div>
+  </div>
+</section>
+
+<!-- 10 PKA -->
+<section class="section" id="pka" data-title="pKa e Equilíbrio">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>pKa e equilíbrio</h2><p class="lead"><b>pKa = −log Ka</b>: pKa menor → ácido mais forte.</p></div></div>
+  <div class="block">
+    <div data-w="kaPka"></div>
+    <div class="note err"><b class="t">Erro comum</b>Maior pKa significa ácido mais <b>fraco</b>, não mais forte.</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Escala de pKa interativa <span class="tag">valores aproximados</span></h3>
+    <div data-w="pkaRuler"></div>
+    <p class="hint3">Valores aproximados (em água quando aplicável; os muito altos ou muito baixos são estimativas e dependem do meio): ácidos carboxílicos ~4–5; fenóis ~10; água 15,7; álcoois ~16–18; alcinos terminais ~25; amônia ~38; alcanos ~50.</p>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Prevendo o equilíbrio</h3>
+    <div class="note key"><b class="t">Conceito-chave</b>Equilíbrios ácido-base tendem a favorecer o lado que contém o <b>ácido mais fraco</b> e a <b>base mais fraca</b>.</div>
+    <div class="formula">log K ≈ pKa(HB) − pKa(HA) &nbsp;⇒&nbsp; K ≈ 10<sup>[pKa(HB) − pKa(HA)]</sup></div>
+    <div class="table-wrap"><table class="cmp"><thead><tr><th>Reação</th><th>pKa(HA)</th><th>pKa(HB)</th><th>K aproximado</th></tr></thead><tbody>
+      <tr><td>CH₃COOH + HO⁻ ⇌ CH₃COO⁻ + H₂O</td><td>4,8</td><td>15,7</td><td class="okc">≈ 10¹¹ (produtos)</td></tr>
+      <tr><td>HC≡CH + NH₂⁻ ⇌ HC≡C⁻ + NH₃</td><td>25</td><td>38</td><td class="okc">≈ 10¹³ (produtos)</td></tr>
+      <tr><td>HC≡CH + HO⁻ ⇌ HC≡C⁻ + H₂O</td><td>25</td><td>15,7</td><td class="hic">≈ 10⁻⁹ (reagentes)</td></tr>
+      <tr><td>CH₃OH + HO⁻ ⇌ CH₃O⁻ + H₂O</td><td>15,5</td><td>15,7</td><td>≈ 1,6</td></tr>
+    </tbody></table></div>
+    <a class="btn" href="#simacido">Abrir o simulador de equilíbrio →</a>
+  </div>
+</section>
+
+<!-- 11 BASE CONJUGADA -->
+<section class="section" id="basecj" data-title="Estabilidade da Base Conjugada">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Estabilidade da base conjugada</h2><p class="lead"><b>Quanto mais estável a base conjugada, mais forte tende a ser o ácido correspondente.</b></p></div></div>
+  <div class="block">
+    <div class="formula big">HA → H⁺ + A⁻ &nbsp;&nbsp; <span class="hic">Quão estável é A⁻?</span></div>
+    <h3 class="block-title">Método de análise</h3>
+    <ol class="steps6"><li>Remova H⁺.</li><li>Desenhe a base conjugada.</li><li>Localize a carga negativa.</li><li>Procure estabilização (ressonância, eletronegatividade, tamanho, hibridização, indução).</li><li>Compare as bases conjugadas.</li><li>Conclua: base mais estável → ácido mais forte.</li></ol>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Construtor de base conjugada <span class="tag">clique no H</span></h3>
+    <div data-w="cbBuilder"></div>
+  </div>
+</section>
+
+<!-- 12 RESSONÂNCIA -->
+<section class="section" id="ressonancia" data-title="Ressonância">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Fator 1 — Ressonância</h2><p class="lead">Etanol (pKa ≈ 16) × ácido acético (pKa ≈ 4,8): a mesma ligação O–H, ≈ 10¹¹ vezes de diferença.</p></div></div>
+  <div class="block">
+    <div class="figs" data-fig="ethVsAce"></div>
+    <h3 class="block-title">Formas canônicas do acetato <span class="tag">animação</span></h3>
+    <div data-w="mech" data-k="acetate"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Ressonância <b>estabiliza</b> a base conjugada, distribuindo a carga por vários átomos.</div>
+    <div class="note err"><b class="t">Erro comum</b>Estruturas de ressonância não são moléculas diferentes em equilíbrio, e a molécula não alterna entre elas: são representações de <b>uma única</b> estrutura eletrônica deslocalizada.</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Etóxido × acetato no mapa eletrostático <span class="tag">3D</span></h3>
+    <div data-w="espEthAce" data-3d></div>
+  </div>
+</section>
+
+<!-- 13 ELETRONEGATIVIDADE -->
+<section class="section" id="eletroneg" data-title="Eletronegatividade">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Fator 2 — Eletronegatividade</h2><p class="lead">No mesmo período, o átomo mais eletronegativo acomoda melhor a carga negativa.</p></div></div>
+  <div class="block"><div data-w="periodTrend"></div></div>
+</section>
+
+<!-- 14 TAMANHO -->
+<section class="section" id="tamanho" data-title="Tamanho Atômico">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Fator 3 — Tamanho atômico</h2><p class="lead">Descendo no grupo: o átomo aumenta, a carga se distribui em volume maior e a ligação H–X fica mais longa e fraca.</p></div></div>
+  <div class="block"><div data-w="groupTrend"></div></div>
+  <div class="block">
+    <h3 class="block-title">Eletronegatividade × tamanho <span class="tag">tabela interativa</span></h3>
+    <div data-w="ptTrend"></div>
+    <div class="note care"><b class="t">Cuidado</b>Ao longo de um <b>período</b>, a eletronegatividade costuma dominar; ao descer em um <b>grupo</b>, tamanho e força da ligação tornam-se mais importantes. HF é a ligação mais polar e, mesmo assim, o ácido mais fraco do grupo.</div>
+    <div data-w="espHX" data-3d></div>
+  </div>
+</section>
+
+<!-- 15 HIBRIDIZAÇÃO -->
+<section class="section" id="hibridizacao" data-title="Hibridização">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Fator 4 — Hibridização</h2><p class="lead">Maior caráter s → elétrons, em média, mais próximos do núcleo → carga negativa mais estabilizada no carbono.</p></div></div>
+  <div class="block">
+    <div class="grid3"><div class="defbox"><b>sp³ · 25% s</b>CH₃CH₃ → CH₃CH₂⁻ · pKa ≈ 50</div><div class="defbox o"><b>sp² · ≈ 33% s</b>CH₂=CH₂ → CH₂=CH⁻ · pKa ≈ 44</div><div class="defbox m"><b>sp · 50% s</b>HC≡CH → HC≡C⁻ · pKa ≈ 25</div></div>
+    <h3 class="block-title">Orbitais híbridos (qualitativos) <span class="tag">3D</span></h3>
+    <div data-w="hybTrend" data-3d></div>
+    <p class="hint3">Desenho qualitativo: o lóbulo de maior caráter s é mais "curto e gordo" (densidade mais próxima do núcleo). Não está em escala.</p>
+    <div data-w="espHyb" data-3d></div>
+    <div class="note quick" data-q="Qual é mais ácido?" data-o="H de alcino terminal;H de alceno;H de alcano" data-a="0" data-e="sp (50% s): pKa ≈ 25."></div>
+  </div>
+</section>
+
+<!-- 16 LIGAÇÃO -->
+<section class="section" id="ligacao" data-title="Força e Comprimento de Ligação">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Fator 5 — Força e comprimento de ligação</h2><p class="lead">A facilidade de remover H⁺ também depende da ligação H–A: ligações mais longas e mais fracas facilitam a ionização.</p></div></div>
+  <div class="block">
+    <div class="table-wrap"><table class="cmp"><thead><tr><th>Ligação</th><th>Comprimento (Å)</th><th>Energia de ligação (kJ/mol)</th><th>pKa</th></tr></thead><tbody>
+      <tr><td>H–F</td><td>0,92</td><td>570</td><td>3,2</td></tr><tr><td>H–Cl</td><td>1,27</td><td>432</td><td>≈ −7</td></tr><tr><td>H–Br</td><td>1,41</td><td>366</td><td>≈ −9</td></tr><tr><td>H–I</td><td>1,61</td><td>298</td><td>≈ −10</td></tr>
+    </tbody></table></div>
+    <div data-w="groupTrend"></div>
+    <div class="note think"><b class="t">Pense nisso</b>Força de ligação e tamanho caminham juntos ao descer o grupo: os dois favorecem a acidez de HI.</div>
+  </div>
+</section>
+
+<!-- 17 INDUTIVO -->
+<section class="section" id="indutivo" data-title="Efeito Indutivo">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>Fator 6 — Efeito indutivo</h2><p class="lead"><b>Efeito indutivo = polarização eletrônica transmitida através de ligações σ.</b></p></div></div>
+  <div class="block">
+    <h3 class="block-title">Número de grupos retiradores</h3>
+    <div data-w="inductive"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Distância</h3>
+    <div data-w="inductDist"></div>
+    <div class="grid2"><div class="defbox o"><b>Grupos retiradores</b>(halogênios, O, N⁺, C=O…) podem estabilizar a carga negativa por indução → ácido mais forte.</div><div class="defbox"><b>Grupos doadores</b>(alquilas) podem desestabilizá-la → ácido mais fraco (ex.: (CH₃)₃COH, pKa 18, é menos ácido que CH₃OH, 15,5).</div></div>
+  </div>
+</section>
+
+<!-- 18 INTEGRAÇÃO -->
+<section class="section" id="integracao" data-title="Integração dos Fatores de Acidez">
+  <div class="section-head"><div><span class="kicker">Módulo 18</span><h2>Integração dos fatores de acidez</h2><p class="lead">Uma ferramenta de raciocínio, não uma regra única.</p></div></div>
+  <div class="block"><h3 class="block-title">Perguntas para comparar dois ácidos</h3><div data-w="reasonTool"></div></div>
+  <div class="block"><h3 class="block-title">Simulador de acidez <span class="tag">marque os fatores antes</span></h3><div data-w="aciditySim"></div></div>
+  <div class="block"><h3 class="block-title">Ranking de acidez <span class="tag">arrastar</span></h3><div data-w="rankEx"></div></div>
+  <div class="block"><h3 class="block-title">Base mais forte</h3><div data-w="baseEx"></div></div>
+</section>
+
+<!-- 19 K ΔG -->
+<section class="section" id="kdg" data-title="K, ΔG e Equilíbrio">
+  <div class="section-head"><div><span class="kicker">Módulo 19</span><h2>K, ΔG e equilíbrio</h2><p class="lead">Por que algumas reações favorecem produtos e outras reagentes?</p></div></div>
+  <div class="block">
+    <div class="formula big">ΔG° = −RT ln K</div>
+    <div class="grid3"><div class="defbox"><b>K &gt; 1</b>ΔG° &lt; 0: produtos favorecidos</div><div class="defbox o"><b>K = 1</b>ΔG° = 0</div><div class="defbox m"><b>K &lt; 1</b>ΔG° &gt; 0: reagentes favorecidos</div></div>
+    <h3 class="block-title">Gráfico interativo <span class="tag">K e T</span></h3>
+    <div data-w="kGraph"></div>
+    <div class="note err"><b class="t">Erro comum</b>Uma reação termodinamicamente favorável <b>não é necessariamente rápida</b>. ΔG informa sobre favorabilidade termodinâmica; a <b>energia de ativação</b> está relacionada à velocidade. K informa sobre o equilíbrio, não sobre a velocidade.</div>
+  </div>
+  <div class="block"><h3 class="block-title">Exercícios</h3><div data-w="kdgEx"></div></div>
+</section>
+
+<!-- 20 DIAGRAMAS -->
+<section class="section" id="diagramas" data-title="Diagramas de Energia">
+  <div class="section-head"><div><span class="kicker">Módulo 20</span><h2>Diagramas de energia</h2><p class="lead">Energia × coordenada da reação: reagentes, estado de transição e produtos.</p></div></div>
+  <div class="block">
+    <div class="grid2"><div><h4>Exergônica (ΔG &lt; 0)</h4><div data-fig="exo"></div><p class="hint3">Produtos abaixo dos reagentes: termodinamicamente favorável nas condições padrão consideradas.</p></div><div><h4>Endergônica (ΔG &gt; 0)</h4><div data-fig="endo"></div><p class="hint3">Produtos acima dos reagentes.</p></div></div>
+    <div class="grid2"><div class="defbox"><b>Energia de ativação (Ea)</b>diferença entre o ET e o ponto de partida da etapa: controla a velocidade.</div><div class="defbox o"><b>ΔG da reação</b>diferença entre produtos e reagentes: controla o equilíbrio.</div></div>
+    <div class="note err"><b class="t">Erro comum</b>ΔG e energia de ativação <b>não</b> são a mesma grandeza.</div>
+  </div>
+  <div class="block"><h3 class="block-title">Ajuste o diagrama <span class="tag">sliders</span></h3><div data-w="energyLab"></div></div>
+  <div class="block"><h3 class="block-title">Exercícios</h3><div data-w="energyEx"></div></div>
+</section>
+
+<!-- 21 INTERMEDIÁRIOS -->
+<section class="section" id="intermediarios" data-title="Intermediários e Estados de Transição">
+  <div class="section-head"><div><span class="kicker">Módulo 21</span><h2>Intermediários e estados de transição</h2></div></div>
+  <div class="block">
+    <div class="grid2"><div class="defbox m"><b>Estado de transição (‡)</b>configuração de máxima energia ao longo de uma etapa elementar; não é isolável; ligações parcialmente formadas/rompidas.</div><div class="defbox"><b>Intermediário</b>espécie formada em uma etapa e consumida em outra; mínimo local de energia (máximo → mínimo → máximo).</div></div>
+    <h3 class="block-title">Aproximação nucleófilo–eletrófilo e o ET <span class="tag">3D + diagrama</span></h3>
+    <div data-w="approach" data-3d></div>
+  </div>
+  <div class="block">
+    <div class="table-wrap"><table class="cmp"><thead><tr><th>Intermediário</th><th>Estado de transição</th></tr></thead><tbody>
+      <tr><td>mínimo local de energia</td><td>máximo de energia</td></tr><tr><td>pode ter vida finita</td><td>não é isolável</td></tr><tr><td>estrutura química</td><td>configuração de passagem</td></tr><tr><td>aparece entre etapas</td><td>aparece no topo da barreira</td></tr>
+    </tbody></table></div>
+    <div class="grid2"><div><h4>Uma etapa (concertada)</h4><div data-fig="exo"></div><p class="hint3">reagentes → ET → produtos: uma etapa elementar.</p></div><div><h4>Várias etapas</h4><div data-fig="two"></div><p class="hint3">reagentes → ET1 → intermediário → ET2 → produtos: cada etapa tem sua barreira.</p></div></div>
+    <h3 class="block-title">Etapa determinante da velocidade</h3>
+    <p>Qualitativamente, a etapa associada à <b>maior barreira relevante</b> frequentemente controla a velocidade global. Compare (1ª etapa lenta) com (2ª etapa lenta):</p>
+    <div class="grid2"><div data-fig="two"></div><div data-fig="two2"></div></div>
+    <div class="note care"><b class="t">Cuidado</b>Em mecanismos mais complexos (pré-equilíbrios, etapas reversíveis), a análise exige mais cuidado do que "a maior barreira de uma etapa isolada".</div>
+  </div>
+</section>
+
+<!-- 22 MECANISMOS -->
+<section class="section" id="mecanismos" data-title="Introdução a Mecanismos">
+  <div class="section-head"><div><span class="kicker">Módulo 22</span><h2>Introdução a mecanismos orgânicos</h2><p class="lead"><b>Mecanismo = sequência detalhada de etapas elementares que descreve como reagentes se transformam em produtos.</b> Deve indicar: ligações que quebram e que formam, movimento de elétrons, intermediários, estados de transição e cargas.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Mecanismo ácido-base: HO⁻ + CH₃OH ⇌ H₂O + CH₃O⁻ <span class="tag">5 passos</span></h3>
+    <div data-w="mech" data-k="methanol"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Nucleófilo e eletrófilo: CN⁻ + CH₃Br → CH₃CN + Br⁻</h3>
+    <div data-w="mech" data-k="cn"></div>
+    <p class="hint3">Mostramos apenas carbono δ+, nucleófilo, grupo abandonador e movimento de elétrons; o mecanismo SN2 será estudado depois.</p>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Polarização C–X: qual região o nucleófilo atacaria? <span class="tag">clique no 3D</span></h3>
+    <div data-w="cxAttack" data-3d></div>
+  </div>
+  <div class="block"><h3 class="block-title">Conservação de carga</h3><div data-w="chargeEx"></div></div>
+  <div class="block"><h3 class="block-title">Contabilidade eletrônica</h3><div data-w="accounting"></div></div>
+</section>
+
+<!-- 23 LAB -->
+<section class="section" id="laboratorio" data-title="Laboratório Eletrônico 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 23</span><h2>Laboratório eletrônico 3D</h2><p class="lead">Gire, aproxime, alterne entre bola-vareta e volume, mostre pares, cargas, orbitais, mapas eletrostáticos e regiões nucleofílicas/eletrofílicas.</p></div></div>
+  <div class="block"><div data-w="lab3d" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Onde estão os elétrons? <span class="tag">clique no 3D</span></h3><div data-w="whereElectrons" data-3d></div></div>
+</section>
+
+<!-- 24 SIM ÁCIDO-BASE -->
+<section class="section" id="simacido" data-title="Simulador Ácido-Base">
+  <div class="section-head"><div><span class="kicker">Módulo 24</span><h2>Simulador ácido-base</h2></div></div>
+  <div class="block"><h3 class="block-title">Equilíbrio ácido-base <span class="tag">preveja e confira</span></h3><div data-w="eqSim"></div></div>
+  <div class="block"><h3 class="block-title">Calculadora didática pKa → K → ΔG°</h3><div data-w="pkaCalc"></div></div>
+  <div class="block"><h3 class="block-title">Comparador de bases conjugadas</h3><div data-w="cbCompare"></div></div>
+  <div class="block"><h3 class="block-title">Simulador K ↔ ΔG</h3><div data-w="kGraph"></div></div>
+</section>
+
+<!-- 25 SIM SETAS -->
+<section class="section" id="simsetas" data-title="Simulador de Setas Curvas">
+  <div class="section-head"><div><span class="kicker">Módulo 25</span><h2>Simulador de setas curvas</h2><p class="lead">Arraste da origem dos elétrons até o destino. A aplicação verifica origem, destino, valência e cargas, com feedback específico.</p></div></div>
+  <div class="block"><div data-w="arrowSim"></div></div>
+  <div class="block"><h3 class="block-title">Monte o mecanismo</h3><div data-w="mechBuilder"></div></div>
+  <div class="block">
+    <h3 class="block-title">Detecte o erro</h3>
+    <ul class="checklist err">
+      <li>seta saindo de uma carga positiva (ou de H⁺)</li><li>seta terminando em elétrons inexistentes</li><li>carbono pentavalente</li><li>oxigênio com valência incorreta</li><li>H com duas ligações</li><li>quebra de ligação sem destino para os elétrons</li>
+    </ul>
+    <a class="btn" href="#prop-hard">Exercícios "Detecte o erro" →</a>
+  </div>
+</section>
+
+<!-- 26 RESOLVIDOS -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 26</span><h2>Exercícios resolvidos</h2><p class="lead">Tente resolver primeiro; depois peça a dica ou a resolução.</p></div></div>
+  <div class="block"><div class="chips" data-w="levelChips"></div><div data-w="solved"></div></div>
+</section>
+
+<!-- 27 PROPOSTOS -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 27</span><h2>Exercícios propostos</h2><p class="lead">70 exercícios: 20 fáceis, 30 intermediários e 20 avançados. <button class="btn sm" type="button" data-action="redo">↺ Refazer todos</button></p></div></div>
+  <nav class="subnav"><a href="#prop-easy">Fáceis</a><a href="#prop-mid">Intermediários</a><a href="#prop-hard">Avançados</a></nav>
+  <div class="block">
+    <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+    <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+    <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+  </div>
+</section>
+
+<!-- 28 QUIZ -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 28</span><h2>Quiz final</h2><p class="lead">40 questões sorteadas de todos os temas.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">Modo desafio <span class="tag">pontos · sequência</span></h3><div data-w="challenge"></div></div>
+</section>
+
+<!-- 29 MAPA -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 29</span><h2>Mapa conceitual e resumo</h2></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block">
+    <h3 class="block-title">Resumo visual</h3>
+    <div class="rules">
+      <div><b class="nuc">Nucleófilo</b> → doa elétrons</div><div><b class="elc">Eletrófilo</b> → recebe elétrons</div>
+      <div><b>Base de Lewis</b> → doa par eletrônico</div><div><b>Ácido de Lewis</b> → recebe par eletrônico</div>
+      <div><b>Base de Brønsted</b> → recebe H⁺</div><div><b>Ácido de Brønsted</b> → doa H⁺</div>
+      <div><b>Ácido forte</b> → base conjugada relativamente estável</div><div><b>pKa menor</b> → ácido mais forte</div>
+      <div><b>K &gt; 1</b> → produtos favorecidos</div><div><b>ΔG° &lt; 0</b> → produtos termodinamicamente favorecidos</div>
+      <div><b>Seta curva</b> → movimento de dois elétrons</div><div><b>Seta de meia ponta</b> → movimento de um elétron</div>
+    </div>
+  </div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica I</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

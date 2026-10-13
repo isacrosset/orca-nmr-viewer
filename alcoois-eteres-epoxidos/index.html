@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Álcoois, Éteres e Epóxidos · Química Orgânica I</title>
+  <meta name="description" content="Plataforma interativa de Química Orgânica I sobre álcoois, éteres e epóxidos: estrutura, propriedades, acidez, preparação, reações, oxidação, síntese de Williamson, abertura de epóxidos, modelos 3D, simuladores, exercícios e quiz.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><line x1="11" y1="27" x2="29" y2="27" stroke="#9fb0cc" stroke-width="2.4"/><line x1="11" y1="27" x2="20" y2="12" stroke="#9fb0cc" stroke-width="2.4"/><line x1="29" y1="27" x2="20" y2="12" stroke="#9fb0cc" stroke-width="2.4"/><circle cx="20" cy="12" r="5" fill="#ef3b3b"/><circle cx="14" cy="8" r="1.6" fill="#2fd4f5"/><circle cx="26" cy="8" r="1.6" fill="#2fd4f5"/></svg>
+      <span>Álcoois, Éteres e Epóxidos<small>Química Orgânica I</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#estrutura-alcoois">Estrutura dos Álcoois</a></li>
+        <li><a href="#nomenclatura">Nomenclatura</a></li>
+        <li><a href="#acidez">Acidez e Basicidade</a></li>
+        <li><a href="#preparacao">Preparação de Álcoois</a></li>
+        <li><a href="#reacoes-alcoois">Reações de Álcoois</a></li>
+        <li><a href="#oxidacao">Oxidação</a></li>
+        <li><a href="#estrutura-eteres">Éteres</a></li>
+        <li><a href="#sintese-eteres">Síntese de Éteres</a></li>
+        <li><a href="#reacoes-eteres">Reações de Éteres</a></li>
+        <li><a href="#epoxidos">Epóxidos</a></li>
+        <li><a href="#abertura">Abertura de Epóxidos</a></li>
+        <li><a href="#comparacao">Álcoois × Éteres × Epóxidos</a></li>
+        <li><a href="#laboratorio">Laboratório 3D</a></li>
+        <li><a href="#simulador">Simulador</a></li>
+        <li><a href="#resolvidos">Resolvidos</a></li>
+        <li><a href="#propostos">Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ===================================================== 1 INÍCIO -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica I · compostos oxigenados</span>
+      <h1>Álcoois, Éteres e <span class="g">Epóxidos</span></h1>
+      <p class="sub">Estrutura, propriedades, mecanismos e reatividade do oxigênio em Química Orgânica.</p>
+      <div class="cta"><a class="btn primary lg" href="#estrutura-alcoois">Começar →</a><a class="btn lg" href="#laboratorio">Explorar moléculas em 3D</a></div>
+      <p class="eq">estrutura → propriedade → mecanismo → produto</p>
+    </div>
+    <div data-w="hero" data-3d class="grid3" style="gap:10px"></div>
+  </div>
+  <div class="modules">
+    <a href="#estrutura-alcoois"><b>Álcoois</b><span>estrutura, ligação de H, solubilidade, 1°/2°/3° em 3D</span></a>
+    <a href="#nomenclatura"><b>Nomenclatura</b><span>-ol, dióis, cíclicos, éteres (alcoxialcanos)</span></a>
+    <a href="#acidez"><b>Acidez</b><span>pKa, alcóxidos, NaH, efeitos estruturais</span></a>
+    <a href="#preparacao"><b>Preparação</b><span>hidratação, oximercuração, hidroboração, redução</span></a>
+    <a href="#reacoes-alcoois"><b>Reações de álcoois</b><span>HX, PBr₃, SOCl₂, tosilatos, desidratação</span></a>
+    <a href="#oxidacao"><b>Oxidação</b><span>PCC × Jones; 1°, 2°, 3°</span></a>
+    <a href="#sintese-eteres"><b>Éteres</b><span>Williamson, clivagem com HI/HBr, peróxidos</span></a>
+    <a href="#abertura"><b>Epóxidos</b><span>tensão de anel; abertura ácida × básica em 3D</span></a>
+    <a href="#laboratorio"><b>Laboratório 3D</b><span>14 moléculas, pares livres, δ±, ângulos</span></a>
+    <a href="#simulador"><b>Simuladores</b><span>propriedades, álcoois, Williamson, epóxidos, mecanismos</span></a>
+    <a href="#resolvidos"><b>Exercícios</b><span>29 resolvidos e 50 propostos</span></a>
+    <a href="#quiz"><b>Quiz e desafio</b><span>30 questões + "Qual é o produto?"</span></a>
+  </div>
+</section>
+
+<!-- ===================================================== 2 ESTRUTURA E PROPRIEDADES DOS ÁLCOOIS -->
+<section class="section" id="estrutura-alcoois" data-title="Estrutura dos Álcoois">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>Estrutura e propriedades dos álcoois</h2><p class="lead">Álcoois têm um grupo hidroxila (–OH) ligado a um carbono sp³: <b>R–OH</b>.</p></div></div>
+  <nav class="subnav"><a href="#est-estrutura">Estrutura</a><a href="#est-modelos">Modelos 3D</a><a href="#est-hbond">Ligação de H</a><a href="#est-sol">Solubilidade</a><a href="#est-class">1° · 2° · 3°</a></nav>
+  <div class="block" id="est-estrutura">
+    <div class="formula"><span class="big">R–<span style="color:var(--cyan)">Ö</span>–H</span> &nbsp; O sp³ · 2 ligações σ + 2 pares livres</div>
+    <div class="grid3">
+      <div class="defbox"><b>Oxigênio sp³</b>quatro domínios eletrônicos: duas ligações (C–O, O–H) e dois pares livres. Geometria angular; C–O–H ≈ 108,5°.</div>
+      <div class="defbox o"><b>Polarização</b>O é mais eletronegativo: C<sup>δ+</sup>–O<sup>δ−</sup> e O<sup>δ−</sup>–H<sup>δ+</sup>. O carbono ligado ao O é levemente eletrofílico; o H do OH é levemente ácido.</div>
+      <div class="defbox m"><b>Pares livres</b>tornam o O <b>básico</b> (aceita H⁺) e <b>nucleofílico</b>, e permitem que ele <b>aceite</b> ligações de hidrogênio.</div>
+    </div>
+    <div class="figs" data-fig="alcohols"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>O grupo OH reúne três "personalidades": doa H⁺ (ácido fraco), aceita H⁺ pelos pares livres (base fraca) e forma ligações de hidrogênio. Quase todas as propriedades e reações dos álcoois vêm daí.</div>
+  </div>
+  <div class="block" id="est-modelos">
+    <h3 class="block-title">Metanol, etanol, propan-2-ol e terc-butanol <span class="tag">3D</span></h3>
+    <div data-w="alcohols3d" data-3d></div>
+  </div>
+  <div class="block" id="est-hbond">
+    <h3 class="block-title">Ligações de hidrogênio: etanol × éter dimetílico × propano <span class="tag">3D animado</span></h3>
+    <div data-w="hbond" data-3d></div>
+    <div class="grid3">
+      <div class="defbox"><b>Álcool</b>doador <b>e</b> aceptor de ligação de H.</div>
+      <div class="defbox o"><b>Éter</b>apenas aceptor (não há H ligado ao O).</div>
+      <div class="defbox m"><b>Alcano</b>nenhuma ligação de H.</div>
+    </div>
+    <h4>Pontos de ebulição comparados</h4>
+    <div data-w="bp"></div>
+    <div class="note think"><b class="t">Pense nisso</b>Por que o etilenoglicol (dois OH) ferve a 197 °C e é usado como anticongelante?</div>
+  </div>
+  <div class="block" id="est-sol">
+    <h3 class="block-title">Solubilidade em água × tamanho da cadeia <span class="tag">animação</span></h3>
+    <div data-w="solub"></div>
+    <div class="note care"><b class="t">Cuidado</b>"Semelhante dissolve semelhante" é uma heurística. Um álcool tem uma parte polar (OH) e uma apolar (cadeia): o resultado depende do equilíbrio entre as duas.</div>
+    <div data-w="solOrder"></div>
+  </div>
+  <div class="block" id="est-class">
+    <h3 class="block-title">Álcoois 1°, 2° e 3° <span class="tag">clique no 3D</span></h3>
+    <p>A classe depende do número de <b>carbonos ligados ao carbono que carrega o OH</b> (carbono carbinólico): 1 → primário, 2 → secundário, 3 → terciário.</p>
+    <div data-w="classify3d" data-3d></div>
+    <div class="note quick" data-q="O butan-2-ol é um álcool:" data-o="1°;2°;3°" data-a="1" data-e="O C do OH está ligado a dois carbonos (CH₃ e CH₂CH₃)."></div>
+  </div>
+</section>
+
+<!-- ===================================================== 3 NOMENCLATURA -->
+<section class="section" id="nomenclatura" data-title="Nomenclatura">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Nomenclatura dos álcoois</h2><p class="lead">Sufixo <b>-ol</b>; o grupo OH define a cadeia principal e a numeração.</p></div></div>
+  <div class="block">
+    <ol>
+      <li><b>Cadeia principal</b>: a mais longa que contém o carbono ligado ao OH.</li>
+      <li><b>Numeração</b>: a partir da extremidade que dá o <b>menor localizador ao OH</b> (antes dos substituintes, das duplas etc.).</li>
+      <li><b>Nome</b>: substituintes em ordem alfabética + prefixo da cadeia + localizador + <b>-ol</b> (ex.: 4-metilpentan-2-ol).</li>
+      <li><b>Dióis e trióis</b>: mantém-se o "o" do alcano: butano-1,3-diol, propano-1,2,3-triol.</li>
+      <li><b>Cíclicos</b>: o carbono do OH é o C1 (ciclo-hexanol; 2-metilciclo-hexan-1-ol).</li>
+    </ol>
+    <div class="figs" data-fig="nomEx"></div>
+    <div class="note err"><b class="t">Erro comum</b>Numerar para dar o menor número ao substituinte alquila. O OH (grupo funcional principal) tem prioridade: 4-metilpentan-2-ol, e não 2-metilpentan-4-ol.</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Treino: cadeia → numeração → nome <span class="tag">interativo</span></h3>
+    <div data-w="nomAlc"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Exercícios rápidos</h3>
+    <div data-w="nomQuiz"></div>
+  </div>
+</section>
+
+<!-- ===================================================== 4 ACIDEZ -->
+<section class="section" id="acidez" data-title="Acidez e Basicidade">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Acidez e basicidade de álcoois</h2><p class="lead">O mesmo O–H pode perder H⁺ (ácido fraco) ou ganhar H⁺ nos pares livres (base fraca).</p></div></div>
+  <nav class="subnav"><a href="#ac-eq">Equilíbrio</a><a href="#ac-pka">Comparação</a><a href="#ac-fatores">Fatores</a><a href="#ac-alcox">Alcóxidos</a></nav>
+  <div class="block" id="ac-eq">
+    <div class="formula">R–O–H &nbsp;⇌&nbsp; R–O⁻ + H⁺ &nbsp;&nbsp;(pKa ≈ 16–18)</div>
+    <div class="formula">R–O–H + H⁺ &nbsp;⇌&nbsp; R–OH₂⁺ &nbsp;&nbsp;(álcool protonado; só com ácidos fortes)</div>
+    <div class="note key"><b class="t">Conceito-chave</b>O pKa é um apoio para comparar, não o objetivo. O que importa é: <b>quanto mais estável a base conjugada (RO⁻), mais ácido o álcool</b>.</div>
+  </div>
+  <div class="block" id="ac-pka">
+    <h3 class="block-title">Escada de acidez e escolha da base <span class="tag">interativo</span></h3>
+    <div data-w="pka"></div>
+  </div>
+  <div class="block" id="ac-fatores">
+    <h3 class="block-title">O que estabiliza a base conjugada?</h3>
+    <div class="grid3">
+      <div class="defbox"><b>Eletronegatividade</b>a carga em O (mais eletronegativo) é mais estável que em N ou C: álcool (16) ≫ amina (38) ≫ alcano (≈ 50).</div>
+      <div class="defbox o"><b>Efeito indutivo</b>grupos retiradores próximos (F, Cl) estabilizam RO⁻: CF₃CH₂OH (pKa 12,4) é mais ácido que o etanol.</div>
+      <div class="defbox m"><b>Ressonância</b>deslocaliza a carga: fenóxido (pKa 10) e carboxilato (pKa ≈ 4,8) são muito mais estáveis que o etóxido.</div>
+      <div class="defbox"><b>Solvatação</b>alcóxidos pequenos são melhor solvatados: metanol &gt; etanol &gt; terc-butanol em água.</div>
+      <div class="defbox o"><b>Base conjugada</b>RO⁻ é uma base forte (pKa do ácido conjugado ≈ 16): útil em E2 e como nucleófilo em SN2.</div>
+      <div class="defbox m"><b>Basicidade do O</b>o álcool é base fraca: só ácidos fortes (H₂SO₄, HBr) o protonam. Isso <b>ativa</b> o OH.</div>
+    </div>
+  </div>
+  <div class="block" id="ac-alcox">
+    <h3 class="block-title">Formação de alcóxidos: NaH, Na, K <span class="tag">3D animado</span></h3>
+    <div data-w="alkoxide3d" data-3d></div>
+    <div class="grid2">
+      <div class="defbox"><b>NaH</b>ROH + NaH → RO⁻Na⁺ + H₂↑ (ácido–base; irreversível).</div>
+      <div class="defbox o"><b>Na ou K metálico</b>2 ROH + 2 Na → 2 RO⁻Na⁺ + H₂↑ (redox).</div>
+    </div>
+    <div class="note care"><b class="t">Cuidado</b>NaOH não converte completamente o etanol em etóxido: o pKa da água (15,7) é quase igual ao do etanol (16). Forma-se um equilíbrio.</div>
+    <div class="note quick" data-q="Alcóxidos são:" data-o="ácidos fracos;bases fortes e bons nucleófilos;grupos abandonadores excelentes" data-a="1" data-e="RO⁻ é a base conjugada de um ácido fraco: base forte, nucleófilo (Williamson) e base em E2."></div>
+  </div>
+</section>
+
+<!-- ===================================================== 5 PREPARAÇÃO -->
+<section class="section" id="preparacao" data-title="Preparação de Álcoois">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Preparação de álcoois</h2><p class="lead">A partir de alcenos (adição de água) e por redução de compostos carbonílicos.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">A partir de alcenos: três métodos lado a lado</h3>
+    <div class="figs" data-fig="hydration"></div>
+    <div data-w="hydrTable"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Escolha o método pela <b>regioquímica</b> desejada (Markovnikov × anti-Markovnikov) e pelo <b>risco de rearranjo</b> (carbocátion livre só na hidratação ácida).</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Rearranjo: hidratação ácida × oximercuração</h3>
+    <div class="figs" data-fig="rearrHyd"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Por redução de aldeídos e cetonas <span class="tag">introdutório</span></h3>
+    <div class="figs" data-fig="reduction"></div>
+    <p>NaBH₄ e LiAlH₄ funcionam como fontes de <b>hidreto (H⁻)</b>, que ataca o carbono da C=O; a protonação do alcóxido dá o álcool. Aldeído → 1°; cetona → 2°. (Os mecanismos detalhados são estudados com compostos carbonílicos.)</p>
+    <div class="note care"><b class="t">Cuidado</b>LiAlH₄ reage violentamente com água e álcoois: usa-se em éter anidro e só depois se adiciona H₃O⁺. NaBH₄ é mais brando e pode ser usado em metanol.</div>
+  </div>
+</section>
+
+<!-- ===================================================== 6 REAÇÕES DE ÁLCOOIS -->
+<section class="section" id="reacoes-alcoois" data-title="Reações de Álcoois">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Reações de álcoois</h2><p class="lead">Substituição e eliminação exigem transformar o OH em um bom grupo abandonador.</p></div></div>
+  <nav class="subnav"><a href="#rea-key">O problema do OH</a><a href="#rea-prot">Protonação</a><a href="#rea-hx">HX</a><a href="#rea-socl2">SOCl₂</a><a href="#rea-pbr3">PBr₃</a><a href="#rea-ts">Tosilatos</a><a href="#rea-desid">Desidratação</a><a href="#rea-tab">Resumo</a></nav>
+  <div class="block" id="rea-key">
+    <div class="note key"><b class="t">Conceito-chave</b>OH⁻ geralmente é um grupo abandonador ruim porque é uma base forte. Por isso, o grupo OH precisa ser <b>ativado</b>: protonado (→ H₂O), convertido em éster inorgânico (PBr₃, SOCl₂) ou em sulfonato (TsCl, MsCl).</div>
+    <div class="grid3">
+      <div class="defbox"><b>H⁺ (HX, H₂SO₄)</b>ROH → ROH₂⁺: sai H₂O.</div>
+      <div class="defbox o"><b>PBr₃, SOCl₂</b>O–P ou O–S: o O vira parte de um bom grupo abandonador; o haleto ataca o C.</div>
+      <div class="defbox m"><b>TsCl, MsCl</b>R–OTs: ótimo grupo abandonador; a C–O não é tocada.</div>
+    </div>
+  </div>
+  <div class="block" id="rea-prot">
+    <h3 class="block-title">Protonação e substituição (álcool 1° + HBr) <span class="tag">animação</span></h3>
+    <div data-w="protPlayer"></div>
+  </div>
+  <div class="block" id="rea-hx">
+    <h3 class="block-title">Conversão em haletos com HCl, HBr, HI</h3>
+    <div class="grid3">
+      <div class="defbox"><b>1°</b>SN2 sobre o álcool protonado (não há carbocátion primário livre).</div>
+      <div class="defbox o"><b>2°</b>caso intermediário: SN1 e SN2 podem competir; rearranjos possíveis.</div>
+      <div class="defbox m"><b>3°</b>SN1: carbocátion terciário (rápido).</div>
+    </div>
+    <h4>Álcool 3° + HBr (SN1) <span class="tag">animação</span></h4>
+    <div data-w="sn1Player"></div>
+    <div data-w="energyHX"></div>
+    <div class="note err"><b class="t">Erro comum</b>Desenhar a saída de OH⁻ "nua". Em meio ácido, o OH é protonado primeiro; quem sai é a H₂O.</div>
+    <div class="note quick" data-q="Qual reage mais rápido com HCl/ZnCl₂ (teste de Lucas)?" data-o="butan-1-ol;butan-2-ol;2-metilpropan-2-ol" data-a="2" data-e="Álcool 3° → carbocátion 3° (SN1): turvação imediata."></div>
+  </div>
+  <div class="block" id="rea-socl2">
+    <h3 class="block-title">Cloreto de tionila (SOCl₂)</h3>
+    <div data-w="socl2Player"></div>
+    <p>ROH + SOCl₂ → RCl + SO₂(g) + HCl. Os subprodutos gasosos deslocam o equilíbrio e facilitam a purificação. Usado com álcoois 1° e 2°, geralmente com piridina.</p>
+    <div class="note care"><b class="t">Cuidado</b>A estereoquímica com SOCl₂ <b>depende das condições</b>: com piridina, o Cl⁻ livre faz SN2 (inversão); sem base, pode haver retenção. Não generalize.</div>
+  </div>
+  <div class="block" id="rea-pbr3">
+    <h3 class="block-title">Tribrometo de fósforo (PBr₃) <span class="tag">inversão</span></h3>
+    <div data-w="pbr3Player"></div>
+    <p>Funciona com álcoois <b>1° e 2°</b>: o O ataca o P (ativação), e o Br⁻ faz <b>SN2</b> no carbono → inversão, sem carbocátion e sem rearranjo. Com álcoois 3° a SN2 é bloqueada: use HBr.</p>
+  </div>
+  <div class="block" id="rea-ts">
+    <h3 class="block-title">Tosilatos e mesilatos</h3>
+    <div data-w="tsPlayer"></div>
+    <div class="grid2">
+      <div class="defbox"><b>Ativação sem tocar o carbono</b>ROH + TsCl (piridina) → ROTs. A ligação C–O é mantida: <b>retenção</b>.</div>
+      <div class="defbox o"><b>Depois: SN2 ou E2</b>TsO⁻ é base muito fraca (ressonância) → excelente grupo abandonador. Com nucleófilo: SN2 (inversão). Com base forte/volumosa: E2.</div>
+    </div>
+    <div class="note think"><b class="t">Pense nisso</b>(R)-butan-2-ol → (1) TsCl (2) NaBr dá qual enantiômero do 2-bromobutano? E com PBr₃ diretamente?</div>
+  </div>
+  <div class="block" id="rea-desid">
+    <h3 class="block-title">Desidratação com H₂SO₄/Δ: E1 com rearranjo <span class="tag">animação</span></h3>
+    <div data-w="dehydPlayer"></div>
+    <div data-w="energyE1"></div>
+    <div class="grid3">
+      <div class="defbox"><b>Facilidade</b>3° &gt; 2° &gt; 1° (estabilidade do carbocátion).</div>
+      <div class="defbox o"><b>Zaitsev</b>predomina o alceno mais substituído (mais estável).</div>
+      <div class="defbox m"><b>Temperatura</b>alta favorece a eliminação; a reação é reversível (hidratação).</div>
+    </div>
+    <div class="note err"><b class="t">Erro comum</b>Desenhar um carbocátion primário livre na desidratação de álcoois 1°. Ele não se forma: a saída da água é assistida pela remoção do H<sub>β</sub>, e o alceno pode isomerizar depois.</div>
+  </div>
+  <div class="block" id="rea-tab">
+    <h3 class="block-title">Resumo dos reagentes</h3>
+    <div data-w="reagTable"></div>
+  </div>
+</section>
+
+<!-- ===================================================== 7 OXIDAÇÃO -->
+<section class="section" id="oxidacao" data-title="Oxidação">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Oxidação de álcoois</h2><p class="lead">O carbono carbinólico perde H e ganha ligação com O.</p></div></div>
+  <div class="block">
+    <div class="grid3">
+      <div class="flowsteps"><div class="fs"><b>álcool 1°</b></div><span class="ar">↓ [O]</span><div class="fs"><b>aldeído</b></div><span class="ar">↓ [O] (em água)</span><div class="fs"><b>ácido carboxílico</b></div></div>
+      <div class="flowsteps"><div class="fs"><b>álcool 2°</b></div><span class="ar">↓ [O]</span><div class="fs"><b>cetona</b></div><span class="ar">✕</span><div class="fs" style="opacity:.6">(não oxida mais)</div></div>
+      <div class="flowsteps"><div class="fs"><b>álcool 3°</b></div><span class="ar">✕</span><div class="fs" style="opacity:.6">sem oxidação simples<br><small>(não há H no C do OH)</small></div></div>
+    </div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">PCC × Jones <span class="tag">interativo</span></h3>
+    <div data-w="oxid"></div>
+    <div class="grid2">
+      <div class="defbox"><b>PCC</b> (clorocromato de piridínio, CH₂Cl₂, anidro) — mais brando: 1° → aldeído; 2° → cetona.</div>
+      <div class="defbox o"><b>Jones</b> (CrO₃, H₂SO₄, H₂O, acetona) — forte, aquoso: 1° → ácido carboxílico; 2° → cetona.</div>
+    </div>
+    <div class="note key"><b class="t">Conceito-chave · outros oxidantes</b>Hoje se preferem oxidantes sem cromo para parar no aldeído: <b>periodinano de Dess–Martin</b> (DMP) e a <b>oxidação de Swern</b> (DMSO, (COCl)₂, Et₃N, −78 °C). Mesmo resultado que o PCC: 1° → aldeído, 2° → cetona.</div>
+    <div class="note care"><b class="t">Cuidado · contexto</b>A mudança de cor do Cr(VI) (laranja) para Cr(III) (verde) foi a base dos antigos bafômetros químicos. Compostos de Cr(VI) são tóxicos e carcinogênicos: por isso o uso tem diminuído.</div>
+    <div class="note quick" data-q="Ciclo-hexanol + reagente de Jones dá:" data-o="ciclo-hexanona;ácido ciclo-hexanocarboxílico;ciclo-hexeno" data-a="0" data-e="Álcool 2° → cetona."></div>
+  </div>
+</section>
+
+<!-- ===================================================== 8 ÉTERES -->
+<section class="section" id="estrutura-eteres" data-title="Éteres">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Estrutura e propriedades dos éteres</h2><p class="lead">Éteres têm um oxigênio ligado a dois carbonos: <b>R–O–R′</b>.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Éter dimetílico, éter dietílico, THF e anisol <span class="tag">3D</span></h3>
+    <div data-w="ethers3d" data-3d></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Éteres × álcoois</h3>
+    <div class="grid3">
+      <div class="defbox"><b>Só aceptor</b>o O tem pares livres, mas nenhum H: éteres não doam ligações de H.</div>
+      <div class="defbox o"><b>P.E. baixo</b>etanol 78 °C × éter dimetílico −24 °C (mesma fórmula C₂H₆O).</div>
+      <div class="defbox m"><b>Bons solventes</b>pouco reativos, dissolvem compostos orgânicos e solvatam cátions (Et₂O e THF em reações de Grignard).</div>
+    </div>
+    <h4>Solubilidade: a água faz ligação de H com o O do éter <span class="tag">3D</span></h4>
+    <div data-w="etherWater" data-3d></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Nomenclatura: alcoxialcanos</h3>
+    <p>O grupo menor + O vira um substituinte <b>alcóxi</b> (CH₃O– metoxi, CH₃CH₂O– etoxi); a cadeia maior (ou o anel) é a estrutura principal: metoxietano, 2-metoxipropano, etoxibenzeno. Nomes usuais: listar os grupos + "éter" (etil metil éter; <b>éter dietílico</b>).</p>
+    <div data-w="nomEth"></div>
+  </div>
+</section>
+
+<!-- ===================================================== 9 SÍNTESE DE ÉTERES -->
+<section class="section" id="sintese-eteres" data-title="Síntese de Éteres">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Síntese de éteres</h2><p class="lead">Síntese de Williamson: alcóxido + haleto de alquila, por SN2.</p></div></div>
+  <div class="block">
+    <div class="formula">R–O⁻ Na⁺ + R′–X &nbsp;⟶&nbsp; R–O–R′ + Na⁺X⁻ &nbsp;&nbsp;(SN2)</div>
+    <div data-w="willPlayer"></div>
+    <div class="grid3">
+      <div class="defbox"><b>Funciona bem</b>R′–X metílico ou primário (e benzílico/alílico).</div>
+      <div class="defbox o"><b>2°</b>a E2 compete fortemente: rendimentos baixos.</div>
+      <div class="defbox m"><b>3° e arila</b>3°: E2 (alceno). Arila: não há SN2 no C sp² do anel.</div>
+    </div>
+    <div class="note err"><b class="t">Erro comum</b>A síntese de Williamson não é adequada para realizar SN2 em um carbono terciário. O lado ramificado do éter deve vir do <b>alcóxido</b>.</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Qual lado do éter deve ser usado como haleto? <span class="tag">exercício</span></h3>
+    <div data-w="willSide"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Alcoximercuração-desmercuração <span class="tag">secundário</span></h3>
+    <div class="figs" data-fig="alkoxy"></div>
+  </div>
+</section>
+
+<!-- ===================================================== 10 REAÇÕES DE ÉTERES -->
+<section class="section" id="reacoes-eteres" data-title="Reações de Éteres">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Reações de éteres</h2><p class="lead">Éteres são pouco reativos; a reação típica é a clivagem com HI ou HBr concentrados.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Clivagem ácida: protonação e depois SN2 (ou SN1) <span class="tag">animação</span></h3>
+    <div data-w="cleavPlayer"></div>
+    <div class="figs" data-fig="cleavCases"></div>
+    <div class="grid2">
+      <div class="defbox"><b>Metila / 1°</b>X⁻ ataca o carbono menos impedido (SN2).</div>
+      <div class="defbox o"><b>3°</b>forma-se o carbocátion terciário (SN1/E1).</div>
+      <div class="defbox m"><b>Arila</b>C(sp²)–O não sofre SN2: produto é o fenol, nunca o haleto de arila.</div>
+      <div class="defbox"><b>Excesso de HX</b>o álcool formado também vira haleto.</div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="note care"><b class="t">Cuidado · peróxidos</b>Éter dietílico, THF e outros éteres reagem lentamente com O₂ (luz, tempo de armazenamento) formando <b>hidroperóxidos e peróxidos</b>, que podem explodir quando concentrados. Por isso frascos são datados, mantidos fechados e longe da luz, e éteres antigos nunca devem ser evaporados até a secura. Siga sempre as normas de segurança do seu laboratório.</div>
+  </div>
+</section>
+
+<!-- ===================================================== 11 EPÓXIDOS -->
+<section class="section" id="epoxidos" data-title="Epóxidos">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Epóxidos (oxiranos)</h2><p class="lead">Éteres cíclicos de três membros: muito mais reativos que os éteres comuns.</p></div></div>
+  <nav class="subnav"><a href="#epox-intro">Estrutura</a><a href="#epox-tensao">Tensão de anel</a><a href="#epox-prep">Preparação</a></nav>
+  <div class="block" id="epox-intro">
+    <div class="figs" data-fig="epoxIntro"></div>
+    <div data-w="epox3d" data-3d></div>
+  </div>
+  <div class="block" id="epox-tensao">
+    <h3 class="block-title">Tensão de anel: éter acíclico × THF × epóxido <span class="tag">3D</span></h3>
+    <div data-w="strain3d" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>No epóxido os ângulos internos ficam perto de 60°, muito abaixo dos ≈ 109,5° de um O/C sp³. A sobreposição ruim dos orbitais gera ≈ 115 kJ/mol de tensão, liberada quando o anel se abre: é por isso que epóxidos reagem com nucleófilos que não atacam éteres comuns.</div>
+  </div>
+  <div class="block" id="epox-prep">
+    <h3 class="block-title">Preparação 1: perácido (mCPBA) <span class="tag">3D</span></h3>
+    <div class="figs" data-fig="mcpbaScheme"></div>
+    <div data-w="mcpba3d" data-3d></div>
+    <h3 class="block-title">Preparação 2: haloidrina + base <span class="tag">animação</span></h3>
+    <div data-w="halohPlayer"></div>
+    <div class="note think"><b class="t">Pense nisso</b>Na haloidrina, o O⁻ precisa atacar o carbono pelo lado oposto ao halogênio. Que conformação a molécula precisa adotar?</div>
+  </div>
+</section>
+
+<!-- ===================================================== 12 ABERTURA -->
+<section class="section" id="abertura" data-title="Abertura de Epóxidos">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Abertura de epóxidos</h2><p class="lead">A tensão do anel é a "mola"; o meio (ácido ou básico) decide qual carbono é atacado.</p></div></div>
+  <nav class="subnav"><a href="#ab-3d">3D lado a lado</a><a href="#ab-basica">Básica</a><a href="#ab-acida">Ácida</a><a href="#ab-tab">Comparação</a><a href="#ab-estereo">Estereoquímica</a><a href="#ab-nuc">Nucleófilos</a><a href="#ab-grig">Grignard</a></nav>
+  <div class="block" id="ab-3d">
+    <h3 class="block-title">Básica × ácida: animações lado a lado <span class="tag">3D</span></h3>
+    <div data-w="open3d" data-3d></div>
+    <div class="figs" data-fig="nucProducts"></div>
+  </div>
+  <div class="block" id="ab-basica">
+    <h3 class="block-title">Abertura em meio básico (nucleófilo forte): SN2</h3>
+    <div data-w="basicPlayer"></div>
+    <div class="grid3"><div class="defbox"><b>Onde?</b>no carbono <b>menos substituído</b> (controle estérico).</div><div class="defbox o"><b>Como?</b>ataque pelo lado oposto ao O (backside).</div><div class="defbox m"><b>Resultado</b>inversão no C atacado; Nu e OH anti.</div></div>
+  </div>
+  <div class="block" id="ab-acida">
+    <h3 class="block-title">Abertura em meio ácido (nucleófilo fraco)</h3>
+    <div data-w="acidPlayer"></div>
+    <div class="note err"><b class="t">Erro comum</b>A abertura de um epóxido em meio ácido não corresponde simplesmente à formação de um carbocátion livre. O nucleófilo ataca o epóxido <b>protonado</b> enquanto a ligação C–O ainda existe (ET com caráter catiônico parcial): por isso há <b>inversão</b> e não racemização.</div>
+    <div data-w="energyOpen"></div>
+  </div>
+  <div class="block" id="ab-tab">
+    <h3 class="block-title">Meio ácido × meio básico</h3>
+    <div data-w="openTable"></div>
+    <div class="note quick" data-q="2-metiloxirano + CH₃OH/H⁺: o OCH₃ entra no" data-o="CH₂ (C menos substituído);CH (C mais substituído);O do epóxido" data-a="1" data-e="Ácido: controle eletrônico (mais δ+ no C mais substituído)."></div>
+  </div>
+  <div class="block" id="ab-estereo">
+    <h3 class="block-title">Estereoquímica: abertura anti <span class="tag">3D</span></h3>
+    <div data-w="stereo3d" data-3d></div>
+    <div class="figs" data-fig="stereoProd"></div>
+  </div>
+  <div class="block" id="ab-nuc">
+    <h3 class="block-title">Nucleófilos que abrem epóxidos</h3>
+    <div data-w="nucTable"></div>
+    <div class="figs" data-fig="nucs"></div>
+  </div>
+  <div class="block" id="ab-grig">
+    <h3 class="block-title">Ferramenta sintética: epóxido + Grignard → álcool com nova C–C</h3>
+    <div data-w="grigPlayer"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>R–MgX + óxido de etileno, depois H₃O⁺ → <b>R–CH₂CH₂–OH</b>: um álcool primário com dois carbonos a mais. Com epóxidos substituídos, o ataque é no carbono menos impedido.</div>
+  </div>
+</section>
+
+<!-- ===================================================== 13 COMPARAÇÃO -->
+<section class="section" id="comparacao" data-title="Álcoois × Éteres × Epóxidos">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Álcoois × Éteres × Epóxidos</h2></div></div>
+  <div class="block"><div data-w="bigTable"></div></div>
+</section>
+
+<!-- ===================================================== 14 LABORATÓRIO -->
+<section class="section" id="laboratorio" data-title="Laboratório 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Laboratório Molecular 3D</h2><p class="lead">Gire, aproxime, troque a representação, veja pares livres e cargas parciais, destaque o oxigênio, visualize ligações de hidrogênio, meça ângulos e compare a tensão de anel.</p></div></div>
+  <div class="block"><div data-w="lab" data-3d></div></div>
+</section>
+
+<!-- ===================================================== 15 SIMULADOR -->
+<section class="section" id="simulador" data-title="Simulador">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Simulador de reações</h2></div></div>
+  <nav class="subnav"><a href="#sim-prop">Propriedades</a><a href="#sim-alc">Álcoois</a><a href="#sim-will">Williamson</a><a href="#sim-epox">Epóxidos</a><a href="#sim-mec">Monte o mecanismo</a><a href="#sim-map">Mapas</a><a href="#sim-cmp">Comparação mecanística</a></nav>
+  <div class="block" id="sim-prop"><h3 class="block-title">Comparador de propriedades <span class="tag">preveja primeiro</span></h3><div data-w="props"></div></div>
+  <div class="block" id="sim-alc"><h3 class="block-title">Simulador de reações de álcoois</h3><div data-w="simAlc"></div></div>
+  <div class="block" id="sim-will"><h3 class="block-title">Simulador de Williamson: SN2 ou E2?</h3><div data-w="simWill"></div></div>
+  <div class="block" id="sim-epox"><h3 class="block-title">Simulador de abertura de epóxidos <span class="tag">3D</span></h3><div data-w="simEpox" data-3d></div></div>
+  <div class="block" id="sim-mec"><h3 class="block-title">Monte o mecanismo <span class="tag">setas curvas</span></h3><p>Clique na <b>origem</b> dos elétrons (par livre ou ligação) e depois no <b>destino</b>. Em seguida escolha intermediário e produto.</p><div data-w="puzzles"></div></div>
+  <div class="block" id="sim-map">
+    <h3 class="block-title">Mapas de reações <span class="tag">clique nos produtos</span></h3>
+    <h4>Álcool</h4><div data-w="mapAlc"></div>
+    <h4>Éter</h4><div data-w="mapEth"></div>
+    <h4>Epóxido</h4><div data-w="mapEpox"></div>
+  </div>
+  <div class="block" id="sim-cmp"><h3 class="block-title">Comparação mecanística lado a lado</h3><div data-w="mechCompare"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Os quatro casos são variações do mesmo tema: um <b>nucleófilo</b> ataca um <b>carbono ligado a O</b>, e o O sai como parte de um grupo abandonador aceitável (H₂O, RO⁻ aliviando tensão, ROH). O que muda é <b>como o O foi ativado</b>.</div></div>
+</section>
+
+<!-- ===================================================== 16 RESOLVIDOS -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Exercícios resolvidos</h2><p class="lead">29 exercícios em 8 níveis. Tente antes de abrir a dica e a resolução.</p></div></div>
+  <div class="levels" data-w="levelChips"></div>
+  <div data-w="solved"></div>
+</section>
+
+<!-- ===================================================== 17 PROPOSTOS -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>Exercícios propostos</h2><p class="lead">50 exercícios: previsão de produtos, escolha de reagentes, síntese, desconexão de éteres, setas curvas, associação, ordenação e "detecte o erro" — e dois desafios em 3D.</p></div><button class="btn sm" type="button" data-action="redo">↺ Refazer exercícios</button></div>
+  <nav class="subnav"><a href="#prop-3d">Desafios 3D</a><a href="#prop-easy">Fáceis (15)</a><a href="#prop-mid">Intermediários (20)</a><a href="#prop-hard">Avançados (15)</a></nav>
+  <h3 id="prop-3d">Desafios 3D: abertura de epóxidos</h3><div data-w="epoxEx3d" data-3d></div>
+  <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+  <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+  <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+</section>
+
+<!-- ===================================================== 18 QUIZ -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 18</span><h2>Quiz final</h2><p class="lead">30 questões sorteadas de todos os temas.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">Modo desafio: Qual é o produto? <span class="tag">pontos + sequência + níveis</span></h3><div data-w="challenge"></div></div>
+</section>
+
+<!-- ===================================================== 19 MAPA -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 19</span><h2>Mapa conceitual</h2><p class="lead">estrutura → propriedade → mecanismo → produto</p></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica I</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

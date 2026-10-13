@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SN1 e SN2 · Substituição Nucleofílica</title>
+  <meta name="description" content="Plataforma interativa de Química Orgânica I sobre reações de substituição nucleofílica SN1 e SN2: mecanismos animados em 3D, laboratório molecular, simulador de reações, exercícios resolvidos e propostos, quiz e desafio.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fd4f5"/><stop offset="1" stop-color="#ff4fa3"/></linearGradient></defs><rect width="40" height="40" rx="10" fill="#131f36" stroke="url(#lg1)" stroke-width="2"/><circle cx="20" cy="20" r="5" fill="#8a929f"/><circle cx="9" cy="20" r="4" fill="#ff4fa3"/><circle cx="31" cy="20" r="4.6" fill="#ff9f43"/><path d="M12 14 Q16 8 19 13" fill="none" stroke="#2fd4f5" stroke-width="2"/></svg>
+      <span>SN1 × SN2<small>Química Orgânica I</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#fundamentos">Fundamentos</a></li>
+        <li><a href="#sn2">SN2</a></li>
+        <li><a href="#sn1">SN1</a></li>
+        <li><a href="#comparacao">SN1 × SN2</a></li>
+        <li><a href="#laboratorio">Laboratório 3D</a></li>
+        <li><a href="#simulador">Simulador</a></li>
+        <li><a href="#resolvidos">Resolvidos</a></li>
+        <li><a href="#propostos">Propostos</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#resumo">Resumo</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ============================================================ INÍCIO -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica I · mecanismos</span>
+      <h1>Substituição Nucleofílica: <span class="g">entendendo SN1 e SN2</span></h1>
+      <p class="sub">Visualize os mecanismos, explore moléculas em 3D e aprenda a prever qual mecanismo será favorecido.</p>
+      <div class="cta">
+        <a class="btn primary lg" href="#fundamentos">Começar a estudar →</a>
+        <a class="btn lg" href="#laboratorio">Explorar moléculas em 3D</a>
+      </div>
+      <p class="eq">Nu:⁻ + R–X → R–Nu + X⁻</p>
+    </div>
+    <div class="viewer" data-w="hero" data-3d aria-label="Animação 3D: HO⁻ atacando CH₃Br pelo lado oposto ao bromo"></div>
+  </div>
+  <div class="modules">
+    <a href="#fundamentos"><b>1 · Fundamentos</b><span>nucleófilo, eletrófilo, grupo abandonador, setas curvas</span></a>
+    <a href="#sn2"><b>2 · SN2</b><span>ataque backside, inversão, energia, substrato, solvente</span></a>
+    <a href="#sn1"><b>3 · SN1</b><span>carbocátion, etapas, racemização, rearranjos</span></a>
+    <a href="#comparacao"><b>4 · SN1 × SN2</b><span>tabela, árvore de decisão, comparação animada</span></a>
+    <a href="#laboratorio"><b>5 · Laboratório 3D</b><span>9 moléculas para girar e analisar</span></a>
+    <a href="#simulador"><b>6 · Simulador</b><span>monte a reação e analise os fatores</span></a>
+    <a href="#resolvidos"><b>7 · Exercícios</b><span>15 resolvidos e 30 propostos</span></a>
+    <a href="#quiz"><b>8 · Quiz e desafio</b><span>20 questões sorteadas + modo cronometrado</span></a>
+  </div>
+</section>
+
+<!-- ============================================================ FUNDAMENTOS -->
+<section class="section" id="fundamentos" data-title="Fundamentos">
+  <div class="section-head"><div><span class="kicker">Módulo 1</span><h2>Fundamentos da substituição nucleofílica</h2><p class="lead">Numa <b>reação de substituição</b>, um átomo ou grupo de uma molécula é trocado por outro. Na substituição <b>nucleofílica</b>, quem entra é um nucleófilo e quem sai é um grupo abandonador.</p></div></div>
+
+  <div class="block">
+    <div class="formula"><span class="big">Nu:⁻ + R–X → R–Nu + X:⁻</span><br><small style="color:var(--muted)">nucleófilo + substrato → produto + grupo abandonador</small></div>
+    <div class="grid3">
+      <div class="defbox m"><b>Nucleófilo (Nu)</b>= espécie <b>rica em elétrons</b>, com um par disponível para formar uma nova ligação. Ex.: HO⁻, CN⁻, I⁻, H₂O, NH₃.</div>
+      <div class="defbox"><b>Eletrófilo</b>= espécie <b>deficiente em elétrons</b>, que recebe o par. Aqui, o <b>carbono eletrofílico</b> ligado ao grupo abandonador.</div>
+      <div class="defbox o"><b>Grupo abandonador (X, LG)</b>= espécie capaz de <b>sair levando o par eletrônico</b> da ligação. Ex.: I⁻, Br⁻, Cl⁻, TsO⁻, H₂O.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3 class="block-title">Polarização da ligação C–X <span class="tag">conceito</span></h3>
+    <div class="split">
+      <div>
+        <p>O halogênio é <b>mais eletronegativo</b> que o carbono. A densidade eletrônica da ligação se desloca para X, criando cargas parciais: <b class="sn2c">C<sup>δ+</sup></b>–<b style="color:var(--magenta)">X<sup>δ−</sup></b>.</p>
+        <p>O carbono δ+ é o <b>carbono eletrofílico</b>: é ele que o nucleófilo ataca. Além da carga parcial, o carbono tem um orbital vazio de baixa energia, o antiligante <b>σ* C–X</b>, que recebe o par do nucleófilo.</p>
+        <div class="note key"><b class="t">Conceito-chave</b>Eletronegatividade (Pauling): C 2,5 · Cl 3,0 · Br 2,8 · I 2,5. Embora a C–I seja pouco polar, ela é longa e fraca, e o I⁻ é ótimo grupo abandonador.</div>
+      </div>
+      <figure class="fig"><div data-fig="polar"></div><figcaption>carbono eletrofílico (halo ciano) e o átomo eletronegativo (δ−)</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3 class="block-title">Setas curvas: a linguagem dos mecanismos <span class="tag">representação</span></h3>
+    <div class="grid2">
+      <figure class="fig"><div data-fig="arrowForm"></div><figcaption><b>Formação de ligação:</b> a seta sai do <b>par livre</b> do nucleófilo e aponta para o átomo que vai recebê-lo.</figcaption></figure>
+      <figure class="fig"><div data-fig="arrowBreak"></div><figcaption><b>Quebra heterolítica:</b> a seta sai do <b>meio da ligação</b> e aponta para o átomo que fica com o par (X⁻).</figcaption></figure>
+    </div>
+    <div class="note err"><b class="t">Erro comum</b>Desenhar a seta saindo do carbono δ+ em direção ao nucleófilo. Setas curvas mostram o movimento de <b>elétrons</b>: sempre partem de um par livre ou de uma ligação, nunca de um átomo deficiente em elétrons.</div>
+    <div class="note key"><b class="t">Conceito-chave</b>Seta de <b>ponta inteira</b> = movimento de um <b>par</b> de elétrons (2 e⁻). Seta de meia-ponta ("anzol") = 1 elétron (reações radicalares, que não são o tema aqui).</div>
+  </div>
+
+  <div class="block">
+    <h3 class="block-title">Formação e quebra de ligações, passo a passo <span class="tag">animação</span></h3>
+    <p>Acompanhe: <b>nucleófilo → carbono eletrofílico → saída do grupo abandonador</b>.</p>
+    <div data-w="fundPlayer"></div>
+    <div class="note quick" data-q="Na reação CH₃–I + NH₃ → CH₃–NH₃⁺ + I⁻, qual é o nucleófilo?" data-o="CH₃–I;NH₃;I⁻;CH₃⁺" data-a="1" data-e="O nitrogênio da amônia doa seu par livre ao carbono; o I⁻ é o grupo abandonador."></div>
+  </div>
+</section>
+
+<!-- ============================================================ SN2 -->
+<section class="section" id="sn2" data-title="SN2">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>Mecanismo SN2</h2><p class="lead">Substituição nucleofílica <b>bimolecular</b> e <b>concertada</b>: o nucleófilo entra ao mesmo tempo em que o grupo abandonador sai.</p></div></div>
+  <nav class="subnav" aria-label="Tópicos de SN2"><a href="#sn2-def">Definição</a><a href="#sn2-mec">Mecanismo 3D</a><a href="#sn2-back">Ataque backside</a><a href="#sn2-walden">Inversão de Walden</a><a href="#sn2-energia">Energia</a><a href="#sn2-sub">Substrato</a><a href="#sn2-nu">Nucleofilicidade</a><a href="#sn2-solv">Solventes</a></nav>
+
+  <div class="block" id="sn2-def">
+    <div class="acronym">
+      <div><div class="L c">S</div><span>substituição</span></div>
+      <div><div class="L c">N</div><span>nucleofílica</span></div>
+      <div><div class="L m">2</div><span>duas espécies participam da etapa determinante da velocidade</span></div>
+    </div>
+    <div class="formula">v = k [RX] [Nu⁻]</div>
+    <p>Como substrato e nucleófilo estão juntos no estado de transição, a velocidade depende das <b>duas</b> concentrações: dobrar [Nu⁻] dobra a velocidade.</p>
+    <div class="note key"><b class="t">Conceito-chave</b><b>Concertada</b> = a ligação Nu–C se forma <b>enquanto</b> a ligação C–X se rompe, em uma única etapa, sem intermediário.</div>
+  </div>
+
+  <div class="block" id="sn2-mec">
+    <h3 class="block-title">Mecanismo em 3D: HO⁻ + CH₃Br → CH₃OH + Br⁻ <span class="tag">animação</span></h3>
+    <div data-w="sn2Lab" data-3d></div>
+    <h4>A mesma reação com setas curvas</h4>
+    <div data-w="sn2Player"></div>
+  </div>
+
+  <div class="block" id="sn2-back">
+    <h3 class="block-title">Ataque backside (pela face oposta) <span class="tag">3D · orbitais</span></h3>
+    <div class="split">
+      <div data-w="backside" data-3d></div>
+      <div>
+        <p>O nucleófilo ataca a ~<b>180°</b> em relação ao grupo abandonador:</p>
+        <div class="formula">Nu⁻ → C — LG</div>
+        <p><b>Por quê?</b> O par de elétrons do nucleófilo precisa entrar em um orbital vazio do substrato: o antiligante <b>σ* C–LG</b>. Esse orbital tem seu <b>lóbulo maior no carbono, do lado oposto ao LG</b>. Ao ser preenchido, ele enfraquece a ligação C–LG, que se rompe.</p>
+        <p>Pelo mesmo lado do LG, o nucleófilo encontraria o nó do σ* e a repulsão do próprio grupo abandonador (rico em elétrons).</p>
+        <div class="note think"><b class="t">Pense nisso</b>Clique em "Mostrar orbitais" e gire o modelo: de que lado o orbital σ* oferece mais "espaço" para receber o par do nucleófilo?</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="sn2-walden">
+    <h3 class="block-title">Inversão de Walden <span class="tag">estereoquímica</span></h3>
+    <div class="split">
+      <div data-w="walden" data-3d></div>
+      <div>
+        <p>Com o ataque backside, os três grupos ligados ao carbono "viram" para o outro lado, como um <b>guarda-chuva virado pelo vento</b>.</p>
+        <p>Em um <b>centro estereogênico</b> (aqui, o 2-bromobutano atacado por HO⁻), isso produz <b>inversão da configuração</b>. O descritor R/S mostrado no modelo é calculado a partir da geometria 3D.</p>
+        <div class="note key"><b class="t">Conceito-chave</b>A SN2 é <b>estereoespecífica</b>: cada enantiômero do reagente leva a um enantiômero definido do produto (sempre com inversão).</div>
+        <div class="note care"><b class="t">Cuidado</b>"Inversão" é geométrica. O descritor R/S <i>costuma</i> mudar, mas pode não mudar se as prioridades CIP do nucleófilo e do grupo abandonador ocuparem posições diferentes na ordem.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="sn2-energia">
+    <h3 class="block-title">Perfil energético da SN2 <span class="tag">interativo</span></h3>
+    <div class="split">
+      <div data-w="energySN2"></div>
+      <div>
+        <ul>
+          <li><b>uma única etapa</b>;</li>
+          <li><b>um único estado de transição</b> (máximo);</li>
+          <li><b>nenhum intermediário</b>.</li>
+        </ul>
+        <p>Passe o mouse (ou toque) nos pontos da curva.</p>
+        <div class="note err"><b class="t">Erro comum</b>Tratar o carbono "pentacoordenado" como uma molécula. Ele existe apenas no estado de transição ‡, um máximo de energia que dura cerca de uma vibração molecular (~10⁻¹³ s).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="sn2-sub">
+    <h3 class="block-title">Efeito do substrato: impedimento estérico <span class="tag">3D</span></h3>
+    <div class="figs" data-fig="subsRow"></div>
+    <div class="formula">metílico &gt; primário &gt; secundário ≫ terciário</div>
+    <div class="split">
+      <div data-w="steric" data-3d></div>
+      <div>
+        <p>Use <b>Adicionar grupos alquila</b> para transformar CH₃Br em CH₃CH₂Br, (CH₃)₂CHBr e (CH₃)₃CBr. Depois lance o nucleófilo e veja em <b>space-filling</b> como o acesso à face traseira fica cada vez mais difícil.</p>
+        <div id="steric-info" class="stepcap"></div>
+        <div class="note care"><b class="t">Cuidado</b>Ramificação no carbono <b>vizinho</b> também atrapalha: o brometo de neopentila, (CH₃)₃CCH₂Br, é primário, mas reage por SN2 dezenas de milhares de vezes mais devagar que o brometo de etila.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="sn2-nu">
+    <h3 class="block-title">Nucleofilicidade <span class="tag">depende do meio</span></h3>
+    <div class="split">
+      <div data-w="nucleo"></div>
+      <div>
+        <ul>
+          <li><b>Carga:</b> o ânion é melhor nucleófilo que seu ácido conjugado neutro (HO⁻ &gt; H₂O; RO⁻ &gt; ROH).</li>
+          <li><b>Eletronegatividade:</b> no mesmo período, átomo menos eletronegativo segura menos o par (H₃N &gt; H₂O; ⁻NH₂ &gt; HO⁻).</li>
+          <li><b>Polarizabilidade:</b> átomos grandes (I, S) têm nuvem eletrônica deformável, que interage bem com o carbono à distância.</li>
+          <li><b>Solvatação:</b> em solventes próticos, ânions pequenos ficam "presos" por ligações de hidrogênio.</li>
+          <li><b>Volume:</b> nucleófilos volumosos (t-BuO⁻) atacam mal o carbono, mas continuam bases fortes.</li>
+        </ul>
+        <div class="note err"><b class="t">Erro comum</b>Confundir nucleofilicidade com basicidade. <b>Basicidade</b> é termodinâmica (afinidade por H⁺); <b>nucleofilicidade</b> é cinética (velocidade de ataque ao carbono) e muda com o solvente. I⁻ é ótimo nucleófilo e péssima base.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="sn2-solv">
+    <h3 class="block-title">Solventes e SN2 <span class="tag">animação</span></h3>
+    <div data-w="solv"></div>
+    <div class="grid2" style="margin-top:14px">
+      <div class="defbox"><b>Polares apróticos favorecem SN2</b>DMSO, DMF, acetona, acetonitrila: dissolvem sais (solvatam o cátion), mas não fazem ligação de hidrogênio com o ânion → nucleófilo relativamente <b>mais disponível</b>. Ex.: reações com N₃⁻ e CN⁻ chegam a ser milhares de vezes mais rápidas em DMF do que em metanol.</div>
+      <div class="defbox o"><b>Polares próticos</b>H₂O, CH₃OH, EtOH: <b>forte solvatação do nucleófilo</b> aniônico por ligações de hidrogênio → menor reatividade em SN2. Em compensação, favorecem a ionização (SN1).</div>
+    </div>
+    <div class="note quick" data-q="Para a reação CH₃CH₂Br + NaN₃, qual solvente deve dar a SN2 mais rápida?" data-o="metanol;água;DMF;etanol" data-a="2" data-e="DMF é polar aprótico: o N₃⁻ fica pouco solvatado e mais reativo."></div>
+  </div>
+</section>
+
+<!-- ============================================================ SN1 -->
+<section class="section" id="sn1" data-title="SN1">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Mecanismo SN1</h2><p class="lead">Substituição nucleofílica <b>unimolecular</b>: primeiro o grupo abandonador sai e forma um <b>carbocátion</b>; depois o nucleófilo ataca.</p></div></div>
+  <nav class="subnav" aria-label="Tópicos de SN1"><a href="#sn1-def">Definição</a><a href="#sn1-mec">Mecanismo 3D</a><a href="#sn1-cat">Carbocátion</a><a href="#sn1-est">Estereoquímica</a><a href="#sn1-energia">Energia</a><a href="#sn1-estab">Estabilidade</a><a href="#sn1-rearr">Rearranjos</a><a href="#sn1-lg">Grupos abandonadores</a></nav>
+
+  <div class="block" id="sn1-def">
+    <div class="acronym">
+      <div><div class="L o">S</div><span>substituição</span></div>
+      <div><div class="L o">N</div><span>nucleofílica</span></div>
+      <div><div class="L m">1</div><span>somente o substrato participa da etapa determinante da velocidade</span></div>
+    </div>
+    <div class="formula">v = k [RX]</div>
+    <div class="note err"><b class="t">Erro comum</b>SN1 não significa que a reação possui apenas uma etapa. O número "1" refere-se à <b>molecularidade da etapa determinante da velocidade</b>. A SN1 ocorre em <b>múltiplas etapas</b>.</div>
+  </div>
+
+  <div class="block" id="sn1-mec">
+    <h3 class="block-title">Mecanismo em 3D: (CH₃)₃C–Br + H₂O <span class="tag">etapa por etapa</span></h3>
+    <div data-w="sn1Lab" data-3d></div>
+    <h4>As mesmas etapas com setas curvas</h4>
+    <div data-w="sn1Player"></div>
+  </div>
+
+  <div class="block" id="sn1-cat">
+    <h3 class="block-title">O carbocátion em 3D <span class="tag">sp³ → sp²</span></h3>
+    <div class="split">
+      <div data-w="cation" data-3d></div>
+      <div>
+        <p>Quando o Br sai, o carbono fica com apenas três ligações e <b>seis elétrons de valência</b>. Ele se reorganiza em geometria <b>trigonal plana</b> (sp², ângulos de 120°), com um <b>orbital p vazio</b> perpendicular ao plano.</p>
+        <p>Use o controle para acompanhar a transformação tetraédrico → plano e ative o orbital p.</p>
+        <div class="note key"><b class="t">Conceito-chave</b>O orbital p vazio é o que o nucleófilo "enxerga". Ele tem dois lóbulos equivalentes: <b>as duas faces</b> do carbocátion podem ser atacadas.</div>
+        <div class="note think"><b class="t">Pense nisso</b>Ative "hiperconjugação": os H em amarelo pertencem a ligações C–H quase paralelas ao orbital p. Elas doam densidade eletrônica ao carbono positivo.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="sn1-est">
+    <h3 class="block-title">Estereoquímica da SN1 <span class="tag">duas faces</span></h3>
+    <div class="split">
+      <div data-w="faces" data-3d></div>
+      <div>
+        <p>Partindo de um haleto terciário quiral (3-bromo-3-metil-hexano), o carbocátion formado é <b>plano e aquiral</b>. A água pode atacar pela <b>face superior</b> ou pela <b>face inferior</b>, gerando os dois enantiômeros do 3-metil-hexan-3-ol.</p>
+        <p>Isso leva à <b>racemização</b>: perda (total ou parcial) da informação estereoquímica do reagente.</p>
+        <div class="note care"><b class="t">Cuidado</b>Na prática, a racemização raramente é perfeita (50:50). Logo após a ionização, o Br⁻ permanece próximo como <b>par iônico</b> e bloqueia parcialmente a face de onde saiu; o ambiente de solvatação também influencia. Por isso costuma haver <b>ligeiro excesso do produto de inversão</b>. Ative "par iônico" no modelo.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="sn1-energia">
+    <h3 class="block-title">Perfil energético da SN1 <span class="tag">interativo</span></h3>
+    <div data-w="energySN1"></div>
+    <p>Reagentes → ET1‡ → <b>carbocátion</b> → ET2‡ → íon oxônio → ET3‡ (desprotonação) → produtos. O <b>ET1</b> é o ponto mais alto: a ionização é a etapa lenta e define a energia de ativação global.</p>
+    <div class="note key"><b class="t">Conceito-chave</b><b>Intermediário</b> (vale, mínimo local, tempo de vida finito) ≠ <b>estado de transição</b> (pico, máximo, não isolável).</div>
+    <h4>Comparando com a SN2</h4>
+    <div data-w="energyCmp"></div>
+  </div>
+
+  <div class="block" id="sn1-estab">
+    <h3 class="block-title">Estabilidade dos carbocátions <span class="tag">tendência geral</span></h3>
+    <div class="formula">terciário &gt; secundário &gt; primário &gt; metílico</div>
+    <div data-w="ladder"></div>
+    <div class="grid3" style="margin-top:14px">
+      <div class="defbox"><b>Hiperconjugação</b>Ligações σ C–H e C–C vizinhas, alinhadas com o orbital p vazio, doam densidade eletrônica. Mais grupos alquila → mais ligações doadoras.</div>
+      <div class="defbox o"><b>Efeito indutivo</b>Grupos alquila são levemente doadores de elétrons através das ligações σ e dispersam a carga positiva.</div>
+      <div class="defbox m"><b>Ressonância</b>Quando o C⁺ é vizinho de uma ligação π (alílico) ou de um anel aromático (benzílico), a carga se deslocaliza por vários átomos.</div>
+    </div>
+    <h4>Cátions alílico e benzílico: formas de ressonância</h4>
+    <figure class="fig"><div data-fig="allyl"></div><figcaption>cátion alílico: a carga + fica distribuída entre C1 e C3</figcaption></figure>
+    <figure class="fig" style="margin-top:10px"><div data-fig="benzyl"></div><figcaption>cátion benzílico: a carga + se espalha pelo CH₂ e pelas posições orto e para do anel</figcaption></figure>
+    <div class="note care"><b class="t">Cuidado</b>Essas ordens são tendências. Um cátion benzílico primário pode ser tão estável quanto um terciário; e o solvente muda bastante as energias absolutas.</div>
+  </div>
+
+  <div class="block" id="sn1-rearr">
+    <h3 class="block-title">Cuidado: carbocátions podem rearranjar <span class="tag">setas animadas</span></h3>
+    <p>Se um carbocátion pode se transformar num cátion <b>mais estável</b> por migração de um grupo vizinho (com seu par de elétrons), isso geralmente acontece antes do ataque do nucleófilo.</p>
+    <div class="grid2">
+      <div><h4>Migração 1,2 de hidreto</h4><div data-w="rearrH"></div></div>
+      <div><h4>Migração 1,2 de metila (alquila)</h4><div data-w="rearrM"></div></div>
+    </div>
+    <div class="note err"><b class="t">Erro comum</b>Esperar rearranjos em SN2. Rearranjos exigem um carbocátion — só aparecem em mecanismos do tipo SN1/E1.</div>
+  </div>
+
+  <div class="block" id="sn1-lg">
+    <h3 class="block-title">Grupos abandonadores <span class="tag">SN1 e SN2</span></h3>
+    <div class="split">
+      <div data-w="lgRank"></div>
+      <div>
+        <p>Quanto mais <b>estável</b> o ânion (ou molécula) que sai, mais fácil a saída. Em geral, bons grupos abandonadores são <b>bases fracas</b> — ácidos conjugados fortes (pKa baixo).</p>
+        <div class="figs"><figure class="fig"><div data-fig="tosylate"></div><figcaption>tosilato de alquila (R–OTs)</figcaption></figure><figure class="fig"><div data-fig="mesylate"></div><figcaption>mesilato de alquila (R–OMs)</figcaption></figure></div>
+        <figure class="fig"><div data-fig="protAlc"></div><figcaption>álcool protonado: o grupo abandonador passa a ser H₂O</figcaption></figure>
+        <div class="note care"><b class="t">Cuidado</b>A relação com o pKa é uma tendência, não uma lei: sulfonatos (TsO⁻, MsO⁻) costumam sair mais facilmente que I⁻ apesar de TsOH ser menos ácido que HI, graças à deslocalização da carga em três oxigênios. HO⁻ e RO⁻ praticamente não saem — por isso álcoois precisam ser protonados ou convertidos em tosilatos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ COMPARAÇÃO -->
+<section class="section" id="comparacao" data-title="SN1 × SN2">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>SN1 × SN2</h2><p class="lead">Mesma transformação global, caminhos diferentes. Clique nas linhas da tabela para ver a explicação.</p></div></div>
+  <div class="block"><div data-w="cmpTable"></div></div>
+
+  <div class="block">
+    <h3 class="block-title">Comparação visual animada <span class="tag">lado a lado</span></h3>
+    <div data-w="sideBySide" data-3d></div>
+  </div>
+
+  <div class="block" id="arvore">
+    <h3 class="block-title">SN1 ou SN2? <span class="tag">árvore de decisão</span></h3>
+    <div data-w="tree"></div>
+  </div>
+
+  <div class="block">
+    <h3 class="block-title">Atenção: substituição não ocorre isoladamente</h3>
+    <div class="grid2">
+      <div class="defbox m"><b>E2 (eliminação bimolecular)</b>Favorecida por <b>bases fortes</b> (HO⁻, RO⁻, especialmente volumosas como t-BuO⁻), em substratos <b>secundários e terciários</b>. Compete diretamente com a SN2.</div>
+      <div class="defbox o"><b>E1 (eliminação unimolecular)</b>Compartilha o <b>carbocátion</b> com a SN1: em vez de capturar um nucleófilo, o cátion perde um H⁺ vizinho e forma um alceno. Favorecida por <b>temperaturas elevadas</b>.</div>
+    </div>
+    <p style="color:var(--muted)">As eliminações serão estudadas em detalhe em outro módulo. Aqui, basta lembrar: substrato, nucleófilo/base, solvente, grupo abandonador e temperatura atuam <b>em conjunto</b>.</p>
+  </div>
+</section>
+
+<!-- ============================================================ LABORATÓRIO -->
+<section class="section" id="laboratorio" data-title="Laboratório Molecular 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Laboratório Molecular</h2><p class="lead">Gire em 360°, aproxime, troque a representação, identifique os átomos e compare substratos.</p></div></div>
+  <div class="block"><div data-w="lab" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>Mude para <b>space-filling</b> e compare CH₃Br com (CH₃)₃CBr olhando pela face oposta ao Br (gire até o Br ficar atrás). Onde o nucleófilo conseguiria encostar?</div>
+  </div>
+</section>
+
+<!-- ============================================================ SIMULADOR -->
+<section class="section" id="simulador" data-title="Simulador de Reações">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Monte sua reação</h2><p class="lead">Escolha substrato, grupo abandonador, nucleófilo e solvente. Faça seu palpite e depois clique em <b>Prever mecanismo</b> para ver a análise fator a fator.</p></div></div>
+  <div class="block"><div data-w="sim"></div></div>
+  <div class="note care"><b class="t">Cuidado</b>O simulador usa regras qualitativas de livro-texto para ensinar o raciocínio. Reações reais dependem também de temperatura, concentração e estrutura fina do substrato.</div>
+</section>
+
+<!-- ============================================================ RESOLVIDOS -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Exercícios resolvidos</h2><p class="lead">15 exercícios em ordem crescente de dificuldade. Tente resolver antes; use a dica se precisar.</p></div></div>
+  <div class="levels" data-w="levelChips"></div>
+  <div data-w="solved"></div>
+</section>
+
+<!-- ============================================================ PROPOSTOS -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Exercícios propostos</h2><p class="lead">30 exercícios: múltipla escolha, V/F, associação, clique na estrutura, ordenação por arrastar e "complete o mecanismo". As respostas só aparecem quando você pedir.</p></div></div>
+  <nav class="subnav" aria-label="Níveis"><a href="#prop-easy">Fáceis (10)</a><a href="#prop-mid">Intermediários (10)</a><a href="#prop-hard">Avançados (10)</a></nav>
+  <div id="prop-easy" class="block"><h3 class="block-title">Fáceis <span class="tag">1–10</span></h3><div data-w="propEasy"></div></div>
+  <div id="prop-mid" class="block"><h3 class="block-title">Intermediários <span class="tag">11–20</span></h3><div data-w="propMid"></div></div>
+  <div id="prop-hard" class="block"><h3 class="block-title">Avançados <span class="tag">21–30</span></h3><div data-w="propHard"></div></div>
+</section>
+
+<!-- ============================================================ QUIZ -->
+<section class="section" id="quiz" data-title="Quiz">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Quiz final</h2><p class="lead">20 perguntas sorteadas de um banco maior. Ao final você recebe sua classificação e os tópicos para revisar.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio">
+    <h3 class="block-title">Desafio SN1 × SN2 <span class="tag">cronometrado</span></h3>
+    <div data-w="challenge"></div>
+  </div>
+</section>
+
+<!-- ============================================================ RESUMO -->
+<section class="section" id="resumo" data-title="Resumo Final">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Resumo visual</h2><p class="lead">O mapa conceitual reúne as ideias centrais. Clique em um item para revisar.</p></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block">
+    <h3 class="block-title">Agora você deve ser capaz de:</h3>
+    <ul class="checklist">
+      <li>reconhecer nucleófilos, eletrófilos e grupos abandonadores;</li>
+      <li>explicar os mecanismos SN1 e SN2;</li>
+      <li>interpretar suas leis de velocidade;</li>
+      <li>prever o efeito do substrato;</li>
+      <li>analisar nucleofilicidade;</li>
+      <li>avaliar o efeito do solvente;</li>
+      <li>interpretar a estereoquímica;</li>
+      <li>reconhecer rearranjos em SN1;</li>
+      <li>comparar SN1 e SN2;</li>
+      <li>prever qualitativamente qual mecanismo é favorecido em diferentes condições.</li>
+    </ul>
+    <div class="ex-actions">
+      <button class="btn primary lg" type="button" data-action="redo">↺ Refazer exercícios</button>
+      <button class="btn accent lg" type="button" data-action="challenge">⚡ Iniciar desafio SN1 × SN2</button>
+    </div>
+  </div>
+</section>
+
+  <div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica I</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

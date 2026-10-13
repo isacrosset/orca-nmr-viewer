@@ -1,0 +1,11 @@
+# Publicação no Netlify do material "Conformações & Estereoquímica".
+# Site estático: não há etapa de build.
+[build]
+  publish = "conformacoes-estereoquimica"
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

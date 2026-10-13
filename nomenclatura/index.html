@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Funções Orgânicas e Nomenclatura · Química Orgânica I</title>
+  <meta name="description" content="Aplicação interativa para reconhecer funções orgânicas e construir nomes IUPAC passo a passo: leitura de estruturas, cadeia principal, numeração, substituintes, prioridade de funções, simulador de nomenclatura, construtor molecular e modelos 3D.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><path d="M7 25 L13 18 L19 25 L25 18" fill="none" stroke="#2fd4f5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 18 L13 10" stroke="#ff9f43" stroke-width="2.6" stroke-linecap="round"/><path d="M25 18 L32 24" stroke="#ff4fa3" stroke-width="2.6" stroke-linecap="round"/><circle cx="33" cy="25" r="3" fill="#ff4fa3"/></svg>
+      <span>Funções e Nomenclatura<small>Química Orgânica I</small></span>
+    </a>
+    <button class="btn sm guidebtn" id="guideBtn" type="button" aria-haspopup="dialog">📘 Guia rápido</button>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#leitura">Ler uma Estrutura</a></li>
+        <li><a href="#cadeias">Cadeias Carbônicas</a></li>
+        <li><a href="#representacoes">Representações</a></li>
+        <li><a href="#funcoes">Reconhecer Funções</a></li>
+        <li><a href="#regras">Regras Gerais</a></li>
+        <li><a href="#cadeia">Cadeia Principal</a></li>
+        <li><a href="#numeracao">Numeração</a></li>
+        <li><a href="#substituintes">Substituintes</a></li>
+        <li><a href="#hidrocarbonetos">Hidrocarbonetos</a></li>
+        <li><a href="#alcanos">Alcanos</a></li>
+        <li><a href="#alcenos">Alcenos</a></li>
+        <li><a href="#alcinos">Alcinos</a></li>
+        <li><a href="#ciclicos">Cíclicos</a></li>
+        <li><a href="#aromaticos">Aromáticos</a></li>
+        <li><a href="#haletos">Haletos</a></li>
+        <li><a href="#alcoois">Álcoois</a></li>
+        <li><a href="#fenois">Fenóis</a></li>
+        <li><a href="#eteres">Éteres</a></li>
+        <li><a href="#aldeidos">Aldeídos</a></li>
+        <li><a href="#cetonas">Cetonas</a></li>
+        <li><a href="#acidos">Ácidos Carboxílicos</a></li>
+        <li><a href="#esteres">Ésteres</a></li>
+        <li><a href="#aminas">Aminas</a></li>
+        <li><a href="#amidas">Amidas</a></li>
+        <li><a href="#nitrilas">Nitrilas</a></li>
+        <li><a href="#nitro">Nitrocompostos</a></li>
+        <li><a href="#multifuncionais">Multifuncionais</a></li>
+        <li><a href="#prioridade">Prioridade</a></li>
+        <li><a href="#nomeestrutura">Nome → Estrutura</a></li>
+        <li><a href="#estruturanome">Estrutura → Nome</a></li>
+        <li><a href="#lab3d">Laboratório 3D</a></li>
+        <li><a href="#simulador">Simulador</a></li>
+        <li><a href="#resolvidos">Resolvidos</a></li>
+        <li><a href="#propostos">Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1 INÍCIO -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica I · nomenclatura IUPAC</span>
+      <h1>Funções Orgânicas e <span class="g">Nomenclatura</span></h1>
+      <p class="sub">Aprenda a reconhecer estruturas, identificar funções e construir nomes IUPAC passo a passo.</p>
+      <div class="cta"><a class="btn primary lg" href="#leitura">Começar →</a><a class="btn lg" href="#funcoes">Reconhecer funções</a><a class="btn lg" href="#simulador">Treinar nomenclatura</a></div>
+      <p class="eq"><span class="p-pre">prefixos</span> + <span class="p-stem">cadeia</span> + <span class="p-inf">insaturação</span> + <span class="p-suf">sufixo</span></p>
+    </div>
+    <div data-w="hero" data-3d></div>
+  </div>
+  <div class="modules">
+    <a href="#leitura"><b>Ler estruturas</b><span>esquelética, condensada, completa e 3D</span></a>
+    <a href="#funcoes"><b>Reconhecer funções</b><span>mapa de funções, clique no grupo, modo rápido</span></a>
+    <a href="#cadeia"><b>Cadeia principal</b><span>simulador com feedback por critério</span></a>
+    <a href="#numeracao"><b>Numeração</b><span>animação e primeiro ponto de diferença</span></a>
+    <a href="#substituintes"><b>Substituintes</b><span>alquilas, ordem alfabética, pontuação</span></a>
+    <a href="#hidrocarbonetos"><b>Hidrocarbonetos</b><span>alcanos, alcenos, alcinos, cíclicos, aromáticos</span></a>
+    <a href="#alcoois"><b>Oxigenadas</b><span>álcoois, fenóis, éteres, aldeídos, cetonas, ácidos, ésteres</span></a>
+    <a href="#aminas"><b>Nitrogenadas</b><span>aminas, amidas, nitrilas, nitro</span></a>
+    <a href="#prioridade"><b>Prioridade e multifuncionais</b><span>sufixo × prefixos, guia em 6 etapas</span></a>
+    <a href="#simulador"><b>Simulador de nomenclatura</b><span>8 etapas com feedback inteligente</span></a>
+    <a href="#nomeestrutura"><b>Construtor molecular</b><span>nome → estrutura com verificação de valência</span></a>
+    <a href="#lab3d"><b>Laboratório 3D</b><span>destaque de cadeia, funções e numeração</span></a>
+    <a href="#resolvidos"><b>Exercícios</b><span>44 resolvidos e 80 propostos</span></a>
+    <a href="#quiz"><b>Quiz e desafios</b><span>40 questões + 3 modos cronometrados</span></a>
+  </div>
+  <div class="legend center"><span><i style="background:var(--cyan)"></i>cadeia principal</span><span><i style="background:var(--orange)"></i>substituintes</span><span><i style="background:var(--magenta)"></i>grupo funcional principal</span><span><i style="background:var(--green)"></i>resposta correta</span></div>
+</section>
+
+<!-- 2 LEITURA -->
+<section class="section" id="leitura" data-title="Como Ler uma Estrutura Orgânica">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>Como ler uma estrutura orgânica</h2><p class="lead">Antes de nomear, é preciso <b>ler</b> a estrutura: quantos carbonos, onde estão os hidrogênios, quais heteroátomos e quais ligações.</p></div></div>
+  <nav class="subnav"><a href="#l-rep">Representações</a><a href="#l-regras">Regras da esquelética</a><a href="#l-conta">Quantos carbonos?</a><a href="#l-clique">Clique nos carbonos</a><a href="#l-h">H implícitos</a></nav>
+  <div class="block" id="l-rep">
+    <h3 class="block-title">Uma molécula, cinco representações</h3>
+    <div data-w="reps" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Fórmula molecular, condensada, estrutural completa, esquelética e 3D descrevem a <b>mesma</b> molécula. Só a fórmula molecular (C₄H₁₀O) não basta: vários isômeros têm a mesma fórmula.</div>
+  </div>
+  <div class="block" id="l-regras">
+    <h3 class="block-title">Regras da estrutura esquelética (bastão)</h3>
+    <ul class="checklist">
+      <li>Cada vértice (ângulo) da linha é um carbono.</li><li>Cada extremidade de linha é um carbono (CH₃, se não houver outro átomo escrito).</li>
+      <li>Os H ligados a carbono não são desenhados: complete até 4 ligações.</li><li>Heteroátomos (O, N, Cl, Br…) e os H ligados a eles são sempre escritos (OH, NH₂).</li>
+      <li>Linha dupla = ligação dupla; linha tripla = ligação tripla (desenhada em linha reta).</li><li>Desenha-se em zigue-zague para lembrar os ângulos reais (~109,5° e 120°).</li>
+    </ul>
+    <div class="note err"><b class="t">Erro comum</b>Esquecer o carbono da extremidade ou contar o O/N como carbono. O <b>OH</b> escrito numa ponta não é um carbono a mais!</div>
+  </div>
+  <div class="block" id="l-conta"><h3 class="block-title">Atividade: Quantos carbonos? <span class="tag">dificuldade progressiva</span></h3><div data-w="countC"></div></div>
+  <div class="block" id="l-clique"><h3 class="block-title">Atividade: clique em todos os carbonos</h3><div data-w="clickC"></div></div>
+  <div class="block" id="l-h">
+    <h3 class="block-title">Hidrogênios implícitos</h3>
+    <div data-w="implicitH"></div>
+    <div class="note quick" data-q="Um carbono desenhado com uma ligação dupla e uma simples tem quantos H implícitos?" data-o="0;1;2;3" data-a="1" data-e="2 + 1 = 3 ligações → falta 1 H para 4."></div>
+  </div>
+</section>
+
+<!-- 3 CADEIAS -->
+<section class="section" id="cadeias" data-title="Carbono e Cadeias Carbônicas">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Carbono e cadeias carbônicas</h2><p class="lead">O carbono é tetravalente e forma cadeias estáveis consigo mesmo: abertas, fechadas, ramificadas, com ligações simples, duplas ou triplas.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Classificação das cadeias</h3>
+    <div class="table-wrap"><table><thead><tr><th>Critério</th><th>Tipos</th><th>Como reconhecer</th></tr></thead><tbody>
+      <tr><td>Forma</td><td>aberta (acíclica) · fechada (cíclica) · mista</td><td>há anel? há carbonos fora do anel?</td></tr>
+      <tr><td>Disposição</td><td>normal · ramificada</td><td>algum C ligado a 3 ou 4 outros C (ou anel com ramo)?</td></tr>
+      <tr><td>Ligações C–C</td><td>saturada · insaturada</td><td>há C=C, C≡C ou anel aromático?</td></tr>
+      <tr><td>Natureza</td><td>homogênea · heterogênea</td><td>há heteroátomo <b>entre</b> dois carbonos?</td></tr>
+    </tbody></table></div>
+    <div data-fig="mol" data-s="CCCC CC(C)CC C=CCC CCOCC C1CCCCC1 Cc1ccccc1" data-c="none" data-n="0" data-scale="30" class="figs"></div>
+  </div>
+  <div class="block"><h3 class="block-title">Atividade: classifique a cadeia</h3><div data-w="chainClass"></div>
+    <div class="note care"><b class="t">Cuidado</b>Em CH₃CH₂CH₂OH o O está na ponta (não entre carbonos): a cadeia é <b>homogênea</b>. Em CH₃CH₂OCH₂CH₃ o O está entre carbonos: <b>heterogênea</b>.</div>
+  </div>
+</section>
+
+<!-- 4 REPRESENTAÇÕES -->
+<section class="section" id="representacoes" data-title="Representações das Moléculas">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Representações das moléculas</h2><p class="lead">Escolha uma molécula e alterne entre as representações; o modelo 3D gira e mostra a geometria real.</p></div></div>
+  <div class="block"><div data-w="repLab" data-3d></div></div>
+  <div class="block">
+    <div class="grid2">
+      <div class="note think"><b class="t">Pense nisso</b>Por que a cadeia é desenhada em zigue-zague e não em linha reta? Porque os carbonos sp³ têm ângulos de ~109,5°: o zigue-zague é a projeção da cadeia estendida.</div>
+      <div class="note key"><b class="t">Conceito-chave</b>O nome depende apenas da <b>conectividade</b> (quem está ligado a quem), não do jeito de desenhar ou da conformação.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 FUNÇÕES -->
+<section class="section" id="funcoes" data-title="Reconhecimento de Funções Orgânicas">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Reconhecimento de funções orgânicas</h2><p class="lead">Uma função orgânica é um conjunto de compostos com o mesmo grupo funcional — o grupo de átomos que define a reatividade e a terminação do nome.</p></div></div>
+  <nav class="subnav"><a href="#f-mapa">Mapa</a><a href="#f-cartas">Padrões</a><a href="#f-clique">Clique na função</a><a href="#f-multi">Várias funções</a><a href="#f-rapido">Qual é a função?</a><a href="#f-cmp">Funções parecidas</a><a href="#f-real">Moléculas reais</a></nav>
+  <div class="block" id="f-mapa"><h3 class="block-title">Mapa das funções <span class="tag">clique para ver o 3D</span></h3><div data-w="fnMap" data-3d></div></div>
+  <div class="block" id="f-cartas"><h3 class="block-title">Cartas de padrão: estrutura → função</h3><div data-w="patternMatch"></div></div>
+  <div class="block" id="f-clique"><h3 class="block-title">Clique na função</h3><div data-w="clickFG"></div></div>
+  <div class="block" id="f-multi">
+    <h3 class="block-title">Destacar funções <span class="tag">uma cor para cada função</span></h3>
+    <div data-w="multiFG"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Uma molécula pode ter várias funções. Só <b>uma</b> — a de maior prioridade — vai para o <span class="p-suf">sufixo</span>; as outras entram como <span class="p-pre">prefixos</span>.</div>
+  </div>
+  <div class="block" id="f-rapido"><h3 class="block-title">Modo rápido: Qual é a função? <span class="tag">sequência</span></h3><div data-w="rapidFn"></div></div>
+  <div class="block" id="f-cmp"><h3 class="block-title">Funções parecidas</h3><div data-w="compareFn"></div></div>
+  <div class="block" id="f-real"><h3 class="block-title">Desafio: encontre todas as funções em moléculas reais</h3><p class="hint3">Fármacos, aromas e metabólitos — aqui o objetivo é reconhecer funções; os nomes usuais são indicados.</p><div data-w="realFind"></div></div>
+</section>
+
+<!-- 6 REGRAS -->
+<section class="section" id="regras" data-title="Regras Gerais de Nomenclatura">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Regras gerais de nomenclatura</h2><p class="lead">Um nome IUPAC é montado em blocos: <span class="p-pre">prefixos</span> + <span class="p-stem">cadeia</span> + <span class="p-inf">insaturação</span> + <span class="p-suf">sufixo</span>.</p></div></div>
+  <div class="block">
+    <div class="namebig"><span class="p-pre">3-metil</span><span class="sep">|</span><span class="p-stem">pent</span><span class="sep">|</span><span class="p-inf">an</span><span class="sep">|</span><span class="p-suf">-2-ol</span></div>
+    <div data-w="anatomy"></div>
+  </div>
+  <div class="block"><h3 class="block-title">Prefixos de contagem de carbonos</h3><div data-w="prefixTable"></div></div>
+  <div class="block"><h3 class="block-title">Atividade: prefixo, cadeia, insaturação ou sufixo?</h3><div data-w="partsQuiz"></div></div>
+  <div class="block">
+    <h3 class="block-title">Nomes sistemáticos, retidos e usuais</h3>
+    <div class="rules"><div><b>Sistemático</b> — construído pelas regras (ex.: propan-2-ona).</div><div><b>Retido</b> — aceito pela IUPAC (ex.: benzeno, fenol, ácido acético; acetona é usual retido em uso geral).</div><div><b>Usual/comercial</b> — tradicional (ex.: álcool etílico, éter etílico, tolueno). Nos exercícios, use o nome sistemático.</div></div>
+    <div class="note care"><b class="t">Cuidado</b>Esta aplicação segue as recomendações IUPAC de 2013 em português: localizador junto ao sufixo (but-1-eno, pentan-2-ol) e hífen antes de “h” (3-metil-hexano, ciclo-hexano). Formas antigas como “1-buteno” e “2-pentanol” aparecem em livros mais antigos.</div>
+  </div>
+</section>
+
+<!-- 7 CADEIA PRINCIPAL -->
+<section class="section" id="cadeia" data-title="Cadeia Principal">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Cadeia principal</h2><p class="lead">A cadeia principal <b>não</b> é simplesmente “a maior cadeia”: ela deve conter a função principal e, depois, ser a mais longa.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Critérios, em ordem</h3>
+    <ol class="ladder"><li>contém o maior número de grupos da função principal</li><li>anel × cadeia: na IUPAC 2013, o anel é preferido</li><li>é a mais longa</li><li>tem mais ligações múltiplas (depois, mais duplas)</li><li>dá menores localizadores ao grupo principal e às insaturações</li><li>tem mais substituintes</li></ol>
+    <div class="note err"><b class="t">Erro comum</b>Escolher sempre a cadeia horizontal ou a mais longa sem procurar o carbono do grupo principal.</div>
+    <div class="note care"><b class="t">Cuidado</b>Nas regras antigas (1979/1993), a cadeia com mais insaturações vinha antes da mais longa; em 2013, o comprimento vem primeiro. Os exemplos deste curso foram escolhidos de modo que os dois critérios concordem.</div>
+  </div>
+  <div class="block"><h3 class="block-title">Simulador: clique nos carbonos da cadeia principal</h3><div data-w="chainSim"></div></div>
+  <div class="block"><h3 class="block-title">Exemplos</h3><div data-fig="mol" data-s="OCC(CCC)CCCC CCCC(CC(C)=O)CCC CCC(CC)CC(C)C" class="figs"></div></div>
+</section>
+
+<!-- 8 NUMERAÇÃO -->
+<section class="section" id="numeracao" data-title="Numeração da Cadeia">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Numeração da cadeia</h2><p class="lead">Numere a partir da extremidade que dá o menor localizador, nesta ordem: grupo principal → ligações múltiplas → substituintes.</p></div></div>
+  <div class="block"><h3 class="block-title">Animação: esquerda → direita × direita → esquerda</h3><div data-w="numberAnim"></div></div>
+  <div class="block">
+    <h3 class="block-title">Menor conjunto de localizadores</h3>
+    <p>Compare os conjuntos <b>termo a termo</b>; vence o que tiver o menor número no <b>primeiro ponto de diferença</b>. Ex.: {2,7,8} vence {3,4,9} (2 &lt; 3), embora a soma seja maior.</p>
+    <div class="note err"><b class="t">Erro comum</b>Somar os localizadores. A regra da soma <b>não</b> existe na IUPAC.</div>
+    <div class="note quick" data-q="Qual conjunto é menor: {2,4,5} ou {3,4,6}?" data-o="{2,4,5};{3,4,6};são iguais" data-a="0" data-e="2 &lt; 3 já no primeiro termo."></div>
+  </div>
+  <div class="block"><h3 class="block-title">Exercícios: escolha o sentido e justifique</h3><div data-w="directionEx"></div></div>
+</section>
+
+<!-- 9 SUBSTITUINTES -->
+<section class="section" id="substituintes" data-title="Substituintes">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Substituintes</h2><p class="lead">Ramos ligados à cadeia principal recebem nomes terminados em <b>-il</b> (alquilas) ou nomes de prefixo (cloro, nitro, metoxi…).</p></div></div>
+  <div class="block"><h3 class="block-title">Grupos alquila <span class="tag">R = cadeia principal</span></h3><div data-w="alkylCards"></div>
+    <div class="note care"><b class="t">Cuidado</b>Substituintes ramificados com número no nome vão entre parênteses: 4-(propan-2-il)heptano. Nomes como isopropil, sec-butil e terc-butil também são aceitos.</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Multiplicadores e ordem alfabética</h3>
+    <div class="rules"><div><b>di, tri, tetra</b>: grupos iguais — 2,2,4-trimetilpentano (um localizador para cada grupo).</div><div><b>Ordem alfabética</b>: ignore di, tri, tetra, sec e terc; <b>iso</b> conta — 3-etil-2-metil-hexano.</div><div><b>Pontuação</b>: vírgula entre números (2,3), hífen entre número e letra (2-metil), nada entre prefixo e nome-base (metilbutano).</div></div>
+    <div data-w="alphaOrder"></div>
+  </div>
+  <div class="block"><h3 class="block-title">Corrija este nome</h3><div data-w="fixName"></div></div>
+</section>
+
+<!-- 10 HIDROCARBONETOS -->
+<section class="section" id="hidrocarbonetos" data-title="Hidrocarbonetos">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Hidrocarbonetos</h2><p class="lead">Compostos formados apenas por C e H. O nome termina em <b>-o</b>, e o infixo indica as ligações: <b>an</b> (simples), <b>en</b> (dupla), <b>in</b> (tripla).</p></div></div>
+  <div class="block">
+    <div class="table-wrap"><table><thead><tr><th>Classe</th><th>Ligação característica</th><th>Fórmula geral</th><th>Terminação</th><th>Exemplo</th></tr></thead><tbody>
+      <tr><td>alcano</td><td>só C–C</td><td>CₙH₂ₙ₊₂</td><td>-ano</td><td data-name="CCCC"></td></tr>
+      <tr><td>alceno</td><td>uma C=C</td><td>CₙH₂ₙ</td><td>-eno</td><td data-name="C=CCC"></td></tr>
+      <tr><td>alcino</td><td>uma C≡C</td><td>CₙH₂ₙ₋₂</td><td>-ino</td><td data-name="C#CCC"></td></tr>
+      <tr><td>alcadieno</td><td>duas C=C</td><td>CₙH₂ₙ₋₂</td><td>-dieno</td><td data-name="C=CC=C"></td></tr>
+      <tr><td>cicloalcano</td><td>anel saturado</td><td>CₙH₂ₙ</td><td>ciclo…ano</td><td data-name="C1CCCCC1"></td></tr>
+      <tr><td>aromático</td><td>anel benzênico</td><td>—</td><td>benzeno</td><td data-name="Cc1ccccc1"></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="alcanos,alcenos,alcinos"></div></div>
+</section>
+
+<!-- 11 ALCANOS -->
+<section class="section" id="alcanos" data-title="Alcanos">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Alcanos</h2><p class="lead">Só ligações simples. Nome: localizadores-substituintes + prefixo da cadeia + <b>ano</b>.</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="CC(C)CC(C)(C)C CCC(CC)C(C)C CCCC(C(C)C)CCC" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">3D: a conformação não muda o nome</h3><div data-w="straighten" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>Em 3D a cadeia pode estar “enrolada”. Ao girar as ligações simples, nenhuma ligação é quebrada: a substância (e o nome) é a mesma.</div></div>
+  <div class="block"><h3 class="block-title">Galeria de alcanos</h3><div data-w="gallery" data-cat="alcanos"></div></div>
+</section>
+
+<!-- 12 ALCENOS -->
+<section class="section" id="alcenos" data-title="Alcenos">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Alcenos</h2><p class="lead">Ligação dupla C=C: infixo <b>en</b>, com o localizador do primeiro carbono da dupla imediatamente antes: but-1-eno, but-2-eno.</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="C=CCC CC=CC C=CC(C)CC C=CC=CCC" class="figs"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>A dupla deve estar na cadeia principal e receber o menor localizador possível (se não houver grupo principal). Dois C=C: <b>dieno</b> com “a” de eufonia — hexa-1,3-dieno.</div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="alcenos"></div></div>
+</section>
+
+<!-- 13 ALCINOS -->
+<section class="section" id="alcinos" data-title="Alcinos">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Alcinos</h2><p class="lead">Ligação tripla C≡C: infixo <b>in</b> — but-1-ino, pent-2-ino, 3-metil-hex-1-ino.</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="C#CCC CC#CCC C#CC(C)CCC" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">Eninos: dupla e tripla juntas</h3>
+    <p>Usa-se <b>-en-…-ino</b>. Menores localizadores para as ligações múltiplas em conjunto; em empate, a dupla recebe o menor número.</p>
+    <div data-fig="mol" data-s="C=CCC#C C#CC=CC C=CCCC#C" class="figs"></div>
+  </div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="alcinos,eninos"></div></div>
+</section>
+
+<!-- 14 CÍCLICOS -->
+<section class="section" id="ciclicos" data-title="Compostos Cíclicos">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Compostos cíclicos</h2><p class="lead">Anel saturado: <b>ciclo</b> + prefixo + ano. Com um substituinte, não se usa localizador (metilciclopentano); com dois ou mais, numere o anel para o menor conjunto.</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="C1CCC1 CC1CCCCC1 CCC1CCCC(C)C1 C1=CCCCC1" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">Anel ou cadeia?</h3><div data-w="ringVsChain"></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="ciclicos"></div></div>
+</section>
+
+<!-- 15 AROMÁTICOS -->
+<section class="section" id="aromaticos" data-title="Compostos Aromáticos">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Compostos aromáticos</h2><p class="lead">Derivados do benzeno: substituinte(s) + <b>benzeno</b>. Nomes retidos importantes: fenol, anilina, ácido benzoico, benzaldeído. “Tolueno” é usual (metilbenzeno).</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="Cc1ccccc1 Clc1ccccc1 Cc1ccc(Cl)cc1 Brc1cccc([N+](=O)[O-])c1" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">1,2 / 1,3 / 1,4 × orto / meta / para</h3><div data-w="omp"></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="aromaticos"></div></div>
+</section>
+
+<!-- 16 HALETOS -->
+<section class="section" id="haletos" data-title="Haletos Orgânicos">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Haletos orgânicos</h2><p class="lead">Halogênios são sempre <b>prefixos</b>: fluoro, cloro, bromo, iodo — ordenados alfabeticamente com os alquilas.</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="CC(Br)C CC(Cl)CC(C)C ClCCCl" class="figs"></div>
+    <div class="note err"><b class="t">Erro comum</b>Escrever “cloreto de …” como nome IUPAC substitutivo. “Cloreto de metila” é nome de classe funcional (usual); o substitutivo é clorometano.</div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="haletos"></div></div>
+</section>
+
+<!-- 17 ÁLCOOIS -->
+<section class="section" id="alcoois" data-title="Álcoois">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>Álcoois</h2><p class="lead">OH ligado a carbono sp³: sufixo <b>-ol</b> com localizador — propan-2-ol, 3-metilbutan-2-ol.</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="CC(O)C CC(O)C(C)CC CC(C)(C)O" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">Polióis</h3><p>Vários OH: <b>diol, triol</b> — mantém-se o “o” do “ano”: etano-1,2-diol, propano-1,2,3-triol (glicerol).</p><div data-fig="mol" data-s="OCCO OCC(O)CO" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="alcoois"></div></div>
+</section>
+
+<!-- 18 FENÓIS -->
+<section class="section" id="fenois" data-title="Fenóis">
+  <div class="section-head"><div><span class="kicker">Módulo 18</span><h2>Fenóis</h2><p class="lead">OH ligado diretamente ao anel aromático. Nome retido: <b>fenol</b>; derivados: 4-clorofenol, 2-metilfenol.</p></div></div>
+  <div class="block"><h3 class="block-title">Álcool × fenol</h3><div data-w="compareFn" data-k="alcool-fenol"></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="fenois"></div></div>
+</section>
+
+<!-- 19 ÉTERES -->
+<section class="section" id="eteres" data-title="Éteres">
+  <div class="section-head"><div><span class="kicker">Módulo 19</span><h2>Éteres</h2><p class="lead">R–O–R′. Nome substitutivo: o grupo menor vira <b>alcóxi</b> (metoxi, etoxi) e a cadeia maior é o nome-base: metoxietano, 2-metoxipropano.</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="COCC CCOCC COC(C)C" class="figs"></div>
+    <div class="note care"><b class="t">Cuidado</b>Éter nunca é sufixo. “Éter dietílico” é nome usual; o sistemático é etoxietano.</div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="eteres"></div></div>
+</section>
+
+<!-- 20 ALDEÍDOS -->
+<section class="section" id="aldeidos" data-title="Aldeídos">
+  <div class="section-head"><div><span class="kicker">Módulo 20</span><h2>Aldeídos</h2><p class="lead">–CHO na ponta: sufixo <b>-al</b>. O carbono do CHO é sempre C1 e o localizador é omitido: butanal, 3-metilbutanal.</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="CCCC=O CC(C)CC=O CC=CC=O" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="aldeidos"></div></div>
+</section>
+
+<!-- 21 CETONAS -->
+<section class="section" id="cetonas" data-title="Cetonas">
+  <div class="section-head"><div><span class="kicker">Módulo 21</span><h2>Cetonas</h2><p class="lead">C=O entre dois carbonos: sufixo <b>-ona</b> com localizador — pentan-2-ona, pentan-3-ona. Propan-2-ona (acetona) admite “propanona”.</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="CCCC(=O)C CCC(=O)CC CC(=O)CC(C)C" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">Aldeído ou cetona?</h3><div data-w="aldKet"></div><div data-w="compareFn" data-k="aldeido-cetona"></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="cetonas"></div></div>
+</section>
+
+<!-- 22 ÁCIDOS -->
+<section class="section" id="acidos" data-title="Ácidos Carboxílicos">
+  <div class="section-head"><div><span class="kicker">Módulo 22</span><h2>Ácidos carboxílicos</h2><p class="lead">–COOH: <b>ácido …-oico</b>. O carbono da carboxila é C1: ácido 3-metilbutanoico.</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="CCC(=O)O CC(C)CC(=O)O CC=CC(=O)O" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">Ácidos dicarboxílicos</h3><p>Dois COOH nas pontas: <b>ácido …-dioico</b> — ácido etanodioico (oxálico), ácido butanodioico.</p><div data-fig="mol" data-s="OC(=O)C(=O)O OC(=O)CCC(=O)O" data-n="0" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="acidos"></div></div>
+</section>
+
+<!-- 23 ÉSTERES -->
+<section class="section" id="esteres" data-title="Ésteres">
+  <div class="section-head"><div><span class="kicker">Módulo 23</span><h2>Ésteres</h2><p class="lead">R–COO–R′: <b>…oato de …ila</b>. A parte <span class="p-stem">ácida</span> (com o C=O) dá o “…oato”; a parte <span class="p-alk">alquila</span>, ligada ao O, dá o “…ila”.</p></div></div>
+  <div class="block"><h3 class="block-title">Simulador: separe acila e alquila</h3><div data-w="esterSim"></div>
+    <div class="note err"><b class="t">Erro comum</b>Contar o carbono da C=O na parte alquila. Em CH₃COOCH₂CH₃, a parte ácida tem 2 C (etanoato) e a alquila 2 C (etila): <b>etanoato de etila</b>.</div></div>
+  <div class="block"><h3 class="block-title">Ácido × éster</h3><div data-w="compareFn" data-k="acido-ester"></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="esteres"></div></div>
+</section>
+
+<!-- 24 AMINAS -->
+<section class="section" id="aminas" data-title="Aminas">
+  <div class="section-head"><div><span class="kicker">Módulo 24</span><h2>Aminas</h2><p class="lead">Sufixo <b>-amina</b>: propan-1-amina. Grupos adicionais no N recebem o localizador <b>N</b>: N-metiletanamina, N,N-dimetiletanamina.</p></div></div>
+  <div class="block"><h3 class="block-title">Primária, secundária ou terciária?</h3><div data-w="amineClass"></div></div>
+  <div class="block"><h3 class="block-title">Geometria do nitrogênio</h3><div data-w="amine3d" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="aminas"></div></div>
+</section>
+
+<!-- 25 AMIDAS -->
+<section class="section" id="amidas" data-title="Amidas">
+  <div class="section-head"><div><span class="kicker">Módulo 25</span><h2>Amidas</h2><p class="lead">R–CONH₂: <b>-amida</b> — propanamida. Substituintes no N: N-metiletanamida, N,N-dimetilmetanamida (DMF).</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="CCC(N)=O CC(=O)NC O=CN(C)C" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">Amina × amida</h3><div data-w="compareFn" data-k="amina-amida"></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="amidas"></div></div>
+</section>
+
+<!-- 26 NITRILAS -->
+<section class="section" id="nitrilas" data-title="Nitrilas">
+  <div class="section-head"><div><span class="kicker">Módulo 26</span><h2>Nitrilas</h2><p class="lead">R–C≡N: <b>-nitrila</b>, contando o C do grupo como C1 — propanonitrila, 3-metilbutanonitrila.</p></div></div>
+  <div class="block"><h3 class="block-title">Nitrila × alcino</h3><div data-w="compareFn" data-k="nitrila-alcino"></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="nitrilas"></div></div>
+</section>
+
+<!-- 27 NITRO -->
+<section class="section" id="nitro" data-title="Nitrocompostos">
+  <div class="section-head"><div><span class="kicker">Módulo 27</span><h2>Nitrocompostos</h2><p class="lead">–NO₂ é sempre o prefixo <b>nitro-</b>: nitrometano, 2-nitropropano, nitrobenzeno.</p></div></div>
+  <div class="block"><div data-fig="mol" data-s="C[N+](=O)[O-] CC(C)[N+](=O)[O-]" class="figs"></div>
+    <div class="note care"><b class="t">Cuidado</b>Nitro (–NO₂, N ligado a dois O) ≠ nitrila (–C≡N) ≠ amina (–NH₂).</div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="nitro"></div></div>
+</section>
+
+<!-- 28 MULTIFUNCIONAIS -->
+<section class="section" id="multifuncionais" data-title="Compostos Multifuncionais">
+  <div class="section-head"><div><span class="kicker">Módulo 28</span><h2>Compostos multifuncionais</h2><p class="lead">Seis etapas: funções → função principal → cadeia → numeração → prefixos → nome.</p></div></div>
+  <div class="block"><h3 class="block-title">Guia passo a passo</h3><div data-w="multiGuide"></div></div>
+  <div class="block"><h3 class="block-title">Galeria</h3><div data-w="gallery" data-cat="multi"></div></div>
+</section>
+
+<!-- 29 PRIORIDADE -->
+<section class="section" id="prioridade" data-title="Prioridade de Funções">
+  <div class="section-head"><div><span class="kicker">Módulo 29</span><h2>Prioridade de funções</h2><p class="lead">A função de maior prioridade dá o sufixo; as demais viram prefixos.</p></div></div>
+  <div class="block"><div data-w="prioTable"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>ácidos e derivados &gt; nitrilas &gt; aldeídos &gt; cetonas &gt; álcoois &gt; aminas &gt; ligações múltiplas &gt; halo, alcóxi, nitro (sempre prefixos).</div></div>
+  <div class="block"><h3 class="block-title">Funções como prefixos</h3>
+    <div class="rules"><div><b>hidroxi-</b> — OH quando não é a principal</div><div><b>oxo-</b> — C=O de cetona (ou aldeído) não principal</div><div><b>amino-</b> — NH₂ não principal</div><div><b>alcóxi-</b> — metoxi, etoxi</div></div>
+    <div data-fig="mol" data-s="CC(O)CC(=O)O CC(=O)CCC(=O)O NCCO" class="figs"></div></div>
+  <div class="block"><h3 class="block-title">Exercícios</h3><div data-w="prioOrder"></div></div>
+</section>
+
+<!-- 30 NOME → ESTRUTURA -->
+<section class="section" id="nomeestrutura" data-title="Nome → Estrutura">
+  <div class="section-head"><div><span class="kicker">Módulo 30</span><h2>Nome → estrutura</h2><p class="lead">Leia o nome de trás para frente: sufixo (função) → cadeia → insaturações → substituintes. Monte no construtor e confira; o modelo 3D é gerado da sua estrutura.</p></div></div>
+  <div class="block"><h3 class="block-title">Construtor molecular <span class="tag">alerta de valência</span></h3><div data-w="builder" data-3d></div></div>
+  <div class="block"><h3 class="block-title">Escolha a estrutura</h3><div data-w="nameToStructMC"></div></div>
+</section>
+
+<!-- 31 ESTRUTURA → NOME -->
+<section class="section" id="estruturanome" data-title="Estrutura → Nome">
+  <div class="section-head"><div><span class="kicker">Módulo 31</span><h2>Estrutura → nome</h2><p class="lead">Digite o nome ou escolha entre alternativas. São aceitos o nome IUPAC e sinônimos válidos (por exemplo, isopropil por propan-2-il).</p></div></div>
+  <div class="block"><div data-w="structToName"></div></div>
+  <div class="block"><h3 class="block-title">Monte e descubra o nome <span class="tag">modo livre</span></h3><div data-w="builderFree"></div></div>
+</section>
+
+<!-- 32 LAB 3D -->
+<section class="section" id="lab3d" data-title="Laboratório Molecular 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 32</span><h2>Laboratório molecular 3D</h2><p class="lead">Gire, aproxime, troque o modelo e destaque heteroátomos, grupos funcionais, cadeia principal e numeração.</p></div></div>
+  <div class="block"><div data-w="lab3d" data-3d></div></div>
+  <div class="block"><h3 class="block-title">3D → 2D: qual estrutura esquelética?</h3><div data-w="threeToTwo" data-3d></div></div>
+  <div class="block"><h3 class="block-title">2D → 3D e conformações</h3><div data-w="twoToThree" data-3d></div></div>
+</section>
+
+<!-- 33 SIMULADOR -->
+<section class="section" id="simulador" data-title="Simulador de Nomenclatura">
+  <div class="section-head"><div><span class="kicker">Módulo 33</span><h2>Simulador de nomenclatura</h2><p class="lead">Oito etapas, cada uma com feedback específico — não apenas “errado”.</p></div></div>
+  <div class="block"><div data-w="nameSim"></div></div>
+</section>
+
+<!-- 34 RESOLVIDOS -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 34</span><h2>Exercícios resolvidos</h2><p class="lead">Treze níveis. Tente resolver primeiro; depois peça a dica ou a resolução passo a passo (função, cadeia, numeração, substituintes, nome).</p></div></div>
+  <div class="block"><div class="chips" data-w="levelChips"></div><div data-w="solved"></div></div>
+</section>
+
+<!-- 35 PROPOSTOS -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 35</span><h2>Exercícios propostos</h2><p class="lead">80 exercícios: 25 fáceis, 30 intermediários e 25 avançados. <button class="btn sm" type="button" data-action="redo">↺ Refazer todos</button></p></div></div>
+  <nav class="subnav"><a href="#prop-easy">Fáceis</a><a href="#prop-mid">Intermediários</a><a href="#prop-hard">Avançados</a></nav>
+  <div class="block">
+    <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+    <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+    <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+  </div>
+</section>
+
+<!-- 36 QUIZ -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 36</span><h2>Quiz final</h2><p class="lead">40 questões sorteadas, com pontuação, porcentagem, feedback e tópicos para revisar.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">Modo desafio <span class="tag">20 s · pontos · sequência</span></h3><div data-w="challenge"></div></div>
+</section>
+
+<!-- 37 MAPA -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 37</span><h2>Mapa conceitual e resumo</h2></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block"><h3 class="block-title">Tabela-resumo das funções <span class="tag">clique nas linhas</span></h3><div data-w="summaryTable"></div></div>
+  <div class="block"><h3 class="block-title">Guia rápido de nomenclatura</h3><div data-w="guideList"></div><button class="btn primary" type="button" data-action="guide">Abrir guia (imprimir / tela cheia)</button></div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<dialog id="guide" class="guide" aria-label="Guia rápido de nomenclatura">
+  <div class="guide-head"><h2>Guia rápido de nomenclatura</h2><div class="ex-actions"><button class="btn sm" type="button" data-g="print">🖨 Imprimir</button><button class="btn sm" type="button" data-g="full">⛶ Tela cheia</button><button class="btn sm" type="button" data-g="close" aria-label="Fechar">✕</button></div></div>
+  <div class="guide-body"></div>
+  <p class="eq"><span class="p-pre">prefixos</span> + <span class="p-stem">cadeia</span> + <span class="p-inf">insaturação</span> + <span class="p-suf">sufixo</span></p>
+</dialog>
+
+<footer class="site">
+  <b>Química Orgânica I</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

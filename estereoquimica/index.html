@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estereoquímica de Moléculas Orgânicas · Química Orgânica I</title>
+  <meta name="description" content="Ambiente interativo de estereoquímica: isomeria, quiralidade, centros estereogênicos, enantiômeros, diastereoisômeros, meso, regras CIP, configuração R/S, projeções de Fischer e atividade óptica, com modelos 3D.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><line x1="20" y1="5" x2="20" y2="35" stroke="#9fd8ff" stroke-width="1.4" stroke-dasharray="3 2"/><circle cx="12" cy="20" r="3.4" fill="#2fd4f5"/><line x1="12" y1="20" x2="6" y2="12" stroke="#ff9f43" stroke-width="2.2"/><line x1="12" y1="20" x2="6" y2="28" stroke="#ff4fa3" stroke-width="2.2"/><circle cx="28" cy="20" r="3.4" fill="#2fd4f5"/><line x1="28" y1="20" x2="34" y2="12" stroke="#ff9f43" stroke-width="2.2"/><line x1="28" y1="20" x2="34" y2="28" stroke="#ff4fa3" stroke-width="2.2"/></svg>
+      <span>Estereoquímica<small>Química Orgânica I</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#isomeria">O que é Isomeria?</a></li>
+        <li><a href="#constitucionais">Isômeros Constitucionais</a></li>
+        <li><a href="#estereoisomeria">Estereoisomeria</a></li>
+        <li><a href="#quiralidade">Quiralidade</a></li>
+        <li><a href="#centros">Centros Estereogênicos</a></li>
+        <li><a href="#enantiomeros">Enantiômeros</a></li>
+        <li><a href="#diastereoisomeros">Diastereoisômeros</a></li>
+        <li><a href="#meso">Compostos Meso</a></li>
+        <li><a href="#cip">Regras CIP</a></li>
+        <li><a href="#rs">Configuração R/S</a></li>
+        <li><a href="#nomenclatura">Nomenclatura</a></li>
+        <li><a href="#fischer">Projeções de Fischer</a></li>
+        <li><a href="#optica">Atividade Óptica</a></li>
+        <li><a href="#racemicas">Misturas Racêmicas</a></li>
+        <li><a href="#numero">Número de Estereoisômeros</a></li>
+        <li><a href="#varios">Vários Centros</a></li>
+        <li><a href="#laboratorio">Laboratório 3D</a></li>
+        <li><a href="#simulador">Simulador R/S</a></li>
+        <li><a href="#comparador">Comparador</a></li>
+        <li><a href="#resolvidos">Resolvidos</a></li>
+        <li><a href="#propostos">Propostos</a></li>
+        <li><a href="#quiz">Quiz Final</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1 INÍCIO -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero hero-stack">
+    <div>
+      <span class="kicker">Química Orgânica I · estereoquímica</span>
+      <h1>Estereoquímica de <span class="g">Moléculas Orgânicas</span></h1>
+      <p class="sub">Visualize moléculas em 3D, identifique relações estereoquímicas e domine a configuração R/S.</p>
+      <div class="cta"><a class="btn primary lg" href="#isomeria">Começar →</a><a class="btn lg" href="#laboratorio">Explorar em 3D</a></div>
+      <p class="eq">observe em 3D → reflita no espelho → tente sobrepor → numere as prioridades → coloque o 4 para trás → R ou S</p>
+    </div>
+    <div data-w="hero" data-3d class="grid3 herogrid"></div>
+  </div>
+  <div class="modules">
+    <a href="#isomeria"><b>Isomeria</b><span>árvore interativa: constitucionais × estereoisômeros</span></a>
+    <a href="#quiralidade"><b>Quiralidade</b><span>espelho virtual 3D e tentativa de sobreposição</span></a>
+    <a href="#centros"><b>Centros estereogênicos</b><span>clique nos centros de moléculas em 3D</span></a>
+    <a href="#enantiomeros"><b>Enantiômeros e diastereoisômeros</b><span>comparação em 3D, matriz de relações</span></a>
+    <a href="#meso"><b>Meso</b><span>plano de simetria em 3D</span></a>
+    <a href="#cip"><b>Regras CIP</b><span>algoritmo em camadas, átomos duplicados</span></a>
+    <a href="#rs"><b>R/S</b><span>grupo 4 para trás, para a frente e no plano</span></a>
+    <a href="#fischer"><b>Fischer</b><span>cruz → 3D, operações permitidas</span></a>
+    <a href="#optica"><b>Atividade óptica</b><span>polarímetro, [α], racêmicos e ee</span></a>
+    <a href="#laboratorio"><b>Laboratório e simuladores</b><span>R/S em 5 etapas, comparador, construtor quiral</span></a>
+    <a href="#resolvidos"><b>Exercícios</b><span>31 resolvidos e 60 propostos</span></a>
+    <a href="#quiz"><b>Quiz e desafio</b><span>35 questões + "R ou S em 15 segundos"</span></a>
+  </div>
+</section>
+
+<!-- 2 ISOMERIA -->
+<section class="section" id="isomeria" data-title="O que é Isomeria?">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>O que é isomeria?</h2><p class="lead"><b>Isômeros</b> são compostos diferentes com a <b>mesma fórmula molecular</b>. Eles diferem na conectividade ou no arranjo espacial dos átomos.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Árvore da isomeria <span class="tag">clique nos ramos</span></h3>
+    <div data-w="isoTree"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Primeiro pergunte: <b>a conectividade é a mesma?</b> Se não, são constitucionais. Se sim, a diferença está no espaço: estereoisômeros.</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Classifique os pares</h3>
+    <div data-w="constActivity"></div>
+    <div class="note quick" data-q="C₂H₆O pode ser etanol ou éter dimetílico. Eles são:" data-o="isômeros constitucionais;estereoisômeros;a mesma substância" data-a="0" data-e="Mesma fórmula, conectividades diferentes (isômeros de função)."></div>
+  </div>
+</section>
+
+<!-- 3 CONSTITUCIONAIS -->
+<section class="section" id="constitucionais" data-title="Isômeros Constitucionais">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Isômeros constitucionais</h2><p class="lead">Mesma fórmula, <b>átomos ligados em ordem diferente</b>.</p></div></div>
+  <div class="block">
+    <div class="grid3">
+      <div class="defbox"><b>De cadeia</b>esqueleto diferente: butano × 2-metilpropano; pentano × 2-metilbutano.</div>
+      <div class="defbox o"><b>De posição</b>mesmo grupo em outra posição: propan-1-ol × propan-2-ol.</div>
+      <div class="defbox m"><b>De função</b>grupos funcionais diferentes: etanol × éter dimetílico.</div>
+    </div>
+    <p>Use a árvore do módulo anterior para ver os exemplos desenhados. Abaixo, a atividade <b>"Mesma conectividade ou conectividade diferente?"</b> — percorra cada átomo e compare seus vizinhos.</p>
+    <div data-w="constActivity"></div>
+    <div class="note err"><b class="t">Erro comum</b>Achar que dois desenhos diferentes são isômeros. Uma cadeia "dobrada" de outro jeito (butano em zigue-zague × butano em "U") é a <b>mesma</b> molécula: a conectividade não mudou.</div>
+  </div>
+</section>
+
+<!-- 4 ESTEREOISOMERIA -->
+<section class="section" id="estereoisomeria" data-title="Estereoisomeria">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Estereoisomeria</h2><p class="lead">Mesma conectividade, <b>orientação espacial diferente</b>. Para comparar, precisamos ver em 3D — e lembrar que <b>girar não muda a identidade</b>.</p></div></div>
+  <nav class="subnav"><a href="#est-rot">Girar não muda</a><a href="#est-mesma">São a mesma molécula?</a><a href="#est-cunha">Cunha e tracejado</a></nav>
+  <div class="block" id="est-rot">
+    <h3 class="block-title">Girar uma molécula não muda sua identidade <span class="tag">3D</span></h3>
+    <div data-w="rotOnly" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>Se você gira a molécula, ela fica parecendo diferente no papel. Mas alguma ligação foi quebrada?</div>
+  </div>
+  <div class="block" id="est-mesma">
+    <h3 class="block-title">"São a mesma molécula?" <span class="tag">girar · sobrepor · verificar</span></h3>
+    <div data-w="sameMol" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Duas estruturas são <b>idênticas</b> se uma puder ser sobreposta à outra apenas por <b>rotação e translação</b>, sem quebrar ligações.</div>
+  </div>
+  <div class="block" id="est-cunha">
+    <h3 class="block-title">Cunha e tracejado: do 3D ao papel <span class="tag">animação</span></h3>
+    <div class="grid3">
+      <div class="defbox"><b>Linha cheia</b>ligação no plano do papel.</div>
+      <div class="defbox o"><b>Cunha cheia</b>ligação apontando <b>para o observador</b>.</div>
+      <div class="defbox m"><b>Tracejado</b>ligação apontando <b>para trás</b> do papel.</div>
+    </div>
+    <div data-w="wedge3d" data-3d></div>
+    <h4>A mesma molécula em orientações diferentes — todas corretas</h4>
+    <div class="figs" data-fig="orients"></div>
+    <h4>3D → cunha/tracejado</h4>
+    <div data-w="wedgeQuiz" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Trocar só uma cunha por tracejado (sem mexer no resto) <b>não</b> é girar: gera o outro estereoisômero.</div>
+  </div>
+</section>
+
+<!-- 5 QUIRALIDADE -->
+<section class="section" id="quiralidade" data-title="Quiralidade">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Quiralidade</h2><p class="lead">Um objeto é <b>quiral</b> quando não é sobreponível à sua imagem especular — como as mãos.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Analogia das mãos</h3>
+    <div data-w="hands"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Espelho virtual 3D <span class="tag">mostrar imagem · sobrepor</span></h3>
+    <div data-w="mirror" data-3d></div>
+    <div class="grid2">
+      <div class="defbox"><b>Sobreponível → aquiral</b>propan-2-ol, diclorometano, formas meso.</div>
+      <div class="defbox m"><b>Não sobreponível → quiral</b>CHBrClF, butan-2-ol, ácido lático.</div>
+    </div>
+    <div class="note care"><b class="t">Cuidado</b>Quiralidade é uma <b>propriedade global</b> da molécula, não de um átomo isolado. O caso mais comum é o carbono com quatro grupos diferentes, mas existem outras formas de quiralidade (axial em alenos e bifenilas, planar, helicoidal) — e há moléculas com centros estereogênicos que são aquirais (meso).</div>
+  </div>
+</section>
+
+<!-- 6 CENTROS -->
+<section class="section" id="centros" data-title="Centros Estereogênicos">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Centros estereogênicos</h2><p class="lead">Um átomo em que a <b>troca de dois grupos</b> gera um estereoisômero. Para carbono sp³: <b>quatro grupos diferentes</b>.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Butan-2-ol: os quatro grupos de C2 <span class="tag">clique</span></h3>
+    <div data-w="fourGroups" data-3d></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Clique em todos os centros estereogênicos <span class="tag">0, 1, 2 ou vários</span></h3>
+    <div data-w="clickCenters" data-3d></div>
+    <div class="note err"><b class="t">Erro comum</b>Marcar CH₂, CH₃ ou carbonos de C=O. Eles têm dois (ou três) grupos iguais ou não são tetraédricos.</div>
+    <div class="note quick" data-q="O C3 do 3-metil-hexano é centro estereogênico?" data-o="sim;não" data-a="0" data-e="H, CH₃, etila e propila: quatro grupos diferentes (a diferença aparece longe do centro)."></div>
+  </div>
+</section>
+
+<!-- 7 ENANTIÔMEROS -->
+<section class="section" id="enantiomeros" data-title="Enantiômeros">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Enantiômeros</h2><p class="lead">Estereoisômeros que são <b>imagens especulares não sobreponíveis</b>: todos os centros invertidos.</p></div></div>
+  <div class="block">
+    <div class="figs" data-fig="enantPair"></div>
+    <h3 class="block-title">Espelho e sobreposição <span class="tag">3D</span></h3>
+    <div data-w="enantMirror" data-3d></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Propriedades</h3>
+    <div class="table-wrap"><table class="cmp"><thead><tr><th>Propriedade</th><th>Enantiômeros</th></tr></thead><tbody>
+      <tr><td>PF, PE, densidade, solubilidade em solvente aquiral</td><td class="okc"><b>iguais</b></td></tr>
+      <tr><td>Espectros de IV, RMN (ambiente aquiral)</td><td class="okc"><b>iguais</b></td></tr>
+      <tr><td>Rotação da luz polarizada</td><td class="hic"><b>mesmo valor, sinais opostos</b></td></tr>
+      <tr><td>Reação com reagentes/catalisadores quirais</td><td class="hic"><b>diferente</b></td></tr>
+      <tr><td>Interação com enzimas e receptores (quirais)</td><td class="hic"><b>diferente</b> (cheiro, sabor, atividade farmacológica)</td></tr>
+    </tbody></table></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Enantiômeros só se diferenciam em um <b>ambiente quiral</b> (luz polarizada, outra molécula quiral, um sistema biológico).</div>
+  </div>
+</section>
+
+<!-- 8 DIASTEREOISÔMEROS -->
+<section class="section" id="diastereoisomeros" data-title="Diastereoisômeros">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Diastereoisômeros</h2><p class="lead">Estereoisômeros que <b>não</b> são imagens especulares: apenas parte dos centros é invertida. Têm propriedades físicas diferentes.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">2,3-diclorobutano: (2R,3R), (2S,3S) e (2R,3S) <span class="tag">3D</span></h3>
+    <div data-w="trioDicl" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>O (2R,3S) deste composto é <b>meso</b>: ele é diastereoisômero das duas formas quirais, mas não tem enantiômero (sua imagem especular é ele mesmo).</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Comparador de relações <span class="tag">pares gerados</span></h3>
+    <div data-w="relComp"></div>
+  </div>
+</section>
+
+<!-- 9 MESO -->
+<section class="section" id="meso" data-title="Compostos Meso">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Compostos meso</h2><p class="lead">Possuem centros estereogênicos, mas são <b>aquirais</b>: têm um <b>plano de simetria</b> interno.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Mostrar plano de simetria <span class="tag">Fischer ↔ 3D</span></h3>
+    <div data-w="mesoPlane" data-3d></div>
+    <p class="hint3">O plano aparece na conformação eclipsada (a da projeção de Fischer). Na conformação anti, a forma meso tem um centro de inversão — continua aquiral.</p>
+  </div>
+  <div class="block">
+    <h3 class="block-title">A imagem especular de um meso é ele mesmo <span class="tag">sobrepor</span></h3>
+    <div data-w="mesoMirror" data-3d></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Ácido tartárico: (R,R), (S,S) e (R,S)</h3>
+    <div class="figs" data-fig="tartaric"></div>
+    <div class="grid2">
+      <div class="defbox"><b>Elementos de simetria</b>plano (σ): divide em metades especulares; centro de inversão (i); eixo impróprio (Sₙ). Qualquer um deles torna a molécula aquiral.</div>
+      <div class="defbox o"><b>Reconhecendo meso</b>centros com os mesmos substituintes e descritores opostos (R,S), metades "iguais".</div>
+    </div>
+    <div class="note err"><b class="t">Erro comum</b>Achar que todo composto com centros estereogênicos é quiral. Formas meso têm centros e são aquirais.</div>
+  </div>
+</section>
+
+<!-- 10 CIP -->
+<section class="section" id="cip" data-title="Regras CIP">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Regras de prioridade CIP</h2><p class="lead">Cahn–Ingold–Prelog: um algoritmo para ordenar os quatro grupos de um centro (1 → 4).</p></div></div>
+  <nav class="subnav"><a href="#cip-proc">Procedimento</a><a href="#cip-z">Número atômico</a><a href="#cip-camadas">Camadas</a><a href="#cip-mult">Ligações múltiplas</a><a href="#cip-ex">Exercícios</a></nav>
+  <div class="block" id="cip-proc">
+    <h3 class="block-title">Procedimento em 6 passos</h3>
+    <ol class="steps6">
+      <li>Identifique os <b>quatro átomos ligados</b> diretamente ao centro.</li>
+      <li>Compare pelo <b>número atômico</b>: maior Z, maior prioridade (isótopos: maior massa).</li>
+      <li>Se houver <b>empate</b>, liste os três átomos ligados a cada átomo empatado (camada 2), em ordem decrescente.</li>
+      <li>Compare as listas termo a termo: o <b>primeiro ponto de diferença</b> decide.</li>
+      <li>Persistindo o empate, avance para a camada seguinte, pelo ramo de maior prioridade.</li>
+      <li>Ligações <b>duplas/triplas</b>: duplique (triplique) os átomos da ligação múltipla.</li>
+    </ol>
+  </div>
+  <div class="block" id="cip-z">
+    <h3 class="block-title">Número atômico <span class="tag">tabela interativa</span></h3>
+    <div data-w="ptable"></div>
+    <div class="formula">I &gt; Br &gt; Cl &gt; S &gt; O &gt; N &gt; C &gt; H &nbsp;·&nbsp; isótopos: T &gt; D &gt; H</div>
+  </div>
+  <div class="block" id="cip-camadas">
+    <h3 class="block-title">Algoritmo em camadas <span class="tag">passo a passo</span></h3>
+    <div data-w="cipTree" data-3d></div>
+    <div class="note err"><b class="t">Erro comum</b>Somar as massas do grupo inteiro. O CIP compara <b>camada a camada</b>; o primeiro ponto de diferença decide, mesmo que o outro grupo seja "maior".</div>
+  </div>
+  <div class="block" id="cip-mult">
+    <h3 class="block-title">Ligações múltiplas: átomos duplicados</h3>
+    <div data-w="dupAtoms"></div>
+  </div>
+  <div class="block" id="cip-ex">
+    <h3 class="block-title">Ordene por prioridade <span class="tag">arrastar</span></h3>
+    <div data-w="cipOrder"></div>
+  </div>
+</section>
+
+<!-- 11 R/S -->
+<section class="section" id="rs" data-title="Configuração R/S">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Configuração R/S</h2><p class="lead">Numere as prioridades, coloque o grupo 4 <b>para trás</b> e siga 1 → 2 → 3: <b>horário = R</b> (rectus), <b>anti-horário = S</b> (sinister).</p></div></div>
+  <nav class="subnav"><a href="#rs-central">Passo a passo 3D</a><a href="#rs-frente">Grupo 4 para a frente</a><a href="#rs-plano">Grupo 4 no plano</a></nav>
+  <div class="block" id="rs-central">
+    <h3 class="block-title">Prioridades → grupo 4 para trás → seta 1 → 2 → 3 <span class="tag">3D</span></h3>
+    <div data-w="rsView" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>O grupo de menor prioridade deve apontar <b>para longe</b> do observador. Só então o sentido 1 → 2 → 3 indica R ou S.</div>
+  </div>
+  <div class="block" id="rs-frente">
+    <h3 class="block-title">Grupo 4 para a frente: leia e <b>inverta</b> <span class="tag">animação</span></h3>
+    <div data-w="g4front" data-3d></div>
+  </div>
+  <div class="block" id="rs-plano">
+    <h3 class="block-title">Grupo 4 no plano</h3>
+    <div class="grid3">
+      <div class="defbox"><b>Estratégia 1 · trocar</b>troque o 4 com o grupo que está para trás; determine R/S; <b>inverta</b> (uma troca inverte).</div>
+      <div class="defbox o"><b>Estratégia 2 · girar</b>gire a molécula (mentalmente ou no 3D) até o 4 ir para trás.</div>
+      <div class="defbox m"><b>Estratégia 3 · duas trocas</b>faça duas trocas (configuração preservada) para pôr o 4 no tracejado.</div>
+    </div>
+    <div data-w="g4plane"></div>
+    <div class="note quick" data-q="Com o H na cunha, a seta 1→2→3 parece horária. A configuração é:" data-o="R;S" data-a="1" data-e="O 4 aponta para você: inverta. Horário aparente → S."></div>
+  </div>
+</section>
+
+<!-- 12 NOMENCLATURA -->
+<section class="section" id="nomenclatura" data-title="Nomenclatura Estereoquímica">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Nomenclatura estereoquímica</h2><p class="lead">Descritores entre parênteses, com locantes, antes do nome: <b>(2R,3S)-</b>2-bromo-3-clorobutano.</p></div></div>
+  <div class="block">
+    <div class="grid3">
+      <div class="defbox"><b>Um centro</b>(R)-butan-2-ol — o locante é opcional.</div>
+      <div class="defbox o"><b>Vários centros</b>(2R,3S)-… — cada descritor com seu locante, separados por vírgula, em ordem crescente.</div>
+      <div class="defbox m"><b>Meso</b>(2R,3S)-2,3-dibromobutano, também chamado <i>meso</i>-2,3-dibromobutano.</div>
+    </div>
+    <div class="figs" data-fig="nameEx"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Simulador de nomenclatura <span class="tag">passo a passo</span></h3>
+    <div data-w="nameSim"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Exercícios</h3>
+    <div data-w="nameEx"></div>
+  </div>
+</section>
+
+<!-- 13 FISCHER -->
+<section class="section" id="fischer" data-title="Projeções de Fischer">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Projeções de Fischer</h2><p class="lead">Cruz: <b>horizontais para a frente</b>, <b>verticais para trás</b>; o centro estereogênico fica no cruzamento.</p></div></div>
+  <nav class="subnav"><a href="#fi-3d">Fischer → 3D</a><a href="#fi-ops">Operações</a><a href="#fi-rs">R/S</a><a href="#fi-multi">Vários centros</a></nav>
+  <div class="block" id="fi-3d">
+    <h3 class="block-title">Transformar Fischer em 3D <span class="tag">animação</span></h3>
+    <div data-w="fischerMorph" data-3d></div>
+  </div>
+  <div class="block" id="fi-ops">
+    <h3 class="block-title">Operações permitidas <span class="tag">animação</span></h3>
+    <div class="grid2">
+      <div class="defbox"><b>Mantêm</b>giro de 180° no plano; número <b>par</b> de trocas.</div>
+      <div class="defbox m"><b>Invertem</b>giro de 90°; <b>uma</b> troca de dois grupos.</div>
+    </div>
+    <div data-w="fischerOps"></div>
+  </div>
+  <div class="block" id="fi-rs">
+    <h3 class="block-title">R/S em Fischer <span class="tag">gerador</span></h3>
+    <p>H (grupo 4) na <b>vertical</b> → já está para trás: leia direto. H na <b>horizontal</b> → está para a frente: leia e <b>inverta</b>.</p>
+    <div data-w="fischerRS"></div>
+  </div>
+  <div class="block" id="fi-multi">
+    <h3 class="block-title">Fischer com vários centros <span class="tag">classifique</span></h3>
+    <div data-w="fischerMulti"></div>
+  </div>
+</section>
+
+<!-- 14 ÓPTICA -->
+<section class="section" id="optica" data-title="Atividade Óptica">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Atividade óptica</h2><p class="lead">Substâncias quirais (não racêmicas) giram o plano da luz polarizada: <b>dextrorrotatórias (+)</b> no sentido horário e <b>levorrotatórias (−)</b> no anti-horário.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Polarímetro virtual <span class="tag">gire o analisador</span></h3>
+    <div data-w="polarimeter"></div>
+    <div class="formula">[α] = α<sub>obs</sub> / (l · c) &nbsp;·&nbsp; l em dm, c em g/mL</div>
+    <div class="note err"><b class="t">Erro comum</b><b>R/S não indica (+)/(−).</b> R/S é uma convenção geométrica (regras CIP); o sinal da rotação é uma medida experimental. (R)-gliceraldeído é (+); (R)-butan-2-ol é (−).</div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Estereoquímica e biologia</h3>
+    <p>Enzimas e receptores são quirais (formados por L-aminoácidos e D-açúcares) e por isso podem distinguir enantiômeros: a (R)-carvona tem cheiro de hortelã e a (S)-carvona, de alcaravia; muitos fármacos são vendidos como um único enantiômero porque o outro é menos ativo ou causa efeitos diferentes. No caso da talidomida, os enantiômeros se interconvertem no organismo — por isso administrar um só deles não elimina o risco.</p>
+  </div>
+</section>
+
+<!-- 15 RACÊMICAS -->
+<section class="section" id="racemicas" data-title="Misturas Racêmicas">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Misturas racêmicas e excesso enantiomérico</h2><p class="lead">Racemato: mistura <b>1:1</b> de enantiômeros. As rotações se cancelam: (+α) + (−α) = 0.</p></div></div>
+  <div class="block">
+    <h3 class="block-title">Misture os enantiômeros do butan-2-ol <span class="tag">ee</span></h3>
+    <div data-w="racemic"></div>
+    <div class="formula">ee = |% maior − % menor| = [α]<sub>amostra</sub> / [α]<sub>puro</sub> × 100</div>
+    <div class="note care"><b class="t">Cuidado</b>Racemato e meso têm α = 0 por motivos diferentes: o meso é <b>uma substância aquiral</b>; o racemato é uma <b>mistura</b> de duas substâncias quirais.</div>
+  </div>
+</section>
+
+<!-- 16 NÚMERO -->
+<section class="section" id="numero" data-title="Número de Estereoisômeros">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Número de estereoisômeros</h2><p class="lead">Com <b>n</b> centros estereogênicos, há no máximo <b>2ⁿ</b> estereoisômeros. Simetria (formas meso) reduz esse número.</p></div></div>
+  <div class="block">
+    <div data-w="count2n"></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Exercícios (1 a 4 centros)</h3>
+    <div data-w="countEx"></div>
+  </div>
+</section>
+
+<!-- 17 VÁRIOS CENTROS -->
+<section class="section" id="varios" data-title="Moléculas com Vários Centros">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>Moléculas com vários centros estereogênicos</h2><p class="lead">3-metilpentan-2-ol: (2R,3R), (2S,3S), (2R,3S) e (2S,3R).</p></div></div>
+  <div class="block">
+    <div data-w="multi3d" data-3d></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Matriz de relações A–D <span class="tag">preencha</span></h3>
+    <div data-w="relMatrix"></div>
+  </div>
+</section>
+
+<!-- 18 LABORATÓRIO -->
+<section class="section" id="laboratorio" data-title="Laboratório Estereoquímico 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 18</span><h2>Laboratório estereoquímico 3D</h2><p class="lead">Escolha a molécula, mude a configuração de cada centro, veja prioridades, gere o enantiômero e converta para cunha ou Fischer.</p></div></div>
+  <div class="block"><div data-w="lab" data-3d></div></div>
+  <div class="block">
+    <h3 class="block-title">Construtor quiral <span class="tag">4 substituintes</span></h3>
+    <div data-w="chiralBuilder" data-3d></div>
+  </div>
+</section>
+
+<!-- 19 SIMULADOR -->
+<section class="section" id="simulador" data-title="Simulador R/S">
+  <div class="section-head"><div><span class="kicker">Módulo 19</span><h2>Simulador R/S</h2><p class="lead">Cinco etapas, cada uma avaliada separadamente: centro → prioridades → grupo 4 atrás → sentido → descritor.</p></div></div>
+  <div class="block"><div data-w="rsSim" data-3d></div></div>
+  <div class="block">
+    <h3 class="block-title">Troca de dois grupos <span class="tag">R ↔ S</span></h3>
+    <div data-w="swapTool" data-3d></div>
+  </div>
+  <div class="block">
+    <h3 class="block-title">Rotação não é reflexão</h3>
+    <div data-w="rotRefl" data-3d></div>
+  </div>
+</section>
+
+<!-- 20 COMPARADOR -->
+<section class="section" id="comparador" data-title="Comparador de Estereoisômeros">
+  <div class="section-head"><div><span class="kicker">Módulo 20</span><h2>Comparador de estereoisômeros</h2><p class="lead">Monte A e B, peça a explicação em 6 etapas e sobreponha em 3D.</p></div></div>
+  <div class="block"><div data-w="comparator" data-3d></div></div>
+  <div class="block">
+    <h3 class="block-title">Fluxograma de decisão <span class="tag">aplicado a um par</span></h3>
+    <div data-w="decTree"></div>
+  </div>
+</section>
+
+<!-- 21 RESOLVIDOS -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 21</span><h2>Exercícios resolvidos</h2><p class="lead">Tente resolver primeiro; depois peça a dica ou a resolução.</p></div></div>
+  <div class="block"><div class="chips" data-w="levelChips"></div><div data-w="solved"></div></div>
+</section>
+
+<!-- 22 PROPOSTOS -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 22</span><h2>Exercícios propostos</h2><p class="lead">60 exercícios: fáceis, intermediários e avançados. <button class="btn sm" type="button" data-action="redo">↺ Refazer todos</button></p></div></div>
+  <nav class="subnav"><a href="#prop-easy">Fáceis</a><a href="#prop-mid">Intermediários</a><a href="#prop-hard">Avançados</a></nav>
+  <div class="block">
+    <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+    <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+    <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+  </div>
+</section>
+
+<!-- 23 QUIZ -->
+<section class="section" id="quiz" data-title="Quiz Final">
+  <div class="section-head"><div><span class="kicker">Módulo 23</span><h2>Quiz final</h2><p class="lead">35 questões sorteadas de todos os temas.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">R ou S em 15 segundos <span class="tag">pontos · sequência · níveis</span></h3><div data-w="challenge"></div></div>
+</section>
+
+<!-- 24 MAPA -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 24</span><h2>Mapa conceitual e resumo</h2></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block">
+    <h3 class="block-title">Regras essenciais</h3>
+    <div class="rules">
+      <div>Mesma fórmula + conectividade diferente → <b>constitucionais</b></div>
+      <div>Mesma conectividade + espaço diferente → <b>estereoisômeros</b></div>
+      <div>Imagem especular <b>não sobreponível</b> → quiral</div>
+      <div>Carbono com <b>quatro grupos diferentes</b> → centro estereogênico</div>
+      <div>Todos os centros invertidos → <b>enantiômeros</b>; só parte → <b>diastereoisômeros</b></div>
+      <div>Centros + plano de simetria → <b>meso</b> (aquiral)</div>
+      <div>CIP: maior <b>número atômico</b>; empate → próxima camada; duplas duplicam</div>
+      <div>Grupo 4 <b>para trás</b>: horário = <b>R</b>, anti-horário = <b>S</b></div>
+      <div>Grupo 4 <b>para a frente</b>: leia e <b>inverta</b></div>
+      <div>Fischer: horizontal = frente; 180° mantém; 90° inverte</div>
+      <div>Uma troca inverte; <b>duas trocas</b> restauram</div>
+      <div><b>R/S ≠ (+)/(−)</b>; racemato: α = 0; ee = |%maior − %menor|</div>
+      <div>No máximo <b>2ⁿ</b> estereoisômeros</div>
+    </div>
+  </div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica I</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

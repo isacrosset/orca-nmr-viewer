@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compostos Carbonílicos · Química Orgânica II</title>
+  <meta name="description" content="Laboratório virtual de compostos carbonílicos: estrutura da carbonila, polarização, π/π*, Bürgi–Dunitz, aldeídos e cetonas, reduções com NaBH₄, LiAlH₄ e DIBAL-H, oxidações com PCC, Jones e KMnO₄, ozonólise, mapa de interconversões, modelos 3D e simuladores.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#131f36" stroke="#2fd4f5" stroke-width="2"/><line x1="9" y1="27" x2="17" y2="21" stroke="#e8eef9" stroke-width="2.4"/><line x1="25" y1="27" x2="17" y2="21" stroke="#e8eef9" stroke-width="2.4"/><line x1="15.6" y1="20" x2="15.6" y2="9" stroke="#2fd4f5" stroke-width="2.4"/><line x1="18.4" y1="20" x2="18.4" y2="9" stroke="#2fd4f5" stroke-width="2.4"/><circle cx="17" cy="21" r="3" fill="#ff9f43"/><circle cx="17" cy="8" r="3.4" fill="#2fd4f5"/><path d="M33 31 Q34 22 22 21" fill="none" stroke="#ff4fa3" stroke-width="2"/></svg>
+      <span>Compostos Carbonílicos<small>Química Orgânica II · redução e oxidação</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Módulos">
+      <ol>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#carbonilicos">O que são compostos carbonílicos?</a></li>
+        <li><a href="#aldcet">Aldeídos e Cetonas</a></li>
+        <li><a href="#estrutura">Estrutura da Carbonila</a></li>
+        <li><a href="#geometria">Geometria e Hibridização</a></li>
+        <li><a href="#polarizacao">Polarização C=O</a></li>
+        <li><a href="#ressonancia">Ressonância</a></li>
+        <li><a href="#orbitais">Orbitais π e π*</a></li>
+        <li><a href="#burgi">Bürgi–Dunitz</a></li>
+        <li><a href="#propriedades">Propriedades Físicas</a></li>
+        <li><a href="#reatividade">Reatividade</a></li>
+        <li><a href="#adicao">Adição Nucleofílica</a></li>
+        <li><a href="#reducao">Redução</a></li>
+        <li><a href="#nabh4">NaBH₄</a></li>
+        <li><a href="#lialh4">LiAlH₄</a></li>
+        <li><a href="#hidreto">Transferência de Hidreto</a></li>
+        <li><a href="#comparacao">NaBH₄ × LiAlH₄</a></li>
+        <li><a href="#dibal">DIBAL-H</a></li>
+        <li><a href="#oxestados">Estados de Oxidação</a></li>
+        <li><a href="#oxalcoois">Oxidação de Álcoois</a></li>
+        <li><a href="#pcc">PCC</a></li>
+        <li><a href="#jones">Jones</a></li>
+        <li><a href="#kmno4">Permanganato</a></li>
+        <li><a href="#cromo">Mecanismos com Cr(VI)</a></li>
+        <li><a href="#oxaldeidos">Oxidação de Aldeídos</a></li>
+        <li><a href="#ozonolise">Ozonólise</a></li>
+        <li><a href="#mapa-inter">Mapa de Interconversões</a></li>
+        <li><a href="#lab3d">Laboratório 3D</a></li>
+        <li><a href="#simred">Simulador de Reduções</a></li>
+        <li><a href="#simox">Simulador de Oxidações</a></li>
+        <li><a href="#simmec">Simulador de Mecanismos</a></li>
+        <li><a href="#resolvidos">Exercícios Resolvidos</a></li>
+        <li><a href="#propostos">Exercícios Propostos</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#mapa">Mapa Conceitual</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="progress-top" aria-hidden="true"><span id="progress"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1 -->
+<section class="section" id="inicio" data-title="Início">
+  <div class="hero">
+    <div>
+      <span class="kicker">Química Orgânica II · aldeídos, cetonas, redução e oxidação</span>
+      <h1>Introdução aos <span class="g">Compostos Carbonílicos</span></h1>
+      <p class="sub">Aldeídos, cetonas e as reações de redução e oxidação que conectam álcoois, carbonilas e ácidos carboxílicos.</p>
+      <p class="legendline"><span class="oxy">● O / região rica em elétrons</span> <span class="el">● C eletrofílico</span> <span class="mv">● movimento de elétrons</span> <span class="hy">● hidreto</span> <span class="pr">● produtos</span> <span class="it">● intermediários</span></p>
+      <div class="cta"><a class="btn primary lg" href="#carbonilicos">Começar →</a><a class="btn lg" href="#lab3d">Explorar a carbonila em 3D</a><a class="btn lg" href="#simred">Simular uma redução</a></div>
+    </div>
+    <div class="heroview" data-w="hero" data-3d></div>
+  </div>
+  <div class="bigqs">
+    <div class="chcard"><span class="kicker">Pergunta 1</span><h3>Por que o carbono da carbonila é atacado por nucleófilos e o oxigênio não?</h3></div>
+    <div class="chcard"><span class="kicker">Pergunta 2</span><h3>Como escolher entre NaBH₄, LiAlH₄, DIBAL-H, PCC, Jones, KMnO₄ ou ozonólise?</h3></div>
+  </div>
+  <div class="modules">
+    <a href="#estrutura"><b>A carbonila</b><span>sp², σ + π, polarização, ressonância</span></a>
+    <a href="#orbitais"><b>π e π* em 3D</b><span>LUMO centrado no carbono</span></a>
+    <a href="#burgi"><b>Bürgi–Dunitz</b><span>o ângulo de ≈ 107°</span></a>
+    <a href="#adicao"><b>Adição nucleofílica</b><span>2D + 3D + energia sincronizados</span></a>
+    <a href="#nabh4"><b>Reduções</b><span>NaBH₄, LiAlH₄, DIBAL-H</span></a>
+    <a href="#oxalcoois"><b>Oxidações</b><span>PCC, Jones, KMnO₄, Cr(VI)</span></a>
+    <a href="#ozonolise"><b>Ozonólise</b><span>corte a C=C; ozonólise inversa</span></a>
+    <a href="#mapa-inter"><b>Mapa de interconversões</b><span>alcenos, álcoois, carbonilas, ácidos</span></a>
+    <a href="#lab3d"><b>Laboratório 3D</b><span>11 moléculas, δ±, π*, potencial</span></a>
+    <a href="#simmec"><b>Simulador de mecanismo</b><span>desenhe as setas; o sistema confere</span></a>
+    <a href="#resolvidos"><b>Exercícios</b><span>42 resolvidos e 80 propostos</span></a>
+    <a href="#quiz"><b>Quiz e desafios</b><span>40 questões + 4 modos cronometrados</span></a>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="section" id="carbonilicos" data-title="O que são compostos carbonílicos?">
+  <div class="section-head"><div><span class="kicker">Módulo 2</span><h2>O que são compostos carbonílicos?</h2><p class="lead">Compostos que contêm o grupo <b>carbonila, C=O</b>: um carbono unido a um oxigênio por uma ligação dupla.</p></div></div>
+  <div class="block"><h3 class="block-title">Do álcool ao ácido: o carbono ganha ligações com oxigênio</h3><div data-w="chain"></div></div>
+  <div class="block"><h3 class="block-title">A família carbonílica</h3><div data-w="familyTree"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Neste módulo o foco são <b>aldeídos e cetonas</b>. Ácidos carboxílicos, ésteres, amidas e cloretos de acila também têm C=O (são derivados de ácidos) e aparecem como substratos ou produtos de redução/oxidação.</div></div>
+  <div class="block"><h3 class="block-title">Teste: tem carbonila?</h3><div data-w="hasCO"></div>
+    <div class="note err"><b class="t">Erro comum</b>Confundir C–OH (álcool) ou C–O–C (éter) com C=O. Só há carbonila quando existe a <b>dupla</b> carbono–oxigênio.</div></div>
+</section>
+
+<!-- 3 -->
+<section class="section" id="aldcet" data-title="Aldeídos e Cetonas">
+  <div class="section-head"><div><span class="kicker">Módulo 3</span><h2>Aldeídos e cetonas</h2><p class="lead"><b>Aldeído</b>: R–CHO (o C carbonílico tem pelo menos um H). <b>Cetona</b>: R–CO–R′ (o C carbonílico liga-se a dois carbonos).</p></div></div>
+  <div class="block"><h3 class="block-title">Exemplos</h3><div data-w="aldKetExamples"></div></div>
+  <div class="block"><h3 class="block-title">Classifique (com modelo 3D)</h3><div data-w="aldOrKet" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>O H do aldeído será decisivo mais adiante: é ele que permite oxidar um aldeído a ácido, enquanto a cetona não tem esse H.</div>
+    <div class="note quick" data-q="A propanona (acetona) é:" data-o="aldeído;cetona;ácido;éster" data-a="1" data-e="C=O ligado a dois CH₃."></div></div>
+</section>
+
+<!-- 4 -->
+<section class="section" id="estrutura" data-title="Estrutura da Carbonila">
+  <div class="section-head"><div><span class="kicker">Módulo 4</span><h2>Estrutura da carbonila</h2><p class="lead">A dupla C=O é formada por uma ligação <b>σ</b> e uma ligação <b>π</b>; o oxigênio carrega dois pares de elétrons não ligantes.</p></div></div>
+  <div class="block"><div data-w="structure" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>A ligação σ resulta da sobreposição frontal (sp² do C com orbital do O); a π, da sobreposição lateral dos orbitais p, perpendiculares ao plano da molécula. C=O é mais curta (≈ 1,21 Å) e mais forte que C–O (≈ 1,43 Å).</div></div>
+</section>
+
+<!-- 5 -->
+<section class="section" id="geometria" data-title="Geometria e Hibridização">
+  <div class="section-head"><div><span class="kicker">Módulo 5</span><h2>Geometria e hibridização</h2><p class="lead">O carbono carbonílico é <b>sp²</b>, <b>trigonal planar</b>, com ângulos de ≈ 120°. O orbital p restante forma a π.</p></div></div>
+  <div class="block"><div data-w="geometry" data-3d></div>
+    <div class="note err"><b class="t">Erro comum</b>Desenhar o carbono carbonílico como tetraédrico. Ele só se torna tetraédrico (≈ sp³) <b>depois</b> da adição de um nucleófilo.</div>
+    <div class="note quick" data-q="Quantos domínios eletrônicos há ao redor do C carbonílico?" data-o="2;3;4;5" data-a="1" data-e="Três ligações σ → sp², trigonal."></div></div>
+</section>
+
+<!-- 6 -->
+<section class="section" id="polarizacao" data-title="Polarização C=O">
+  <div class="section-head"><div><span class="kicker">Módulo 6</span><h2>Polarização da ligação C=O</h2><p class="lead">O oxigênio (χ = 3,44) é mais eletronegativo que o carbono (χ = 2,55): <b>Cδ+</b> e <b>Oδ−</b>.</p></div></div>
+  <div class="block"><div data-w="polarization" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>O carbono carbonílico é <b>eletrofílico</b> (alvo de nucleófilos); o oxigênio é rico em elétrons (pode ser protonado ou coordenar ácidos de Lewis).</div>
+    <div class="note care"><b class="t">Cuidado</b>As cores do mapa de potencial são <b>qualitativas</b> (modelo didático baseado em eletronegatividade), não um cálculo quântico.</div></div>
+</section>
+
+<!-- 7 -->
+<section class="section" id="ressonancia" data-title="Ressonância">
+  <div class="section-head"><div><span class="kicker">Módulo 7</span><h2>Ressonância da carbonila</h2><p class="lead">R₂C=O ↔ R₂C⁺–O⁻: o contribuinte polar é minoritário, mas explica a polarização.</p></div></div>
+  <div class="block"><div data-w="resonance"></div>
+    <div class="note err"><b class="t">Erro comum</b>Tratar a ressonância como um equilíbrio entre duas moléculas. Não há “troca”: as estruturas são representações de <b>uma única</b> distribuição eletrônica (híbrido).</div>
+    <div class="note quick" data-q="Qual contribuinte de ressonância da acetona pesa mais?" data-o="(CH₃)₂C=O;(CH₃)₂C⁺–O⁻;(CH₃)₂C⁻–O⁺;pesam igual" data-a="0" data-e="Sem separação de cargas, octetos completos."></div></div>
+</section>
+
+<!-- 8 -->
+<section class="section" id="orbitais" data-title="Orbitais π e π*">
+  <div class="section-head"><div><span class="kicker">Módulo 8</span><h2>Orbitais π e π*</h2><p class="lead">O π ocupado concentra-se no <b>oxigênio</b>; o π* vazio (importante componente do LUMO) tem o <b>maior lobo no carbono</b>.</p></div></div>
+  <div class="block"><div data-w="piPistar" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Um nucleófilo doa seu par para o π*. Como o maior coeficiente do π* está no C, é ali que a nova ligação se forma.</div>
+    <div class="note care"><b class="t">Cuidado</b>As superfícies são <b>representações qualitativas</b> (combinação de orbitais p com coeficientes ilustrativos).</div></div>
+</section>
+
+<!-- 9 -->
+<section class="section" id="burgi" data-title="Bürgi–Dunitz">
+  <div class="section-head"><div><span class="kicker">Módulo 9</span><h2>Trajetória de Bürgi–Dunitz</h2><p class="lead">O nucleófilo não chega a 90° nem ao longo do eixo C=O: o ângulo Nu···C=O típico é de <b>≈ 105–110°</b> (≈ 107°).</p></div></div>
+  <div class="block"><h3 class="block-title">Simulador do ângulo de ataque</h3><div data-w="bdSim" data-3d></div>
+    <div class="note think"><b class="t">Pense nisso</b>Por que ≈ 107°? Esse ângulo maximiza a sobreposição com o π* (que tem um nó entre C e O e lobo maior no C), afasta o nucleófilo da densidade do oxigênio e já aproxima a geometria tetraédrica do produto.</div></div>
+  <div class="block"><h3 class="block-title">Duas faces da carbonila</h3><div data-w="faces" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>A carbonila é plana: o ataque pode ocorrer pelas duas faces. Com uma cetona assimétrica e reagente aquiral, os dois enantiômeros se formam em igual quantidade (mistura racêmica).</div></div>
+</section>
+
+<!-- 10 -->
+<section class="section" id="propriedades" data-title="Propriedades Físicas">
+  <div class="section-head"><div><span class="kicker">Módulo 10</span><h2>Propriedades físicas</h2><p class="lead">A C=O é polar: aldeídos e cetonas fazem interações dipolo–dipolo, mas <b>não doam</b> ligação de hidrogênio entre si.</p></div></div>
+  <div class="block"><h3 class="block-title">Pontos de ebulição</h3><div data-w="boiling"></div></div>
+  <div class="block"><h3 class="block-title">Ligação de H com a água</h3><div data-w="waterHB" data-3d></div>
+    <div class="note err"><b class="t">Erro comum</b>Dizer que aldeídos e cetonas formam ligação de H entre si. O O carbonílico é <b>aceptor</b>; falta um H ligado a O ou N para doar.</div></div>
+</section>
+
+<!-- 11 -->
+<section class="section" id="reatividade" data-title="Reatividade de Aldeídos e Cetonas">
+  <div class="section-head"><div><span class="kicker">Módulo 11</span><h2>Reatividade de aldeídos e cetonas</h2><p class="lead">Em geral, <b>aldeídos são mais reativos</b> que cetonas frente a nucleófilos: efeitos eletrônicos e estéricos.</p></div></div>
+  <div class="block"><div data-w="reactivity" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Grupos alquila doam densidade (diminuem o δ+) e bloqueiam a aproximação na trajetória de Bürgi–Dunitz. Metanal &gt; aldeídos &gt; cetonas &gt; cetonas muito impedidas.</div>
+    <div class="note quick" data-q="Qual é mais reativo frente a NaBH₄?" data-o="etanal;propanona;pinacolona;todos iguais" data-a="0" data-e="Aldeído: menos impedido e mais δ+."></div></div>
+</section>
+
+<!-- 12 -->
+<section class="section" id="adicao" data-title="Introdução à Adição Nucleofílica">
+  <div class="section-head"><div><span class="kicker">Módulo 12</span><h2>Introdução à adição nucleofílica</h2><p class="lead">Nu⁻ ataca o C carbonílico, o par π vai para o O → alcóxido tetraédrico → protonação.</p></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo sincronizado: 2D + 3D + energia</h3><div data-w="addMech" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: contraíons, solvente e agregação não são mostrados.</div></div>
+  <div class="block"><h3 class="block-title">Do trigonal ao tetraédrico</h3><div data-w="tetraSlider" data-3d></div>
+    <div class="note err"><b class="t">Erro comum</b>Mover o par π para o carbono. Se o C recebe o nucleófilo <b>e</b> mantém a π, fica com cinco ligações. O par π vai para o <b>oxigênio</b>.</div></div>
+</section>
+
+<!-- 13 -->
+<section class="section" id="reducao" data-title="Redução">
+  <div class="section-head"><div><span class="kicker">Módulo 13</span><h2>Redução de aldeídos e cetonas</h2><p class="lead">Aldeído → <b>álcool primário</b>; cetona → <b>álcool secundário</b>. O carbono ganha uma ligação C–H.</p></div></div>
+  <div class="block"><div data-w="reductionIntro"></div></div>
+  <div class="block"><h3 class="block-title">Qual é o produto?</h3><div data-w="productQuiz"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Em química orgânica, redução = ganho de ligações C–H (ou perda de ligações C–O). O nº de oxidação do carbono funcional diminui.</div></div>
+</section>
+
+<!-- 14 -->
+<section class="section" id="nabh4" data-title="NaBH₄">
+  <div class="section-head"><div><span class="kicker">Módulo 14</span><h2>Boroidreto de sódio, NaBH₄</h2><p class="lead">Redutor <b>brando</b> e seletivo: reduz aldeídos e cetonas; usado em metanol ou etanol.</p></div></div>
+  <div class="block"><div class="grid2"><div data-w="spBH4" data-3d></div><div><h3 class="block-title">Características</h3><ul><li>Fonte de <b>hidreto equivalente</b> (B–H).</li><li>Compatível com solventes próticos (MeOH, EtOH).</li><li>Reduz aldeídos e cetonas.</li><li>Em condições usuais <b>não</b> reduz ésteres, ácidos, amidas ou nitrilas de forma significativa.</li></ul></div></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo: acetona + NaBH₄ (MeOH)</h3><div data-w="mechNaBH4" data-3d></div>
+    <div class="note err"><b class="t">Erro comum</b>Escrever “H⁻ livre” saindo do NaBH₄. O hidreto é transferido <b>diretamente da ligação B–H</b> ao carbono carbonílico; o solvente protona o alcóxido.</div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: um BH₄⁻ pode transferir até quatro hidretos; o boro forma alcoxiboratos.</div></div>
+</section>
+
+<!-- 15 -->
+<section class="section" id="lialh4" data-title="LiAlH₄">
+  <div class="section-head"><div><span class="kicker">Módulo 15</span><h2>Hidreto de lítio e alumínio, LiAlH₄</h2><p class="lead">Redutor <b>forte</b>: reduz aldeídos, cetonas, ésteres, ácidos carboxílicos, amidas e nitrilas.</p></div></div>
+  <div class="block"><div class="grid2"><div data-w="spAlH4" data-3d></div><div><h3 class="block-title">Características</h3><ul><li>Al–H mais polarizada que B–H (Al é menos eletronegativo): hidreto mais reativo.</li><li>Usado em éter ou THF <b>anidro</b>.</li><li>A protonação ocorre num <b>workup</b> aquoso posterior (H₃O⁺).</li></ul></div></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo: acetona + LiAlH₄; depois H₃O⁺</h3><div data-w="mechLiAlH4" data-3d></div>
+    <div class="note care"><b class="t">Cuidado · segurança</b>LiAlH₄ reage <b>vigorosamente com água</b> e solventes próticos, liberando H₂ (inflamável). Por isso a reação é feita em solvente anidro e a água/ácido só entra no workup. Este é um esclarecimento conceitual, não um protocolo experimental.</div></div>
+</section>
+
+<!-- 16 -->
+<section class="section" id="hidreto" data-title="Mecanismo de Transferência de Hidreto">
+  <div class="section-head"><div><span class="kicker">Módulo 16</span><h2>Mecanismo de transferência de hidreto</h2><p class="lead">Mova o cursor ao longo da coordenada de reação: estrutura 3D, geometria do carbono e energia acompanham.</p></div></div>
+  <div class="block"><div data-w="energyHydride" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Etapas: (1) aproximação do B–H ou Al–H na trajetória de Bürgi–Dunitz; (2) formação de C–H enquanto o par π vai para o O; (3) alcóxido tetraédrico (intermediário); (4) protonação → álcool.</div>
+    <div class="note care"><b class="t">Cuidado</b>Perfil de energia qualitativo; representação mecanística simplificada para fins didáticos.</div></div>
+</section>
+
+<!-- 17 -->
+<section class="section" id="comparacao" data-title="NaBH₄ × LiAlH₄">
+  <div class="section-head"><div><span class="kicker">Módulo 17</span><h2>NaBH₄ × LiAlH₄</h2><p class="lead">Força, seletividade e compatibilidade com o solvente.</p></div></div>
+  <div class="block"><div data-w="redTable"></div></div>
+  <div class="block"><h3 class="block-title">Qual redutor escolher?</h3><div data-w="redChoice"></div>
+    <div class="note think"><b class="t">Pense nisso</b>Uma molécula tem uma cetona e um éster. Com NaBH₄ só a cetona é reduzida; com LiAlH₄, ambos. Seletividade é tão importante quanto força.</div></div>
+</section>
+
+<!-- 18 -->
+<section class="section" id="dibal" data-title="DIBAL-H">
+  <div class="section-head"><div><span class="kicker">Módulo 18</span><h2>DIBAL-H: redução parcial controlada</h2><p class="lead">Hidreto de diisobutilalumínio: ácido de Lewis (Al) com um único H transferível. Útil para <b>éster → aldeído</b> e <b>nitrila → aldeído</b>.</p></div></div>
+  <div class="block"><div class="grid2"><div data-w="spDIBAL" data-3d></div><div data-w="dibalScheme"></div></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo: éster + DIBAL-H (−78 °C)</h3><div data-w="mechDIBAL"></div>
+    <div class="note err"><b class="t">Erro comum</b>“DIBAL-H sempre para no aldeído.” A redução parcial depende de <b>temperatura baixa, 1 equivalente, solvente e workup</b>. Com excesso ou aquecimento, a redução pode ir até o álcool.</div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos (agregação do reagente e detalhes do workup omitidos).</div></div>
+</section>
+
+<!-- 19 -->
+<section class="section" id="oxestados" data-title="Estados de Oxidação">
+  <div class="section-head"><div><span class="kicker">Módulo 19</span><h2>Estados de oxidação do carbono</h2><p class="lead">Para o carbono funcional: <b>+1</b> por ligação a átomo mais eletronegativo (O), <b>−1</b> por H, <b>0</b> por C.</p></div></div>
+  <div class="block"><div data-w="oxLadder"></div></div>
+  <div class="block"><h3 class="block-title">Calculadora: clique num carbono</h3><div data-w="oxCalc"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Oxidação: o carbono ganha ligações com O (ou perde C–H). Redução: ganha C–H (ou perde ligações com O).</div></div>
+</section>
+
+<!-- 20 -->
+<section class="section" id="oxalcoois" data-title="Oxidação de Álcoois">
+  <div class="section-head"><div><span class="kicker">Módulo 20</span><h2>Oxidação de álcoois</h2><p class="lead">O número de H no carbono carbinólico decide o resultado.</p></div></div>
+  <div class="block"><div data-w="oxAlcohols"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>1° → aldeído (ou ácido); 2° → cetona; 3° → sem oxidação usual (não há H no carbono que porta o OH).</div>
+    <div class="note quick" data-q="Cicloexanol + Cr(VI):" data-o="cicloexanona;ácido adípico (sempre);sem reação;cicloexeno" data-a="0" data-e="Álcool 2° → cetona."></div></div>
+</section>
+
+<!-- 21 -->
+<section class="section" id="pcc" data-title="PCC">
+  <div class="section-head"><div><span class="kicker">Módulo 21</span><h2>PCC (clorocromato de piridínio)</h2><p class="lead">Cr(VI) relativamente brando, em CH₂Cl₂ <b>anidro</b>: álcool 1° → <b>aldeído</b>; álcool 2° → cetona.</p></div></div>
+  <div class="block"><div data-w="pccJones"></div>
+    <div class="note think"><b class="t">Pense nisso</b>Por que o PCC para no aldeído? Sem água, o aldeído não forma o hidrato — e é o hidrato (com um O–H) que seria oxidado de novo.</div></div>
+</section>
+
+<!-- 22 -->
+<section class="section" id="jones" data-title="Jones">
+  <div class="section-head"><div><span class="kicker">Módulo 22</span><h2>Reagente de Jones (CrO₃/H₂SO₄, acetona/H₂O)</h2><p class="lead">Cr(VI) em meio ácido aquoso: álcool 1° → <b>ácido carboxílico</b>; álcool 2° → cetona.</p></div></div>
+  <div class="block"><h3 class="block-title">O hidrato do aldeído</h3><div class="grid2"><div data-w="hydrate"></div><div data-w="spHidrato" data-3d></div></div>
+    <div class="note care"><b class="t">Cuidado · Cr(VI)</b>Compostos de cromo(VI) são <b>tóxicos e carcinogênicos</b> e geram resíduos perigosos. Hoje se preferem oxidantes alternativos (ex.: Swern, Dess–Martin, TEMPO). Aqui o Cr(VI) é estudado pelo seu valor conceitual.</div></div>
+</section>
+
+<!-- 23 -->
+<section class="section" id="kmno4" data-title="Permanganato">
+  <div class="section-head"><div><span class="kicker">Módulo 23</span><h2>Permanganato de potássio, KMnO₄</h2><p class="lead">Oxidante forte, Mn(VII). Álcool 1° e aldeído → ácido; álcool 2° → cetona; reage também com alcenos.</p></div></div>
+  <div class="block"><div data-w="oxSlider" data-3d></div>
+    <div class="note care"><b class="t">Cuidado</b>O resultado com KMnO₄ <b>depende do pH, temperatura, concentração e substrato</b>: com alcenos, frio/diluído dá dióis; quente/concentrado causa clivagem. Não memorize “KMnO₄ = uma reação”.</div></div>
+</section>
+
+<!-- 24 -->
+<section class="section" id="cromo" data-title="Mecanismos com Cr(VI)">
+  <div class="section-head"><div><span class="kicker">Módulo 24</span><h2>Mecanismo da oxidação com Cr(VI)</h2><p class="lead">(1) O álcool forma um <b>éster de cromato</b>; (2) uma base remove o H do carbono, forma-se a C=O e o Cr(VI) é reduzido a Cr(IV).</p></div></div>
+  <div class="block"><div class="grid2"><div data-w="spCromato" data-3d></div><div data-w="spEster" data-3d></div></div></div>
+  <div class="block"><h3 class="block-title">Mecanismo sincronizado</h3><div data-w="mechCr" data-3d></div>
+    <div class="note key"><b class="t">Conceito-chave</b>A etapa que forma a C=O exige um <b>H no carbono</b> que porta o O–Cr. Por isso álcoois terciários não são oxidados dessa forma.</div>
+    <div class="note care"><b class="t">Cuidado</b>Representação mecanística simplificada para fins didáticos: transferências de próton e as espécies de Cr(IV)/Cr(V)/Cr(III) subsequentes não são detalhadas.</div></div>
+</section>
+
+<!-- 25 -->
+<section class="section" id="oxaldeidos" data-title="Oxidação de Aldeídos">
+  <div class="section-head"><div><span class="kicker">Módulo 25</span><h2>Oxidação de aldeídos</h2><p class="lead">Aldeído → ácido carboxílico (o C–H do aldeído vira C–OH). Cetonas não têm esse H.</p></div></div>
+  <div class="block"><div data-w="aldehydeOx"></div>
+    <div class="note quick" data-q="Qual é oxidado facilmente a ácido carboxílico?" data-o="butanal;butanona;terc-butanol;butano" data-a="0" data-e="H no carbono carbonílico."></div></div>
+</section>
+
+<!-- 26 -->
+<section class="section" id="ozonolise" data-title="Ozonólise">
+  <div class="section-head"><div><span class="kicker">Módulo 26</span><h2>Ozonólise</h2><p class="lead">O₃ cliva a ligação C=C: cada carbono da antiga dupla torna-se um <b>carbono carbonílico</b>.</p></div></div>
+  <div class="block"><h3 class="block-title">Ferramenta de corte</h3><div data-w="ozoCut"></div>
+    <div class="note key"><b class="t">Conceito-chave</b>Workup <b>redutivo</b> (Zn/H₂O ou Me₂S): aldeídos preservados. Workup <b>oxidativo</b> (H₂O₂): fragmentos aldeídicos → ácidos; cetonas permanecem.</div></div>
+  <div class="block"><h3 class="block-title">Ozonólise inversa</h3><div data-w="ozoReverse"></div></div>
+  <div class="block"><div class="grid2"><div data-w="spO3" data-3d></div><div data-w="ozoMech"></div></div>
+    <div class="note care"><b class="t">Cuidado</b>Ozônio é tóxico e ozonídeos podem ser explosivos. Mecanismo de Criegee: representação mecanística simplificada para fins didáticos.</div></div>
+</section>
+
+<!-- 27 -->
+<section class="section" id="mapa-inter" data-title="Mapa de Interconversões">
+  <div class="section-head"><div><span class="kicker">Módulo 27</span><h2>Mapa de interconversões</h2><p class="lead">Clique numa classe para ver de onde vem e para onde vai; passe pelas setas para ver os reagentes.</p></div></div>
+  <div class="block"><div data-w="netMap"></div></div>
+  <div class="block"><h3 class="block-title">Comparador de reagentes</h3><div data-w="reagentCompare"></div></div>
+</section>
+
+<!-- 28 -->
+<section class="section" id="lab3d" data-title="Laboratório 3D">
+  <div class="section-head"><div><span class="kicker">Módulo 28</span><h2>Laboratório 3D da carbonila</h2><p class="lead">Escolha a molécula; ligue δ±, π, π*, mapa de potencial, ângulos e a trajetória de Bürgi–Dunitz.</p></div></div>
+  <div class="block"><div data-w="lab3d" data-3d></div></div>
+</section>
+
+<!-- 29 -->
+<section class="section" id="simred" data-title="Simulador de Reduções">
+  <div class="section-head"><div><span class="kicker">Módulo 29</span><h2>Simulador de reduções</h2><p class="lead">Escolha substrato e redutor. Antes de ver o resultado, responda: há C=O? qual o tipo? o reagente reduz esse grupo? qual a classe do produto?</p></div></div>
+  <div class="block"><div data-w="redSim"></div></div>
+</section>
+
+<!-- 30 -->
+<section class="section" id="simox" data-title="Simulador de Oxidações">
+  <div class="section-head"><div><span class="kicker">Módulo 30</span><h2>Simulador de oxidações</h2><p class="lead">Álcoois, aldeídos, cetonas e alcenos com PCC, Jones, KMnO₄ e ozonólise: preveja antes de revelar.</p></div></div>
+  <div class="block"><div data-w="oxSim"></div></div>
+</section>
+
+<!-- 31 -->
+<section class="section" id="simmec" data-title="Simulador de Mecanismos">
+  <div class="section-head"><div><span class="kicker">Módulo 31</span><h2>Simulador de mecanismos</h2><p class="lead">Desenhe as setas curvas: clique na origem (par de elétrons ou ligação) e depois no destino. Setas mecanisticamente incorretas não são aceitas.</p></div></div>
+  <div class="block"><div data-w="mechSim"></div></div>
+</section>
+
+<!-- 32 -->
+<section class="section" id="resolvidos" data-title="Exercícios Resolvidos">
+  <div class="section-head"><div><span class="kicker">Módulo 32</span><h2>Exercícios resolvidos</h2><p class="lead">18 níveis, 42 exercícios. Tente resolver primeiro; depois veja a dica e a resolução passo a passo.</p></div></div>
+  <div class="block"><div class="chips" data-w="levelChips"></div><div data-w="solved"></div></div>
+</section>
+
+<!-- 33 -->
+<section class="section" id="propostos" data-title="Exercícios Propostos">
+  <div class="section-head"><div><span class="kicker">Módulo 33</span><h2>Exercícios propostos</h2><p class="lead">80 exercícios: 25 fáceis, 30 intermediários e 25 avançados (incluindo “Detecte o erro” e arrastar e soltar). <button class="btn sm" type="button" data-action="redo">↺ Refazer todos</button></p></div></div>
+  <nav class="subnav"><a href="#prop-easy">Fáceis</a><a href="#prop-mid">Intermediários</a><a href="#prop-hard">Avançados</a></nav>
+  <div class="block">
+    <h3 id="prop-easy">Fáceis</h3><div data-w="propEasy"></div>
+    <h3 id="prop-mid">Intermediários</h3><div data-w="propMid"></div>
+    <h3 id="prop-hard">Avançados</h3><div data-w="propHard"></div>
+  </div>
+</section>
+
+<!-- 34 -->
+<section class="section" id="quiz" data-title="Quiz">
+  <div class="section-head"><div><span class="kicker">Módulo 34</span><h2>Quiz final</h2><p class="lead">40 questões sorteadas. Classificação: 0–49% revise os fundamentos · 50–69% em desenvolvimento · 70–84% bom domínio · 85–100% excelente domínio.</p></div></div>
+  <div class="block"><div data-w="quiz"></div></div>
+  <div class="block" id="desafio"><h3 class="block-title">Modo desafio <span class="tag">pontos · sequência</span></h3><div data-w="challenge"></div></div>
+</section>
+
+<!-- 35 -->
+<section class="section" id="mapa" data-title="Mapa Conceitual">
+  <div class="section-head"><div><span class="kicker">Módulo 35</span><h2>Mapa conceitual</h2></div></div>
+  <div class="block"><div data-w="cmap"></div></div>
+  <div class="block"><h3 class="block-title">Resumo: reduções</h3>
+    <ol class="flowv big"><li class="step">C=O POLARIZADA (Cδ+)</li><li>HIDRETO EQUIVALENTE → C (≈ 107°)</li><li class="non">PAR π → O</li><li class="non">ALCÓXIDO TETRAÉDRICO</li><li class="step">PROTONAÇÃO</li><li class="arom">ÁLCOOL (1° de aldeído, 2° de cetona)</li></ol></div>
+  <div class="block"><h3 class="block-title">Resumo: oxidações</h3>
+    <ol class="flowv big"><li class="step">ÁLCOOL + Cr(VI)</li><li class="non">ÉSTER DE CROMATO</li><li>BASE REMOVE H DO CARBONO</li><li class="arom">C=O FORMADA · Cr(VI) → Cr(IV)</li><li class="step">EM ÁGUA: HIDRATO → ÁCIDO</li></ol></div>
+  <div class="block"><h3 class="block-title">Tabela mestre das reduções</h3><div data-w="masterRed"></div></div>
+  <div class="block"><h3 class="block-title">Tabela mestre das oxidações</h3><div data-w="masterOx"></div></div>
+</section>
+
+<div class="pager" id="pager"></div>
+</main>
+
+<footer class="site">
+  <b>Química Orgânica II</b><br>
+  Prof. Dr. Isac G. Rosset | UFPR – Setor Palotina
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
